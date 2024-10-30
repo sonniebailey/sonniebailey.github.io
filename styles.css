@@ -1,5 +1,5 @@
 /* General Reset */
-body, h1, p, a, nav, button {
+body, h1, h2, h3, p, a, nav, button {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -9,18 +9,18 @@ body, h1, p, a, nav, button {
 /* Full-height body */
 body, html {
     height: 100%;
-    overflow: hidden;
 }
 
 /* Header Styling */
 header {
-    position: absolute;
+    position: fixed;
     top: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    left: 0;
+    right: 0;
+    background-color: #000000;
     text-align: center;
     z-index: 2;
-    padding: 10px 0;
+    padding: 20px 0;
 }
 
 nav a {
@@ -34,12 +34,72 @@ nav a:hover {
     text-decoration: underline;
 }
 
+/* Main Content Styling */
+main {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    min-height: 100vh;
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 5%;
+}
+
+h1 {
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin-top: 4rem;
+    margin-bottom: 3rem; /* Increased from 2rem to 3rem to match h1 */
+    color: #f0f0f0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 1rem; /* Increased from 0.5rem to 1rem to match h1 */
+}
+
+h3 {
+    font-size: 1.4rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #e0e0e0;
+}
+
+p {
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+section {
+    margin-bottom: 5rem;
+}
+
+ul, ol {
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
 /* Video Background Styling */
 .video-container {
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100vh; /* Full viewport height */
+    height: 100vh;
     overflow: hidden;
+    z-index: -1;
 }
 
 video {
@@ -50,7 +110,6 @@ video {
     min-height: 100%;
     width: auto;
     height: auto;
-    z-index: -1;
     transform: translate(-50%, -50%);
 }
 
@@ -60,50 +119,55 @@ video {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Adjust the opacity/color as needed */
-    z-index: 1;
+    background: rgba(0, 0, 0, 0.5);
 }
 
-/* Main Content Styling */
-.content {
-    position: relative;
-    z-index: 2;
-    color: white;
-    text-align: center;
+/* Home page specific styles */
+.home-content {
+    position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 1;
+    width: 100%;
 }
 
-h1 {
-    font-size: 3em;
-    margin-bottom: 20px;
+.home-content h1 {
+    font-size: 4em;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border-bottom: none;
+    padding-bottom: 0;
 }
 
 button {
-    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0.2);
     border: 2px solid white;
     color: white;
-    padding: 10px 20px;
+    padding: 15px 30px;
     font-size: 1.2em;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 button:hover {
-    background-color: white;
-    color: black;
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
 /* Footer Styling */
 footer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    left: 0;
+    right: 0;
+    background-color: #000000;
     text-align: center;
     z-index: 2;
     color: white;
     font-size: 0.9em;
-    padding: 10px 0;
+    padding: 20px 0;
 }
 
 footer a {
@@ -114,4 +178,58 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 2rem 7%;
+    }
+
+    h1 {
+        font-size: 2.4rem;
+        margin-bottom: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+        margin-top: 3.5rem;
+        margin-bottom: 2.5rem; /* Adjusted to maintain proportion */
+    }
+
+    h3 {
+        font-size: 1.2rem;
+        margin-top: 2rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .home-content h1 {
+        font-size: 3em;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1.5rem 5%;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+        margin-top: 3rem;
+        margin-bottom: 2rem; /* Adjusted to maintain proportion */
+    }
+
+    .home-content h1 {
+        font-size: 2.5em;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
 }
