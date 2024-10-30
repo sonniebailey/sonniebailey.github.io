@@ -20,8 +20,10 @@
         <div class="overlay"></div>
     </div>
     <main>
-        <div class="container" id="content">
-            <!-- Content will be loaded here -->
+        <div class="container">
+            <div id="content">
+                <!-- Content will be loaded here -->
+            </div>
         </div>
     </main>
     <footer>
@@ -31,7 +33,13 @@
         fetch('about-content.md')
             .then(response => response.text())
             .then(text => {
-                document.getElementById('content').innerHTML = marked.parse(text);
+                const parsedContent = marked.parse(text);
+                const contentDiv = document.getElementById('content');
+                contentDiv.innerHTML = `
+                    <article>
+                        ${parsedContent}
+                    </article>
+                `;
             });
     </script>
 </body>
