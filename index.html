@@ -9,23 +9,38 @@
 <body>
     <header>
         <nav>
-            <a href="#">FAIRHAVEN WEALTH</a> | <a href="about.html">ABOUT/FAQ</a>
+            <a href="#">FAIRHAVEN WEALTH</a> | <a href="about.html">ABOUT</a>
         </nav>
     </header>
     <div class="video-container">
-        <video autoplay loop muted playsinline>
+        <video id="bgVideo" autoplay loop muted playsinline>
             <source src="background_video.mp4" type="video/mp4">
         </video>
         <div class="overlay"></div>
     </div>
     <main>
-        <div class="home-content">
-            <h1>TRULY INDEPENDENT.</h1>
-            <button onclick="window.location.href='about.html'">Find out more</button>
+        <div class="container">
+            <div class="home-content">
+                <h1>Financial clarity through meaningful conversation</h1>
+                <div class="description">
+                    <p>Fairhaven Wealth offers something different.</p>
+                    
+                    <p>In-depth, candid discussions that help you see your financial situation with fresh eyes.</p>
+
+                    <p>We don't want to touch your money. We don't want to tell you what to do. We want to help you make your own decisions. Our unique service helps you to gain the clarity and confidence to make financial decisions that truly align with your values – without the conflicts of interest common in the financial services industry.</p>
+                </div>
+                <a href="about.html" class="button">Find out more</a>
+            </div>
         </div>
     </main>
     <footer>
-        <p>sonnie@fairhavenwealth.co.nz | 021 0269 2213 | <a href="#">Disclosure Document</a> | <a href="#">Privacy Policy</a></p>
+        <p><a href="mailto:sonnie@fairhavenwealth.co.nz">sonnie@fairhavenwealth.co.nz</a> | <a href="tel:0210269213">021 0269 2213</a> | <a href="#">Disclosure Document</a> | <a href="#">Privacy Policy</a></p>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var video = document.getElementById('bgVideo');
+            video.playbackRate = 0.5;
+        });
+    </script>
 </body>
 </html>

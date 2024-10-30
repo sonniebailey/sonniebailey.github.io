@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About/FAQ - Fairhaven Wealth</title>
+    <title>About - Fairhaven Wealth</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
     <header>
         <nav>
-            <a href="index.html">FAIRHAVEN WEALTH</a> | <a href="#">ABOUT/FAQ</a>
+            <a href="index.html">FAIRHAVEN WEALTH</a> | <a href="#">ABOUT</a>
         </nav>
     </header>
     <div class="video-container">
-        <video autoplay loop muted playsinline>
+        <video id="bgVideo" autoplay loop muted playsinline>
             <source src="background_video.mp4" type="video/mp4">
         </video>
         <div class="overlay"></div>
@@ -34,13 +34,14 @@
             .then(response => response.text())
             .then(text => {
                 const parsedContent = marked.parse(text);
-                const contentDiv = document.getElementById('content');
-                contentDiv.innerHTML = `
-                    <article>
-                        ${parsedContent}
-                    </article>
-                `;
+                document.getElementById('content').innerHTML = parsedContent;
             });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var video = document.getElementById('bgVideo');
+            video.playbackRate = 0.5;
+        });
     </script>
 </body>
 </html>

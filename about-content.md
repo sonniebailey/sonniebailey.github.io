@@ -1,4 +1,3 @@
-# FAQ/About
 
 Below are responses to questions that I'm often asked; I believe that I (and other financial advisers) should be asked; and/or are listed on various articles as questions that are good to ask a prospective adviser. 
 
