@@ -26,18 +26,42 @@ function generateTableOfContents() {
     toc.appendChild(tocTitle);
 
     const tocList = document.createElement('ul');
+    let currentList = tocList;
+    let previousLevel = 2;
+
     headings.forEach((heading, index) => {
+        const level = parseInt(heading.tagName.charAt(1));
         const listItem = document.createElement('li');
         const link = document.createElement('a');
         link.textContent = heading.textContent;
         link.href = `#heading-${index}`;
         listItem.appendChild(link);
-        tocList.appendChild(listItem);
+
+        if (level > previousLevel) {
+            const subList = document.createElement('ul');
+            currentList.lastElementChild.appendChild(subList);
+            currentList = subList;
+        } else if (level < previousLevel) {
+            currentList = tocList;
+        }
+
+        currentList.appendChild(listItem);
+        previousLevel = level;
 
         // Add id to the heading
         heading.id = `heading-${index}`;
     });
 
     toc.appendChild(tocList);
-    content.insertBefore(toc, content.firstChild);
+
+    // Find the first h2 element
+    const firstH2 = content.querySelector('h2');
+
+    // Insert the table of contents before the first h2 element
+    if (firstH2) {
+        firstH2.parentNode.insertBefore(toc, firstH2);
+    } else {
+        // If there's no h2, append it to the end of the content
+        content.appendChild(toc);
+    }
 }

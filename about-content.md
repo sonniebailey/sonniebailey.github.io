@@ -1,42 +1,24 @@
 Fairhaven Wealth offers a unique INSIGHT service that empowers you to make confident financial decisions aligned with your values. Through in-depth conversations, we help you gain clarity on your financial situation and future, without the conflicts of interest common when speaking with people in the financial services industry.
 
-Below is a comprehensive overview relating to Fairhaven Wealth and its services. If you're thinking about engaging Fairhaven Wealth, I recommend that you read it in full.
+Below is a comprehensive overview relating to Fairhaven Wealth and its services. If you're thinking about engaging Fairhaven Wealth, I recommend that you read it in full. If you think that this level of disclosure and detail is overkill, I completely understand! That's an indication that we might be on a different wavelength, and Fairhaven Wealth isn't a good fit for you. 
 
-## Isn't reading this entire document overkill?
-
-If you think that this level of disclosure and detail is overkill, I completely understand! 
-
-That's an indication that we might be on a different wavelength, and Fairhaven Wealth isn't a good fit for you. 
-
-If, on the other hand, you value this level of transparency, and want to have a good amount of insight into how someone you're going to work with thinks and operates, then that's an indicator that Fairhaven Wealth's services could be a good fit. 
-
-In a sense, the purpose of this document is to filter most people OUT. If there is part of this document that puts you off engaging Fairhaven Wealth, then that's fine! You can stop reading. 
+If, on the other hand, you value this level of transparency, and want to have a good amount of insight into how someone you're going to work with thinks and operates, then that's an indicator that Fairhaven Wealth's services could be a good fit. In a sense, the purpose of this document is to filter most people OUT. If there is part of this document that puts you off engaging Fairhaven Wealth, then that's fine! You can stop reading and make enquiries elsewhere.
 
 If you read to the end, and you're still interested, then that's a sign to get in touch. 
 
-## Are Fairhaven Wealth's services suitable for most people?
+## Fairhaven Wealth's service and price
 
-No.
-
-Fairhaven Wealth provides a unique set of services. For some people, Fairhaven Wealth's services are ideal and could be one of the most valuable investments of time and money they've made. 
-
-For most people, Fairhaven Wealth's services are not suitable and not worth the price. 
-
-## Who or what is Fairhaven Wealth? 
-
-When you work with Fairhaven Wealth, you work with me – Sonnie Bailey. 
-
-In parts of this FAQ I have written this FAQ in the first person. However, all services provided by Fairhaven Wealth are provided via the Fairhaven Ventures Ltd. I am the sole director and shareholder of this company. 
-
-I don't have any employees and don't plan on engaging any. 
-
-## What service does Fairhaven Wealth provide?
+### What service does Fairhaven Wealth provide?
 
 Fairhaven Wealth provides a single service to all of its clients. I call it an "INSIGHT" service.
 
 This service consists of two three-hour discussions, within approximately one week of each other, followed by one or more succinct emails, providing a high-level overview of what we discussed during each of the meetings.
 
-## What do I get out of Fairhaven Wealth's service? 
+### How much does this service cost?
+
+$6,000 including GST, but that is only if the service meets or exceeds your expectations. More on that below.
+
+### What do I get out of Fairhaven Wealth's service? 
 
 It depends on who you are, what your situation is, and what you want out of life. 
 
@@ -64,11 +46,17 @@ What *you* get out of the service is impossible to know, until we've had the con
 
 Some discussions centre more narrowly about a specific decision or set of decisions. But even with these conversations, these decisions are contextualised within the broader scope of their situations. Some conversations more narrowly about financial products. But again, these conversations are contextualised within the bigger picture, and are only discussed after stepping back and determining whether financial products are appropriate in the first place, and this is the appropriate level of granularity for the conversation. 
 
-## How much does this service cost?
+## About Fairhaven Wealth
 
-$6,000 including GST, but that is only if the service meets or exceeds your expectations. More on that below.
+### Who or what is Fairhaven Wealth? 
 
-## Does this service result in any definitive advice? 
+When you work with Fairhaven Wealth, you work with me – Sonnie Bailey. 
+
+In parts of this FAQ I have written this FAQ in the first person. However, all services provided by Fairhaven Wealth are provided via the Fairhaven Ventures Ltd. I am the sole director and shareholder of this company. 
+
+I don't have any employees and don't plan on engaging any. 
+
+### Does Fairhaven Wealth's INSIGHT service result in any definitive advice? 
 
 No. 
 
@@ -76,13 +64,13 @@ This service is called an "INSIGHT" service because it is not about *me* providi
 
 This service is about helping to elicit your own insight, to help you make your own informed decisions.
 
-## Will I receive a financial plan or anything of the sort?
+### Will I receive a financial plan or anything of the sort?
 
 No. 
 
 At the end of our engagement, you will receive one or more emails that will summarise some of the things we will have discussed.
 
-## But you're registered as a financial adviser and provide disclosure documents as if you're an adviser. Why is this?  
+### You say you don't provide advice. But you're registered as a financial adviser and provide disclosure documents as if you're an adviser. Why is this?  
 
 Just in case I step over the line, especially when it comes to our discussions relating to financial products! 
 
@@ -96,41 +84,19 @@ There are exemptions for some situations where advice is given but it is ancilla
 
 Talking about financial products, whether they be investment products or insurance products, is not a core value proposition of Fairhaven Wealth's INSIGHT service. The INSIGHT service is about taking a bigger picture perspective, including whether and how financial products might fit into the bigger picture of your situation, and how you might think about them. However, some aspects of our discussion might technically fall within the regulatory definition of financial advice, and it's important that I satisfy all of the associated obligations, including being registered as an adviser and meeting the necessary disclosure requirements. 
 
-## Is this an ongoing service? 
-  
-No. This is a one-off service. Fairhaven Wealth provides one-off services, not ongoing engagements.
+### Are Fairhaven Wealth's services suitable for most people?
 
-Of course, we can have an ongoing relationship. I love to stay in touch with past clients! It is one of the most rewarding parts of the business. But that doesn't translate to an ongoing professional engagement, which results in you committing to pay Fairhaven Wealth on an ongoing basis.
+No.
 
-It is important for me to point out that this is different from a lot of providers of financial services. Most engagements, particularly those provided by financial planners and investment advisers, are ongoing arrangements, which involve a commitment to provide ongoing services – not to mention, a commitment to pay ongoing fees.
+Fairhaven Wealth provides a unique set of services. For some people, Fairhaven Wealth's services are ideal and could be one of the most valuable investments of time and money they've made. 
 
-For many people, ongoing service arrangements are appropriate and suitable. If you want or need an ongoing arrangement like this, then Fairhaven Wealth is not right for you. 
+For most people, Fairhaven Wealth's services are not suitable and not worth the price. 
 
-However, if you want to work on a one-off basis, and don't want to feel "locked" into an ongoing service – and fee – arrangement, then Fairhaven Wealth's service might be appropriate for you.
-
-## Can I schedule reviews?
-
-If you've engaged Fairhaven Wealth in the past, you can engage Fairhaven Wealth again. But that is entirely at your discretion, and is something you have to actively choose to do. 
-
-As it stands, the cost of the review service is the same price as the standard service. However, you will have the option of having a single meeting rather than two meetings, and for this we will charge half the standard price (ie, $3,000 for a single three-hour meeting instead of $6,000 for two three-hour meetings). 
-
-For a limited period of time, clients who engaged Fairhaven Wealth will have the option of paying half this amount – ie, $1,500 for a three-hour meeting or $3,000 for two three-hour meetings.
-
-The cost and scope of review services are subject to change. 
-
-## What about questions that arise after the engagement is complete?
-
-I'm just an email or a phone call away. 
-
-I don't charge for short follow-up conversations. In fact, I love to hear from past clients! It's rewarding, and receiving updates from past clients informs the discussions I have with other clients, so it's win-win!
-
-I'll only charge for significant additional work. Where this is the case, we discuss this transparently and make it clear beforehand before any billable work begins. To date all clients have been satisfied with this. If anything I'm considered "too reasonable" when it comes to charging for follow-up work.
-
-## What's included vs what's extra?
+### What's included in the $6,000 price vs what's extra?
 
 I provide the same service to everyone. There are no "added extras", unless you can come up with something creative you specifically want to engage me for, over and above my normal service.
 
-## Isn't $6,000 for two three-hour conversations expensive? 
+### Isn't $6,000 for two three-hour conversations expensive? 
 
 Yes. 
 
@@ -138,7 +104,7 @@ Well, it is for most people. Not for everyone.
 
 And even if something is expensive, it can still be worth it. 
 
-## Is the service worth $6,000?
+### Is the service worth $6,000?
 
 For most people? No. 
 
@@ -152,23 +118,8 @@ One other thing worth noting is that many financial advisers charge in a less tr
 
 To be clear, the service that these advisers provide is different to Fairhaven Wealth. They will be providing definitive advice, and are usually responsible for managing transactions on your behalf. This is valuable and important for many people. Many also charge less than 1% (particularly for those with larger portfolios). For some people, however – I believe that Fairhaven Wealth provides a lot of the genuine value that they would receive from these ongoing engagements, and possibly with lower risk and potential conflict of interest. (Lower risk because there is no third party that can touch your finances, and less conflicts of interest because Fairhaven Wealth's remuneration model isn't linked to a particular class of financial assets, which could potentially lead to a bias in favour of these assets.)
 
-## Does the fact that Fairhaven Wealth charges so much, suck? 
 
-Yeah, it kind of does. I have an egalitarian streak and I wish that I could provide this service more cheaply to more people. 
-
-However, I'm one person, with a unique set of skills, a number of other competing priorities, and a limited number of hours in the day. That's what I'm prepared to work for. If people are prepared to engage me for the price I'm prepared to charge, that's the market at work. 
-
-This FAQ isn't really the context for a long discussion on this topic. It's written for the small subset of Kiwis who are considering spending $6,000 on Fairhaven Wealth's services.
-
-However, I will note that one way I try to make peace with this is that I have spent, and continue to spend, a lot of my time and energy on other projects that I hope will benefit other Kiwis more broadly. For example:
-
-* I've written extensively and freely on my blog. I have taken a hiatus over the past couple of years but plan to return to this soon. I do not use the blog to directly make money (although it might indirectly attract some potential clients for Fairhaven Wealth). In particular, the blog does not advertise any third party products or services, so I can maintain independence and the ability to discuss topics without fear or favour, which can be more difficult to do when this might impact other income sources.
-
-* When regulatory changes relating to financial services are proposed, I take steps to try to influence them so they are consumer-focused, rather than inordinately influenced by the financial services organisations that have more of a direct interest in them.  
-
-* I am also working on other products and services that can be more broadly useful, such as Flawcastr, which I'm making free and open source.
-
-## Can I get a similar service from other advisers for a smaller fee, or for free?
+### Can I get a similar service from other advisers for a smaller fee, or for free?
 
 Maybe. You might even find people who provide a more comprehensive service for a lower price. 
 
@@ -180,11 +131,45 @@ At the end of the day, the main distinguishing factor for this service is that y
 
 If you've seen how I think and operate, and want *my* unique perspective on your situation, rather than the perspective of someone else, then that's the cost.
 
-## How do you get paid?
+## Fairhaven Wealth provides one-off services
+
+### Is this an ongoing service? 
+  
+No. This is a one-off service. Fairhaven Wealth provides one-off services, not ongoing engagements.
+
+Of course, we can have an ongoing relationship. I love to stay in touch with past clients! It is one of the most rewarding parts of the business. But that doesn't translate to an ongoing professional engagement, which results in you committing to pay Fairhaven Wealth on an ongoing basis.
+
+It is important for me to point out that this is different from a lot of providers of financial services. Most engagements, particularly those provided by financial planners and investment advisers, are ongoing arrangements, which involve a commitment to provide ongoing services – not to mention, a commitment to pay ongoing fees.
+
+For many people, ongoing service arrangements are appropriate and suitable. If you want or need an ongoing arrangement like this, then Fairhaven Wealth is not right for you. 
+
+However, if you want to work on a one-off basis, and don't want to feel "locked" into an ongoing service – and fee – arrangement, then Fairhaven Wealth's service might be appropriate for you.
+
+### Can I schedule reviews?
+
+If you've engaged Fairhaven Wealth in the past, you can engage Fairhaven Wealth again. But that is entirely at your discretion, and is something you have to actively choose to do. 
+
+As it stands, the cost of the review service is the same price as the standard service. However, you will have the option of having a single meeting rather than two meetings, and for this we will charge half the standard price (ie, $3,000 for a single three-hour meeting instead of $6,000 for two three-hour meetings). 
+
+For a limited period of time, clients who engaged Fairhaven Wealth will have the option of paying half this amount – ie, $1,500 for a three-hour meeting or $3,000 for two three-hour meetings.
+
+The cost and scope of review services are subject to change. 
+
+### What about questions that arise after the engagement is complete?
+
+I'm just an email or a phone call away. 
+
+I don't charge for short follow-up conversations. In fact, I love to hear from past clients! It's rewarding, and receiving updates from past clients informs the discussions I have with other clients, so it's win-win!
+
+I'll only charge for significant additional work. Where this is the case, we discuss this transparently and make it clear beforehand before any billable work begins. To date all clients have been satisfied with this. If anything I'm considered "too reasonable" when it comes to charging for follow-up work.
+
+## How Fairhaven Wealth charges and gets paid
+
+### How do you get paid?
 
 The only remuneration I receive is from clients. I'm the sole shareholder of Fairhaven Ventures Ltd and receive income in the form of drawings from the business. 
 
-## What extra fees should I be aware of?
+### What extra fees should I be aware of?
 
 I charge a fixed fee, and that's it. There are no extra fees involved with my service. 
 
@@ -194,7 +179,9 @@ If you make any decisions following your engagement with Fairhaven Wealth, there
 
 One of my key philosophies is try to help you pay as few unnecessary fees as possible.
 
-## Have Fairhaven Wealth's clients been happy with the services historically?
+## Previous clients
+
+### Have Fairhaven Wealth's clients been happy with the services historically?
 
 Yes. 
 
@@ -202,7 +189,37 @@ You can look at dozens of testimonials provided by dozens of clients here.
 
 It's not really my place to say, but I believe that the clients I've worked with have found me engaging, trustworthy, and able to communicate my advice in a way that is clear and tailored to them. I work with all clients in a spirit of candour, transparency, and good faith.
 
-## What about if I'm not satisfied with the service?
+
+### What types of clients do you specialise in? What does your ideal client look like?
+
+Almost all of my clients to date have been "ideal" clients. They don't fit within a particular demographic. However, they seem to have three things in common
+
+- they're switched on;
+- they're engaged in their financial futures; and
+- they're nice.
+
+### Are there clients who aren't suitable for you?
+
+Fairhaven Wealth's services aren't suitable for most people. For one thing, the price of Fairhaven Wealth's services are too high to justify for most households. 
+
+Having said this, Fairhaven Wealth is not suitable for for you if
+
+* you are looking for definitive advice relating to one or more financial products (investment, insurance, or otherwise);
+* you are wanting someone to prepare a detailed financial plan for you;
+* you're not engaged with your finances;
+* you want to outsource your financial life to a third party;
+* you're having issues dealing with debt and making ends meet (addressing those issues involve distinct skill sets);
+* you want an adviser who wears expensive suits and ties and/or has their business name on the side of a CBD building;
+* you think it's possible to "beat the market" and want someone who thinks they can do this for you;
+* you think it's possible to "time the market" and want someone who thinks they can do this for you;
+* you think it's possible to pick stocks that will outperform the market and want someone who thinks they can do this for you (... you probably get the idea);
+* you want someone who will give you certainty about the future (the best I can give you is comfort and confidence in the face of an uncertain future);
+* you want someone who uses technical terminology (aka "jargon") at any opportunity; or
+* you want sympathy for supporting Donald Trump. I don't like that guy.
+
+## What if I'm not happy?
+
+### What about if I'm not satisfied with the service?
 
 Fairhaven Wealth operates a "5-star payment policy". 
 
@@ -224,21 +241,23 @@ There are two reasons we do this:
 
 Fairhaven Wealth is also a member of an alternative dispute resolution scheme. You can lodge complaints in the way described in the Fairhaven Wealth disclosure statement.
 
-## What happens if I'm not satisfied with the service after the first session? 
+### What happens if I'm not satisfied with the service after the first session? 
 
 You don't have to pay anything more than $1,000. It's your choice whether to have the follow-up conversation. 
 
-## What about if I pay the initial $1,000 but have second thoughts before the first meeting?
+### What about if I pay the initial $1,000 but have second thoughts before the first meeting?
 
 If you give me notice of 24 hours, I will refund you in full. If you give notice of 12 hours, I will refund $500. 
 
-## Do you touch my money? 
+## Conflicts of interest etc
+
+### Do you touch my money? 
 
 NO!!! 
 
 I don't touch your money in any way, shape, or form.
 
-## Are you a fiduciary?
+### Are you a fiduciary?
 
 If by asking whether I'm a fiduciary, you're really asking whether my interests are aligned with yours, and that I don't let any conflicts of interest stop me from providing a service that I think is in your best interests, then yes, I'm a fiduciary.
 
@@ -246,7 +265,7 @@ If you want a more technical answer, fiduciary relationships only exist in relat
 
 If you want to read a 3,000 word article I wrote on this topic, read it [here](link-to-article).
 
-## What are your conflicts of interest?
+### What are your conflicts of interest?
 
 Fairhaven Wealth has been structured so that conflicts of interest are *avoided*, rather than *managed.*
 
@@ -256,7 +275,7 @@ There are no conflicts of interest relating to remuneration. All income received
 
 Even income received by clients is received in a way where clients only pay the full amount if they are satisfied with the service and it meets their expectations. 
 
-Fairhaven Wealth doesn't have any relationship with third parties that might influence it service.
+Fairhaven Wealth doesn't have any relationship with third parties that might influence its service.
 
 Fairhaven Wealth's business model isn't predicated on encouraging you to invest via certain types of assets or purchase particular financial products. For example, Fairhaven Wealth receives no commission from any financial products (such as commission for insurance) nor generate income associated with certain types of assets (such as financial assets invested via a platform or wrap, on which a percentage-based fee might be charged). 
 
@@ -292,7 +311,7 @@ I have managed this a few different ways
 
 The best I can do is be up-front about this, mindful of it, communicate it, and do my best to ensure that conversations don't end up being a personal Rorschach test. 
 
-## Do you have any *potential* conflicts of interest? 
+### Do you have any *potential* conflicts of interest? 
 
 This isn't currently relevant, but I sometimes wonder whether it will occur at some point in time.
 
@@ -312,7 +331,7 @@ Let's put it another way. Fairhaven Wealth's services aren't cheap. If you engag
 
 So. Contrary to my immediate instinct, my inclination is as follows. **If you engage Fairhaven Wealth, there is a chance that I might get in touch with an investment proposition in the future.** This will not constitute a recommendation. I will not make any propositions of this nature during any of our engagements: if I'm pursuing a project of this nature, then I will not be providing services via Fairhaven Wealth at the time. 
 
-## Do you have referral arrangements that might influence the service you provide?
+### Do you have referral arrangements that might influence the service you provide?
 
 No. I don't have any formal referral arrangements with anyone. I don't receive, or pay, anything resembling a "finder's fee" for referrals. 
 
@@ -320,7 +339,7 @@ If I refer someone to another professional, the only reason I am making this ref
 
 Likewise, I don't pay other people for referring my services to other people. If someone refers Fairhaven Wealth, I want it to be for the right reasons, not because it will benefit the referrer. 
 
-## Do you have any arrangements or special relationships with any financial product providers? 
+### Do you have any arrangements or special relationships with any financial product providers? 
 
 No. I don't have any formal arrangements, or special commercial relationships, with any financial product providers.
 
@@ -336,7 +355,7 @@ Examples of where I have ensured this is the case:
 
 On a related note, I do not have any direct equity stake in any companies or investments I discuss. I might have an indirect stake, in the sense that one of the managed funds I invest in might have an interest in a company that might have some stake in what you do. However, I invest exclusively via widely diversified, index-based funds, and do not have concentrated interests in any companies of this nature. This doesn't have any impact whatsoever in what I think or say or ask. 
 
-## What about incentives that are *missing* from Fairhaven Wealth's business model? 
+### What about incentives that are *missing* from Fairhaven Wealth's business model? 
 
 Fairhaven Wealth does not get involved with *implementing* anything you decide to do after our engagement. 
 
@@ -346,46 +365,7 @@ There is, however, one major downside. It means that we aren't incentivised to p
 
 Because of this, there is a risk that you might generate some insight and be inclined to make decisions and take action. However, you might be less likely to go ahead with that, since I don't have any incentive to push you. In this case, a more traditional engagement model might be a better fit for you. 
 
-## Do you hold professional indemnity insurance?
-
-No.
-
-One of the major reasons is that I think there is an extremely high chance that if I had to make a claim, I wouldn't be covered anyway. This is because the services provided via Fairhaven Wealth are unique and don't fall within the standard set of services anticipated by the underwriting teams. 
-
-Fairhaven Wealth is a single-person operation, and it's not worth my time or the time of a broker to work out a policy that is suitable for what I do and would be reasonably priced (from my perspective). 
-
-On a related note, it probably wouldn't be worth suing Fairhven Wealth. The entity that provides any services, Fairhaven Ventures Ltd, has very few assets. To the extent you might try to sue me personally, my personal wealth has been settled into one or more trusts, where those assets are held for the benefit of other beneficiaries. 
-
-I share this to be entirely transparent. 
-
-## What types of clients do you specialise in? What does your ideal client look like?
-
-Almost all of my clients to date have been "ideal" clients. They don't fit within a particular demographic. However, they seem to have three things in common
-
-- they're switched on;
-- they're engaged in their financial futures; and
-- they're nice.
-
-## Are there clients who aren't suitable for you?
-
-Fairhaven Wealth's services aren't suitable for most people. For one thing, the price of Fairhaven Wealth's services are too high to justify for most households. 
-
-Having said this, Fairhaven Wealth is not suitable for for you if
-
-* you are looking for definitive advice relating to one or more financial products (investment, insurance, or otherwise);
-* you are wanting someone to prepare a detailed financial plan for you;
-* you're not engaged with your finances;
-* you want to outsource your financial life to a third party;
-* you're having issues dealing with debt and making ends meet (addressing those issues involve distinct skill sets);
-* you want an adviser who wears expensive suits and ties and/or has their business name on the side of a CBD building;
-* you think it's possible to "beat the market" and want someone who thinks they can do this for you;
-* you think it's possible to "time the market" and want someone who thinks they can do this for you;
-* you think it's possible to pick stocks that will outperform the market and want someone who thinks they can do this for you (... you probably get the idea);
-* you want someone who will give you certainty about the future (the best I can give you is comfort and confidence in the face of an uncertain future);
-* you want someone who uses technical terminology (aka "jargon") at any opportunity; or
-* you want sympathy for supporting Donald Trump. I don't like that guy.
-
-## What don't you do?
+### What don't you do?
 
 Fairhaven Wealth doesn't provide
 
@@ -398,11 +378,11 @@ Fairhaven Wealth doesn't provide
 * accounting and tax advice.
 
 
-## Are there any geographical limitations to your service? How do you handle international clients or time zone differences?
+### Are there any geographical limitations to your service? How do you handle international clients or time zone differences?
 
 NZ only.
 
-## How do you communicate with clients?
+### How do you communicate with clients?
 
 I communicate with clients in whatever way suits them. If you're in the Christchurch area, I'm usually happy to meet you at your home or office. 
 
@@ -410,22 +390,22 @@ Historically I have met a lot of clients at my home office. We are in the middle
 
 The majority of my clients are outside of Christchurch. Some clients has historically flown in to meet me. However, the vast majority of clients speak with me via telephone or Skype/Zoom and communicate via email. 
 
-## Do you have any disclosures?
+### Do you have any disclosures?
 
 Yes. My primary disclosure statement can be found here. 
 
 Frankly, I believe that the information in this FAQ expands on everything that needs to be set out in the disclosure document. 
 
-## How do you protect client data and what are your privacy policies?
+### How do you protect client data and what are your privacy policies?
 
 
 Fairhaven Wealth's privacy policy can be found here. The TL;DR is: your information is kept secure and not sold to anyone else. It is only shared with third parties where required by law or in a way in which it is necessary to provide high quality services. Fairhaven Wealth retains very limited client data – emails and documents which are stored digitally (physical documents are digitised and shredded or returned), on devices under our control and cloud services, where we have security measures in place (including two-factor authentication). 
 
-## What's your succession plan?
+### What's your succession plan?
 
 I provide one-off engagements. If you want to re-engage me but something has happened to me in the meantime, you'll need to find another adviser. If something happens to me in the middle of the engagement I won't be able to complete the engagement. You won't be invoiced for the service. The only cost to you will be the time you have put into our discussions and the inconvenience of having to find another service provider. 
 
-## Do you work with clients who already have advisers?
+### Do you work with clients who already have advisers?
 
 Yes. 
 
@@ -433,7 +413,7 @@ A number of my clients already have relationships with advisers and engage me fo
 
 Because I provide an advice-only service, you can engage me and this won't interrupt your current engagement with your existing adviser at all.
 
-## How many clients do you work with?
+### How many clients do you work with?
 
 Since establishing Fairhaven Wealth in 2016 I've worked with over one hundred clients. However, as I provided clients on an as-needed basis, I wouldn't consider any of these to be ongoing clients. 
 
@@ -441,13 +421,13 @@ One of the reasons I have priced Fairhaven Wealth's services at their current le
 
 I have priced and positioned this service so that at any given moment, I won't be working with more than one or two sets of clients, and no more than 20 clients per year. 
 
-## Do you have a set account minimum?
+### Do you have a set account minimum?
 
 No. 
 
 Admittedly, the amount I charge tends to select for people with a decent amount of assets. However, I don't have a minimum whatsoever. 
 
-## What do I need to do before our meetings?
+### What do I need to do before our meetings?
 
 I don't prescribe any preparation, or require you to provide any information to me ahead of the meeting. I don't give you any forms or checklists. 
 
@@ -469,7 +449,7 @@ I find that in the course of my conversations with clients, I'm able to elicit m
 
 The most important thing to bring to a our conversations is your good, candid self. 
 
-## What do we cover in our conversations? What sorts of questions do you ask?****
+### What do we cover in our conversations? What sorts of questions do you ask?****
 
 I try to keep my conversations as free-wheeling and natural as possible. 
 
@@ -525,7 +505,7 @@ When it comes to specific goals and objectives, I will ask questions about how y
 
 As we speak, I will take notes. I also have a document that I use that helps me to make sure that I don't miss any important topics and that might prompt me to go into more detail. However, the conversation tends to be very organic. 
 
-## What specific financial topics or areas do you typically cover in your conversations?
+### What specific financial topics or areas do you typically cover in your conversations?
 
 It depends. 
 
@@ -549,7 +529,59 @@ Over time, the main thing I've found is that the true value with financial plann
 
 I can, and am prepared to, discuss a number of financial topics at a granular level. However, I am reluctant to do that without a solid grounding of how that topic fits within your broader situation. 
 
-## When it comes to money, what are some of your biases and prejudices? 
+## "Soft stuff"
+
+### What are your qualifications? 
+
+I've met all the educational requirements necessary to be authorised to provide comprehensive financial advice.
+
+I also have a Bachelor of Laws (LLB), a Bachelor of Commerce (BCom) (economics and finance), a Masters of Entrepreneurship degree, a Diploma in Financial Planning, and a Graduate Certificate in Professional Coaching. 
+
+As a lawyer I've provided trust and estate planning services to many clients. I've also worked for many years as a financial services lawyer, when worked with banks, insurance companies, managed funds, and many financial advice businesses. In this capacity I've reviewed thousands of advice files prepared by hundreds of advisers and spoken with dozens of advisers in depth about their business and advice processes.
+
+### How do you maintain your competence, knowledge, and skill relevant to the services you offer?
+
+*(For reference: Part 2 of the [Code of Professional Conduct for Financial Services](https://financialadvicecode.govt.nz/) (the Code) sets out competence, knowledge, and skill requirements for people who are authorised to provide financial advice. This includes standards that require people to have general competence, knowledge, and skill in the first place – and to undertake continuing professional development to maintain this competence, knowledge, and skill, including retaining an update-to-date understanding of the relevant regulatory frameworks for providing advice. Specifically, Standard 6 of the Code requires people to, "at least annually, plan for and progressively complete learning activities to ensure they maintain" these competencies, knowledge, and skills. My response addresses this specifically, but is relevant more broadly.)* 
+
+I maintain my competence, knowledge, and skill through several key approaches:
+
+1. Continuous Learning:
+	   
+	- I read, listen to, and watch a wide range of resources relating to personal finance. I strive to be "promiscuous" in terms of where I source information to get as many different perspectives as possible.
+    
+	- I pay special attention to regulatory changes. I try to retain a nuanced view on regulatory changes: I want to understand what I can and can't do, and act according to these obligations. But separate to this, I also sometimes have strong opinions on whether I think the regulatory rules are good or could be better, and also in terms of how effectively they are regulated. When there are changes that I feel strongly about, I make submissions in relation to them.
+    
+	- Historically, I have used my blog, [Wealth & Risk](www.wealthandrisk.nz), as a context for putting my ideas in writing, working out what I actually think, interrogating these points, and developing the ability to communicate my thoughts and feelings.
+
+	- I often pursue formal qualifications that align with what I am doing professionally at a given point in time. I completed my financial planning diploma while acting as a financial services lawyer, to better understand the world of financial advisers I was working with. I recently completed a graduate certificate in professional coaching because I felt like the skills and knowledge related to coaching were highly relevant to the work I was doing as a financial planner. When I was focusing on estate planning I started working on a a Master of Laws (Applied Law) majoring in wills and estates (which I only partially completed, before returning from Australia to New Zealand). 
+
+2. Professional Engagement:
+
+	- I've been a member of Financial Advice New Zealand (FANZ), where I served on the Risk Member Advisory Committee (and was actively involved in advocating for FANZ members in relation to proposed regulatory changes) and was a founding member of the Canterbury region committee.
+    
+	- I've previously been a member of the New Zealand Law Society, where I was a founding member of an Elder Law Special Interest Group. I've also held memberships with the New Zealand Institute of Directors and the Governance Institute of Australia.
+
+	- I'm not currently a member of any professional organisations, as I haven't found them relevant to my current needs. However, when that changes I don't hesitate to join these organisations and get involved.
+
+3. Practical Experience:
+	   
+	- Working directly with clients has been one of the most valuable ways of maintaining my competency. In-depth conversations with thoughtful clients who ask valuable questions have been particularly beneficial.
+	
+    - Even during periods when I'm not actively advising, I maintain informal discussions with peers and previous clients, which serves as a practical test of my ongoing competence.
+
+4. Recent Focus and Return to Practice:
+
+    - In the past two years, I have spent less time keeping up to date with financial advising specifically. During this time, I wasn't assisting clients and was unsure if I would return to this type of work. For a lot of this time, to the extent I was cultivating my knowledge/competence/skills, it was in domains that are orthogonal/adjacent to the service I provide via Fairhaven Wealth. This has included developing a strong background in generative AI and its applications, and learning to code (which has included working on a standalone Flawcastr application as well an application for ranking/prioritising items, in part to assist with complex decision-making. It has also improved my ability to efficiently work with numbers - for example, to create Monte Carlo analyses using Python instead of Excel). 
+	
+    - Prior to reestablishing Fairhaven Wealth and officially publishing this website, I've spent a significant amount of renewing  my competencies and ensuring I am up to date with industry changes.
+	
+    - I've also spoken with several previous clients in an informal capacity and have been encouraged to find I can still have valuable conversations. This served as a litmus test for whether I'd maintained my competencies. I've been pleased to hear that I'm still able to have valuable conversations. 
+
+### Is there any other way of finding out your view on things? 
+
+To get a sense of how I see the world, I encourage you to look at my blog, [Wealth & Risk](www.wealthandrisk.nz), where I published articles regularly for approximately 10 years. One of the reasons for writing publicly was to develop my thinking about a lot of topics, my ability to communicate ideas as I returned to them, and get the benefit of making my ideas legible and open to scrutiny.
+
+### When it comes to money, what are some of your biases and prejudices? 
 
 I have biases and prejudices. I'm human: we all have 'em.
 
@@ -577,8 +609,7 @@ Ultimately, I'm biased towards recognising that I'm not the final authority on a
 
 I believe that _you_ are the final authority of or your own life.
 
-
-## How is your own money invested?**
+### How is your own money invested?**
 
 I have money invested in Australian superannuation in a low-fee, widely diversified, growth-oriented fund. My KiwiSaver is invested in Kernel's High Growth fund (and my wife's Kiwisaver is invested in Simplicity's Growth Fund). I have funds invested in SuperLife's conservative fund. The majority of my surplus income is directed towards repaying my mortgage. Investing time and money into this my own career (including this business) and the career of my wife also involves significant investment.
 
@@ -586,7 +617,7 @@ I have a number of insurances in place, including home, contents, car, professio
 
 If you're interested, in late 2019 I wrote a detailed article on ["How I money"](https://wealthandrisk.nz/how-i-money/).
 
-## How do you measure success?
+### How do you measure success?
 
 In the context of Fairhaven Wealth, I track success by the satisfaction of my clients. 
 
@@ -598,7 +629,7 @@ I'm successful if, after working with me, they feel more comfortable and confide
 
 The [kind words of my clients](https://fairhavenwealth.co.nz/testimonial) are a good barometer of my success in relation to the advice I provide.
 
-## On a more personal (and selfish) note
+### On a more personal (and selfish) note
 
 Although it's important that I generate an income from Fairhaven Wealth, I've also created this business so I can have flexibility with my time, so I can spend time with family and focus on other projects. 
 
@@ -606,11 +637,11 @@ For me, success is also about being able to speak without fear or favour, and li
 
 Ultimately, success (and true wealth) for me is more about maintaining good health and good relationships than maximising the size of my balance sheet.
 
-## What do you love about your job
+### What do you love about your job
 
 I love getting to know my clients. It is a pleasure and a privilege to have candid conversations and be worthy of the trust that people place in me. I love helping to develop plans with clients to help them live a life that's in line with their values and priorities. I love giving clients a sense of comfort and confidence about their financial futures – and their lives in general.
 
-## What ethical framework guides your practice? 
+### What ethical framework guides your practice? 
 
 I believe grappling earnestly with ethical questions is part of living a meaningful life, and it's important to ensure that the frameworks we apply personally are in line with how we act professionally.
 
@@ -631,62 +662,18 @@ I'm always open to examining and updating my ethical stances, and I encourage th
 Some articles from my blog that expand on these topics include:
 
 * [The minefield of ethical investing](https://wealthandrisk.nz/ethical-investing/)
+
 * [Ethical consumption: staring at the sun](https://wealthandrisk.nz/ethical-consumption/)
+
 * [Fiduciaries: yet another "F" word](https://wealthandrisk.nz/fiduciary/)
+
 * [Fiduciary relationships, fiduciary duties, and sticky ethical and moral dilemmas](https://wealthandrisk.nz/fiduciaries-and-sticky-ethical-dilemmas/)
+
 * [On companies and their corporate DNA](https://wealthandrisk.nz/corporate-dna/)
+
 * [Show me the consequences and I’ll show you the outcomes](https://wealthandrisk.nz/show-me-the-consequences/)
 
-## What are your qualifications? 
-
-I've met all the educational requirements necessary to be authorised to provide comprehensive financial advice.
-
-I also have a Bachelor of Laws (LLB), a Bachelor of Commerce (BCom) (economics and finance), a Masters of Entrepreneurship degree, a Diploma in Financial Planning, and a Graduate Certificate in Professional Coaching. 
-
-As a lawyer I've provided trust and estate planning services to many clients. I've also worked for many years as a financial services lawyer, when worked with banks, insurance companies, managed funds, and many financial advice businesses. In this capacity I've reviewed thousands of advice files prepared by hundreds of advisers and spoken with dozens of advisers in depth about their business and advice processes.
-
-## How do you maintain your competence, knowledge, and skill relevant to the services you offer?
-
-*(For reference: Part 2 of the [Code of Professional Conduct for Financial Services](https://financialadvicecode.govt.nz/) (the Code) sets out competence, knowledge, and skill requirements for people who are authorised to provide financial advice. This includes standards that require people to have general competence, knowledge, and skill in the first place – and to undertake continuing professional development to maintain this competence, knowledge, and skill, including retaining an update-to-date understanding of the relevant regulatory frameworks for providing advice. Specifically, Standard 6 of the Code requires people to, "at least annually, plan for and progressively complete learning activities to ensure they maintain" these competencies, knowledge, and skills. My response addresses this specifically, but is relevant more broadly.)* 
-
-I maintain my competence, knowledge, and skill through several key approaches:
-
-1. Continuous Learning:
-	   
-	- I read, listen to, and watch a wide range of resources relating to personal finance. I strive to be "promiscuous" in terms of where I source information to get as many different perspectives as possible.
-    
-	- I pay special attention to regulatory changes. When there are changes that I feel strongly about, I make submissions in relation to them.
-    
-	- Historically, I have used my blog, [Wealth & Risk](www.wealthandrisk.nz), as a context for putting my ideas in writing, working out what I actually think, and developing the ability to communicate it.
-
-2. Professional Engagement:
-
-	- I've been a member of Financial Advice New Zealand (FANZ), where I served on the Risk Member Advisory Committee (and was actively involved in advocating for FANZ members in relation to proposed regulatory changes) and was a founding member of the Canterbury region committee.
-    
-	- I've previously been a member of the New Zealand Law Society, where I was a founding member of an Elder Law Special Interest Group. I've also held memberships with the New Zealand Institute of Directors and the Governance Institute of Australia.
-
-	- I'm not currently a member of any professional organizations, as I haven't found them relevant to my current needs.
-
-3. Practical Experience:
-	   
-	- Working directly with clients has been one of the most valuable ways of maintaining my competency. In-depth conversations with thoughtful clients who ask valuable questions have been particularly beneficial.
-	
-    - Even during periods when I'm not actively advising, I maintain informal discussions with peers and previous clients, which serves as a practical test of my ongoing competence.
-
-4. Recent Focus and Return to Practice:
-    - In the past two years, I have spent less time keeping up to date with financial advising specifically. During this time, I wasn't assisting clients and was unsure if I would return to this type of work.
-	
-    - However, prior to reestablishing my practice, I have spent a significant amount of time updating my competencies in different, complementing domains.
-	
-    - I've also spoken with several previous clients in an informal capacity and have been encouraged to find I can still have valuable conversations. This served as a litmus test for whether I'd maintained my competencies.
-
-I maintain a comprehensive understanding of the field, combining theoretical knowledge with practical experience and a commitment to ongoing professional development.
-
-## Is there any other way of finding out your view on things? 
-
-To get a sense of how I see the world, I encourage you to look at my blog, [Wealth & Risk](www.wealthandrisk.nz), where I published articles regularly for approximately 10 years. One of the reasons for writing publicly was to develop my thinking about a lot of topics, my ability to communicate ideas as I returned to them, and get the benefit of making my ideas legible and open to scrutiny.
-
-## Please look at other service providers before deciding to engage Fairhaven Wealth
+### Please look at other service providers before deciding to engage Fairhaven Wealth
 
 This isn't a question but an exhortation. 
 
@@ -698,13 +685,13 @@ However, I want to reiterate
 
 * Fairhaven Wealth's services are different from what you are likely to find anywhere else. 
 
-* At a personal level, I might be on your wavelength, but I also might not be. 
+* You might vibe with everything I've written here, but you might not vibe with me personally. Some people operate at difference "wavelengths" or "frequencies" and tune in better with some people than others. That's no judgement of me or you, it's just the way it is sometimes. If that's the case, I understand it.
 
 It's important that you find a service that is a fit for you, in terms of what you want and need. 
 
 It's also important that you work with someone who is on your wavelength, with whom you can be entirely frank and candid about your situation, what you want and don't want, and who is able to challenge you. 
 
-## I have more questions.
+### I have more questions.
 
 Call or email! 
 
