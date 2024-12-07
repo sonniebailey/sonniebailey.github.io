@@ -5,13 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fairhaven Wealth</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="#">FAIRHAVEN WEALTH</a> | <a href="about.html">ABOUT</a>
-        </nav>
-    </header>
+    <div id="header-placeholder"></div>
+
     <div class="video-container">
         <video id="bgVideo" autoplay loop muted playsinline>
             <source src="background_video.mp4" type="video/mp4">
@@ -20,26 +18,27 @@
     </div>
     <main>
         <div class="container">
-            <div class="home-content">
-                <h1>Financial clarity through meaningful conversation</h1>
-                <div class="description">
-                    <p>Fairhaven Wealth offers something different.</p>
-                    
-                    <p>In-depth, candid discussions that help you see your financial situation with fresh eyes.</p>
-
-                    <p>We don't want to touch your money. We don't want to tell you what to do. We don't want to lock you into an ongoing service arrangement. We just want to help <em>you</em> make <em>your own decisions</em>. Our unique service helps you to gain the clarity and confidence to make financial decisions that truly align with your values – without the conflicts of interest common in the financial services industry.</p>
-                </div>
-                <a href="about.html" class="button">Find out more</a>
+            <div class="home-content" id="content">
+                <!-- Content will be loaded here -->
             </div>
+            <a href="about.html" class="button">Find out more</a>
         </div>
     </main>
-    <footer>
-        <p><a href="mailto:sonnie@fairhavenwealth.co.nz">sonnie@fairhavenwealth.co.nz</a> | <a href="tel:0210269213">021 0269 2213</a> | <a href="#">Disclosure Document</a> | <a href="#">Privacy Policy</a></p>
-    </footer>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="scripts.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var video = document.getElementById('bgVideo');
             video.playbackRate = 0.5;
+
+            fetch('index-content.md')
+                .then(response => response.text())
+                .then(text => {
+                    const parsedContent = marked.parse(text);
+                    document.getElementById('content').innerHTML = parsedContent;
+                });
         });
     </script>
 </body>
