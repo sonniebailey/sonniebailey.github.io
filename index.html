@@ -12,9 +12,7 @@
     <div id="header-placeholder"></div>
 
     <div class="video-container">
-        <video id="bgVideo" autoplay loop muted playsinline>
-            <source src="background_video.mp4" type="video/mp4">
-        </video>
+        <img src="sunset-sky-over-moke-lake-reflect-with-mountain-ra-2024-10-12-04-08-19-utc.jpg" alt="Sunset sky over Moke Lake" id="bgImage">
         <div class="overlay"></div>
     </div>
     <main>
@@ -30,9 +28,6 @@
 
     <script src="scripts.js"></script>
     <script>
-        var video = document.getElementById('bgVideo');
-        video.playbackRate = 0.5;
-
         fetch('index-content.md')
             .then(response => response.text())
             .then(text => {
