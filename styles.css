@@ -217,6 +217,16 @@ li {
     .button-container {
         flex-direction: column;
     }
+    
+    /* Add to existing mobile styles */
+    header nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .nav-links {
+        font-size: 0.9rem;
+    }
 }
 
 
@@ -234,4 +244,27 @@ header nav {
 
 .nav-links {
     text-align: right;
+}
+
+/* Add after existing styles */
+@media (max-width: 768px) {
+    /* Existing mobile styles */
+    
+    /* Add these typography adjustments */
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.3rem; }
+    h4 { font-size: 1.2rem; }
+    
+    /* Adjust spacing */
+    .container { padding: 0 15px; }
+    main { padding: 80px 0; }
+}
+
+/* Add small mobile breakpoint */
+@media (max-width: 480px) {
+    h1 { font-size: 1.75rem; }
+    p { line-height: 1.6; }
+    
+    /* Tighten up spacing */
+    .container { padding: 0 10px; }
 }
