@@ -19,7 +19,7 @@
     </div>
     <main>
         <div class="container">
-            <div class="home-content" id="content">
+            <div id="content">
                 <!-- Content will be loaded here -->
             </div>
             <a href="about.html" class="button">Find out more</a>
@@ -30,17 +30,15 @@
 
     <script src="scripts.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var video = document.getElementById('bgVideo');
-            video.playbackRate = 0.5;
+        var video = document.getElementById('bgVideo');
+        video.playbackRate = 0.5;
 
-            fetch('index-content.md')
-                .then(response => response.text())
-                .then(text => {
-                    const parsedContent = marked.parse(text);
-                    document.getElementById('content').innerHTML = parsedContent;
-                });
-        });
+        fetch('index-content.md')
+            .then(response => response.text())
+            .then(text => {
+                const parsedContent = marked.parse(text);
+                document.getElementById('content').innerHTML = parsedContent;
+            });
     </script>
 </body>
 </html>
