@@ -3,9 +3,9 @@
     --link-color: #D4AF37; /* Gold for links */
     --link-hover-color: #C6972E; /* Slightly darker gold for hover */
     --text-color: #FFFFFF; /* White text */
-    --border-color: rgba(212, 175, 55, 0.5); /* Semi-transparent gold for borders */
+    --border-color: rgba(212, 175, 55, 0.2); /* Semi-transparent gold for borders */
     --overlay-color: rgba(0, 0, 0, 0.7); /* Darker overlay for better contrast with gold */
-    --header-height: 60px;
+    --header-height: 70px;
 }
 
 /* General Styles */
@@ -30,7 +30,7 @@ a:hover {
 
 /* Header and Footer Common Styles */
 header, footer {
-    background-color: rgba(0, 0, 0);
+    background-color: rgb(0, 0, 0);
     position: fixed;
     width: 100%;
     z-index: 10;
@@ -38,6 +38,7 @@ header, footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0;
 }
 
 header {
@@ -50,15 +51,42 @@ footer {
     border-top: 1px solid var(--border-color);
 }
 
+header .container, footer .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
 /* Navigation and Footer Links */
 nav a, footer a {
     margin: 0 10px;
     transition: transform 0.3s ease;
+    font-size: 0.9rem;  /* Standardized smaller font size */
 }
 
 nav a:hover, footer a:hover {
     transform: scale(1.1);
     text-decoration: none;
+}
+
+/* Add styles for navigation dividers */
+.nav-links .divider {
+    color: rgba(212, 175, 55, 0.3);  /* Lighter gold color for dividers */
+    margin: 0 5px;
+}
+
+/* Current page indicator */
+nav a.current {
+    padding: 4px 8px;
+    border: 1px solid var(--link-color);
+    border-radius: 3px;
+}
+
+/* Ensure consistent sizes across breakpoints */
+@media (max-width: 768px) {
+    nav a, footer a {
+        font-size: 0.9rem;  /* Keep consistent even at mobile sizes */
+    }
 }
 
 /* Video Background */
@@ -121,7 +149,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin-bottom: 2rem;
 }
 
@@ -143,9 +171,11 @@ h4 {
     font-size: 1.4rem;
     margin-top: 2.5rem;
     margin-bottom: 1.5rem;
+    font-weight: normal
 }
 
 p {
+    font-size: 1rem;
     line-height: 2;
     margin-bottom: 1.5rem;
 }

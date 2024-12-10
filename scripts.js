@@ -29,6 +29,14 @@ document.addEventListener('DOMContentLoaded', function() {
     if (window.location.pathname.includes('about.html')) {
         generateTableOfContents();
     }
+
+    // Add current page indicator
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+            link.classList.add('current');
+        }
+    });
 });
 
 function generateTableOfContents() {
