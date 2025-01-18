@@ -1,6 +1,12 @@
-**Fairhaven Wealth: the TL;DR**
+This page includes a lot of information about Fairhaven Wealth and the service it offers. Below is a high-level summary. Underneath the table of contents is more detailed information, and within those sections, there are areas you can expand to get even more info. 
+
+- Fairhaven Wealth is fiercely independent. 
+
+- When you deal with Fairhaven Wealth, you deal with Sonnie Bailey. 
 
 - Fairhaven Wealth provides a single service which consists of two 3-hour conversations, usually held via Zoom or phone, followed by one or more short emails summarising the key points of the conversations.
+
+- The service is not primarily about providing financial advice, although this is something we can do if it arises. The service is more focused on helping to identify your situation as it stands, and the decisions available to you, enabling you to make your own informed decisions, whatever they may be. The service is not about providing you with a comprehensive financial plan or anything of the sort, but instead about helping your develop your own insight and confidence with the decisions you're making.
 
 - Prepare as much or as little as you like for these conversations. We don't ask you to fill in any forms, or provide any specific information prior to the first conversation. If there's information that might be useful, we'll ask you during or after the first conversation.
 
@@ -11,6 +17,8 @@
 - We don't touch your money. It's up to you whether or not to make any changes to your financial situation (or life in general) as a result of our discussions.
 
 - This service is terrific for some people, but not appropriate for most people. It's best suited for people who already have a good understanding of their situation and are (or want to be) engaged in their finances. It also tends to be most valuable for those with some degree of financial and/or professional security.
+
+- Fairhaven Wealth has had many happy clients You can read dozens of testimonials [here](www.fairhavenwealth.co.nz/testimonials).
 
 More information is below. (A *lot* more information!)
 
