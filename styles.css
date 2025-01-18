@@ -91,7 +91,7 @@ nav a.current {
 /* Ensure consistent sizes across breakpoints */
 @media (max-width: 768px) {
     nav a, footer a {
-        font-size: 0.9rem;  /* Keep consistent even at mobile sizes */
+        font-size: 0.8rem;  /* Keep consistent even at mobile sizes */
     }
 }
 
@@ -450,4 +450,8 @@ header nav, footer nav {
 .index-main .container {
     width: 100%;
     margin: auto;
+}
+
+footer a {
+    white-space: nowrap;
 }
