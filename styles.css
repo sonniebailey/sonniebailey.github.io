@@ -6,6 +6,11 @@
     --border-color: rgba(212, 175, 55, 0.2); /* Semi-transparent gold for borders */
     --overlay-color: rgba(0, 0, 0, 0.7); /* Darker overlay for better contrast with gold */
     --header-height: 70px;
+
+    /* New padding variables */
+    --padding-desktop: 20px;
+    --padding-tablet: 18px;
+    --padding-mobile: 15px;
 }
 
 /* General Styles */
@@ -55,6 +60,7 @@ header .container, footer .container {
     height: 100%;
     display: flex;
     align-items: center;
+    padding: 1rem 20px;
 }
 
 /* Navigation and Footer Links */
@@ -121,11 +127,11 @@ nav a.current {
 /* Main Content */
 main {
     min-height: 100%;
-    padding: 110px 0;  /* Changed from 110px 20px - keep vertical padding only */
+    padding: calc(var(--header-height) + 20px) 0 calc(var(--header-height) + 20px);
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     overflow-y: auto;
 }
@@ -134,12 +140,15 @@ main {
     max-width: 800px;
     width: 100%;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 var(--padding-desktop);
     box-sizing: border-box;
 }
 
 header .container, footer .container {
-    padding: 1rem 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 1rem var(--padding-desktop);
 }
 
 /* Typography */
@@ -287,8 +296,19 @@ header nav {
     h4 { font-size: 1.2rem; }
     
     /* Adjust spacing */
-    .container { padding: 0 15px; }
+    .container { padding: 0 var(--padding-tablet); }
     main { padding: 80px 0; }
+    
+    /* Improve typography spacing on mobile */
+    p {
+        line-height: 1.8;  /* Slightly reduce line height on mobile */
+        margin-bottom: 1.2rem;  /* Reduce margin between paragraphs */
+    }
+    
+    /* Adjust list spacing */
+    ul, ol {
+        padding-left: 1.5rem;  /* Reduce list indentation on mobile */
+    }
 }
 
 /* Add small mobile breakpoint */
@@ -297,7 +317,7 @@ header nav {
     p { line-height: 1.6; }
     
     /* Tighten up spacing */
-    .container { padding: 0 10px; }
+    .container { padding: 0 var(--padding-mobile); }
 }
 
 /* Expandable Section Styles */
@@ -368,4 +388,52 @@ header nav {
 
 .expanded .expand-icon::after {
     transform: rotate(90deg);
+}
+
+/* Add even more padding for very small screens */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 var(--padding-mobile);
+    }
+}
+
+/* Mobile adjustments for header/footer */
+@media (max-width: 768px) {
+    header .container, footer .container {
+        padding: 10px 20px;  /* Add some vertical padding */
+    }
+
+    /* Stack navigation items on mobile */
+    header nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    /* Adjust footer text alignment and spacing */
+    footer .container p {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        text-align: center;
+        margin: 0;
+    }
+
+    /* Hide dividers on mobile */
+    footer .divider {
+        display: none;
+    }
+    
+    /* Ensure links are easy to tap */
+    footer a {
+        padding: 5px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        padding-top: calc(var(--header-height) + 15px);
+        padding-bottom: calc(var(--header-height) + 15px);
+    }
 }

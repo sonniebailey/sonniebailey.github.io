@@ -1,8 +1,8 @@
 **Fairhaven Wealth: the TL;DR**
 
-- Fairhaven Wealth provides a single service which consists primarily of two 3-hour conversations, with one or more short emails summarising the key points of the conversations.
+- Fairhaven Wealth provides a single service which consists of two 3-hour conversations, usually held via Zoom or phone, with one or more short emails summarising the key points of the conversations.
 
-- Prepare as much or as little as you like for these conversations. We don't ask you to fill in any forms, or provide any specific information prior to th first conversation. (If there's information that might be useful, we'll ask you during/after the first conversation.)
+- Prepare as much or as little as you like for these conversations. We don't ask you to fill in any forms, or provide any specific information prior to the first conversation. If there's information that might be useful, we'll ask you during or after the first conversation.
 
 - Cost is $6,000 (including GST). $1,000 is paid upfront and the remaining $5,000 is paid after the second meeting on a "5-star" basis, linked to whether the service met or exceeded your expectations.
 
