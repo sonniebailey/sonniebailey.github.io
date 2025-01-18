@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Load header elements into head section
+    fetch('header-elements.html')
+        .then(response => response.text())
+        .then(data => {
+            document.head.insertAdjacentHTML('beforeend', data);
+        })
+        .catch(error => console.error('Error loading header elements:', error));
+
     // Load header
     fetch('header.html')
         .then(response => response.text())

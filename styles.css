@@ -7,10 +7,10 @@
     --overlay-color: rgba(0, 0, 0, 0.7); /* Darker overlay for better contrast with gold */
     --header-height: 70px;
 
-    /* New padding variables */
+    /* New padding variables. Note taht these relate to horizontal padding, vertical padding is still being defined elsewhere. */ 
     --padding-desktop: 20px;
-    --padding-tablet: 18px;
-    --padding-mobile: 15px;
+    --padding-tablet: 20px;
+    --padding-mobile: 32px;
 }
 
 /* General Styles */
@@ -60,7 +60,7 @@ header .container, footer .container {
     height: 100%;
     display: flex;
     align-items: center;
-    padding: 1rem 20px;
+    padding: 1rem var(--padding-desktop);
 }
 
 /* Navigation and Footer Links */
@@ -131,7 +131,6 @@ main {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
     overflow-y: auto;
 }
@@ -400,7 +399,7 @@ header nav {
 /* Mobile adjustments for header/footer */
 @media (max-width: 768px) {
     header .container, footer .container {
-        padding: 10px 20px;  /* Add some vertical padding */
+        padding: 10px var(--padding-tablet);
     }
 
     /* Stack navigation items on mobile */
@@ -436,4 +435,18 @@ header nav {
         padding-top: calc(var(--header-height) + 15px);
         padding-bottom: calc(var(--header-height) + 15px);
     }
+}
+
+/* Add styles for index page main content centering */
+.index-main {
+    min-height: calc(100vh - (var(--header-height) * 2) - 40px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ensure container within index-main takes full width */
+.index-main .container {
+    width: 100%;
+    margin: auto;
 }

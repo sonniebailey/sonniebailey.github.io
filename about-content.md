@@ -1,6 +1,6 @@
 **Fairhaven Wealth: the TL;DR**
 
-- Fairhaven Wealth provides a single service which consists of two 3-hour conversations, usually held via Zoom or phone, with one or more short emails summarising the key points of the conversations.
+- Fairhaven Wealth provides a single service which consists of two 3-hour conversations, usually held via Zoom or phone, followed by one or more short emails summarising the key points of the conversations.
 
 - Prepare as much or as little as you like for these conversations. We don't ask you to fill in any forms, or provide any specific information prior to the first conversation. If there's information that might be useful, we'll ask you during or after the first conversation.
 
@@ -16,9 +16,7 @@ More information is below. (A *lot* more information!)
 
 ## If you're thinking about engaging Fairhaven Wealth, I recommend that you read this in full. 
 
-Below is a comprehensive overview relating to Fairhaven Wealth and the service it offers. If you're thinking about engaging Fairhaven Wealth, I recommend that you read it in full. 
-
-If you think that this level of disclosure and detail is overkill, that's understandable! That indicates we might be on a different wavelength, and Fairhaven Wealth isn't a good fit for you. If, on the other hand, you want to have a clear understanding of how someone you're going to work with thinks and operates, and value the transparency I offer in this document, then Fairhaven Wealth's services could be a good fit. 
+Below is an overview relating to Fairhaven Wealth and the service it offers. If you think that this level of disclosure and detail is overkill, that's understandable! That indicates we might be on a different wavelength, and Fairhaven Wealth isn't a good fit for you. If, on the other hand, you want to have a clear understanding of how someone you're going to work with thinks and operates, and value the transparency I offer in this document, then Fairhaven Wealth's services could be a good fit. 
 
 ## Fairhaven Wealth's service and price
 
@@ -526,28 +524,6 @@ I have a number of insurances in place, including home, contents, car, professio
 
 If you're interested, in late 2019 I wrote a detailed article on ["How I money"](https://wealthandrisk.nz/how-i-money/).
 
-### How do you measure success?
-
-#### Selflessly...
-
-In the context of Fairhaven Wealth, I track success by the satisfaction of my clients. 
-
-I ask clients whether my service covered everything they wanted it to cover. I encourage clients to push back and challenge anything that they don't agree with or that doesn't resonate with them. 
-
-From my perspective, I'm successful if I've helped clients cultivate an understanding of their situation, so that they can make confident decisions that are aligned with their values and priorities. 
-
-I'm successful if, after working with me, they feel more comfortable and confident about their financial futures.
-
-The [kind words of my clients](https://fairhavenwealth.co.nz/testimonial) are a good barometer of my success.
-
-#### ... and on a more personal (and selfish) note
-
-Although it's important that I generate an income from Fairhaven Wealth, I've also created this business so I can have flexibility with my time, so I can spend time with family and focus on other projects. 
-
-For me, success is also about being able to speak without fear or favour, and living with integrity in line with my values and beliefs. 
-
-Ultimately, success (and true wealth) for me is more about maintaining good health and good relationships than maximising the size of my balance sheet.
-
 #### What ethical frameworks guide your practice? 
 
 I believe grappling earnestly with ethical questions is part of living a meaningful life, and it's important to ensure that the frameworks we apply personally are in line with how we act professionally.
@@ -579,6 +555,28 @@ Some articles from my blog that expand on these topics include:
 * [On companies and their corporate DNA](https://wealthandrisk.nz/corporate-dna/)
 
 * [Show me the consequences and I’ll show you the outcomes](https://wealthandrisk.nz/show-me-the-consequences/)
+
+### How do you measure success?
+
+#### Selflessly...
+
+In the context of Fairhaven Wealth, I track success by the satisfaction of my clients. 
+
+I ask clients whether my service covered everything they wanted it to cover. I encourage clients to push back and challenge anything that they don't agree with or that doesn't resonate with them. 
+
+From my perspective, I'm successful if I've helped clients cultivate an understanding of their situation, so that they can make confident decisions that are aligned with their values and priorities. 
+
+I'm successful if, after working with me, they feel more comfortable and confident about their financial futures.
+
+The [kind words of my clients](https://fairhavenwealth.co.nz/testimonial) are a good barometer of my success.
+
+#### ... and on a more personal (and selfish) note
+
+Although it's important that I generate an income from Fairhaven Wealth, I've also created this business so I can have flexibility with my time, so I can spend time with family and focus on other projects. 
+
+For me, success is also about being able to speak without fear or favour, and living with integrity in line with my values and beliefs. 
+
+Ultimately, success (and true wealth) for me is more about maintaining good health and good relationships than maximising the size of my balance sheet.
 
 ## Please look at other service providers before deciding to engage Fairhaven Wealth
 
