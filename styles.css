@@ -258,7 +258,7 @@ li {
     }
     
     /* Add to existing mobile styles */
-    header nav {
+    header nav, footer nav {
         flex-direction: column;
         gap: 0.5rem;
     }
@@ -269,12 +269,12 @@ li {
 }
 
 
-header nav {
+header nav, footer nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    margin: 0; /* Explicitly remove any margin */
+    margin: 0;
 }
 
 .logo {
@@ -282,7 +282,7 @@ header nav {
 }
 
 .nav-links {
-    text-align: right;
+    text-align: center;
 }
 
 /* Add after existing styles */
@@ -327,7 +327,7 @@ header nav {
 }
 
 .expandable-header {
-    padding: 1rem;
+    padding: 1rem var(--padding-desktop);
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -348,12 +348,12 @@ header nav {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-out;
-    padding: 0 1rem;
+    padding: 0 var(--padding-desktop);
 }
 
 .expandable-content.expanded {
     max-height: 2000px; /* Arbitrary large value */
-    padding: 1rem;
+    padding: 0rem var(--padding-desktop);
     transition: max-height 0.6s ease-in;
 }
 
@@ -361,6 +361,7 @@ header nav {
     width: 24px;
     height: 24px;
     position: relative;
+    margin-left: var(--padding-desktop);
 }
 
 .expand-icon::before,
@@ -403,7 +404,7 @@ header nav {
     }
 
     /* Stack navigation items on mobile */
-    header nav {
+    header nav, footer nav {
         flex-direction: column;
         align-items: center;
         gap: 8px;
