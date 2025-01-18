@@ -27,12 +27,70 @@
     
     <script src="scripts.js"></script>
     <script>
+        // Configure marked.js first
+        marked.use({
+            extensions: [{
+                name: 'expand',
+                level: 'block',
+                start(src) {
+                    return src.match(/^\[expand\]|\n####\s/)?.index;
+                },
+                tokenizer(src) {
+                    // Check for [expand] tags first
+                    const expandRule = /^\[expand\]([\s\S]*?)\[\/expand\]/;
+                    const expandMatch = expandRule.exec(src);
+                    if (expandMatch) {
+                        return {
+                            type: 'expand',
+                            raw: expandMatch[0],
+                            content: expandMatch[1].trim()
+                        };
+                    }
+                    
+                    // Check for h4 headers
+                    const h4Rule = /^####\s+(.+?)(?:\n([\s\S]*?)(?=\n#{1,4}\s|$)|\n*$)/;
+                    const h4Match = h4Rule.exec(src);
+                    if (h4Match) {
+                        return {
+                            type: 'expand',
+                            raw: h4Match[0],
+                            title: h4Match[1],
+                            content: h4Match[2] || ''
+                        };
+                    }
+                },
+                renderer(token) {
+                    const title = token.title || token.content.split('\n')[0];
+                    const content = token.title ? token.content : token.content.split('\n').slice(1).join('\n');
+                    
+                    return `<div class="expandable-section">
+                        <div class="expandable-header">
+                            <h4>${title}</h4>
+                            <div class="expand-icon"></div>
+                        </div>
+                        <div class="expandable-content">
+                            ${marked.parse(content)}
+                        </div>
+                    </div>`;
+                }
+            }]
+        });
+
+        // Then fetch and parse content
         fetch('about-content.md')
             .then(response => response.text())
             .then(text => {
                 const parsedContent = marked.parse(text);
                 document.getElementById('content').innerHTML = parsedContent;
                 generateTableOfContents();
+                
+                // Add click handlers for expandable sections
+                document.querySelectorAll('.expandable-header').forEach(header => {
+                    header.addEventListener('click', () => {
+                        header.parentElement.classList.toggle('expanded');
+                        header.nextElementSibling.classList.toggle('expanded');
+                    });
+                });
             });
     </script>
 </body>

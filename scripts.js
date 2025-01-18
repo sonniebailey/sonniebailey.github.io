@@ -37,11 +37,61 @@ document.addEventListener('DOMContentLoaded', function() {
             link.classList.add('current');
         }
     });
+
+    // Add this before the fetch call
+    marked.use({
+        extensions: [{
+            name: 'expand',
+            level: 'block',
+            start(src) {
+                return src.match(/^\[expand\]/)?.index;
+            },
+            tokenizer(src) {
+                const rule = /^\[expand\]([\s\S]*?)\[\/expand\]/;
+                const match = rule.exec(src);
+                if (match) {
+                    return {
+                        type: 'expand',
+                        raw: match[0],
+                        content: match[1].trim()
+                    };
+                }
+            },
+            renderer(token) {
+                return `<div class="expandable-section">
+                            <div class="expandable-header">
+                                <h4>${token.content.split('\n')[0]}</h4>
+                                <div class="expand-icon"></div>
+                            </div>
+                            <div class="expandable-content">
+                                ${marked.parse(token.content.split('\n').slice(1).join('\n'))}
+                            </div>
+                        </div>`;
+            }
+        }]
+    });
+
+    // Update the existing fetch callback
+    fetch('about-content.md')
+        .then(response => response.text())
+        .then(text => {
+            const parsedContent = marked.parse(text);
+            document.getElementById('content').innerHTML = parsedContent;
+            generateTableOfContents();
+            
+            // Add click handlers for expandable sections
+            document.querySelectorAll('.expandable-header').forEach(header => {
+                header.addEventListener('click', () => {
+                    header.parentElement.classList.toggle('expanded');
+                    header.nextElementSibling.classList.toggle('expanded');
+                });
+            });
+        });
 });
 
 function generateTableOfContents() {
     const content = document.querySelector('#content');
-    const headings = content.querySelectorAll('h2, h3');
+    const headings = content.querySelectorAll('h2'); // Changed from 'h2, h3'
     const toc = document.createElement('div');
     toc.id = 'table-of-contents';
     
@@ -88,4 +138,56 @@ function generateTableOfContents() {
         // If there's no h2, append it to the end of the content
         content.appendChild(toc);
     }
+}
+
+function initializeExpandableSections() {
+    const content = document.getElementById('content');
+    const headers = content.querySelectorAll('h3, h4');
+    
+    headers.forEach(header => {
+        // Skip headers in the table of contents
+        if (header.closest('#table-of-contents')) return;
+        
+        // Create expandable section
+        const section = document.createElement('div');
+        section.className = 'expandable-section';
+        
+        // Create header with expand icon
+        const headerDiv = document.createElement('div');
+        headerDiv.className = 'expandable-header';
+        headerDiv.innerHTML = `
+            ${header.outerHTML}
+            <div class="expand-icon"></div>
+        `;
+        
+        // Gather content until next header or end
+        const content = document.createElement('div');
+        content.className = 'expandable-content';
+        let nextEl = header.nextElementSibling;
+        while (nextEl && !['H3', 'H4'].includes(nextEl.tagName)) {
+            const clone = nextEl.cloneNode(true);
+            content.appendChild(clone);
+            nextEl = nextEl.nextElementSibling;
+        }
+        
+        // Add click handler
+        headerDiv.addEventListener('click', () => {
+            section.classList.toggle('expanded');
+            content.classList.toggle('expanded');
+        });
+        
+        // Assemble and replace original content
+        section.appendChild(headerDiv);
+        section.appendChild(content);
+        header.parentNode.insertBefore(section, header);
+        
+        // Remove original elements
+        nextEl = header.nextElementSibling;
+        while (nextEl && !['H3', 'H4'].includes(nextEl.tagName)) {
+            const toRemove = nextEl;
+            nextEl = nextEl.nextElementSibling;
+            toRemove.remove();
+        }
+        header.remove();
+    });
 }

@@ -299,3 +299,73 @@ header nav {
     /* Tighten up spacing */
     .container { padding: 0 10px; }
 }
+
+/* Expandable Section Styles */
+.expandable-section {
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+.expandable-header {
+    padding: 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.expandable-header:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.expandable-header h3, 
+.expandable-header h4 {
+    margin: 0;
+}
+
+.expandable-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding: 0 1rem;
+}
+
+.expandable-content.expanded {
+    max-height: 2000px; /* Arbitrary large value */
+    padding: 1rem;
+    transition: max-height 0.6s ease-in;
+}
+
+.expand-icon {
+    width: 24px;
+    height: 24px;
+    position: relative;
+}
+
+.expand-icon::before,
+.expand-icon::after {
+    content: '';
+    position: absolute;
+    background-color: var(--link-color);
+    transition: transform 0.3s ease;
+}
+
+.expand-icon::before {
+    top: 11px;
+    left: 0;
+    width: 24px;
+    height: 2px;
+}
+
+.expand-icon::after {
+    top: 0;
+    left: 11px;
+    width: 2px;
+    height: 24px;
+}
+
+.expanded .expand-icon::after {
+    transform: rotate(90deg);
+}
