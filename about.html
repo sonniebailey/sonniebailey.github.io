@@ -7,6 +7,133 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Garamond&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        /* Styles for the 5-star payment policy container */
+        .payment-policy-container {
+            max-width: 800px;
+            margin: 30px auto;
+            text-align: center;
+            padding: 0 20px;
+            color: var(--text-color);
+        }
+        
+        .payment-policy-title {
+            font-family: 'Raleway', sans-serif;
+            margin-bottom: 45px;
+            color: var(--text-color);
+        }
+        
+        /* Payment Table Styles */
+        .payment-table-container {
+            margin: 30px auto;
+            max-width: 800px;
+            position: relative;
+        }
+        
+        .payment-table {
+            width: 100%;
+            border-collapse: collapse;
+            color: var(--text-color);
+            font-family: 'Raleway', sans-serif;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        /* Opacity settings for different rows */
+        .payment-table thead tr {
+            opacity: 0.9;
+        }
+       
+       
+        .payment-table th, .payment-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .payment-table th {
+            font-weight: bold;
+            color: var(--text-color);
+            padding-bottom: 20px;
+        }
+        
+        .payment-table th:first-child,
+        .payment-table td:first-child {
+            padding-left: 0;
+        }
+        
+        .payment-table th.stars-col,
+        .payment-table td.stars-col {
+            text-align: center;
+        }
+        
+        .payment-table th.payment-col,
+        .payment-table td.payment-col {
+            text-align: center;
+        }
+        
+        .payment-table .stars {
+            color: var(--link-color);
+            font-size: 18px;
+        }
+        
+        /* Payment notes column */
+        .payment-table .notes-col {
+            text-align: left;
+            width: 45%;
+            padding-left: 20px;
+        }
+        
+        /* Make sure the bottom row has full border */
+        .payment-table tr:last-child td {
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .upfront-note {
+            color: var(--link-color);
+            font-weight: bold;
+        }
+        
+        .remaining-amount {
+            color: var(--link-color);
+            font-weight: bold;
+        }
+        
+        .payment-policy-description {
+            font-family: 'Raleway', sans-serif;
+            font-size: 1rem;
+            color: var(--text-color);
+            max-width: 600px;
+            margin: 40px auto 0;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .payment-table th, .payment-table td {
+                padding: 10px;
+            }
+            
+            .payment-table .notes-col {
+                padding-left: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .payment-table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .payment-table th, .payment-table td {
+                padding: 8px;
+                font-size: 14px;
+            }
+            
+            .payment-table .stars {
+                font-size: 16px;
+            }
+        }
+    </style>
 </head>
 <body>
     <div id="header-placeholder"></div>
@@ -15,7 +142,59 @@
         <img src="sunset-sky-over-moke-lake-reflect-with-mountain-ra-2024-10-12-04-08-19-utc.jpg" alt="Sunset sky over Moke Lake" id="bgImage">
         <div class="overlay"></div>
     </div>
+    
     <main>
+        <!-- 5-Star Payment Policy -->
+        <div class="payment-policy-container">
+            <h2 class="payment-policy-title">Our 5-Star Payment Policy</h2>
+            
+            <div class="payment-table-container">
+                <table class="payment-table">
+                    <thead>
+                        <tr>
+                            <th>Rating</th>
+                            <th class="stars-col">Stars</th>
+                            <th class="payment-col">Payment</th>
+                            <th class="notes-col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1-star</td>
+                            <td class="stars-col stars">★</td>
+                            <td class="payment-col">$1,000</td>
+                            <td class="notes-col">
+                                <span class="upfront-note">$1,000</span> is your minimum payment commitment. You pay before the first conversation. If you find the service as a whole underwhelming you do not need to pay anything more.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2-star</td>
+                            <td class="stars-col stars">★★</td>
+                            <td class="payment-col">$2,000</td>
+                            <td class="notes-col" rowspan="4">
+                                The <span class="remaining-amount">remaining amount</span> is paid after the service is completed, and you pay based on how well the service met your expectations. Only pay the full amount ($5,000) if the service met or exceeded your expectations.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3-star</td>
+                            <td class="stars-col stars">★★★</td>
+                            <td class="payment-col">$3,000</td>
+                        </tr>
+                        <tr>
+                            <td>4-star</td>
+                            <td class="stars-col stars">★★★★</td>
+                            <td class="payment-col">$4,000</td>
+                        </tr>
+                        <tr>
+                            <td>5-star</td>
+                            <td class="stars-col stars">★★★★★</td>
+                            <td class="payment-col">$5,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
         <div class="container">
             <div id="content">
                 <!-- Content will be loaded here -->
