@@ -333,6 +333,7 @@ header nav, footer nav {
     justify-content: space-between;
     align-items: center;
     background: rgba(0, 0, 0, 0.2);
+    position: relative;
 }
 
 .expandable-header:hover {
@@ -342,6 +343,11 @@ header nav, footer nav {
 .expandable-header h3, 
 .expandable-header h4 {
     margin: 0;
+    padding-right: 40px;
+}
+
+.expandable-header h4 {
+    margin: 0;  /* This will override the default h4 margins only within expandable headers */
 }
 
 .expandable-content {
@@ -360,8 +366,13 @@ header nav, footer nav {
 .expand-icon {
     width: 24px;
     height: 24px;
-    position: relative;
-    margin-left: var(--padding-desktop);
+    position: absolute;
+    right: var(--padding-desktop);
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .expand-icon::before,
@@ -370,24 +381,23 @@ header nav, footer nav {
     position: absolute;
     background-color: var(--link-color);
     transition: transform 0.3s ease;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .expand-icon::before {
-    top: 11px;
-    left: 0;
     width: 24px;
     height: 2px;
 }
 
 .expand-icon::after {
-    top: 0;
-    left: 11px;
     width: 2px;
     height: 24px;
 }
 
 .expanded .expand-icon::after {
-    transform: rotate(90deg);
+    transform: translate(-50%, -50%) rotate(90deg);
 }
 
 /* Add even more padding for very small screens */
@@ -444,6 +454,15 @@ header nav, footer nav {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* Content Images */
+.content-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 2rem 0;
+    display: block;
 }
 
 /* Ensure container within index-main takes full width */
