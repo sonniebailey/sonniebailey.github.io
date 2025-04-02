@@ -279,10 +279,95 @@ header nav, footer nav {
 
 .logo {
     text-align: left;
+    flex: 1;
 }
 
 .nav-links {
-    text-align: center;
+    text-align: right;
+    flex: 2;
+}
+
+/* Footer-specific fixes */
+footer .nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+footer .logo {
+    display: none; /* Hide the empty logo div in footer */
+}
+
+footer nav {
+    justify-content: center; /* Center all footer content */
+    width: 100%;
+}
+
+/* Ensure links wrap properly if needed */
+@media (max-width: 768px) {
+    footer .nav-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+    
+    footer .nav-links a {
+        /* When wrapped, prefer groups of two links per line */
+        flex: 0 0 auto;
+    }
+    
+    /* If four items wrap to two lines, ensure proper ordering */
+    footer .nav-links a:nth-child(1),
+    footer .nav-links a:nth-child(3) {
+        /* Keep first two items on first line */
+        order: 1;
+    }
+    
+    footer .nav-links a:nth-child(5),
+    footer .nav-links a:nth-child(7) {
+        /* Keep last two items on second line */
+        order: 2;
+    }
+    
+    /* Keep dividers with their preceding links */
+    footer .nav-links .divider:nth-of-type(1),
+    footer .nav-links .divider:nth-of-type(2) {
+        order: 1;
+    }
+    
+    footer .nav-links .divider:nth-of-type(3),
+    footer .nav-links .divider:nth-of-type(4) {
+        order: 2;
+    }
+}
+
+/* Fix for index.html page consistency */
+.index-main {
+    min-height: calc(100vh - (var(--header-height) * 2) - 40px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: calc(var(--header-height) + 20px) 0 calc(var(--header-height) + 20px); /* Match main padding */
+}
+
+/* Ensure all pages have consistent container widths and borders */
+main .container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 var(--padding-desktop);
+    box-sizing: border-box;
+}
+
+/* Ensure container within index-main takes full width but maintains consistent padding */
+.index-main .container {
+    width: 100%;
+    margin: 0 auto; /* Change from just 'auto' to '0 auto' to match other pages */
+    padding: 0 var(--padding-desktop); /* Explicitly set padding to match other pages */
+    box-sizing: border-box; /* Ensure box sizing is consistent */
 }
 
 /* Add after existing styles */
@@ -419,6 +504,15 @@ header nav, footer nav {
         align-items: center;
         gap: 8px;
     }
+    
+    .logo, .nav-links {
+        text-align: center;
+        width: 100%;
+    }
+    
+    footer .nav-links {
+        justify-content: center;
+    }
 
     /* Adjust footer text alignment and spacing */
     footer .container p {
@@ -448,14 +542,6 @@ header nav, footer nav {
     }
 }
 
-/* Add styles for index page main content centering */
-.index-main {
-    min-height: calc(100vh - (var(--header-height) * 2) - 40px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 /* Content Images */
 .content-image {
     max-width: 100%;
@@ -465,12 +551,7 @@ header nav, footer nav {
     display: block;
 }
 
-/* Ensure container within index-main takes full width */
-.index-main .container {
-    width: 100%;
-    margin: auto;
-}
-
 footer a {
     white-space: nowrap;
 }
+
