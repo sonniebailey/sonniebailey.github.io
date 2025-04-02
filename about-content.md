@@ -34,11 +34,51 @@ $5,000 including GST, assuming the service meets or exceeds your expectations.
 
 ### Fairhaven Wealth's 5-star payment policy
 
-If you engage Fairhaven Wealth, the first $1,000 needs to be paid upfront, before the first conversation.
-
-However, the remaining $4,000 is only payable after the second conversation. With this remaining $4,000, our expectation is that you will pay in accordance with how the service met your expectations.
-
-If you believe you've received a 5-star service, in the sense that met or exceeded your expectations, then you pay the remaining $4,000, so you pay a total of $5,000. 
+<div class="payment-table-container" style="max-width: 800px; margin: 30px auto; position: relative;">
+    <table class="payment-table" style="width: 100%; border-collapse: collapse; color: var(--text-color); font-family: 'Raleway', sans-serif; margin-bottom: 20px; position: relative;">
+        <thead style="opacity: 0.9;">
+            <tr>
+                <th style="padding: 15px; text-align: left; border-bottom: 1px solid rgba(212, 175, 55, 0.3); font-weight: bold; color: var(--text-color); padding-bottom: 20px; padding-left: 0;">Rating</th>
+                <th class="stars-col" style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); font-weight: bold; color: var(--text-color); padding-bottom: 20px; text-align: center;">Stars</th>
+                <th class="payment-col" style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); font-weight: bold; color: var(--text-color); padding-bottom: 20px; text-align: center;">Payment</th>
+                <th class="notes-col" style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); font-weight: bold; color: var(--text-color); padding-bottom: 20px; text-align: left; width: 45%; padding-left: 20px;"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="opacity: 0.8;">
+                <td style="padding: 15px; text-align: left; border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding-left: 0;">1-star</td>
+                <td class="stars-col stars" style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: center; color: var(--link-color); font-size: 18px;">★</td>
+                <td class="payment-col" style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: center;">$1,000</td>
+                <td class="notes-col" style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: left; width: 45%; padding-left: 20px;">
+                    <span class="upfront-note" style="color: var(--link-color); font-weight: bold;">$1,000</span> is your minimum commitment. You pay before the first conversation. If you find the service as a whole underwhelming you do not need to pay anything more.
+                </td>
+            </tr>
+            <tr style="opacity: 0.9;">
+                <td style="padding: 15px; text-align: left; border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding-left: 0;">2-star</td>
+                <td class="stars-col stars" style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: center; color: var(--link-color); font-size: 18px;">★★</td>
+                <td class="payment-col" style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: center;">$2,000</td>
+                <td class="notes-col" rowspan="4" style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: left; width: 45%; padding-left: 20px;">
+                    The <span class="remaining-amount" style="color: var(--link-color); font-weight: bold;">remaining amount</span> is paid after the service is completed, and you pay based on how well the service met your expectations. Only pay the full amount ($5,000) if the service met or exceeded your expectations.
+                </td>
+            </tr>
+            <tr style="opacity: 0.9;">
+                <td style="padding: 15px; text-align: left; border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding-left: 0;">3-star</td>
+                <td class="stars-col stars" style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: center; color: var(--link-color); font-size: 18px;">★★★</td>
+                <td class="payment-col" style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: center;">$3,000</td>
+            </tr>
+            <tr style="opacity: 0.9;">
+                <td style="padding: 15px; text-align: left; border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding-left: 0;">4-star</td>
+                <td class="stars-col stars" style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: center; color: var(--link-color); font-size: 18px;">★★★★</td>
+                <td class="payment-col" style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: center;">$4,000</td>
+            </tr>
+            <tr style="opacity: 0.9;">
+                <td style="padding: 15px; text-align: left; border-bottom: none; padding-left: 0;">5-star</td>
+                <td class="stars-col stars" style="padding: 15px; border-bottom: none; text-align: center; color: var(--link-color); font-size: 18px;">★★★★★</td>
+                <td class="payment-col" style="padding: 15px; border-bottom: none; text-align: center;">$5,000</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 We offer this policy for two main reasons:
 
@@ -134,21 +174,21 @@ Examples of things that I often ask about:
 
 * I'll ask lots of high-level questions. For example:
 
-	* What would you do differently if money wasn’t an issue?
+	* What would you do differently if money wasn't an issue?
 	
 	* What would you do if you found out you only had five or ten good years of life left?
 	
-	* What are some _worst case_ scenarios that you’d rather not entertain? 
+	* What are some _worst case_ scenarios that you'd rather not entertain? 
 	
-	* Questions to get an insight into your psychological tolerance for risk. I ask questions like what you’d see in an online risk tolerance questionnaire (like [here](https://sorted.org.nz/tools/investor-kickstarter)). But I ask questions in a more open-ended way. For example:
+	* Questions to get an insight into your psychological tolerance for risk. I ask questions like what you'd see in an online risk tolerance questionnaire (like [here](https://sorted.org.nz/tools/investor-kickstarter)). But I ask questions in a more open-ended way. For example:
 	
-		* When it comes to investing, what does “risk” mean to you?
+		* When it comes to investing, what does "risk" mean to you?
 		
 		* How would you characterise your tolerance for risk, compared to other people at your age and stage?
 		
 		* How would you describe your experience with investing?
 
-		These questions don’t lend themselves to multiple-question answers. They lead to _discussions_, which reveal nuances and complexities that “yes”, “no”, or “maybe” responses can’t match.
+		These questions don't lend themselves to multiple-question answers. They lead to _discussions_, which reveal nuances and complexities that "yes", "no", or "maybe" responses can't match.
 
 I will probably work through some "flawcasting" in relation to your financial situation. Specifically, we will consider a number of assumptions/variables that you are making (either explicitly or implicitly to date!) and see how these translate into your long-term financial situation. As part of this, we will investigate the strength of your assumptions, and look at different types of scenarios. (I use the term "flawcasting" instead of forecasting, because the only guarantee someone can give about a long-term forecast is that it will be wrong!)
 
@@ -472,7 +512,7 @@ I have money invested in Australian superannuation in a low-fee, widely diversif
 
 I have a number of insurances in place, including home, contents, car, professional indemnity, life, trauma/critical illness, income protection, and total and permanent disability (TPD) insurance.
 
-If you're interested, in late 2019 I wrote a detailed article on ["How I money"](https://wealthandrisk.nz/how-i-money/).
+If you're interested, in late 2019 I wrote a detailed article on ["How I money"](https://wealthandrisk.nz/how-i-money/).
 
 #### What ethical frameworks guide your practice? 
 
@@ -504,7 +544,7 @@ Some articles from my blog that expand on these topics include:
 
 * [On companies and their corporate DNA](https://wealthandrisk.nz/corporate-dna/)
 
-* [Show me the consequences and I’ll show you the outcomes](https://wealthandrisk.nz/show-me-the-consequences/)
+* [Show me the consequences and I'll show you the outcomes](https://wealthandrisk.nz/show-me-the-consequences/)
 
 ## Please look at other service providers before deciding to engage Fairhaven Wealth
 
