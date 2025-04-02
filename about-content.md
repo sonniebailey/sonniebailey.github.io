@@ -38,43 +38,37 @@ $5,000 including GST, assuming the service meets or exceeds your expectations.
     <table class="payment-table" style="width: 100%; border-collapse: collapse; color: var(--text-color); font-family: 'Raleway', sans-serif; margin-bottom: 20px; position: relative;">
         <thead style="opacity: 0.9;">
             <tr>
-                <th style="padding: 15px; text-align: left; border-bottom: 1px solid rgba(212, 175, 55, 0.3); font-weight: bold; color: var(--text-color); padding-bottom: 20px; padding-left: 0;">Rating</th>
-                <th class="stars-col" style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); font-weight: bold; color: var(--text-color); padding-bottom: 20px; text-align: center;">Stars</th>
-                <th class="payment-col" style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); font-weight: bold; color: var(--text-color); padding-bottom: 20px; text-align: center;">Payment</th>
-                <th class="notes-col" style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); font-weight: bold; color: var(--text-color); padding-bottom: 20px; text-align: left; width: 45%; padding-left: 20px;"></th>
+                <th class="star-rating-col" style="padding: 15px; text-align: left; border-bottom: 1px solid rgba(212, 175, 55, 0.3); font-weight: bold; color: var(--text-color); padding-bottom: 20px; padding-left: 0; width: 22.5%; vertical-align: middle;">Star rating</th>
+                <th class="payment-col" style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); font-weight: bold; color: var(--text-color); padding-bottom: 20px; text-align: left; width: 22.5%; vertical-align: middle;">Payment</th>
+                <th class="notes-col" style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); font-weight: bold; color: var(--text-color); padding-bottom: 20px; text-align: left; width: 55%; padding-left: 20px; vertical-align: middle;"></th>
             </tr>
         </thead>
         <tbody>
             <tr style="opacity: 0.8;">
-                <td style="padding: 15px; text-align: left; border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding-left: 0;">1-star</td>
-                <td class="stars-col stars" style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: center; color: var(--link-color); font-size: 18px;">★</td>
-                <td class="payment-col" style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: center;">$1,000</td>
-                <td class="notes-col" style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: left; width: 45%; padding-left: 20px;">
-                    <span class="upfront-note" style="color: var(--link-color); font-weight: bold;">$1,000</span> is your minimum commitment. You pay before the first conversation. If you find the service as a whole underwhelming you do not need to pay anything more.
+                <td class="star-rating-col" style="padding: 15px; text-align: left; border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding-left: 0; vertical-align: middle;"><span class="stars" style="color: var(--link-color); font-size: 27px;">★</span></td>
+                <td class="payment-col" style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: left; vertical-align: middle;">$1,000</td>
+                <td class="notes-col" style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: left; width: 55%; padding-left: 20px; vertical-align: middle;">
+                    <span class="upfront-note" style="color: var(--link-color); font-weight: bold;">$1,000</span> is your minimum payment commitment. You pay before the first conversation. If you find the service as a whole underwhelming you do not need to pay anything more.
                 </td>
             </tr>
             <tr style="opacity: 0.9;">
-                <td style="padding: 15px; text-align: left; border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding-left: 0;">2-star</td>
-                <td class="stars-col stars" style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: center; color: var(--link-color); font-size: 18px;">★★</td>
-                <td class="payment-col" style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: center;">$2,000</td>
-                <td class="notes-col" rowspan="4" style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: left; width: 45%; padding-left: 20px;">
+                <td class="star-rating-col" style="padding: 15px; text-align: left; border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding-left: 0; vertical-align: middle;"><span class="stars" style="color: var(--link-color); font-size: 27px;">★★</span></td>
+                <td class="payment-col" style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: left; vertical-align: middle;">$2,000</td>
+                <td class="notes-col" rowspan="4" style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: left; width: 55%; padding-left: 20px; vertical-align: middle;">
                     The <span class="remaining-amount" style="color: var(--link-color); font-weight: bold;">remaining amount</span> is paid after the service is completed, and you pay based on how well the service met your expectations. Only pay the full amount ($5,000) if the service met or exceeded your expectations.
                 </td>
             </tr>
             <tr style="opacity: 0.9;">
-                <td style="padding: 15px; text-align: left; border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding-left: 0;">3-star</td>
-                <td class="stars-col stars" style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: center; color: var(--link-color); font-size: 18px;">★★★</td>
-                <td class="payment-col" style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: center;">$3,000</td>
+                <td class="star-rating-col" style="padding: 15px; text-align: left; border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding-left: 0; vertical-align: middle;"><span class="stars" style="color: var(--link-color); font-size: 27px;">★★★</span></td>
+                <td class="payment-col" style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: left; vertical-align: middle;">$3,000</td>
             </tr>
             <tr style="opacity: 0.9;">
-                <td style="padding: 15px; text-align: left; border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding-left: 0;">4-star</td>
-                <td class="stars-col stars" style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: center; color: var(--link-color); font-size: 18px;">★★★★</td>
-                <td class="payment-col" style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: center;">$4,000</td>
+                <td class="star-rating-col" style="padding: 15px; text-align: left; border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding-left: 0; vertical-align: middle;"><span class="stars" style="color: var(--link-color); font-size: 27px;">★★★★</span></td>
+                <td class="payment-col" style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: left; vertical-align: middle;">$4,000</td>
             </tr>
             <tr style="opacity: 0.9;">
-                <td style="padding: 15px; text-align: left; border-bottom: none; padding-left: 0;">5-star</td>
-                <td class="stars-col stars" style="padding: 15px; border-bottom: none; text-align: center; color: var(--link-color); font-size: 18px;">★★★★★</td>
-                <td class="payment-col" style="padding: 15px; border-bottom: none; text-align: center;">$5,000</td>
+                <td class="star-rating-col" style="padding: 15px; text-align: left; border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding-left: 0; vertical-align: middle;"><span class="stars" style="color: var(--link-color); font-size: 27px;">★★★★★</span></td>
+                <td class="payment-col" style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: left; vertical-align: middle;">$5,000</td>
             </tr>
         </tbody>
     </table>
@@ -500,7 +494,7 @@ Having said all of the above, I believe there is room for genuine good faith deb
 
 Ultimately, I'm biased towards recognising that I'm not the final authority on anything (even aspects of my own life!). I urge my clients to push back and challenge me on anything I say. I encourage people to "question the question". 
 
-I believe that _you_ are the final authority of or your own life.
+I believe that _you_  are the final authority of or your own life.
 
 #### Is there any other way of finding out your view on things? 
 
