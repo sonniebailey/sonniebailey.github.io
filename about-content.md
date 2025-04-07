@@ -506,7 +506,7 @@ Before deciding to engage with Fairhaven Wealth, I urge you to consider other se
 
 * Fairhaven Wealth's services are not for everyone, and they might not be for you.
 
-* It's important that we are simpatico and on the same wavelength in order for you to get the appropriate level of value out of this service. We should speak at least once before the full engagement, to make sure that this is the case. If not, that's no judgement on me or you. 
+* It's important that we are simpatico and on the same wavelength in order for you to get the appropriate level of value out of this service. We should speak at least once before the full engagement, to make sure that this is the case. If we're not a "fit", that's absolutely fine! That doesn't represent any judgement on me or you. 
 
 ## Thanks for reading!
 
