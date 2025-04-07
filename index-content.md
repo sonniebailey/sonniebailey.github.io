@@ -2,4 +2,4 @@
 
 Fairhaven Wealth offers something different.
 
-Our unique service helps you to gain the clarity and confidence to make financial decisions that truly align with your values – without the conflicts of interest common in the financial services industry.
+Our service helps you cultivate the clarity and confidence to make financial decisions that truly align with your values – without the conflicts of interest that are common in the financial services industry.
