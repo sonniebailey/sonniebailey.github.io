@@ -22,9 +22,7 @@ Fairhaven Wealth's service is terrific for some people, but not appropriate for 
 
 Fairhaven Wealth has had many happy clients You can read dozens of testimonials [here](www.fairhavenwealth.co.nz/testimonials).
 
-## Fairhaven Wealth's primary service – our $5,000 "5-star" service
-
-### What service does Fairhaven Wealth provide?
+## Fairhaven Wealth's $5,000 "5-star" service
 
 Fairhaven Wealth's primary service consists of two three-hour discussions, within approximately one week of each other. These meetings are followed by one or more emails, supporting these conversations and providing a high-level overview of what we discussed during each of the meetings.
 

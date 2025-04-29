@@ -189,11 +189,14 @@ h1 {
 }
 
 h2 {
-    font-size: 2rem;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 1rem;
+    font-size: 2.2rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    color: var(--link-color);
+    font-weight: 700;
+    border-bottom: none;
+    letter-spacing: 0.5px;
 }
 
 h3 {
@@ -215,6 +218,21 @@ p {
     margin-bottom: 1.5rem;
 }
 
+/* Add a subtle highlight for h2 sections */
+h2 + p, h2 + div {
+    position: static;
+    z-index: auto;
+}
+
+/* Special styles for About page h2 headings */
+main:not(.index-main) .glass-container h2 {
+    position: static;
+    display: block;
+    padding-right: 0;
+    margin-right: 0;
+    background: none;
+}
+
 /* Lists */
 ul, ol {
     margin-bottom: 1.5rem;
@@ -227,8 +245,8 @@ li {
 
 /* Table of Contents */
 #table-of-contents {
-    margin: 1rem 0;
-    padding: 1rem;
+    margin: 1.5rem 0;
+    padding: 1.5rem 40px;
     border: none;
     background-color: var(--glass-bg-color);
     backdrop-filter: blur(var(--glass-blur));
@@ -256,6 +274,12 @@ li {
 /* Indent nested levels */
 #table-of-contents ul ul li {
     padding-left: 1.5rem;
+}
+
+#table-of-contents h2 {
+    margin-top: 0;
+    margin-bottom: 1.2rem;
+    padding-top: 0;
 }
 
 /* Button Styles - updated with glassmorphic yellow */
@@ -293,9 +317,10 @@ li {
     }
     
     h2 {
-        font-size: 1.5rem;
-        margin-top: 1.5rem;
-        margin-bottom: 1rem;
+        font-size: 1.8rem;
+        margin-top: 2rem;
+        margin-bottom: 1.2rem;
+        padding-bottom: 0.5rem;
     }
     
     /* First heading should have no top margin */
@@ -774,5 +799,13 @@ footer a {
 @media (max-width: 768px) {
     /* Remove redundant mobile styles for index-main */
     /* These styles are now handled in the section above */
+}
+
+/* Mobile heading adjustments */
+@media (max-width: 768px) {
+    main:not(.index-main) .glass-container h2 {
+        padding-right: 1.5rem;
+        margin-right: -1.5rem;
+    }
 }
 
