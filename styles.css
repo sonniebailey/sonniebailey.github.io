@@ -4,11 +4,15 @@
     --link-hover-color: #C6972E; /* Slightly darker gold for hover */
     --text-color: #FFFFFF; /* White text */
     --border-color: rgba(212, 175, 55, 0.2); /* Semi-transparent gold for borders */
-    --overlay-color: rgba(0, 0, 0, 0.5); /* Lighter overlay for better glassmorphism */
+    --overlay-color: rgba(0, 0, 0, 0.35); /* Lighter overlay - reduced from 0.5 to 0.35 */
     --header-height: 70px;
     --glass-bg-color: rgba(0, 0, 0, 0.2); /* Semi-transparent background for glass effect */
     --glass-blur: 10px; /* Blur amount for glassmorphic effect */
     --glass-border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border for glass effect */
+
+    /* Consistent padding for glassmorphic containers */
+    --glass-padding: 60px;
+    --glass-padding-mobile: 40px;
 
     /* New padding variables. Note taht these relate to horizontal padding, vertical padding is still being defined elsewhere. */ 
     --padding-desktop: 20px;
@@ -259,9 +263,7 @@ li {
     margin-top: 2rem;
     display: inline-block;
     padding: 15px 30px;
-    background-color: var(--glass-bg-color);
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
+    background-color: transparent;
     color: var(--link-color);
     border: 2px solid var(--link-color);
     border-radius: 5px;
@@ -269,9 +271,8 @@ li {
     font-size: 1.1rem;
     text-decoration: none;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    align-self: flex-start;
 }
-
 
 .button:hover {
     background-color: var(--link-color);
@@ -282,7 +283,35 @@ li {
 /* Responsive Design */
 @media (max-width: 768px) {
     h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
+        margin-top: 0;
+        margin-bottom: 1.5rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    /* First heading should have no top margin */
+    main:not(.index-main) .glass-container #content > h1:first-child,
+    main:not(.index-main) .glass-container #content > h2:first-child {
+        margin-top: 0;
+    }
+    
+    /* Table of contents specific adjustments */
+    #table-of-contents {
+        margin-top: 0 !important;
+        margin-bottom: 2rem;
+        padding: 2rem 20px 1.5rem 20px !important;
+    }
+    
+    #table-of-contents h2 {
+        margin-top: 0;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        padding-top: 0;
     }
     
     .button-container {
@@ -376,20 +405,61 @@ footer nav {
     }
 }
 
-/* Fix for index.html page consistency */
+/* True vertical centering fix for index page */
 .index-main {
-    min-height: calc(100vh - (var(--header-height) * 2) - 40px);
+    min-height: calc(100vh - (var(--header-height) * 2));
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: calc(var(--header-height) + 20px) 0 calc(var(--header-height) + 20px);
+    padding: 0;
+    position: absolute;
+    top: var(--header-height);
+    bottom: var(--header-height);
+    left: 0;
+    right: 0;
+    z-index: 1;
 }
 
 .index-main .container {
     width: 100%;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 60px 40px 60px 40px;
+    padding: var(--glass-padding); /* Consistent padding on all sides */
     box-sizing: border-box;
+    background-color: var(--glass-bg-color);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Reset any potentially conflicting styles */
+@media (max-width: 768px) {
+    /* Mobile styles for true vertical centering */
+    .index-main {
+        min-height: calc(100vh - (var(--header-height) * 2));
+        padding: 0;
+        position: absolute;
+        top: var(--header-height);
+        bottom: var(--header-height);
+    }
+    
+    .index-main .container {
+        border-radius: 10px;
+        margin: 20px;
+        width: calc(100% - 40px);
+        padding: var(--glass-padding-mobile); /* Consistent padding on all sides for mobile */
+        display: flex;
+        flex-direction: column;
+    }
+    
+    /* Ensure button appears properly on mobile */
+    .index-main .button {
+        align-self: flex-start;
+        margin-top: 2rem;
+    }
 }
 
 /* Ensure all pages have consistent container widths and borders */
@@ -639,36 +709,43 @@ footer a {
 
 /* Add mobile-specific styles for full-height glassmorphic areas */
 @media (max-width: 768px) {
-    /* Existing mobile styles */
-    
+    /* Header & footer styling for mobile */
+    header .container, footer .container {
+        padding: 10px var(--padding-tablet);
+    }
+
     /* Make glassmorphic containers extend to header/footer on mobile */
-    main {
+    main:not(.index-main) {
         padding-top: var(--header-height);
         padding-bottom: var(--header-height);
     }
     
     /* Remove spacing around glass container on mobile */
-    .glass-container {
+    main:not(.index-main) .glass-container {
         margin: 0;
         border-radius: 0;
         min-height: calc(100vh - (var(--header-height) * 2));
-        padding-top: 20px;
-        padding-bottom: 20px;
+        padding-top: var(--glass-padding-mobile);
+        padding-bottom: var(--glass-padding-mobile);
+        padding-left: var(--padding-mobile);
+        padding-right: var(--padding-mobile);
     }
     
-    /* Keep index page as is with proper spacing */
-    .index-main {
-        padding: calc(var(--header-height) + 20px) 0 calc(var(--header-height) + 20px);
+    /* Ensure consistent spacing for headings in mobile */
+    .glass-container h1:first-child,
+    .glass-container h2:first-child,
+    #table-of-contents,
+    .glass-container > #content > *:first-child {
+        margin-top: 0;
+        padding-top: 0;
     }
     
-    .index-main .glass-container {
-        border-radius: 10px;
-        min-height: auto;
-    }
+    /* Index page styling handled separately above */
     
     /* Adjust TOC and expandable content for mobile */
     .glass-container #table-of-contents {
         padding: 1.5rem 20px;
+        margin-top: 0;
     }
     
     .glass-container .expandable-header {
@@ -686,5 +763,12 @@ footer a {
     .expand-icon {
         right: 20px;
     }
+}
+
+/* Remove these redundant media queries */
+/* Fix potential conflicts in mobile styles */
+@media (max-width: 768px) {
+    /* Remove redundant mobile styles for index-main */
+    /* These styles are now handled in the section above */
 }
 
