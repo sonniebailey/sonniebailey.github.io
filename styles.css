@@ -637,3 +637,54 @@ footer a {
     padding: 1rem 40px 2rem 40px; /* More padding when expanded */
 }
 
+/* Add mobile-specific styles for full-height glassmorphic areas */
+@media (max-width: 768px) {
+    /* Existing mobile styles */
+    
+    /* Make glassmorphic containers extend to header/footer on mobile */
+    main {
+        padding-top: var(--header-height);
+        padding-bottom: var(--header-height);
+    }
+    
+    /* Remove spacing around glass container on mobile */
+    .glass-container {
+        margin: 0;
+        border-radius: 0;
+        min-height: calc(100vh - (var(--header-height) * 2));
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    
+    /* Keep index page as is with proper spacing */
+    .index-main {
+        padding: calc(var(--header-height) + 20px) 0 calc(var(--header-height) + 20px);
+    }
+    
+    .index-main .glass-container {
+        border-radius: 10px;
+        min-height: auto;
+    }
+    
+    /* Adjust TOC and expandable content for mobile */
+    .glass-container #table-of-contents {
+        padding: 1.5rem 20px;
+    }
+    
+    .glass-container .expandable-header {
+        padding: 1rem 20px;
+    }
+    
+    .glass-container .expandable-content {
+        padding: 0 20px;
+    }
+    
+    .glass-container .expandable-content.expanded {
+        padding: 1rem 20px 1.5rem 20px;
+    }
+    
+    .expand-icon {
+        right: 20px;
+    }
+}
+
