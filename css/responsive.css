@@ -139,6 +139,11 @@
         padding: var(--container-padding-mobile);
     }
     
+    /* Hide paragraph content on index page for mobile/tablet */
+    [data-page="index"] #content p {
+        display: none !important;
+    }
+    
     /* Non-index pages */
     main:not([data-page="index"]) .glass-container {
         margin: 0;

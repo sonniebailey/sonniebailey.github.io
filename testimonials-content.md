@@ -2,8 +2,6 @@
 
 Some kind words from clients are below.
 
-Please note that these testimonials were provided to Fairhaven Wealth prior to 2023, when the scope and price of services provided by Fairhaven Wealth were slightly different to those that are currently being offered. All testimonials have been reproduced with permission. (If you are a former client who has provided a testimonial and want it removed or updated, please contact me.) 
-
 #### "we got so much more than we expected"
 
 "We are a couple in our mid 50’s with busy work and family lives. I can spend a week researching a new fridge, and yet we pay very little attention to our savings, super and retirement plans. As people with a strong social conscience, it almost feels a bit wrong to fuss too much about such things and money is the one taboo that people, friends, family rarely talk about. And yet I knew we were being irresponsible, frozen into inaction by a lack of confidence in our knowledge and a distrust of financial advisors. Everyone says to “research your advisors” and “choose carefully” but it is time consuming and complicated, and in the too hard basket.  
