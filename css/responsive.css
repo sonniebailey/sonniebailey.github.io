@@ -1,0 +1,259 @@
+/* Responsive Styles - All Media Queries */
+
+/* Tablet Breakpoint (768px) */
+@media (max-width: 768px) {
+    /* Typography adjustments */
+    h1 {
+        font-size: 2.2rem;
+        margin-top: 0;
+        margin-bottom: 1.5rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+        margin-top: 2rem;
+        margin-bottom: 1.2rem;
+        padding-bottom: 0.5rem;
+    }
+    
+    h3 { font-size: 1.3rem; }
+    h4 { font-size: 1.2rem; }
+    
+    /* First heading should have no top margin */
+    main:not(.index-main) .glass-container #content > h1:first-child,
+    main:not(.index-main) .glass-container #content > h2:first-child {
+        margin-top: 0;
+    }
+    
+    /* Main layout adjustments */
+    main {
+        padding-top: calc(var(--header-height) + 15px);
+        padding-bottom: calc(var(--header-height) + 15px);
+        padding: 80px 0;
+    }
+    
+    /* Container adjustments */
+    .container {
+        padding: 0 var(--padding-tablet);
+    }
+    
+    /* Header & footer adjustments */
+    header .container, footer .container {
+        padding: 10px var(--padding-tablet);
+    }
+    
+    /* Navigation adjustments */
+    header nav, footer nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .logo, .nav-links {
+        text-align: center;
+        width: 100%;
+    }
+    
+    nav a, footer a {
+        font-size: 0.8rem;
+    }
+    
+    /* Footer specific adjustments */
+    footer .nav-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+    
+    footer .nav-links a {
+        flex: 0 0 auto;
+    }
+    
+    /* Footer link ordering for better wrapping */
+    footer .nav-links a:nth-child(1),
+    footer .nav-links a:nth-child(3) {
+        order: 1;
+    }
+    
+    footer .nav-links a:nth-child(5),
+    footer .nav-links a:nth-child(7) {
+        order: 2;
+    }
+    
+    footer .nav-links .divider:nth-of-type(1),
+    footer .nav-links .divider:nth-of-type(2) {
+        order: 1;
+    }
+    
+    footer .nav-links .divider:nth-of-type(3),
+    footer .nav-links .divider:nth-of-type(4) {
+        order: 2;
+    }
+    
+    footer .container p {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        text-align: center;
+        margin: 0;
+    }
+    
+    footer .divider {
+        display: none;
+    }
+    
+    footer a {
+        padding: 5px 0;
+    }
+    
+    /* Typography spacing improvements */
+    p {
+        line-height: 1.8;
+        margin-bottom: 1.2rem;
+    }
+    
+    ul, ol {
+        padding-left: 1.5rem;
+    }
+    
+    /* Table of contents adjustments */
+    #table-of-contents {
+        margin-top: 0 !important;
+        margin-bottom: 2rem;
+        padding: 2rem 20px 1.5rem 20px !important;
+    }
+    
+    #table-of-contents h2 {
+        margin-top: 0;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        padding-top: 0;
+    }
+    
+    .glass-container #table-of-contents {
+        padding: 1.5rem 20px;
+        margin-top: 0;
+    }
+    
+    /* Button adjustments */
+    .button-container {
+        flex-direction: column;
+    }
+    
+    /* Expandable sections adjustments */
+    .glass-container .expandable-header {
+        padding: 1rem 20px;
+    }
+    
+    .glass-container .expandable-content {
+        padding: 0 20px;
+    }
+    
+    .glass-container .expandable-content.expanded {
+        padding: 1rem 20px 1.5rem 20px;
+    }
+    
+    .expand-icon {
+        right: 20px;
+    }
+    
+    /* Payment table adjustments */
+    .payment-table th, .payment-table td {
+        padding: 10px;
+    }
+    
+    .payment-table .notes-col {
+        padding-left: 15px;
+    }
+    
+    /* Index page specific mobile styles */
+    .index-main {
+        min-height: calc(100vh - (var(--header-height) * 2));
+        padding: 0;
+        position: absolute;
+        top: var(--header-height);
+        bottom: var(--header-height);
+    }
+    
+    .index-main .container {
+        border-radius: 10px;
+        margin: 20px;
+        width: calc(100% - 40px);
+        padding: var(--glass-padding-mobile);
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .index-main .button {
+        align-self: flex-start;
+        margin-top: 2rem;
+    }
+    
+    /* Glass container mobile adjustments */
+    main:not(.index-main) {
+        padding-top: var(--header-height);
+        padding-bottom: var(--header-height);
+    }
+    
+    main:not(.index-main) .glass-container {
+        margin: 0;
+        border-radius: 0;
+        min-height: calc(100vh - (var(--header-height) * 2));
+        padding-top: var(--glass-padding-mobile);
+        padding-bottom: var(--glass-padding-mobile);
+        padding-left: var(--padding-mobile);
+        padding-right: var(--padding-mobile);
+    }
+    
+    .glass-container h1:first-child,
+    .glass-container h2:first-child,
+    #table-of-contents,
+    .glass-container > #content > *:first-child {
+        margin-top: 0;
+        padding-top: 0;
+    }
+    
+    /* About page heading adjustments */
+    main:not(.index-main) .glass-container h2 {
+        padding-right: 1.5rem;
+        margin-right: -1.5rem;
+    }
+}
+
+/* Small Mobile Breakpoint (480px) */
+@media (max-width: 480px) {
+    /* Typography adjustments for small screens */
+    h1 { font-size: 1.75rem; }
+    p { line-height: 1.6; }
+    
+    /* Container adjustments */
+    .container {
+        padding: 0 var(--padding-mobile);
+    }
+    
+    /* Payment table horizontal scroll */
+    .payment-table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .payment-table {
+        min-width: 500px;
+    }
+    
+    .payment-table th, .payment-table td {
+        padding: 8px;
+        font-size: 14px;
+        white-space: normal;
+    }
+    
+    .payment-table .notes-col {
+        width: 200px;
+    }
+    
+    .payment-table .stars {
+        font-size: 16px;
+    }
+} 

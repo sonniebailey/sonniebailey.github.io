@@ -1,0 +1,58 @@
+/* Typography Styles */
+
+/* Headings - Add scroll margin for fixed header */
+h1, h2, h3, h4, h5, h6 {
+    scroll-margin-top: calc(var(--header-height) + 60px);
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    color: var(--link-color);
+    font-weight: 700;
+    border-bottom: none;
+    letter-spacing: 0.5px;
+}
+
+h3 {
+    font-size: 1.6rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+h4 {
+    font-size: 1.4rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: normal;
+}
+
+/* Paragraphs */
+p {
+    font-size: 1rem;
+    line-height: 2;
+    margin-bottom: 1.5rem;
+}
+
+/* Lists */
+ul, ol {
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+/* Special h2 positioning styles */
+h2 + p, h2 + div {
+    position: static;
+    z-index: auto;
+} 

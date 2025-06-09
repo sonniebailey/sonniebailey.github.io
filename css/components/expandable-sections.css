@@ -1,0 +1,110 @@
+/* Expandable Section Styles */
+
+.expandable-section {
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    background-color: var(--glass-bg-color);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.expandable-header {
+    padding: 1rem var(--padding-desktop);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.1);
+    position: relative;
+    border-radius: 4px 4px 0 0;
+}
+
+.expandable-header:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.expandable-header h3, 
+.expandable-header h4 {
+    margin: 0;
+    padding-right: 40px;
+}
+
+.expandable-header h4 {
+    margin: 0; /* Override default h4 margins only within expandable headers */
+}
+
+.expandable-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding: 0 var(--padding-desktop);
+}
+
+.expandable-content.expanded {
+    max-height: 2000px; /* Arbitrary large value */
+    padding: 0rem var(--padding-desktop);
+    transition: max-height 0.6s ease-in;
+}
+
+/* Expand icon */
+.expand-icon {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.expand-icon::before,
+.expand-icon::after {
+    content: '';
+    position: absolute;
+    background-color: var(--link-color);
+    transition: transform 0.3s ease;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.expand-icon::before {
+    width: 24px;
+    height: 2px;
+}
+
+.expand-icon::after {
+    width: 2px;
+    height: 24px;
+}
+
+.expanded .expand-icon::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+/* Prevent nested glassmorphic effects */
+.glass-container .expandable-section {
+    background-color: rgba(0, 0, 0, 0.25);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: none;
+    margin-bottom: 1.5rem;
+}
+
+.glass-container .expandable-header {
+    border-radius: 10px 10px 0 0;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 1rem 40px;
+}
+
+.glass-container .expandable-content {
+    padding: 0 40px;
+}
+
+.glass-container .expandable-content.expanded {
+    padding: 1rem 40px 2rem 40px;
+} 

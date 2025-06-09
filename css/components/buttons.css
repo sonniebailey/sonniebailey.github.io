@@ -1,0 +1,31 @@
+/* Button Styles */
+
+.button {
+    margin-top: 2rem;
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: rgba(212, 175, 55, 0.5); /* More transparent gold */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.button:hover {
+    background-color: rgba(212, 175, 55, 0.8); /* More solid on hover */
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3); /* Golden glow */
+}
+
+.button-container {
+    display: flex;
+    gap: 1rem;
+} 

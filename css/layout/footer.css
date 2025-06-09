@@ -1,0 +1,65 @@
+/* Footer Styles */
+
+footer {
+    background-color: var(--glass-bg-color);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: none;
+    bottom: 0;
+    border-top: none;
+}
+
+footer .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 1rem var(--padding-desktop);
+    background-color: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: none;
+    box-shadow: none;
+}
+
+footer nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    justify-content: center; /* Center all footer content */
+}
+
+/* Footer-specific layout fixes */
+footer .nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+footer .logo {
+    display: none; /* Hide the empty logo div in footer */
+}
+
+footer a {
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+footer a:hover {
+    transform: scale(1.1);
+    text-decoration: none;
+} 

@@ -1,0 +1,26 @@
+/* CSS Variables and Theme Configuration */
+:root {
+    /* Color Scheme */
+    --link-color: #D4AF37; /* Gold for links */
+    --link-hover-color: #C6972E; /* Slightly darker gold for hover */
+    --text-color: #FFFFFF; /* White text */
+    --border-color: rgba(212, 175, 55, 0.2); /* Semi-transparent gold for borders */
+    --overlay-color: rgba(0, 0, 0, 0.35); /* Lighter overlay - reduced from 0.5 to 0.35 */
+    
+    /* Layout Variables */
+    --header-height: 70px;
+    
+    /* Glassmorphic Effect Variables */
+    --glass-bg-color: rgba(0, 0, 0, 0.2); /* Semi-transparent background for glass effect */
+    --glass-blur: 10px; /* Blur amount for glassmorphic effect */
+    --glass-border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border for glass effect */
+    
+    /* Consistent padding for glassmorphic containers */
+    --glass-padding: 60px;
+    --glass-padding-mobile: 40px;
+    
+    /* Responsive padding variables - Note that these relate to horizontal padding */
+    --padding-desktop: 20px;
+    --padding-tablet: 20px;
+    --padding-mobile: 32px;
+} 

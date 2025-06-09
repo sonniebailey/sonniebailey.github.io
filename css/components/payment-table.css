@@ -1,0 +1,126 @@
+/* Payment Table Styles (About Page) */
+
+/* Payment policy container */
+.payment-policy-container {
+    max-width: 800px;
+    margin: 30px auto;
+    text-align: center;
+    padding: 0 20px;
+    color: var(--text-color);
+}
+
+.payment-policy-title {
+    font-family: 'Raleway', sans-serif;
+    margin-bottom: 45px;
+    color: var(--text-color);
+}
+
+/* Payment Table Styles */
+.payment-table-container {
+    margin: 30px auto;
+    max-width: 800px;
+    position: relative;
+}
+
+.payment-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: var(--text-color);
+    font-family: 'Raleway', sans-serif;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* Opacity settings for different rows */
+.payment-table thead tr {
+    opacity: 0.95;
+}
+
+.payment-table tbody tr:first-child { /* 1-star row */
+    opacity: 0.8;
+}
+
+.payment-table tbody tr:not(:first-child) { /* 2-5 star rows */
+    opacity: 0.95;
+}
+
+.payment-table th, .payment-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    vertical-align: top;
+}
+
+.payment-table th {
+    font-weight: bold;
+    color: var(--text-color);
+    padding-bottom: 20px;
+}
+
+.payment-table th:first-child,
+.payment-table td:first-child {
+    padding-left: 0;
+}
+
+/* Center align specific columns */
+.payment-table th.stars-col,
+.payment-table td.stars-col,
+.payment-table th.payment-col,
+.payment-table td.payment-col {
+    text-align: center;
+}
+
+.payment-table .stars {
+    color: var(--link-color);
+    font-size: 18px;
+}
+
+/* Payment notes column */
+.payment-table .notes-col {
+    text-align: left;
+    width: 45%;
+    padding-left: 20px;
+    line-height: 1.6;
+}
+
+/* Style paragraphs within the notes column */
+.payment-table .notes-col p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.payment-table .notes-col p:last-child {
+    margin-bottom: 0;
+}
+
+/* Border handling for last rows */
+.payment-table tbody tr:last-child td {
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.payment-table tbody tr td[rowspan]:last-child {
+    border-bottom: none;
+}
+
+.payment-table tbody tr:nth-last-child(-n+4):first-child td:not([rowspan]) {
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.upfront-note {
+    color: var(--link-color);
+    font-weight: bold;
+}
+
+.remaining-amount {
+    color: var(--link-color);
+    font-weight: bold;
+}
+
+.payment-policy-description {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1rem;
+    color: var(--text-color);
+    max-width: 600px;
+    margin: 40px auto 0;
+    line-height: 1.6;
+} 

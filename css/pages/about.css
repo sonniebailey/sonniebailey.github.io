@@ -1,0 +1,10 @@
+/* About Page Specific Styles */
+
+/* Special styles for About page h2 headings */
+main:not(.index-main) .glass-container h2 {
+    position: static;
+    display: block;
+    padding-right: 0;
+    margin-right: 0;
+    background: none;
+} 
