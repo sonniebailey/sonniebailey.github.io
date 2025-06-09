@@ -1,52 +1,42 @@
-/* Responsive Styles - All Media Queries */
+/* Responsive Styles - Pattern-based Media Queries */
 
-/* Tablet Breakpoint (768px) */
+/* Tablet Breakpoint */
 @media (max-width: 768px) {
-    /* Typography adjustments */
-    h1 {
-        font-size: 2.2rem;
+    /* Spacing adjustments */
+    :root {
+        --container-padding: var(--space-7);
+        --section-gap: var(--space-4);
+    }
+    
+    /* Typography scaling */
+    h1 { 
+        font-size: 2.2rem; 
         margin-top: 0;
-        margin-bottom: 1.5rem;
+        margin-bottom: var(--section-gap);
     }
-    
-    h2 {
-        font-size: 1.8rem;
-        margin-top: 2rem;
-        margin-bottom: 1.2rem;
-        padding-bottom: 0.5rem;
+    h2 { 
+        font-size: 1.8rem; 
+        margin-top: var(--space-6);
+        margin-bottom: var(--element-gap);
     }
-    
     h3 { font-size: 1.3rem; }
     h4 { font-size: 1.2rem; }
     
-    /* First heading should have no top margin */
-    main:not(.index-main) .glass-container #content > h1:first-child,
-    main:not(.index-main) .glass-container #content > h2:first-child {
-        margin-top: 0;
-    }
-    
-    /* Main layout adjustments */
+    /* Main layout pattern */
     main {
-        padding-top: calc(var(--header-height) + 15px);
-        padding-bottom: calc(var(--header-height) + 15px);
-        padding: 80px 0;
+        padding: var(--header-height) 0;
     }
     
-    /* Container adjustments */
+    /* Container pattern */
     .container {
-        padding: 0 var(--padding-tablet);
+        padding: var(--space-5) var(--space-5);
     }
     
-    /* Header & footer adjustments */
-    header .container, footer .container {
-        padding: 10px var(--padding-tablet);
-    }
-    
-    /* Navigation adjustments */
+    /* Header & Footer navigation pattern */
     header nav, footer nav {
         flex-direction: column;
         align-items: center;
-        gap: 0.5rem;
+        gap: var(--inline-gap);
     }
     
     .logo, .nav-links {
@@ -58,179 +48,120 @@
         font-size: 0.8rem;
     }
     
-    /* Footer specific adjustments */
+    /* Footer specific */
     footer .nav-links {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 5px;
-    }
-    
-    footer .nav-links a {
-        flex: 0 0 auto;
-    }
-    
-    /* Footer link ordering for better wrapping */
-    footer .nav-links a:nth-child(1),
-    footer .nav-links a:nth-child(3) {
-        order: 1;
-    }
-    
-    footer .nav-links a:nth-child(5),
-    footer .nav-links a:nth-child(7) {
-        order: 2;
-    }
-    
-    footer .nav-links .divider:nth-of-type(1),
-    footer .nav-links .divider:nth-of-type(2) {
-        order: 1;
-    }
-    
-    footer .nav-links .divider:nth-of-type(3),
-    footer .nav-links .divider:nth-of-type(4) {
-        order: 2;
-    }
-    
-    footer .container p {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
-        text-align: center;
-        margin: 0;
+        gap: var(--space-1);
     }
     
     footer .divider {
         display: none;
     }
     
-    footer a {
-        padding: 5px 0;
+    footer .container p {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-2);
+        text-align: center;
+        margin: 0;
     }
     
-    /* Typography spacing improvements */
-    p {
-        line-height: 1.8;
-        margin-bottom: 1.2rem;
-    }
-    
-    ul, ol {
-        padding-left: 1.5rem;
-    }
-    
-    /* Table of contents adjustments */
+    /* Table of contents pattern */
     #table-of-contents {
-        margin-top: 0 !important;
-        margin-bottom: 2rem;
-        padding: 2rem 20px 1.5rem 20px !important;
+        margin-top: 0;
+        margin-bottom: var(--space-6);
+        padding: var(--space-6) var(--space-5);
     }
     
     #table-of-contents h2 {
         margin-top: 0;
-        margin-bottom: 1rem;
+        margin-bottom: var(--element-gap);
         font-size: 1.5rem;
-        padding-top: 0;
     }
     
-    .glass-container #table-of-contents {
-        padding: 1.5rem 20px;
-        margin-top: 0;
+    /* Disclosure/Expandable pattern */
+    .disclosure__header,
+    .expandable-header {
+        padding: var(--element-gap) var(--space-5);
     }
     
-    /* Button adjustments */
-    .button-container {
-        flex-direction: column;
+    .disclosure__content,
+    .expandable-content {
+        padding: 0 var(--space-5);
     }
     
-    /* Expandable sections adjustments */
+    .disclosure__content--expanded,
+    .expandable-content.expanded {
+        padding: var(--element-gap) var(--space-5) var(--section-gap) var(--space-5);
+    }
+    
+    .disclosure__icon,
+    .expand-icon {
+        right: var(--space-5);
+    }
+    
+    /* Glass container inside main */
+    .glass-container {
+        padding: var(--container-padding-mobile) var(--space-6);
+    }
+    
+    /* Inside glass containers */
     .glass-container .expandable-header {
-        padding: 1rem 20px;
+        padding: var(--element-gap) var(--space-5);
     }
     
     .glass-container .expandable-content {
-        padding: 0 20px;
+        padding: 0 var(--space-5);
     }
     
     .glass-container .expandable-content.expanded {
-        padding: 1rem 20px 1.5rem 20px;
+        padding: var(--element-gap) var(--space-5) var(--section-gap) var(--space-5);
     }
     
-    .expand-icon {
-        right: 20px;
-    }
-    
-    /* Payment table adjustments */
-    .payment-table th, .payment-table td {
-        padding: 10px;
+    /* Payment table pattern */
+    .payment-table th, 
+    .payment-table td {
+        padding: var(--space-3);
     }
     
     .payment-table .notes-col {
-        padding-left: 15px;
+        padding-left: var(--space-4);
     }
     
-    /* Index page specific mobile styles */
-    .index-main {
-        min-height: calc(100vh - (var(--header-height) * 2));
-        padding: 0;
-        position: absolute;
-        top: var(--header-height);
-        bottom: var(--header-height);
-    }
-    
-    .index-main .container {
+    /* Index page specific */
+    [data-page="index"] .container {
         border-radius: 10px;
-        margin: 20px;
-        width: calc(100% - 40px);
-        padding: var(--glass-padding-mobile);
-        display: flex;
-        flex-direction: column;
+        margin: var(--space-5);
+        width: calc(100% - var(--space-7));
+        padding: var(--container-padding-mobile);
     }
     
-    .index-main .button {
-        align-self: flex-start;
-        margin-top: 2rem;
-    }
-    
-    /* Glass container mobile adjustments */
-    main:not(.index-main) {
-        padding-top: var(--header-height);
-        padding-bottom: var(--header-height);
-    }
-    
-    main:not(.index-main) .glass-container {
+    /* Non-index pages */
+    main:not([data-page="index"]) .glass-container {
         margin: 0;
         border-radius: 0;
         min-height: calc(100vh - (var(--header-height) * 2));
-        padding-top: var(--glass-padding-mobile);
-        padding-bottom: var(--glass-padding-mobile);
-        padding-left: var(--padding-mobile);
-        padding-right: var(--padding-mobile);
-    }
-    
-    .glass-container h1:first-child,
-    .glass-container h2:first-child,
-    #table-of-contents,
-    .glass-container > #content > *:first-child {
-        margin-top: 0;
-        padding-top: 0;
-    }
-    
-    /* About page heading adjustments */
-    main:not(.index-main) .glass-container h2 {
-        padding-right: 1.5rem;
-        margin-right: -1.5rem;
+        padding: var(--container-padding-mobile) var(--space-6);
     }
 }
 
-/* Small Mobile Breakpoint (480px) */
+/* Small Mobile Breakpoint */
 @media (max-width: 480px) {
-    /* Typography adjustments for small screens */
+    /* Further spacing reductions */
+    :root {
+        --container-padding: var(--space-6);
+    }
+    
+    /* Typography */
     h1 { font-size: 1.75rem; }
     p { line-height: 1.6; }
     
     /* Container adjustments */
     .container {
-        padding: 0 var(--padding-mobile);
+        padding: 0 var(--space-6);
     }
     
     /* Payment table horizontal scroll */
@@ -243,8 +174,9 @@
         min-width: 500px;
     }
     
-    .payment-table th, .payment-table td {
-        padding: 8px;
+    .payment-table th, 
+    .payment-table td {
+        padding: var(--space-2);
         font-size: 14px;
         white-space: normal;
     }

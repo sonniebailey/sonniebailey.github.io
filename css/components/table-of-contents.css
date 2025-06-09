@@ -1,14 +1,10 @@
 /* Table of Contents Styles */
 
 #table-of-contents {
-    margin: 1.5rem 0;
-    padding: 1.5rem 40px;
+    margin: var(--section-gap) 0;
+    padding: var(--section-gap) var(--space-7);
     border: none;
-    background-color: var(--glass-bg-color);
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
     border-radius: 10px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 #table-of-contents ul {
@@ -18,33 +14,32 @@
 }
 
 #table-of-contents > ul {
-    column-gap: 2rem;
+    column-gap: var(--space-6);
 }
 
 #table-of-contents li {
-    margin: 0.5rem 0;
+    margin: var(--inline-gap) 0;
     break-inside: avoid-column;
     line-height: 1.4;
 }
 
 /* Indent nested levels */
 #table-of-contents ul ul li {
-    padding-left: 1.5rem;
+    padding-left: var(--section-gap);
 }
 
 #table-of-contents h2 {
     margin-top: 0;
-    margin-bottom: 1.2rem;
+    margin-bottom: var(--element-gap);
     padding-top: 0;
 }
 
-/* Prevent nested glassmorphic effects but improve styling */
+/* Apply glass effect via class in HTML */
+/* When inside a glass container, use stronger variant */
 .glass-container #table-of-contents {
-    background-color: rgba(0, 0, 0, 0.25); /* Darker background for nested elements */
+    background-color: var(--glass-bg-color-strong);
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
     box-shadow: none;
-    border-radius: 10px;
-    padding: 1.5rem 40px;
-    margin: 1.5rem 0;
+    padding: var(--section-gap) var(--space-7);
 } 

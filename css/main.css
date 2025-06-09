@@ -17,18 +17,14 @@
 /* 5. Components */
 @import 'components/buttons.css';
 @import 'components/navigation.css';
+@import 'components/glassmorphic.css';
+@import 'components/disclosure.css';
 @import 'components/table-of-contents.css';
 @import 'components/expandable-sections.css';
 @import 'components/payment-table.css';
-@import 'components/glassmorphic.css';
 
 /* 6. Page-Specific Styles */
-@import 'pages/index.css';
-@import 'pages/about.css';
-@import 'pages/testimonials.css';
+@import 'pages/page-modifiers.css';
 
-/* 7. Utilities */
-@import 'utilities.css';
-
-/* 8. Responsive - Must be last for proper cascade */
+/* 7. Responsive - Must be last for proper cascade */
 @import 'responsive.css'; 

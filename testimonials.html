@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Garamond&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
-<body>
+<body data-page="testimonials">
     <div id="header-placeholder"></div>
     
     <div class="hero-container">
@@ -63,7 +63,7 @@
                     const title = token.title || token.content.split('\n')[0];
                     const content = token.title ? token.content : token.content.split('\n').slice(1).join('\n');
                     
-                    return `<div class="expandable-section">
+                    return `<div class="expandable-section glass glass--strong">
                         <div class="expandable-header">
                             <h4>${title}</h4>
                             <div class="expand-icon"></div>

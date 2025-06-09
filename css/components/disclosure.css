@@ -1,0 +1,74 @@
+/* Disclosure Component - Base expand/collapse pattern */
+
+/* Base disclosure container */
+.disclosure {
+    border: none;
+    border-radius: 4px;
+    margin-bottom: var(--element-gap);
+}
+
+/* Disclosure header - clickable area */
+.disclosure__header {
+    padding: var(--element-gap) var(--space-6);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    border-radius: 4px 4px 0 0;
+    transition: background-color 0.2s ease;
+}
+
+.disclosure__header:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* Disclosure content - collapsible area */
+.disclosure__content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding: 0 var(--space-6);
+}
+
+.disclosure__content--expanded {
+    max-height: 2000px; /* Arbitrary large value */
+    padding: var(--element-gap) var(--space-6);
+    transition: max-height 0.6s ease-in;
+}
+
+/* Expand/collapse icon */
+.disclosure__icon {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: var(--space-6);
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.disclosure__icon::before,
+.disclosure__icon::after {
+    content: '';
+    position: absolute;
+    background-color: var(--link-color);
+    transition: transform 0.3s ease;
+}
+
+.disclosure__icon::before {
+    width: 24px;
+    height: 2px;
+}
+
+.disclosure__icon::after {
+    width: 2px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.disclosure--expanded .disclosure__icon::after {
+    transform: rotate(90deg);
+} 

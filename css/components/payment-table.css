@@ -3,21 +3,21 @@
 /* Payment policy container */
 .payment-policy-container {
     max-width: 800px;
-    margin: 30px auto;
+    margin: var(--space-6) auto;
     text-align: center;
-    padding: 0 20px;
+    padding: 0 var(--space-5);
     color: var(--text-color);
 }
 
 .payment-policy-title {
     font-family: 'Raleway', sans-serif;
-    margin-bottom: 45px;
+    margin-bottom: var(--space-8);
     color: var(--text-color);
 }
 
 /* Payment Table Styles */
 .payment-table-container {
-    margin: 30px auto;
+    margin: var(--space-6) auto;
     max-width: 800px;
     position: relative;
 }
@@ -27,7 +27,7 @@
     border-collapse: collapse;
     color: var(--text-color);
     font-family: 'Raleway', sans-serif;
-    margin-bottom: 20px;
+    margin-bottom: var(--space-5);
     position: relative;
 }
 
@@ -45,7 +45,7 @@
 }
 
 .payment-table th, .payment-table td {
-    padding: 15px;
+    padding: var(--space-4);
     text-align: left;
     border-bottom: 1px solid rgba(212, 175, 55, 0.3);
     vertical-align: top;
@@ -54,7 +54,7 @@
 .payment-table th {
     font-weight: bold;
     color: var(--text-color);
-    padding-bottom: 20px;
+    padding-bottom: var(--space-5);
 }
 
 .payment-table th:first-child,
@@ -79,14 +79,14 @@
 .payment-table .notes-col {
     text-align: left;
     width: 45%;
-    padding-left: 20px;
+    padding-left: var(--space-5);
     line-height: 1.6;
 }
 
 /* Style paragraphs within the notes column */
 .payment-table .notes-col p {
     margin-top: 0;
-    margin-bottom: 1rem;
+    margin-bottom: var(--element-gap);
 }
 
 .payment-table .notes-col p:last-child {
@@ -121,6 +121,6 @@
     font-size: 1rem;
     color: var(--text-color);
     max-width: 600px;
-    margin: 40px auto 0;
+    margin: var(--space-7) auto 0;
     line-height: 1.6;
 } 

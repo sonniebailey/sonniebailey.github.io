@@ -1,0 +1,43 @@
+/* Page Modifiers - Handle page-specific variations */
+
+/* Index Page Modifiers */
+[data-page="index"] main {
+    min-height: calc(100vh - (var(--header-height) * 2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    position: absolute;
+    top: var(--header-height);
+    bottom: var(--header-height);
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+[data-page="index"] .container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--container-padding);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+[data-page="index"] .button {
+    align-self: flex-start;
+    margin-top: var(--space-6);
+}
+
+/* About Page Modifiers */
+[data-page="about"] .glass-container h2 {
+    position: static;
+    display: block;
+    padding-right: 0;
+    margin-right: 0;
+    background: none;
+}
+
+/* Testimonials Page Modifiers */
+/* Currently no specific modifiers needed */ 

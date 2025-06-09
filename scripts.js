@@ -102,6 +102,7 @@ function generateTableOfContents() {
     const headings = content.querySelectorAll('h2'); // Changed from 'h2, h3'
     const toc = document.createElement('div');
     toc.id = 'table-of-contents';
+    toc.className = 'glass';
     
     const tocTitle = document.createElement('h2');
     tocTitle.textContent = 'Table of Contents';
