@@ -30,6 +30,10 @@
     margin-top: var(--space-6);
 }
 
+[data-page="index"] h1 {
+    font-size: 1.75rem;
+}
+
 /* About Page Modifiers */
 [data-page="about"] .glass-container h2 {
     position: static;
