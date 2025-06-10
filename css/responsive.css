@@ -132,6 +132,12 @@
     }
     
     /* Index page - Complete mobile/tablet redesign */
+    /* Ensure header and footer containers work properly */
+    [data-page="index"] header .container,
+    [data-page="index"] footer .container {
+        all: revert !important;
+    }
+    
     /* Reset main element completely */
     [data-page="index"] main {
         all: unset !important;
@@ -143,7 +149,7 @@
     }
     
     /* Glass panel - Transform centered approach */
-    [data-page="index"] .container {
+    [data-page="index"] main .container {
         all: unset !important;
         display: block !important;
         position: fixed !important;
