@@ -153,10 +153,17 @@
     
     /* Index page - Complete mobile/tablet redesign */
     /* Ensure header and footer containers work properly */
-    [data-page="index"] header .container,
-    [data-page="index"] footer .container {
+    [data-page="index"] header .container {
         all: revert !important;
     }
+    
+    /* Fix index page header/footer alignment for tablet */
+    [data-page="index"] header .container {
+        padding-left: var(--space-5) !important;
+        padding-right: var(--space-5) !important;
+    }
+    
+
     
     /* Reset main element completely */
     [data-page="index"] main {
@@ -252,6 +259,14 @@
     [data-page="index"] h1 {
         font-size: 1.4rem !important;
     }
+    
+    /* Fix index page header/footer alignment for mobile */
+    [data-page="index"] header .container {
+        padding-left: 30px !important;
+        padding-right: 30px !important;
+    }
+    
+
     
     /* Container adjustments */
     .container {

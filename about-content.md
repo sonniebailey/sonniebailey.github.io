@@ -94,7 +94,7 @@ Is the service worth $5,000 for *some* people? Yes.
 
 Is it expensive relative to how many financial planners charge? For many people, it's *cheap*.
 
-Many financial planners charge clients for ongoing services as a percentage of "assets under advice". This usually comes out from the clients' investment portfolio, which the adviser manages, and can be a little opaque in the sense that you may not easily notice what you are paying. If you are investing $1 million or more with the help of a financial planner, there's a good chance that you are already paying more than $5,000 per year for their services. If you have a portfolio of significantly more than this, then $5,000 is probably a fraction of what you are paying. 
+Many financial planners charge clients for ongoing services as a percentage of "assets under advice". This usually comes out from the clients' investment portfolio, which the adviser manages, and can be a little opaque in the sense that you may not easily notice what you are paying. If you are investing $1 million or more with the help of a financial planner, there's a good chance that you are already paying more than $5,000 per year for their services. If you have a portfolio of significantly more than this, then $5,000 is probably a fraction of what you are paying. You may not be aware of it, but it's quite possible that the fees you pay in relation to your investment assets are your biggest annual expense. 
 
 To be clear, Fairhaven Wealth's services are more limited in scope than the services that most financial planners provide. They are offering an ongoing service, and they are managing transactions and providing reporting on your behalf. These services are valuable and important for many people. However, for some people, I believe that Fairhaven Wealth provides a lot of the genuine value that they would receive from these ongoing engagements, and possibly with lower risk and potential conflict of interest. (Lower risk because there is no third party that can touch your finances; and less conflicts of interest because Fairhaven Wealth's remuneration model isn't linked to a particular class of financial assets, which could potentially lead to a bias in favour of investing these types of assets, or even a bias against spending or giving money away, when this might be appropriate.)
 
@@ -145,8 +145,6 @@ If, after the first conversation, it seems like there is additional information 
 #### What specific financial topics or areas do you typically cover in your conversations?
 
 It depends. 
-
-One of the reasons I've shifted from a more financial-oriented business model to this more general model is because I don't want the service to be constrained to simply discussing financial assets. 
 
 Historically, clients would often start our engagement thinking that their concern was working out how to invest in financial assets, when it became clear that there were other matters that were more important (even in terms of financial significance). For example, decisions relating to their professional lives or lifestyles.  
 

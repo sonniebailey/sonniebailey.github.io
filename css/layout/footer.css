@@ -132,13 +132,22 @@ footer a:not(.footer-mail-icon):not(.footer-phone-icon):hover {
     }
     
     .footer-content {
-        flex-wrap: wrap;
-        justify-content: center;
-        text-align: center;
+        justify-content: flex-start;
+        text-align: left;
+    }
+    
+    /* Match header mobile link spacing */
+    .footer-mail-icon {
+        margin: 0 15px 0 0;
     }
     
     footer a:not(.footer-mail-icon):not(.footer-phone-icon) {
         font-size: 0.8rem;
+        margin: 0 15px 0 0;
+    }
+    
+    .footer-phone-icon {
+        margin: 0 0 0 0;
     }
     
     .footer-content .divider {
