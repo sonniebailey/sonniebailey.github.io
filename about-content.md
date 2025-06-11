@@ -18,9 +18,9 @@ Fairhaven Wealth's primary service is a fixed-fee service for $5,000 including G
 
 You can also engage Fairhaven Wealth on an ad-hoc, hourly-rate basis, of $350 per hour.
 
-However you engage Fairahven Wealth, I don't touch your money in any way, shape, or form. It's up to you whether or not to make any changes to your financial situation (or life in general) as a result of our discussions. It's up to you to implement any advice I might provide. 
+I operate Fairhaven Wealth in a way so that I don't touch your money in any way, shape, or form. It's up to you whether or not to make any changes to your financial situation (or life in general) as a result of our discussions. It's up to you to implement any advice I might provide. 
 
-We provide one-off services. You can engage us again in the future, but that's up to you. We aren't looking to engage in an relationship that will involve regular, ongoing fees.
+You can engage us again in the future, but that's up to you. We aren't looking to engage in an relationship that will involve regular, ongoing fees.
 
 Fairhaven Wealth's service is terrific for some people, but not appropriate for most people. It's best suited for people who already have a good understanding of their situation and are (or want to be) engaged in their finances. It also tends to be most valuable for those with some degree of financial and/or professional security.
 
@@ -92,7 +92,7 @@ Is the service *worth* $5,000 for *most* people? No.
 
 Is the service worth $5,000 for *some* people? Yes. 
 
-Is it expensive relative to how many financial planners charge? For many people, it's cheap.
+Is it expensive relative to how many financial planners charge? For many people, it's *cheap*.
 
 Many financial planners charge clients for ongoing services as a percentage of "assets under advice". This usually comes out from the clients' investment portfolio, which the adviser manages, and can be a little opaque in the sense that you may not easily notice what you are paying. If you are investing $1 million or more with the help of a financial planner, there's a good chance that you are already paying more than $5,000 per year for their services. If you have a portfolio of significantly more than this, then $5,000 is probably a fraction of what you are paying. 
 
