@@ -86,11 +86,26 @@ footer a:not(.footer-mail-icon):not(.footer-phone-icon):hover {
     text-decoration: none;
 }
 
-/* Desktop consistency - match header alignment */
+/* Desktop consistency - match header alignment and fix vertical alignment */
 @media (min-width: 769px) {
     footer .container {
         padding-left: var(--space-9);
         padding-right: var(--space-9);
+    }
+    
+    /* Override any responsive rules that might affect desktop */
+    footer nav {
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 0 !important;
+    }
+    
+    .footer-content {
+        flex-direction: row !important;
+        justify-content: flex-start !important;
+        text-align: left !important;
+        flex-wrap: nowrap !important;
     }
 }
 

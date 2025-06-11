@@ -1,18 +1,18 @@
 ## Executive summary
 
-Fairhaven Wealth provides financial advice-related services to New Zealanders. Fairhaven Wealth charges $350 per hour, or offers a fixed-fee service for $5,000 (including GST). Our engagements are one-off, short-term, and we typically only work with one client at a time.
+Fairhaven Wealth provides financial advice-related services to New Zealanders. Fairhaven Wealth charges $350 per hour, or offers a fixed-fee service for $5,000 (including GST). Our engagements are one-off, short-term, and we typically work with very few clients at any point in time.
 
-When you deal with Fairhaven Wealth, you deal with Sonnie Bailey. You may be familiar from my writing on the [NZ Wealth & Risk blog](https:\\www.wealthandrisk.nz), where I published regularly for over 10 years.
+When you deal with Fairhaven Wealth, you deal with Sonnie Bailey. You may be familiar with my writing on the [NZ Wealth & Risk blog](https:\\www.wealthandrisk.nz), where I published regularly for over 10 years.
 
-I'm based in Christchurch but work with Kiwis throughout the country, primarily via Zoom, phone, and email.
+I'm based in Christchurch but work with Kiwis throughout the country via Zoom, phone, and email.
 
 ![Sonnie Bailey](sonnie.png)
 
-I provided services to many clients through Fairhaven Wealth between 2017 and 2023, but have recently taken time off to focus on my family. After this hiatus, I am offering services via Fairhaven Wealth again, in a slightly different capacity.
+I provided services to many clients through Fairhaven Wealth between 2017 and 2023, but recently took time off to focus on my family. After this hiatus, I am offering services via Fairhaven Wealth again, in a slightly different capacity.
 
-For one thing, I have committed to short-term engagements with clients, and will only work with one client at a time. Only once I've finished working with a client will I be open to working with another.
+For one thing, I have committed to short-term engagements with clients, and my intention is to only work actively with one or two clients at a time. Only once I've finished working with a client will I be open to working with another.
 
-In terms of how I operate: I operate Fairhaven Wealth in a fiercely independent manner and do everything I can to align my interests with those of my clients.
+I operate Fairhaven Wealth in a fiercely independent manner and do everything I can to align my interests with those of my clients.
 
 Fairhaven Wealth's primary service is a fixed-fee service for $5,000 including GST. This service consists of at least two three-hour conversations, usually held via Zoom or phone, and one or more emails touching on the content of these conversations. Having said this, you are only required to pay the full $5,000 if the service meets or exceeds your expectations. Your minimum commitment is $1,000, paid before the first meeting. Whether you pay more than this, and how much, depends on how you rate the the service on a 5-star basis. You only pay the full $5,000 if the service is a 5-star service. No strings attached.
 
