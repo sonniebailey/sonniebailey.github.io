@@ -300,7 +300,7 @@ Yes. A number of my clients already have relationships with advisers and engage 
 
 Because I provide an advice-only service, you can engage me and this won't interrupt your current engagement with your existing adviser at all.
 
-## I avoid conflicts of interest rather than manage them
+## Conflicts of interest: as independent as possible
 
 When I set up Fairhaven Wealth, I did it so I could follow what I call the "family and friends rule". That is, I would provide my clients with the same guidance  I'd provide to close friends and family members if they were in your position. In fact, I recommend what I would do if I were in your shoes.
 

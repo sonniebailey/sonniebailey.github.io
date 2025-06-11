@@ -52,6 +52,14 @@ nav a.current {
     display: none;
 }
 
+/* Desktop consistency - ensure all pages have same header alignment */
+@media (min-width: 769px) {
+    header .container {
+        padding-left: var(--space-9); /* Match desktop default padding */
+        padding-right: var(--space-9);
+    }
+}
+
 /* Tablet and Mobile styles */
 @media (max-width: 768px) {
     /* Tablet layout adjustments - match content padding */
