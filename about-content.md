@@ -179,7 +179,7 @@ The litimus test for whether the outcome from the engagement (documented or othe
 If you would prefer to engage Fairhaven Wealth for less structured, ad hoc services, then we will charge $350 per hour (including GST).
 
 I recommend engaging Fairhaven Wealth for the fixed-fee service for first-time clients. For previous clients, ad hoc services are likely to be appropirate unless your circumstances have changed significantly and/or you want a more comprehensive set of discussions.
-
+    
 ## Fairhaven Wealth doesn't lock you into ongoing service arrangements
 
 I love having ongoing relationships with clients. I love staying in touch with past clients and finding out how they are going after we've worked together. It is one of the most rewarding parts of what I do. I now count many of my former clients as friends.
