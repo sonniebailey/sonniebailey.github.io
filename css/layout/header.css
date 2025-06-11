@@ -30,6 +30,20 @@ header .container {
     box-shadow: none;
 }
 
+/* Mobile header adjustments */
+@media (max-width: 480px) {
+    header {
+        height: auto;
+        min-height: var(--header-height);
+        padding: 1rem 0;
+    }
+    
+    header .container {
+        padding: 0 1rem;
+    }
+}
+
+/* Legacy nav styles for backward compatibility */
 header nav {
     display: flex;
     justify-content: space-between;

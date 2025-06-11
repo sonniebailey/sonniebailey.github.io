@@ -1,5 +1,19 @@
 /* Navigation Styles */
 
+/* Logo link styling - should look like plain text */
+.logo a {
+    margin: 0;
+    text-decoration: none;
+    font-size: inherit;
+    color: inherit;
+    transition: none;
+}
+
+.logo a:hover {
+    transform: none;
+    text-decoration: none;
+}
+
 /* Navigation links */
 nav a {
     margin: 0 10px;
@@ -23,4 +37,106 @@ nav a.current {
     padding: 4px 8px;
     border: 1px solid var(--link-color);
     border-radius: 3px;
+}
+
+/* Phone number styling - matching nav links */
+.phone-number {
+    font-size: 0.9rem;
+    font-weight: normal;
+    margin: 0 10px;
+    color: inherit;
+}
+
+/* Phone icon - hidden on desktop */
+.phone-icon {
+    display: none;
+}
+
+/* Tablet and Mobile styles */
+@media (max-width: 768px) {
+    /* Tablet layout adjustments - match content padding */
+    header .container {
+        padding-left: var(--space-5); /* Match main content containers */
+        padding-right: var(--space-5);
+    }
+    
+    nav {
+        flex-wrap: wrap;
+        gap: 10px;
+        position: relative;
+    }
+    
+    /* Logo takes full width and aligns with nav links */
+    .logo {
+        width: 100%;
+        flex-basis: 100%;
+        text-align: left;
+        margin-left: 10px; /* Align with nav links margin */
+    }
+    
+    /* Navigation links left-aligned */
+    .nav-links {
+        flex: 1;
+        text-align: left;
+    }
+    
+    /* Adjust font size for tablet */
+    .nav-links a,
+    .phone-number {
+        font-size: 0.85rem;
+    }
+}
+
+/* Mobile specific styles */
+@media (max-width: 480px) {
+    /* Mobile layout adjustments */
+    header .container {
+        padding-left: 30px; /* Match index page glass container */
+        padding-right: 30px;
+    }
+    
+    /* Reset logo margin for mobile */
+    .logo {
+        margin-left: 0;
+    }
+    
+    /* Hide dividers and phone number on mobile */
+    .nav-links .divider,
+    .phone-number {
+        display: none;
+    }
+    
+    /* Smaller font on mobile */
+    .nav-links a {
+        font-size: 0.8rem;
+        margin: 0 15px 0 0;
+    }
+    
+    /* Show phone icon on mobile */
+    .phone-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 48px;
+        height: 48px;
+        border: 2px solid white;
+        border-radius: 50%;
+        color: white;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    .phone-icon:hover {
+        transform: translateY(-50%) scale(1.1);
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+    
+    .phone-icon svg {
+        width: 24px;
+        height: 24px;
+    }
 } 
