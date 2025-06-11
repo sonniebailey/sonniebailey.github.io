@@ -32,34 +32,104 @@ footer .container {
 
 footer nav {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     width: 100%;
     margin: 0;
-    justify-content: center; /* Center all footer content */
 }
 
-/* Footer-specific layout fixes */
-footer .nav-links {
+/* Footer content styling */
+.footer-content {
     display: flex;
-    justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
     width: 100%;
 }
 
-footer .logo {
-    display: none; /* Hide the empty logo div in footer */
+.footer-mail-icon,
+.footer-phone-icon {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    vertical-align: middle;
+    line-height: 1;
 }
 
-footer a {
+.footer-mail-icon:hover,
+.footer-phone-icon:hover {
+    transform: scale(1.1);
+}
+
+.footer-mail-icon svg,
+.footer-phone-icon svg {
+    width: 18px;
+    height: 18px;
+    vertical-align: text-top;
+}
+
+/* Footer navigation dividers */
+.footer-content .divider {
+    color: rgba(212, 175, 55, 0.3);
+    margin: 0 5px;
+}
+
+footer a:not(.footer-mail-icon):not(.footer-phone-icon) {
     margin: 0 10px;
     transition: transform 0.3s ease;
     font-size: 0.9rem;
     white-space: nowrap;
 }
 
-footer a:hover {
+footer a:not(.footer-mail-icon):not(.footer-phone-icon):hover {
     transform: scale(1.1);
     text-decoration: none;
+}
+
+/* Desktop consistency - match header alignment */
+@media (min-width: 769px) {
+    footer .container {
+        padding-left: var(--space-9);
+        padding-right: var(--space-9);
+    }
+}
+
+/* Tablet styles */
+@media (max-width: 768px) {
+    footer .container {
+        padding-left: var(--space-5);
+        padding-right: var(--space-5);
+    }
+    
+    footer a:not(.footer-mail-icon):not(.footer-phone-icon) {
+        font-size: 0.85rem;
+    }
+    
+    .footer-mail-icon svg,
+    .footer-phone-icon svg {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 480px) {
+    footer .container {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    
+    .footer-content {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    footer a:not(.footer-mail-icon):not(.footer-phone-icon) {
+        font-size: 0.8rem;
+    }
+    
+    .footer-content .divider {
+        display: none;
+    }
 } 
