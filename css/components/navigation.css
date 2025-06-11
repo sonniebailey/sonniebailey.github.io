@@ -47,6 +47,28 @@ nav a.current {
     color: inherit;
 }
 
+/* Mail icon styling - shown on desktop/tablet */
+.mail-icon {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    vertical-align: middle;
+    line-height: 1;
+}
+
+.mail-icon:hover {
+    transform: scale(1.1);
+}
+
+.mail-icon svg {
+    width: 18px;
+    height: 18px;
+    vertical-align: text-top;
+}
+
 /* Phone icon - hidden on desktop */
 .phone-icon {
     display: none;
@@ -93,6 +115,12 @@ nav a.current {
     .phone-number {
         font-size: 0.85rem;
     }
+    
+    /* Smaller mail icon on tablet */
+    .mail-icon svg {
+        width: 16px;
+        height: 16px;
+    }
 }
 
 /* Mobile specific styles */
@@ -108,9 +136,10 @@ nav a.current {
         margin-left: 0;
     }
     
-    /* Hide dividers and phone number on mobile */
+    /* Hide dividers, phone number, and mail icon on mobile */
     .nav-links .divider,
-    .phone-number {
+    .phone-number,
+    .mail-icon {
         display: none;
     }
     
