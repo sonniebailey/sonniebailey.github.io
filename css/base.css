@@ -170,7 +170,7 @@ header {
     border-bottom: none;
 }
 
-header .container {
+header > .container {
     height: 100%;
     display: flex;
     align-items: center;
@@ -190,7 +190,7 @@ header .container {
         padding: 1rem 0;
     }
 
-    header .container {
+    header > .container {
         padding: 0 1rem;
     }
 }
@@ -234,7 +234,7 @@ footer {
     border-top: none;
 }
 
-footer .container {
+footer > .container {
     height: 100%;
     display: flex;
     align-items: center;
@@ -306,7 +306,7 @@ footer a:not(.footer-mail-icon):not(.footer-phone-icon):hover {
 
 /* Desktop consistency - match header alignment and fix vertical alignment */
 @media (min-width: 769px) {
-    footer .container {
+    footer > .container {
         padding-left: var(--space-9);
         padding-right: var(--space-9);
     }
@@ -324,7 +324,7 @@ footer a:not(.footer-mail-icon):not(.footer-phone-icon):hover {
 
 /* Tablet styles */
 @media (max-width: 768px) {
-    footer .container {
+    footer > .container {
         padding-left: var(--space-5);
         padding-right: var(--space-5);
     }
@@ -342,7 +342,7 @@ footer a:not(.footer-mail-icon):not(.footer-phone-icon):hover {
 
 /* Mobile styles */
 @media (max-width: 480px) {
-    footer .container {
+    footer > .container {
         padding-left: 30px;
         padding-right: 30px;
     }

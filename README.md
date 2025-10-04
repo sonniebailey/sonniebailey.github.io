@@ -39,16 +39,7 @@ This codebase can serve as a starter for similar 3-10 page information websites,
 
 **Priority order for template readiness:**
 
-#### 1. **CSS Quality** ⚠️ HIGH PRIORITY
-- [ ] Remove 51 `!important` declarations (see `css/README.md` Phase 2)
-- [ ] Fix specificity issues causing brute-force overrides
-- [ ] Test: Index page mobile layout after refactoring
-
-**Why:** Bad CSS practices would propagate to all future projects
-
----
-
-#### 2. **Accessibility** ⚠️ MEDIUM PRIORITY
+#### 1. **Accessibility** ⚠️ MEDIUM PRIORITY
 - [ ] Add keyboard support to expandable sections (tabindex, Enter/Space keys)
 - [ ] Add skip link for keyboard navigation
 - [ ] Add ARIA landmarks (role="banner", role="main", etc.)
@@ -57,7 +48,7 @@ This codebase can serve as a starter for similar 3-10 page information websites,
 
 ---
 
-#### 3. **JavaScript Modernization** 🟡 LOW PRIORITY
+#### 2. **JavaScript Modernization** 🟡 LOW PRIORITY
 - [ ] Refactor promise chains to async/await
 - [ ] Implement module pattern (remove global scope pollution)
 - [ ] Add proper error handling
@@ -66,7 +57,7 @@ This codebase can serve as a starter for similar 3-10 page information websites,
 
 ---
 
-#### 4. **Security Hardening** 🟡 LOW PRIORITY
+#### 3. **Security Hardening** 🟡 LOW PRIORITY
 - [ ] Add Subresource Integrity (SRI) to external scripts
 - [ ] Implement Content Security Policy (CSP)
 - [ ] Document security considerations for future sites
@@ -75,7 +66,7 @@ This codebase can serve as a starter for similar 3-10 page information websites,
 
 ---
 
-#### 5. **Optional: Container Simplification** 🔵 OPTIONAL
+#### 4. **Optional: Container Simplification** 🔵 OPTIONAL
 - [ ] Consolidate 4 container patterns to 2 (see `css/README.md` Phase 3)
 - [ ] Update all HTML files if pursued
 
@@ -85,21 +76,18 @@ This codebase can serve as a starter for similar 3-10 page information websites,
 
 ## Template Readiness Checklist
 
-### ✅ Ready to Use NOW (70% template-ready)
+### ✅ Ready to Use NOW (85% template-ready)
 - Clean file structure
 - Good documentation
 - Reusable patterns
 - Theme variables
-
-### ⏳ Complete for "Good Template" (85% ready)
-- Fix CSS !important issues (Phase 2)
-- Add basic accessibility (skip link, ARIA)
+- Clean CSS (no !important, proper specificity)
 
 ### 🎯 Complete for "Professional Template" (100% ready)
-- All 9 items above
-- Passes WCAG Level A
-- Modern JavaScript patterns
-- Security hardened
+- Add basic accessibility (skip link, ARIA, keyboard support)
+- Modern JavaScript patterns (async/await, modules)
+- Security hardening (CSP, SRI)
+- Optional: Container pattern simplification
 
 ---
 
@@ -132,9 +120,9 @@ This codebase can serve as a starter for similar 3-10 page information websites,
    - Modify `header.html` and `footer.html`
    - Update `<title>` tags in HTML files
 
-4. **BEFORE going live, complete** (from checklist above):
-   - CSS Phase 2 (!important removal)
-   - Basic accessibility (items 2.1-2.3)
+4. **Consider adding** (from checklist above):
+   - Basic accessibility (items 1.1-1.3)
+   - Security hardening if handling sensitive data
 
 ---
 
@@ -144,10 +132,10 @@ This codebase can serve as a starter for similar 3-10 page information websites,
 
 **Summary:**
 1. ✅ ~~Magic numbers~~ → Resolved (converted to CSS variables)
-2. ⏳ 51 !important declarations → Phase 2 documented
-3. ⏳ Container pattern complexity → Phase 3 documented (optional)
-4. ⏳ No accessibility baseline → Items 2.1-2.3 above
-5. ⏳ No security hardening → Items 4.1-4.2 above
+2. ✅ ~~51 !important declarations~~ → Resolved (proper specificity)
+3. ⏳ Container pattern complexity → Optional (see `css/README.md` Phase 2)
+4. ⏳ No accessibility baseline → Items 1.1-1.3 above
+5. ⏳ No security hardening → Items 3.1-3.2 above
 
 ---
 

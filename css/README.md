@@ -176,29 +176,16 @@ All media queries organized by breakpoint:
 
 ## Current Issues Summary
 
-**Total identified issues:** 3 major categories (1 resolved, 2 remaining)
-**Estimated complexity reduction:** ~100 lines of CSS, 51 !important removals, 6+ new variables
+**Total identified issues:** 1 remaining (2 resolved)
 
-### Issue 1: !important Overuse (51 instances) ⏳ IN PROGRESS
-**Location:** responsive.css lines 91-96, 157-236
-**Root cause:** Index page mobile layout uses `all: unset !important` because base CSS specificity is too high
-**Status:** Awaiting Phase 2
-
-### Issue 2: Magic Numbers (Not Variables) ✅ RESOLVED
-**Problem:** Repeated hardcoded values that should be CSS variables
-- ~~`rgba(0, 0, 0, 0.1)` - used 6 times (dark overlay - light)~~ → `var(--overlay-light)`
-- ~~`rgba(0, 0, 0, 0.2)` - used 3 times (dark overlay - medium)~~ → `var(--overlay-medium)`
-- ~~`rgba(0, 0, 0, 0.3)` - used 2 times (dark overlay - strong)~~ → `var(--overlay-strong)`
-- ~~`border-radius: 10px` - used 7 times~~ → `var(--border-radius-standard)`
-- ~~`box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1)` - used 4 times~~ → `var(--shadow-standard)`
-**Completed:** Phase 1 refactoring
-
-### Issue 3: Container Pattern Complexity
+### Issue 1: Container Pattern Complexity (Optional)
 **Problem:** 4 different container patterns doing similar things
 - `.container` - base container
 - `.glass-container` - container with glass effect
-- `header .container` - header-specific overrides
-- `footer .container` - footer-specific overrides
+- `header > .container` - header-specific overrides
+- `footer > .container` - footer-specific overrides
+
+**Note:** This is optional - current patterns work well, only pursue if simplification is desired.
 
 ---
 
@@ -360,18 +347,7 @@ With higher specificity:
 - [x] Delete redundant variables from variables.css (3 deleted: --glass-bg-color, --glass-bg-color-subtle, --glass-shadow)
 - [x] Test: Visual regression check (identical appearance, cleaner code)
 
-### Phase 2: !important Removal (Medium Risk)
-- [ ] Update base.css: Change `header .container` → `header > .container`
-- [ ] Update base.css: Change `footer .container` → `footer > .container`
-- [ ] Rewrite responsive.css lines 169-199 with `body[data-page="index"]` higher specificity
-- [ ] Remove all !important from index page mobile styles
-- [ ] Fix TOC overrides (lines 91-96) with higher specificity
-- [ ] Test: Index page mobile (< 768px) - glass card centered correctly
-- [ ] Test: Index page tablet (768px) - glass card centered correctly
-- [ ] Test: About/Testimonials pages mobile - no regressions
-- [ ] Count: Verify 0 !important in responsive.css (was 51)
-
-### Phase 3: Container Simplification (Optional, High Risk)
+### Phase 2: Container Simplification (Optional, High Risk)
 - [ ] Decision: Option A (merge) or Option B (keep current)
 - [ ] If Option A: Update all HTML files (3 pages)
 - [ ] If Option A: Remove `.glass-container` from CSS
@@ -408,17 +384,12 @@ grep "border-radius: [0-9]" css/*.css
 
 ## Success Metrics
 
-**Before refactoring:**
-- !important count: 51
-- Magic number instances: ~20
-- CSS variables: 11
-- Total CSS lines: ~1,400
-
-**After refactoring (target):**
+**After refactoring:**
 - !important count: 0 ✓
 - Magic number instances: 0 ✓
-- CSS variables: 17+ ✓
-- Total CSS lines: ~1,300 (reduction via deduplication) ✓
+- CSS variables: 17 ✓
+- Total CSS lines: ~1,400
+- Specificity issues: Resolved ✓
 
 **Maintainability improvement:**
 - Single source of truth for colors/spacing/shadows
@@ -452,14 +423,13 @@ If issues arise during Phase 2:
 ## Notes & Warnings
 
 **⚠️ Critical:**
-- Always test index page mobile after changes - it's the most fragile
-- Never remove !important without increasing specificity elsewhere
+- Always test index page mobile after changes
 - Test on actual mobile devices, not just browser DevTools
 
 **💡 Tips:**
-- Do Phase 1 first - it's safe and gives quick wins
-- Phase 2 requires careful testing but biggest improvement
-- Phase 3 is optional - only if you want perfect cleanliness
+- CSS specificity managed with direct child selectors (`>`)
+- Higher specificity via `body[data-page="..."]` prefix for page-specific styles
+- Phase 2 (container simplification) is optional - only if you want perfect cleanliness
 
 **📝 After completion:**
 - Update this section with "COMPLETED" dates
