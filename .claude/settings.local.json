@@ -3,7 +3,10 @@
     "allow": [
       "Bash(ls:*)",
       "Bash(awk:*)",
-      "Bash(identify:*)"
+      "Bash(identify:*)",
+      "Bash(find:*)",
+      "Bash(for file in css/components/*.css)",
+      "Bash(done)"
     ],
     "deny": [],
     "ask": []

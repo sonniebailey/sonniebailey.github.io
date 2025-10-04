@@ -1,30 +1,22 @@
-/* Main CSS File - Import all modular stylesheets in correct order */
+/* ============================================
+   MAIN CSS - Import Manager
+   Consolidated structure for small sites
+   ============================================ */
 
 /* 1. Variables and Theme */
 @import 'variables.css';
 
-/* 2. Base and Reset Styles */
+/* 2. Base Styles (reset, typography, layouts) */
 @import 'base.css';
 
-/* 3. Typography */
-@import 'typography.css';
+/* 3. Core Components (buttons, glass, navigation) */
+@import 'components-core.css';
 
-/* 4. Layout Components */
-@import 'layout/header.css';
-@import 'layout/footer.css';
-@import 'layout/containers.css';
+/* 4. Content Components (expandables, TOC, tables, disclosure) */
+@import 'components-content.css';
 
-/* 5. Components */
-@import 'components/buttons.css';
-@import 'components/navigation.css';
-@import 'components/glassmorphic.css';
-@import 'components/disclosure.css';
-@import 'components/table-of-contents.css';
-@import 'components/expandable-sections.css';
-@import 'components/payment-table.css';
+/* 5. Page-Specific Styles */
+@import 'page-modifiers.css';
 
-/* 6. Page-Specific Styles */
-@import 'pages/page-modifiers.css';
-
-/* 7. Responsive - Must be last for proper cascade */
-@import 'responsive.css'; 
+/* 6. Responsive - Must be last for proper cascade */
+@import 'responsive.css';

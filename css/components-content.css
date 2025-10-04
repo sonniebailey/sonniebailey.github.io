@@ -1,0 +1,362 @@
+/* ============================================
+   CONTENT COMPONENTS
+   Consolidated: disclosure, expandable-sections,
+                 table-of-contents, payment-table
+   Used for page content/features
+   ============================================ */
+
+/* ==================== DISCLOSURE (BASE PATTERN) ==================== */
+
+/* Base disclosure container */
+.disclosure {
+    border: none;
+    border-radius: 4px;
+    margin-bottom: var(--element-gap);
+}
+
+/* Disclosure header - clickable area */
+.disclosure__header {
+    padding: var(--element-gap) var(--space-6);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    border-radius: 4px 4px 0 0;
+    transition: background-color 0.2s ease;
+}
+
+.disclosure__header:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* Disclosure content - collapsible area */
+.disclosure__content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding: 0 var(--space-6);
+}
+
+.disclosure__content--expanded {
+    max-height: 2000px; /* Arbitrary large value */
+    padding: var(--element-gap) var(--space-6);
+    transition: max-height 0.6s ease-in;
+}
+
+/* Expand/collapse icon */
+.disclosure__icon {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: var(--space-6);
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.disclosure__icon::before,
+.disclosure__icon::after {
+    content: '';
+    position: absolute;
+    background-color: var(--link-color);
+    transition: transform 0.3s ease;
+}
+
+.disclosure__icon::before {
+    width: 24px;
+    height: 2px;
+}
+
+.disclosure__icon::after {
+    width: 2px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.disclosure--expanded .disclosure__icon::after {
+    transform: rotate(90deg);
+}
+
+/* ==================== EXPANDABLE SECTIONS ==================== */
+
+/* Legacy support - map old classes to disclosure pattern */
+.expandable-section {
+    border: none;
+    border-radius: 4px;
+    margin-bottom: var(--element-gap);
+}
+
+.expandable-header {
+    padding: var(--element-gap) var(--space-6);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.1);
+    position: relative;
+    border-radius: 4px 4px 0 0;
+}
+
+.expandable-header:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.expandable-header h3,
+.expandable-header h4 {
+    margin: 0;
+    padding-right: var(--space-7);
+}
+
+.expandable-header h4 {
+    margin: 0; /* Override default h4 margins only within expandable headers */
+}
+
+.expandable-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding: 0 var(--space-6);
+}
+
+.expandable-content.expanded {
+    max-height: 2000px;
+    padding: var(--element-gap) var(--space-6);
+    transition: max-height 0.6s ease-in;
+}
+
+/* Expand icon */
+.expand-icon {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: var(--space-7);
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.expand-icon::before,
+.expand-icon::after {
+    content: '';
+    position: absolute;
+    background-color: var(--link-color);
+    transition: transform 0.3s ease;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.expand-icon::before {
+    width: 24px;
+    height: 2px;
+}
+
+.expand-icon::after {
+    width: 2px;
+    height: 24px;
+}
+
+.expanded .expand-icon::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+/* Inside glass containers - use strong glass variant */
+.glass-container .expandable-section {
+    background-color: var(--glass-bg-color-strong);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: none;
+    margin-bottom: var(--section-gap);
+}
+
+.glass-container .expandable-header {
+    border-radius: 10px 10px 0 0;
+    background: rgba(0, 0, 0, 0.2);
+    padding: var(--element-gap) var(--space-7);
+}
+
+.glass-container .expandable-content {
+    padding: 0 var(--space-7);
+}
+
+.glass-container .expandable-content.expanded {
+    padding: var(--element-gap) var(--space-7) var(--space-6) var(--space-7);
+}
+
+/* ==================== TABLE OF CONTENTS ==================== */
+
+#table-of-contents {
+    margin: var(--section-gap) 0;
+    padding: var(--section-gap) var(--space-7);
+    border: none;
+    border-radius: 10px;
+}
+
+#table-of-contents ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+#table-of-contents > ul {
+    column-gap: var(--space-6);
+}
+
+#table-of-contents li {
+    margin: var(--inline-gap) 0;
+    break-inside: avoid-column;
+    line-height: 1.4;
+}
+
+/* Indent nested levels */
+#table-of-contents ul ul li {
+    padding-left: var(--section-gap);
+}
+
+#table-of-contents h2 {
+    margin-top: 0;
+    margin-bottom: var(--element-gap);
+    padding-top: 0;
+}
+
+/* Apply glass effect via class in HTML */
+/* When inside a glass container, use stronger variant */
+.glass-container #table-of-contents {
+    background-color: var(--glass-bg-color-strong);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: none;
+    padding: var(--section-gap) var(--space-7);
+}
+
+/* ==================== PAYMENT TABLE ==================== */
+
+/* Payment policy container */
+.payment-policy-container {
+    max-width: 800px;
+    margin: var(--space-6) auto;
+    text-align: center;
+    padding: 0 var(--space-5);
+    color: var(--text-color);
+}
+
+.payment-policy-title {
+    font-family: 'Raleway', sans-serif;
+    margin-bottom: var(--space-8);
+    color: var(--text-color);
+}
+
+/* Payment Table Styles */
+.payment-table-container {
+    margin: var(--space-6) auto;
+    max-width: 800px;
+    position: relative;
+}
+
+.payment-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: var(--text-color);
+    font-family: 'Raleway', sans-serif;
+    margin-bottom: var(--space-5);
+    position: relative;
+}
+
+/* Opacity settings for different rows */
+.payment-table thead tr {
+    opacity: 0.95;
+}
+
+.payment-table tbody tr:first-child { /* 1-star row */
+    opacity: 0.8;
+}
+
+.payment-table tbody tr:not(:first-child) { /* 2-5 star rows */
+    opacity: 0.95;
+}
+
+.payment-table th, .payment-table td {
+    padding: var(--space-4);
+    text-align: left;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    vertical-align: top;
+}
+
+.payment-table th {
+    font-weight: bold;
+    color: var(--text-color);
+    padding-bottom: var(--space-5);
+}
+
+.payment-table th:first-child,
+.payment-table td:first-child {
+    padding-left: 0;
+}
+
+/* Center align specific columns */
+.payment-table th.stars-col,
+.payment-table td.stars-col,
+.payment-table th.payment-col,
+.payment-table td.payment-col {
+    text-align: center;
+}
+
+.payment-table .stars {
+    color: var(--link-color);
+    font-size: 18px;
+}
+
+/* Payment notes column */
+.payment-table .notes-col {
+    text-align: left;
+    width: 45%;
+    padding-left: var(--space-5);
+    line-height: 1.6;
+}
+
+/* Style paragraphs within the notes column */
+.payment-table .notes-col p {
+    margin-top: 0;
+    margin-bottom: var(--element-gap);
+}
+
+.payment-table .notes-col p:last-child {
+    margin-bottom: 0;
+}
+
+/* Border handling for last rows */
+.payment-table tbody tr:last-child td {
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.payment-table tbody tr td[rowspan]:last-child {
+    border-bottom: none;
+}
+
+.payment-table tbody tr:nth-last-child(-n+4):first-child td:not([rowspan]) {
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.upfront-note {
+    color: var(--link-color);
+    font-weight: bold;
+}
+
+.remaining-amount {
+    color: var(--link-color);
+    font-weight: bold;
+}
+
+.payment-policy-description {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1rem;
+    color: var(--text-color);
+    max-width: 600px;
+    margin: var(--space-7) auto 0;
+    line-height: 1.6;
+}

@@ -1,4 +1,9 @@
-/* Base and Reset Styles */
+/* ============================================
+   BASE STYLES
+   Consolidated: base, typography, layouts
+   ============================================ */
+
+/* ==================== RESET & BASE ==================== */
 
 /* General Reset */
 body, html {
@@ -38,4 +43,330 @@ main {
     border-radius: 10px;
     margin: var(--space-6) 0;
     display: block;
-} 
+}
+
+/* ==================== TYPOGRAPHY ==================== */
+
+/* Headings - Add scroll margin for fixed header */
+h1, h2, h3, h4, h5, h6 {
+    scroll-margin-top: calc(var(--header-height) + var(--container-padding));
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: var(--space-6);
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin-top: var(--space-7);
+    margin-bottom: var(--section-gap);
+    padding-bottom: var(--inline-gap);
+    color: var(--link-color);
+    font-weight: 700;
+    border-bottom: none;
+    letter-spacing: 0.5px;
+}
+
+h3 {
+    font-size: 1.6rem;
+    margin-top: var(--space-7);
+    margin-bottom: var(--section-gap);
+}
+
+h4 {
+    font-size: 1.4rem;
+    margin-top: var(--space-7);
+    margin-bottom: var(--section-gap);
+    font-weight: normal;
+}
+
+/* Paragraphs */
+p {
+    font-size: 1rem;
+    line-height: 2;
+    margin-bottom: var(--section-gap);
+}
+
+/* Lists */
+ul, ol {
+    margin-bottom: var(--section-gap);
+    padding-left: var(--space-6);
+}
+
+li {
+    margin-bottom: var(--inline-gap);
+}
+
+/* Special h2 positioning styles */
+h2 + p, h2 + div {
+    position: static;
+    z-index: auto;
+}
+
+/* ==================== LAYOUT: CONTAINERS ==================== */
+
+/* Base container */
+.container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    padding: var(--space-5) var(--space-5);
+    box-sizing: border-box;
+    background-color: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-radius: 10px;
+    border: none;
+    box-shadow: none;
+}
+
+/* Hero container for background image */
+.hero-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+}
+
+#bgImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--overlay-color);
+}
+
+/* ==================== LAYOUT: HEADER ==================== */
+
+header {
+    background-color: var(--glass-bg-color);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: none;
+    top: 0;
+    border-bottom: none;
+}
+
+header .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 1rem var(--padding-desktop);
+    background-color: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: none;
+    box-shadow: none;
+}
+
+/* Mobile header adjustments */
+@media (max-width: 480px) {
+    header {
+        height: auto;
+        min-height: var(--header-height);
+        padding: 1rem 0;
+    }
+
+    header .container {
+        padding: 0 1rem;
+    }
+}
+
+/* Legacy nav styles for backward compatibility */
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+}
+
+.logo {
+    text-align: left;
+    flex: 1;
+}
+
+.nav-links {
+    text-align: right;
+    flex: 2;
+}
+
+/* ==================== LAYOUT: FOOTER ==================== */
+
+footer {
+    background-color: var(--glass-bg-color);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: none;
+    bottom: 0;
+    border-top: none;
+}
+
+footer .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 1rem var(--padding-desktop);
+    background-color: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: none;
+    box-shadow: none;
+}
+
+footer nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+}
+
+/* Footer content styling */
+.footer-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.footer-mail-icon,
+.footer-phone-icon {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    vertical-align: middle;
+    line-height: 0.9rem;
+}
+
+.footer-mail-icon:hover,
+.footer-phone-icon:hover {
+    transform: scale(1.1);
+}
+
+.footer-mail-icon svg,
+.footer-phone-icon svg {
+    width: 18px;
+    height: 18px;
+    vertical-align: text-top;
+}
+
+/* Footer navigation dividers */
+.footer-content .divider {
+    color: rgba(212, 175, 55, 0.3);
+    margin: 0 5px;
+    line-height: 0.9rem;
+}
+
+footer a:not(.footer-mail-icon):not(.footer-phone-icon) {
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+    font-size: 0.9rem;
+    line-height: 0.9rem;
+    white-space: nowrap;
+}
+
+footer a:not(.footer-mail-icon):not(.footer-phone-icon):hover {
+    transform: scale(1.1);
+    text-decoration: none;
+}
+
+/* Desktop consistency - match header alignment and fix vertical alignment */
+@media (min-width: 769px) {
+    footer .container {
+        padding-left: var(--space-9);
+        padding-right: var(--space-9);
+    }
+
+    /* Keep footer left-aligned like header nav links */
+    footer nav {
+        justify-content: flex-start;
+    }
+
+    .footer-content {
+        justify-content: flex-start;
+        text-align: left;
+    }
+}
+
+/* Tablet styles */
+@media (max-width: 768px) {
+    footer .container {
+        padding-left: var(--space-5);
+        padding-right: var(--space-5);
+    }
+
+    footer a:not(.footer-mail-icon):not(.footer-phone-icon) {
+        font-size: 0.85rem;
+    }
+
+    .footer-mail-icon svg,
+    .footer-phone-icon svg {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 480px) {
+    footer .container {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .footer-content {
+        justify-content: flex-start;
+        text-align: left;
+    }
+
+    /* Match header mobile link spacing */
+    .footer-mail-icon {
+        margin: 0 15px 0 0;
+    }
+
+    footer a:not(.footer-mail-icon):not(.footer-phone-icon) {
+        font-size: 0.8rem;
+        margin: 0 15px 0 0;
+    }
+
+    .footer-phone-icon {
+        margin: 0 0 0 0;
+    }
+
+    .footer-content .divider {
+        display: none;
+    }
+}

@@ -1,4 +1,78 @@
-/* Navigation Styles */
+/* ============================================
+   CORE COMPONENTS
+   Consolidated: buttons, glassmorphic, navigation
+   Used on every page
+   ============================================ */
+
+/* ==================== BUTTONS ==================== */
+
+.button {
+    margin-top: var(--space-6);
+    display: inline-block;
+    padding: var(--space-4) var(--space-6);
+    background-color: rgba(212, 175, 55, 0.5); /* More transparent gold */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.button:hover {
+    background-color: rgba(212, 175, 55, 0.8); /* More solid on hover */
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3); /* Golden glow */
+}
+
+.button-container {
+    display: flex;
+    gap: var(--element-gap);
+}
+
+/* ==================== GLASSMORPHIC ==================== */
+
+/* Base glass effect */
+.glass {
+    background-color: var(--glass-bg-color);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border-radius: 10px;
+    border: none;
+    box-shadow: var(--glass-shadow);
+}
+
+/* Modifier: Strong glass effect for nested elements */
+.glass--strong {
+    background-color: var(--glass-bg-color-strong);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: none;
+}
+
+/* Modifier: Subtle glass effect */
+.glass--subtle {
+    background-color: var(--glass-bg-color-subtle);
+    box-shadow: none;
+}
+
+/* Legacy support - redirect old class to new */
+.glass-container {
+    background-color: var(--glass-bg-color);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border-radius: 10px;
+    border: none;
+    box-shadow: var(--glass-shadow);
+}
+
+/* ==================== NAVIGATION ==================== */
 
 /* Logo link styling - should look like plain text */
 .logo a {
@@ -89,13 +163,13 @@ nav a.current {
         padding-left: var(--space-5); /* Match main content containers */
         padding-right: var(--space-5);
     }
-    
+
     nav {
         flex-wrap: wrap;
         gap: 10px;
         position: relative;
     }
-    
+
     /* Logo takes full width and aligns with nav links */
     .logo {
         width: 100%;
@@ -103,19 +177,19 @@ nav a.current {
         text-align: left;
         margin-left: 10px; /* Align with nav links margin */
     }
-    
+
     /* Navigation links left-aligned */
     .nav-links {
         flex: 1;
         text-align: left;
     }
-    
+
     /* Adjust font size for tablet */
     .nav-links a,
     .phone-number {
         font-size: 0.85rem;
     }
-    
+
     /* Smaller mail icon on tablet */
     .mail-icon svg {
         width: 16px;
@@ -130,25 +204,25 @@ nav a.current {
         padding-left: 30px; /* Match index page glass container */
         padding-right: 30px;
     }
-    
+
     /* Reset logo margin for mobile */
     .logo {
         margin-left: 0;
     }
-    
+
     /* Hide dividers, phone number, and mail icon on mobile */
     .nav-links .divider,
     .phone-number,
     .mail-icon {
         display: none;
     }
-    
+
     /* Smaller font on mobile */
     .nav-links a {
         font-size: 0.8rem;
         margin: 0 15px 0 0;
     }
-    
+
     /* Show phone icon on mobile */
     .phone-icon {
         display: flex;
@@ -166,14 +240,14 @@ nav a.current {
         transition: transform 0.3s ease, background-color 0.3s ease;
         background-color: rgba(255, 255, 255, 0.1);
     }
-    
+
     .phone-icon:hover {
         transform: translateY(-50%) scale(1.1);
         background-color: rgba(255, 255, 255, 0.2);
     }
-    
+
     .phone-icon svg {
         width: 24px;
         height: 24px;
     }
-} 
+}
