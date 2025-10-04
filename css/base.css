@@ -40,7 +40,7 @@ main {
 .content-image {
     max-width: 100%;
     height: auto;
-    border-radius: 10px;
+    border-radius: var(--border-radius-standard);
     margin: var(--space-6) 0;
     display: block;
 }
@@ -116,7 +116,7 @@ h2 + p, h2 + div {
     background-color: transparent;
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
-    border-radius: 10px;
+    border-radius: var(--border-radius-standard);
     border: none;
     box-shadow: none;
 }
@@ -153,7 +153,7 @@ h2 + p, h2 + div {
 /* ==================== LAYOUT: HEADER ==================== */
 
 header {
-    background-color: var(--glass-bg-color);
+    background-color: var(--overlay-medium);
     backdrop-filter: blur(var(--glass-blur));
     -webkit-backdrop-filter: blur(var(--glass-blur));
     position: fixed;
@@ -164,7 +164,7 @@ header {
     align-items: center;
     justify-content: center;
     padding: 0;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-standard);
     border: none;
     top: 0;
     border-bottom: none;
@@ -217,7 +217,7 @@ header nav {
 /* ==================== LAYOUT: FOOTER ==================== */
 
 footer {
-    background-color: var(--glass-bg-color);
+    background-color: var(--overlay-medium);
     backdrop-filter: blur(var(--glass-blur));
     -webkit-backdrop-filter: blur(var(--glass-blur));
     position: fixed;
@@ -228,7 +228,7 @@ footer {
     align-items: center;
     justify-content: center;
     padding: 0;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-standard);
     border: none;
     bottom: 0;
     border-top: none;

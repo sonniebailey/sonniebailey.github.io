@@ -188,11 +188,11 @@
         padding: 40px 30px !important;
         
         /* Glass effect */
-        background-color: rgba(0, 0, 0, 0.2) !important;
+        background-color: var(--overlay-medium) !important;
         backdrop-filter: blur(10px) !important;
         -webkit-backdrop-filter: blur(10px) !important;
-        border-radius: 10px !important;
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+        border-radius: var(--border-radius-standard) !important;
+        box-shadow: var(--shadow-standard) !important;
         
         /* Re-enable interactions */
         pointer-events: auto !important;

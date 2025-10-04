@@ -40,12 +40,12 @@
 
 /* Base glass effect */
 .glass {
-    background-color: var(--glass-bg-color);
+    background-color: var(--overlay-medium);
     backdrop-filter: blur(var(--glass-blur));
     -webkit-backdrop-filter: blur(var(--glass-blur));
-    border-radius: 10px;
+    border-radius: var(--border-radius-standard);
     border: none;
-    box-shadow: var(--glass-shadow);
+    box-shadow: var(--shadow-standard);
 }
 
 /* Modifier: Strong glass effect for nested elements */
@@ -58,18 +58,18 @@
 
 /* Modifier: Subtle glass effect */
 .glass--subtle {
-    background-color: var(--glass-bg-color-subtle);
+    background-color: var(--overlay-light);
     box-shadow: none;
 }
 
 /* Legacy support - redirect old class to new */
 .glass-container {
-    background-color: var(--glass-bg-color);
+    background-color: var(--overlay-medium);
     backdrop-filter: blur(var(--glass-blur));
     -webkit-backdrop-filter: blur(var(--glass-blur));
-    border-radius: 10px;
+    border-radius: var(--border-radius-standard);
     border: none;
-    box-shadow: var(--glass-shadow);
+    box-shadow: var(--shadow-standard);
 }
 
 /* ==================== NAVIGATION ==================== */

@@ -10,7 +10,7 @@
 /* Base disclosure container */
 .disclosure {
     border: none;
-    border-radius: 4px;
+    border-radius: var(--border-radius-small);
     margin-bottom: var(--element-gap);
 }
 
@@ -22,12 +22,12 @@
     justify-content: space-between;
     align-items: center;
     position: relative;
-    border-radius: 4px 4px 0 0;
+    border-radius: var(--border-radius-small) var(--border-radius-small) 0 0;
     transition: background-color 0.2s ease;
 }
 
 .disclosure__header:hover {
-    background: rgba(0, 0, 0, 0.1);
+    background: var(--overlay-light);
 }
 
 /* Disclosure content - collapsible area */
@@ -85,7 +85,7 @@
 /* Legacy support - map old classes to disclosure pattern */
 .expandable-section {
     border: none;
-    border-radius: 4px;
+    border-radius: var(--border-radius-small);
     margin-bottom: var(--element-gap);
 }
 
@@ -95,13 +95,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(0, 0, 0, 0.1);
+    background: var(--overlay-light);
     position: relative;
-    border-radius: 4px 4px 0 0;
+    border-radius: var(--border-radius-small) var(--border-radius-small) 0 0;
 }
 
 .expandable-header:hover {
-    background: rgba(0, 0, 0, 0.3);
+    background: var(--overlay-strong);
 }
 
 .expandable-header h3,
@@ -175,8 +175,8 @@
 }
 
 .glass-container .expandable-header {
-    border-radius: 10px 10px 0 0;
-    background: rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius-standard) var(--border-radius-standard) 0 0;
+    background: var(--overlay-medium);
     padding: var(--element-gap) var(--space-7);
 }
 
@@ -194,7 +194,7 @@
     margin: var(--section-gap) 0;
     padding: var(--section-gap) var(--space-7);
     border: none;
-    border-radius: 10px;
+    border-radius: var(--border-radius-standard);
 }
 
 #table-of-contents ul {

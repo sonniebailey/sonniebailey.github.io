@@ -176,20 +176,22 @@ All media queries organized by breakpoint:
 
 ## Current Issues Summary
 
-**Total identified issues:** 3 major categories
+**Total identified issues:** 3 major categories (1 resolved, 2 remaining)
 **Estimated complexity reduction:** ~100 lines of CSS, 51 !important removals, 6+ new variables
 
-### Issue 1: !important Overuse (51 instances)
+### Issue 1: !important Overuse (51 instances) ⏳ IN PROGRESS
 **Location:** responsive.css lines 91-96, 157-236
 **Root cause:** Index page mobile layout uses `all: unset !important` because base CSS specificity is too high
+**Status:** Awaiting Phase 2
 
-### Issue 2: Magic Numbers (Not Variables)
+### Issue 2: Magic Numbers (Not Variables) ✅ RESOLVED
 **Problem:** Repeated hardcoded values that should be CSS variables
-- `rgba(0, 0, 0, 0.1)` - used 6 times (dark overlay - light)
-- `rgba(0, 0, 0, 0.2)` - used 3 times (dark overlay - medium)
-- `rgba(0, 0, 0, 0.3)` - used 2 times (dark overlay - strong)
-- `border-radius: 10px` - used 7 times
-- `box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1)` - used 4 times
+- ~~`rgba(0, 0, 0, 0.1)` - used 6 times (dark overlay - light)~~ → `var(--overlay-light)`
+- ~~`rgba(0, 0, 0, 0.2)` - used 3 times (dark overlay - medium)~~ → `var(--overlay-medium)`
+- ~~`rgba(0, 0, 0, 0.3)` - used 2 times (dark overlay - strong)~~ → `var(--overlay-strong)`
+- ~~`border-radius: 10px` - used 7 times~~ → `var(--border-radius-standard)`
+- ~~`box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1)` - used 4 times~~ → `var(--shadow-standard)`
+**Completed:** Phase 1 refactoring
 
 ### Issue 3: Container Pattern Complexity
 **Problem:** 4 different container patterns doing similar things
@@ -342,15 +344,21 @@ With higher specificity:
 
 ## Implementation Checklist
 
-### Phase 1: Variables (Safe, Quick Win)
-- [ ] Add overlay/shadow/radius variables to variables.css
-- [ ] Replace `rgba(0, 0, 0, 0.1)` → `var(--overlay-light)` (6 instances)
-- [ ] Replace `rgba(0, 0, 0, 0.2)` → `var(--overlay-medium)` (3 instances)
-- [ ] Replace `rgba(0, 0, 0, 0.3)` → `var(--overlay-strong)` (2 instances)
-- [ ] Replace `border-radius: 10px` → `var(--border-radius-standard)` (7 instances)
-- [ ] Replace `border-radius: 4px` → `var(--border-radius-small)` (instances)
-- [ ] Replace shadow values with `var(--shadow-standard)` (4 instances)
-- [ ] Test: Visual regression check (should look identical)
+### Phase 1: Variables (Safe, Quick Win) ✅ COMPLETED
+
+- [x] Add overlay/shadow/radius variables to variables.css
+- [x] Replace hardcoded `rgba(0, 0, 0, 0.1)` → `var(--overlay-light)` (2 instances)
+- [x] Replace hardcoded `rgba(0, 0, 0, 0.2)` → `var(--overlay-medium)` (2 instances)
+- [x] Replace hardcoded `rgba(0, 0, 0, 0.3)` → `var(--overlay-strong)` (1 instance)
+- [x] Replace `border-radius: 10px` → `var(--border-radius-standard)` (7 instances)
+- [x] Replace `border-radius: 4px` → `var(--border-radius-small)` (4 instances)
+- [x] Replace hardcoded shadows → `var(--shadow-standard)` (3 instances)
+- [x] Consolidate duplicate variables:
+  - `var(--glass-bg-color)` → `var(--overlay-medium)` (4 instances)
+  - `var(--glass-bg-color-subtle)` → `var(--overlay-light)` (1 instance)
+  - `var(--glass-shadow)` → `var(--shadow-standard)` (2 instances)
+- [x] Delete redundant variables from variables.css (3 deleted: --glass-bg-color, --glass-bg-color-subtle, --glass-shadow)
+- [x] Test: Visual regression check (identical appearance, cleaner code)
 
 ### Phase 2: !important Removal (Medium Risk)
 - [ ] Update base.css: Change `header .container` → `header > .container`
