@@ -12,6 +12,14 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(response => response.text())
         .then(data => {
             document.getElementById('header-placeholder').innerHTML = data;
+
+            // Add current page indicator after header is loaded
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('current');
+                }
+            });
         })
         .catch(error => console.error('Error loading header:', error));
     
@@ -22,80 +30,113 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('footer-placeholder').innerHTML = data;
         })
         .catch(error => console.error('Error loading footer:', error));
-        
-    var video = document.getElementById('bgVideo');
-    video.playbackRate = 0.5;
 
-    // Pause video on scroll
-    window.addEventListener('scroll', function() {
-        if (!video.paused) {
-            video.pause();
-        }
-    });
+});
 
-    // Generate table of contents for about page
-    if (window.location.pathname.includes('about.html')) {
-        generateTableOfContents();
+/**
+ * Load and parse markdown content with optional features.
+ *
+ * Args:
+ *   file: Path to markdown file
+ *   containerId: ID of element to insert parsed content
+ *   options: Configuration object
+ *     - generateTOC: Generate table of contents (default: false)
+ *     - enableExpandable: Enable expandable sections (default: true)
+ *     - onLoad: Callback function after content loaded
+ *
+ * Returns:
+ *   Promise that resolves when content is loaded
+ *
+ * LLM Note: Expandable extension handles both [expand] tags and h4 headers.
+ * Always sets up click handlers if expandable sections exist.
+ */
+function loadMarkdownContent(file, containerId, options = {}) {
+    const config = {
+        generateTOC: options.generateTOC || false,
+        enableExpandable: options.enableExpandable !== false, // default true
+        onLoad: options.onLoad || null
+    };
+
+    // Configure marked.js with expandable extension
+    if (config.enableExpandable) {
+        marked.use({
+            extensions: [{
+                name: 'expand',
+                level: 'block',
+                start(src) {
+                    return src.match(/^\[expand\]|\n####\s/)?.index;
+                },
+                tokenizer(src) {
+                    // Check for [expand] tags first
+                    const expandRule = /^\[expand\]([\s\S]*?)\[\/expand\]/;
+                    const expandMatch = expandRule.exec(src);
+                    if (expandMatch) {
+                        return {
+                            type: 'expand',
+                            raw: expandMatch[0],
+                            content: expandMatch[1].trim()
+                        };
+                    }
+
+                    // Check for h4 headers
+                    const h4Rule = /^####\s+(.+?)(?:\n([\s\S]*?)(?=\n#{1,4}\s|$)|\n*$)/;
+                    const h4Match = h4Rule.exec(src);
+                    if (h4Match) {
+                        return {
+                            type: 'expand',
+                            raw: h4Match[0],
+                            title: h4Match[1],
+                            content: h4Match[2] || ''
+                        };
+                    }
+                },
+                renderer(token) {
+                    const title = token.title || token.content.split('\n')[0];
+                    const content = token.title ? token.content : token.content.split('\n').slice(1).join('\n');
+
+                    return `<div class="expandable-section glass glass--strong">
+                        <div class="expandable-header">
+                            <h4>${title}</h4>
+                            <div class="expand-icon"></div>
+                        </div>
+                        <div class="expandable-content">
+                            ${marked.parse(content)}
+                        </div>
+                    </div>`;
+                }
+            }]
+        });
     }
 
-    // Add current page indicator
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        if (link.getAttribute('href') === currentPage) {
-            link.classList.add('current');
-        }
-    });
-
-    // Add this before the fetch call
-    marked.use({
-        extensions: [{
-            name: 'expand',
-            level: 'block',
-            start(src) {
-                return src.match(/^\[expand\]/)?.index;
-            },
-            tokenizer(src) {
-                const rule = /^\[expand\]([\s\S]*?)\[\/expand\]/;
-                const match = rule.exec(src);
-                if (match) {
-                    return {
-                        type: 'expand',
-                        raw: match[0],
-                        content: match[1].trim()
-                    };
-                }
-            },
-            renderer(token) {
-                return `<div class="expandable-section">
-                            <div class="expandable-header">
-                                <h4>${token.content.split('\n')[0]}</h4>
-                                <div class="expand-icon"></div>
-                            </div>
-                            <div class="expandable-content">
-                                ${marked.parse(token.content.split('\n').slice(1).join('\n'))}
-                            </div>
-                        </div>`;
-            }
-        }]
-    });
-
-    // Update the existing fetch callback
-    fetch('about-content.md')
+    // Fetch and parse markdown content
+    return fetch(file)
         .then(response => response.text())
         .then(text => {
             const parsedContent = marked.parse(text);
-            document.getElementById('content').innerHTML = parsedContent;
-            generateTableOfContents();
-            
+            document.getElementById(containerId).innerHTML = parsedContent;
+
+            // Generate TOC if requested
+            if (config.generateTOC) {
+                generateTableOfContents();
+            }
+
             // Add click handlers for expandable sections
-            document.querySelectorAll('.expandable-header').forEach(header => {
-                header.addEventListener('click', () => {
-                    header.parentElement.classList.toggle('expanded');
-                    header.nextElementSibling.classList.toggle('expanded');
+            if (config.enableExpandable) {
+                document.querySelectorAll('.expandable-header').forEach(header => {
+                    header.addEventListener('click', () => {
+                        header.parentElement.classList.toggle('expanded');
+                        header.nextElementSibling.classList.toggle('expanded');
+                    });
                 });
-            });
-        });
-});
+            }
+
+            // Call callback if provided
+            if (config.onLoad) {
+                config.onLoad();
+            }
+        })
+        .catch(error => console.error(`Error loading ${file}:`, error));
+}
 
 function generateTableOfContents() {
     const content = document.querySelector('#content');

@@ -28,12 +28,7 @@
 
     <script src="scripts.js"></script>
     <script>
-        fetch('index-content.md')
-            .then(response => response.text())
-            .then(text => {
-                const parsedContent = marked.parse(text);
-                document.getElementById('content').innerHTML = parsedContent;
-            });
+        loadMarkdownContent('index-content.md', 'content');
     </script>
 </body>
 </html>
