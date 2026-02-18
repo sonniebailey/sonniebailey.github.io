@@ -148,6 +148,36 @@ nav a.current {
     display: none;
 }
 
+/* ==================== SITE BANNER ==================== */
+
+.site-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 11;
+    background-color: rgba(180, 40, 40, 0.35);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    color: var(--text-color);
+    text-align: center;
+    padding: var(--space-2) var(--space-4);
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+}
+
+/* Push header down when banner is present */
+body:has(.site-banner) header {
+    top: calc(var(--space-2) * 2 + 1.2em); /* Banner height */
+}
+
+/* Push main content down when banner is present */
+body:has(.site-banner) main {
+    margin-top: calc(var(--header-height) + var(--space-2) * 2 + 1.2em);
+}
+
 /* Desktop consistency - ensure all pages have same header alignment */
 @media (min-width: 769px) {
     header .container {

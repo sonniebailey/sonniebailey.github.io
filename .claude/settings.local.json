@@ -6,7 +6,8 @@
       "Bash(identify:*)",
       "Bash(find:*)",
       "Bash(for file in css/components/*.css)",
-      "Bash(done)"
+      "Bash(done)",
+      "Read(//mnt/c/users/sonni/dropbox/code/**)"
     ],
     "deny": [],
     "ask": []
