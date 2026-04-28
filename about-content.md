@@ -61,11 +61,6 @@ A worked example, using a 20-hour anchor (illustrative only — anchors are agre
         </thead>
         <tbody>
             <tr style="opacity: 0.9;">
-                <td style="padding: 15px; text-align: left; border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding-left: 0; vertical-align: middle;">10 or fewer (floor rule)</td>
-                <td style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: left; vertical-align: middle;">Actual hours × $300</td>
-                <td style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: left; vertical-align: middle;">$300/hr</td>
-            </tr>
-            <tr style="opacity: 0.9;">
                 <td style="padding: 15px; text-align: left; border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding-left: 0; vertical-align: middle;">15</td>
                 <td style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: left; vertical-align: middle;">$5,250</td>
                 <td style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: left; vertical-align: middle;"><span style="color: var(--link-color); font-weight: bold;">$350/hr</span></td>
@@ -81,14 +76,9 @@ A worked example, using a 20-hour anchor (illustrative only — anchors are agre
                 <td style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: left; vertical-align: middle;">$270/hr</td>
             </tr>
             <tr style="opacity: 0.9;">
-                <td style="padding: 15px; text-align: left; border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding-left: 0; vertical-align: middle;">30</td>
-                <td style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: left; vertical-align: middle;">$7,500</td>
-                <td style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: left; vertical-align: middle;">$250/hr</td>
-            </tr>
-            <tr style="opacity: 0.9;">
-                <td style="padding: 15px; text-align: left; padding-left: 0; vertical-align: middle;">40</td>
-                <td style="padding: 15px; text-align: left; vertical-align: middle;">$9,000</td>
-                <td style="padding: 15px; text-align: left; vertical-align: middle;">$225/hr</td>
+                <td style="padding: 15px; text-align: left; padding-left: 0; vertical-align: middle;">30</td>
+                <td style="padding: 15px; text-align: left; vertical-align: middle;">$7,500</td>
+                <td style="padding: 15px; text-align: left; vertical-align: middle;">$250/hr</td>
             </tr>
         </tbody>
     </table>
@@ -96,11 +86,9 @@ A worked example, using a 20-hour anchor (illustrative only — anchors are agre
 
 The effective rate asymptotes to $150/hr at extreme overruns — it never runs away from you, and never drops below that floor.
 
-For shorter, ad-hoc pieces of work — particularly with past clients — pure hourly at $300/hr is also fine. For substantive first-time engagements, I generally recommend the anchored-fee approach.
+For substantive first-time engagements, I generally recommend the anchored-fee approach. For shorter, ad-hoc pieces of work — particularly with past clients — pure hourly rates are likely to be more appropriate than introducing anchored fee arrangements.
 
-##### Why do I offer anchored fee arrangements?
-
-I charge this way for three main reasons:
+I offer anchored fee arrangements for three main reasons:
 
 * **It aligns expectations with reality at the invoice moment.** With pure open-ended hourly billing, there's a recurring risk that the invoice ends up being more than the client was braced for. The anchored structure largely designs that mismatch out — overruns mean you're getting a bargain compared to the headline rate, and under-runs mean I've been rewarded for being efficient.
 
