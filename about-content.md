@@ -1,8 +1,8 @@
 ## Executive summary
 
-Fairhaven Wealth provides financial advice-related services to New Zealanders. Fairhaven Wealth charges $350 per hour, or offers a fixed-fee service for $5,000 (including GST). Our engagements are one-off, short-term, and we typically work with very few clients at any point in time.
+Fairhaven Wealth provides financial advice-related services to New Zealanders. Fairhaven Wealth charges $300 per hour (including GST). For substantive engagements, I prefer to structure billing as an "anchored fee" arrangement, described below. Our engagements are one-off, short-term, and we typically work with very few clients at any point in time.
 
-When you deal with Fairhaven Wealth, you deal with Sonnie Bailey. You may be familiar with my writing on the [NZ Wealth & Risk blog](https:\\www.wealthandrisk.nz), where I published regularly for over 10 years.
+When you deal with Fairhaven Wealth, you deal with Sonnie Bailey. You may be familiar with my writing on the [NZ Wealth & Risk blog](https://www.wealthandrisk.nz), where I published regularly for over 10 years.
 
 I'm based in Christchurch but work with Kiwis throughout the country via Zoom, phone, and email.
 
@@ -14,9 +14,7 @@ For one thing, I have committed to short-term engagements with clients, and my i
 
 I operate Fairhaven Wealth in a fiercely independent manner and do everything I can to align my interests with those of my clients.
 
-Fairhaven Wealth's primary service is a fixed-fee service for $5,000 including GST. This service consists of at least two three-hour conversations, usually held via Zoom or phone, and one or more emails touching on the content of these conversations. Having said this, you are only required to pay the full $5,000 if the service meets or exceeds your expectations. Your minimum commitment is $1,000, paid before the first meeting. Whether you pay more than this, and how much, depends on how you rate the the service on a 5-star basis. You only pay the full $5,000 if the service is a 5-star service. No strings attached.
-
-You can also engage Fairhaven Wealth on an ad-hoc, hourly-rate basis, of $350 per hour.
+Fairhaven Wealth's primary service consists of at least two three-hour conversations, usually held via Zoom or phone, and one or more emails touching on the content of these conversations. The headline rate is $300 per hour including GST. For substantive engagements, I prefer to use an "anchored fee" structure: before we start, you and I agree on an honest mid-estimate of how long the work is likely to take, and if it ends up taking more or less than that, we split the difference. This is described in more detail below.
 
 I operate Fairhaven Wealth in a way so that I don't touch your money in any way, shape, or form. It's up to you whether or not to make any changes to your financial situation (or life in general) as a result of our discussions. It's up to you to implement any advice I might provide. 
 
@@ -24,79 +22,109 @@ You can engage us again in the future, but that's up to you. We aren't looking t
 
 Fairhaven Wealth's service is terrific for some people, but not appropriate for most people. It's best suited for people who already have a good understanding of their situation and are (or want to be) engaged in their finances. It also tends to be most valuable for those with some degree of financial and/or professional security.
 
-Fairhaven Wealth has had many happy clients You can read dozens of testimonials [here](www.fairhavenwealth.co.nz/testimonials).
+Fairhaven Wealth has had many happy clients. You can read dozens of testimonials [here](https://www.fairhavenwealth.co.nz/testimonials).
 
-## Fairhaven Wealth's $5,000 "5-star" service
+## Fairhaven Wealth's primary service
 
-Fairhaven Wealth's primary service consists of two three-hour discussions, within approximately one week of each other. These meetings are followed by one or more emails, supporting these conversations and providing a high-level overview of what we discussed during each of the meetings.
+Fairhaven Wealth's primary service for new clients consists of two three-hour discussions, that take place within approximately one or two weeks of each other. These meetings are followed by a draft financial plan report, which you read and we discuss before finalising the rerport. From there it is up to you whether and to what exent you implement the recommendations in this plan.
+
+That said, this isn't a fixed package. The right shape for an engagement depends on what you want from it. Some clients want exactly this; others want something smaller, or something differently shaped. I'm happy to start with an initial conversation — at no cost and no obligation — to work out whether and how we might work together. If what you actually want from me is a one-off conversation rather than what is described above, that's fine too.
 
 ### How much does this service cost?
 
-$5,000 including GST, assuming the service meets or exceeds your expectations.
+My headline rate is **$300 per hour, including GST**.
 
-The minimum cost is $1,000. You pay this before the first meeting. You only pay more if you rate the service to be a 2-star service or higher, with the amount you pay being linked to how valuable you found it, as set out in the table below.
+An "hour" of work, in this context, includes the preparation and writing-up that goes around our conversations — not just the time we spend together on the phone, on Zoom, or in person. Documenting advice properly is mandatory (more on this further down), and a meaningful share of any engagement is the documentation that supports it.
+
+For some engagements, I might offer an "anchored fee" arragnement rather than open-ended hourly billing. The way it works is described below.
+
+#### Anchored fee arrangements
+
+Before we start, you and I agree on an "anchored fee". This represents my honest mid-estimate of how long the work is likely to take. For a substantive engagement, an anchor of around 20 hours ($6,000 on-anchor) might be a reasonable starting point. (The exact number depends on your circumstances and what you want to achieve, and we agree it together.) For a smaller piece of work, the anchor (and the total) will be smaller.
+
+If the work runs longer than the anchor, we split the difference. I bill at the midpoint between the anchor and the actual time taken — not the actual time itself.
+
+If the work runs shorter than the anchor, we still split the difference — so I'm rewarded for being efficient.
+
+If actual time is well under the anchor (say, half or less), I just bill actual hours, so genuinely quick work stays genuinely cheap.
+
+A worked example, using a 20-hour anchor (illustrative only — anchors are agreed case by case):
 
 <div class="payment-table-container" style="max-width: 800px; margin: 30px auto; position: relative;">
     <table class="payment-table" style="width: 100%; border-collapse: collapse; color: var(--text-color); font-family: 'Raleway', sans-serif; margin-bottom: 20px; position: relative;">
         <thead style="opacity: 0.9;">
             <tr>
-                <th class="star-rating-col" style="padding: 15px; text-align: left; border-bottom: 1px solid rgba(212, 175, 55, 0.3); font-weight: bold; color: var(--text-color); padding-bottom: 20px; padding-left: 0; width: 22.5%; vertical-align: middle;">Star rating</th>
-                <th class="payment-col" style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); font-weight: bold; color: var(--text-color); padding-bottom: 20px; text-align: left; width: 22.5%; vertical-align: middle;">Payment</th>
-                <th class="notes-col" style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); font-weight: bold; color: var(--text-color); padding-bottom: 20px; text-align: left; width: 55%; padding-left: 20px; vertical-align: middle;"></th>
+                <th style="padding: 15px; text-align: left; border-bottom: 1px solid rgba(212, 175, 55, 0.3); font-weight: bold; color: var(--text-color); padding-bottom: 20px; padding-left: 0; width: 33%; vertical-align: middle;">Actual hours</th>
+                <th style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); font-weight: bold; color: var(--text-color); padding-bottom: 20px; text-align: left; width: 33%; vertical-align: middle;">What you pay</th>
+                <th style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); font-weight: bold; color: var(--text-color); padding-bottom: 20px; text-align: left; width: 34%; vertical-align: middle;">Effective rate</th>
             </tr>
         </thead>
         <tbody>
-            <tr style="opacity: 0.8;">
-                <td class="star-rating-col" style="padding: 15px; text-align: left; border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding-left: 0; vertical-align: middle;"><span class="stars" style="color: var(--link-color); font-size: 27px;">★</span></td>
-                <td class="payment-col" style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: left; vertical-align: middle;">$1,000</td>
-                <td class="notes-col" style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: left; width: 55%; padding-left: 20px; vertical-align: middle;">
-                    <span class="upfront-note" style="color: var(--link-color); font-weight: bold;">$1,000</span> is the minimum amount you pay. You pay before the first conversation. If you find the service as a whole underwhelming, you don't pay anything more.
-                </td>
+            <tr style="opacity: 0.9;">
+                <td style="padding: 15px; text-align: left; border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding-left: 0; vertical-align: middle;">10 or fewer (floor rule)</td>
+                <td style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: left; vertical-align: middle;">Actual hours × $300</td>
+                <td style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: left; vertical-align: middle;">$300/hr</td>
             </tr>
             <tr style="opacity: 0.9;">
-                <td class="star-rating-col" style="padding: 15px; text-align: left; border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding-left: 0; vertical-align: middle;"><span class="stars" style="color: var(--link-color); font-size: 27px;">★★</span></td>
-                <td class="payment-col" style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: left; vertical-align: middle;">$2,000</td>
-                <td class="notes-col" rowspan="4" style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: left; width: 55%; padding-left: 20px; vertical-align: middle;">
-                    The remaining amount <span class="remaining-amount" style="color: var(--link-color); font-weight: bold;">(up to $4,000)</span> is paid after the service has been provided. You pay based on how well the service met your expectations. You only pay the full amount ($5,000) if the service met or exceeded your expectations.
-                </td>
+                <td style="padding: 15px; text-align: left; border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding-left: 0; vertical-align: middle;">15</td>
+                <td style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: left; vertical-align: middle;">$5,250</td>
+                <td style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: left; vertical-align: middle;"><span style="color: var(--link-color); font-weight: bold;">$350/hr</span></td>
             </tr>
             <tr style="opacity: 0.9;">
-                <td class="star-rating-col" style="padding: 15px; text-align: left; border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding-left: 0; vertical-align: middle;"><span class="stars" style="color: var(--link-color); font-size: 27px;">★★★</span></td>
-                <td class="payment-col" style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: left; vertical-align: middle;">$3,000</td>
+                <td style="padding: 15px; text-align: left; border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding-left: 0; vertical-align: middle;">20 (on anchor)</td>
+                <td style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: left; vertical-align: middle;">$6,000</td>
+                <td style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: left; vertical-align: middle;">$300/hr</td>
             </tr>
             <tr style="opacity: 0.9;">
-                <td class="star-rating-col" style="padding: 15px; text-align: left; border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding-left: 0; vertical-align: middle;"><span class="stars" style="color: var(--link-color); font-size: 27px;">★★★★</span></td>
-                <td class="payment-col" style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: left; vertical-align: middle;">$4,000</td>
+                <td style="padding: 15px; text-align: left; border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding-left: 0; vertical-align: middle;">25</td>
+                <td style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: left; vertical-align: middle;">$6,750</td>
+                <td style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: left; vertical-align: middle;">$270/hr</td>
             </tr>
             <tr style="opacity: 0.9;">
-                <td class="star-rating-col" style="padding: 15px; text-align: left; border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding-left: 0; vertical-align: middle;"><span class="stars" style="color: var(--link-color); font-size: 27px;">★★★★★</span></td>
-                <td class="payment-col" style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: left; vertical-align: middle;">$5,000</td>
+                <td style="padding: 15px; text-align: left; border-bottom: 1px solid rgba(212, 175, 55, 0.3); padding-left: 0; vertical-align: middle;">30</td>
+                <td style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: left; vertical-align: middle;">$7,500</td>
+                <td style="padding: 15px; border-bottom: 1px solid rgba(212, 175, 55, 0.3); text-align: left; vertical-align: middle;">$250/hr</td>
+            </tr>
+            <tr style="opacity: 0.9;">
+                <td style="padding: 15px; text-align: left; padding-left: 0; vertical-align: middle;">40</td>
+                <td style="padding: 15px; text-align: left; vertical-align: middle;">$9,000</td>
+                <td style="padding: 15px; text-align: left; vertical-align: middle;">$225/hr</td>
             </tr>
         </tbody>
     </table>
 </div>
 
-#### Why do I charge this way?
+The effective rate asymptotes to $150/hr at extreme overruns — it never runs away from you, and never drops below that floor.
 
-I charge this way for two main reasons:
+For shorter, ad-hoc pieces of work — particularly with past clients — pure hourly at $300/hr is also fine. For substantive first-time engagements, I generally recommend the anchored-fee approach.
 
-* To provide you with confidence that you're not committing to paying $5,000 if the service doesn't meet your expectations.
+##### Why do I offer anchored fee arrangements?
 
-* To keep me on my toes. In the world of professional services, it can be difficult to get a sense of whether clients are satisfied and their expectations are being met. If I tie the amount of money I receive directly to this, then there's no avoiding this feedback. 
+I charge this way for three main reasons:
 
-#### Is $5,000 expensive? 
+* **It aligns expectations with reality at the invoice moment.** With pure open-ended hourly billing, there's a recurring risk that the invoice ends up being more than the client was braced for. The anchored structure largely designs that mismatch out — overruns mean you're getting a bargain compared to the headline rate, and under-runs mean I've been rewarded for being efficient.
 
-Yes. For most people. 
+* **It rewards efficiency rather than punishing it.** Pure hourly creates a perverse incentive to "mow the lawn with scissors" — the slower the work, the more I earn. The anchored structure flips that: being efficient earns me more per hour. That matters because I use AI tools (with explicit client permission, in privacy-respecting ways) to support the work I do, and those tools are useful precisely because they compress preparation and reporting time.
 
-Is the service *worth* $5,000 for *most* people? No. 
+* **It shares risk.** Your worst case is bounded compared to true hourly. My worst case is bounded compared to pure fixed-fee. Neither of us carries the full downside.
 
-Is the service worth $5,000 for *some* people? Yes. 
+#### How do I invoice?
+
+For most engagements, I will aim to invoice weekly following when work is done. Anchored fee arrangements will be considered and reconciled as relevant. 
+
+#### Is $300 per hour expensive?
+
+Yes. For most people.
+
+Is the service *worth* $300 per hour for *most* people? No.
+
+Is the service worth $300 per hour for *some* people? Yes.
 
 Is it expensive relative to how many financial planners charge? For many people, it's *cheap*.
 
-Many financial planners charge clients for ongoing services as a percentage of "assets under advice". This usually comes out from the clients' investment portfolio, which the adviser manages, and can be a little opaque in the sense that you may not easily notice what you are paying. If you are investing $1 million or more with the help of a financial planner, there's a good chance that you are already paying more than $5,000 per year for their services. If you have a portfolio of significantly more than this, then $5,000 is probably a fraction of what you are paying. You may not be aware of it, but it's quite possible that the fees you pay in relation to your investment assets are your biggest annual expense. 
+Many financial planners charge clients for ongoing services as a percentage of "assets under advice". This usually comes out from the clients' investment portfolio, which the adviser manages, and can be a little opaque in the sense that you may not easily notice what you are paying. If you are investing $1 million or more with the help of a financial planner, there's a good chance that you are already paying significantly more than the cost of an engagement with Fairhaven Wealth each year. If you have a portfolio of significantly more than this, then Fairhaven Wealth's fees are probably a small fraction of what you are paying. You may not be aware of it, but it's quite possible that the fees you pay in relation to your investment assets are your biggest annual expense.
 
-To be clear, Fairhaven Wealth's services are more limited in scope than the services that most financial planners provide. They are offering an ongoing service, and they are managing transactions and providing reporting on your behalf. These services are valuable and important for many people. However, for some people, I believe that Fairhaven Wealth provides a lot of the genuine value that they would receive from these ongoing engagements, and possibly with lower risk and potential conflict of interest. (Lower risk because there is no third party that can touch your finances; and less conflicts of interest because Fairhaven Wealth's remuneration model isn't linked to a particular class of financial assets, which could potentially lead to a bias in favour of investing these types of assets, or even a bias against spending or giving money away, when this might be appropriate.)
+To be clear, Fairhaven Wealth's services are more limited in scope than the services that most financial planners provide. They are offering an ongoing service, and they are managing transactions and providing reporting on your behalf. These services are valuable and important for many people. However, for some people, I believe that Fairhaven Wealth provides a lot of the genuine value that they would receive from these ongoing engagements, and possibly with lower risk and potential conflict of interest. (Lower risk because there is no third party that can touch your finances; and fewer conflicts of interest because Fairhaven Wealth's remuneration model isn't linked to a particular class of financial assets, which could potentially lead to a bias in favour of investing these types of assets, or even a bias against spending or giving money away, when this might be appropriate.)
 
 ### What will I get out of this service? 
 
@@ -168,18 +196,20 @@ I can, and am prepared to, discuss a number of financial topics at a granular le
 
 ### Will I receive a comprehensive, documented financial plan?
 
-No. I won't commit to this, because what is appropriate for any given engagement will depend on your situation and what you need. 
+Not in the sense of a single bound document covering every aspect of your situation. What documentation looks like depends on your situation and what you need, and committing to a fixed format in advance doesn't make sense.
 
-At the end of our engagement, you'll receive one or more emails that will summarise the key things we discussed. This will include any advice that we provide, including reasons and risks associated with that advice. 
+But documentation isn't optional. You'll receive one or more written communications — usually emails — that set out the key things we discussed. This will include any advice I provide, with the reasons for it and the risks associated with it.
 
-The litimus test for whether the outcome from the engagement (documented or otherwise) is successful will be whether you are prepared to pay the full price for the service. If what you end up with isn't satisfactory, you can simply tell me, and I can address that in order to meet your expectations, or you can pay me less. 
+There are two reasons documentation matters this much:
 
-## Ad hoc services ($350 per hour)
+* **Regulatory.** I'm required by law to document the advice I provide, including the reasons for that advice and the risks associated with it. That's a non-negotiable part of how I do this work.
 
-If you would prefer to engage Fairhaven Wealth for less structured, ad hoc services, then we will charge $350 per hour (including GST).
+* **Practical.** Neither of us will remember the detail of our conversations a year or three from now. The written record is what we both refer back to — to act on, to revisit, and to ground any future engagement we might have.
 
-I recommend engaging Fairhaven Wealth for the fixed-fee service for first-time clients. For previous clients, ad hoc services are likely to be appropirate unless your circumstances have changed significantly and/or you want a more comprehensive set of discussions.
-    
+This is also why the time covered by an engagement isn't only the time we spend on the phone, on Zoom, or in person. Doing the documentation properly takes time, and that time is part of the engagement — and part of the anchor.
+
+If the outcome of the engagement isn't satisfactory, please tell me — I'd rather know and address it than not.
+
 ## Fairhaven Wealth doesn't lock you into ongoing service arrangements
 
 I love having ongoing relationships with clients. I love staying in touch with past clients and finding out how they are going after we've worked together. It is one of the most rewarding parts of what I do. I now count many of my former clients as friends.
@@ -201,8 +231,6 @@ If you have questions that arise after the engagement is complete, I'm just an e
 I don't charge for short follow-up conversations. In fact, I love to hear from past clients! It's rewarding, and receiving updates from past clients informs the discussions I have with other clients! It's win-win!
 
 I'll only charge for significant additional work. Where this is the case, we discuss this transparently and make it clear beforehand before any billable work begins. To date all clients have been satisfied with this. If anything I'm considered "too reasonable" when it comes to charging for follow-up work.
-
-For a limited period of time, clients who engaged Fairhaven Wealth prior to 2024 will have the option of paying half of the price of Fairhaven Wealth's current services - $2,500 for the 5-star service ($500 minimum spend, $500 for each star), or $175 per hour. 
 
 ## What doesn't Fairhaven Wealth do? 
 
@@ -322,9 +350,7 @@ Fairhaven Wealth doesn't have any relationship with third parties that might inf
 
 * Over time, I've developed professional and personal relationships with people from different organisations, including people who work with certain financial providers. However, I prioritise my independence and the interests of my clients over these relationships.
 
-For my main service, even income received by clients is only received in full if they are satisfied with the service and it meets their expectations. 
-
-To the extent Fairhaven Wealth has a conflict of interest, it is that Fairhaven Wealth's primary service involves charging fixed fees. Arguably, this creates an incentive for me to spend as little time as possible on the service. The main way I have managed this is by charging on the basis of a "5-star payment policy". Offering one-off services also creates an incentive for me to provide high quality services, because I won't receive additional work from existing clients, or receive referrals, unless the service I provide is of sufficiently high quality. 
+To the extent Fairhaven Wealth has a conflict of interest, it is that I charge by the hour. Pure hourly billing creates an incentive to "mow the lawn with scissors" — being slower means earning more. The main way I manage this is by structuring substantive engagements as an "anchored fee" rather than open-ended hourly: under that structure, being efficient earns me a higher effective rate, and being slow caps out at a lower one. Offering one-off services also creates an incentive for me to provide high-quality services, because I won't receive additional work from existing clients, or receive referrals, unless the service I provide is of sufficiently high quality. 
 
 One other subtle conflict of interest, that is present for any service provider, is the inclination to want to CMA, or "cover my ass". This can create a situation where an adviser might be tempted to be over-cautious because they don't want to expose clients to risk that might in turn expose them to risk. This is the case even if the clients might have a higher appetite for risk and be prepared to take on risk, in a fully informed manner. This is one central reason why I don't provide cookie-cutter advice: I provide all of my advice in the context of my clients' circumstances, needs, and objectives. On top of this, the best I can do is be up-front about this, mindful of it, communicate it, and do my best to ensure that conversations don't end up being a personal Rorschach test.  
 
