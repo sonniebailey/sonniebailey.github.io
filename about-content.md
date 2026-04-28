@@ -14,7 +14,7 @@ For one thing, I have committed to short-term engagements with clients, and my i
 
 I operate Fairhaven Wealth in a fiercely independent manner and do everything I can to align my interests with those of my clients.
 
-Fairhaven Wealth's primary service consists of at least two three-hour conversations, usually held via Zoom or phone, and one or more emails touching on the content of these conversations. The headline rate is $300 per hour including GST. For substantive engagements, I prefer to use an "anchored fee" structure: before we start, you and I agree on an honest mid-estimate of how long the work is likely to take, and if it ends up taking more or less than that, we split the difference. This is described in more detail below.
+Fairhaven Wealth's primary service for new clients consists of two three-hour conversations, usually held via Zoom or phone, followed by a draft financial plan report that you and I review and finalise together. The headline rate is $300 per hour including GST. For substantive engagements, I might offer an "anchored fee" arrangement: before we start, you and I agree on an honest mid-estimate of how long the work is likely to take, and if it ends up taking more or less than that, we split the difference. This is described in more detail below.
 
 I operate Fairhaven Wealth in a way so that I don't touch your money in any way, shape, or form. It's up to you whether or not to make any changes to your financial situation (or life in general) as a result of our discussions. It's up to you to implement any advice I might provide. 
 
@@ -26,7 +26,7 @@ Fairhaven Wealth has had many happy clients. You can read dozens of testimonials
 
 ## Fairhaven Wealth's primary service
 
-Fairhaven Wealth's primary service for new clients consists of two three-hour discussions, that take place within approximately one or two weeks of each other. These meetings are followed by a draft financial plan report, which you read and we discuss before finalising the rerport. From there it is up to you whether and to what exent you implement the recommendations in this plan.
+Fairhaven Wealth's primary service for new clients consists of two three-hour discussions, that take place within approximately one or two weeks of each other. These meetings are followed by a draft financial plan report, which you read and we discuss before finalising the report. From there it is up to you whether and to what extent you implement the recommendations in this plan.
 
 That said, this isn't a fixed package. The right shape for an engagement depends on what you want from it. Some clients want exactly this; others want something smaller, or something differently shaped. I'm happy to start with an initial conversation — at no cost and no obligation — to work out whether and how we might work together. If what you actually want from me is a one-off conversation rather than what is described above, that's fine too.
 
@@ -36,11 +36,11 @@ My headline rate is **$300 per hour, including GST**.
 
 An "hour" of work, in this context, includes the preparation and writing-up that goes around our conversations — not just the time we spend together on the phone, on Zoom, or in person. Documenting advice properly is mandatory (more on this further down), and a meaningful share of any engagement is the documentation that supports it.
 
-For some engagements, I might offer an "anchored fee" arragnement rather than open-ended hourly billing. The way it works is described below.
+For some engagements, I might offer an "anchored fee" arrangement rather than open-ended hourly billing. The way it works is described below.
 
 #### Anchored fee arrangements
 
-Before we start, you and I agree on an "anchored fee". This represents my honest mid-estimate of how long the work is likely to take. For a substantive engagement, an anchor of around 20 hours ($6,000 on-anchor) might be a reasonable starting point. (The exact number depends on your circumstances and what you want to achieve, and we agree it together.) For a smaller piece of work, the anchor (and the total) will be smaller.
+Before we start, you and I agree on an "anchored fee", based on my honest mid-estimate of how long the work is likely to take. For a substantive engagement, an anchor of around 20 hours ($6,000 on-anchor) might be a reasonable starting point. (The exact number depends on your circumstances and what you want to achieve, and we agree it together.) For a smaller piece of work, the anchor (and the total) will be smaller.
 
 If the work runs longer than the anchor, we split the difference. I bill at the midpoint between the anchor and the actual time taken — not the actual time itself.
 
@@ -196,15 +196,17 @@ I can, and am prepared to, discuss a number of financial topics at a granular le
 
 ### Will I receive a comprehensive, documented financial plan?
 
-Not in the sense of a single bound document covering every aspect of your situation. What documentation looks like depends on your situation and what you need, and committing to a fixed format in advance doesn't make sense.
+For my primary service for new clients, yes — you'll receive a financial plan report that we draft, discuss, and finalise together. For smaller or differently-shaped engagements, the form of documentation varies — sometimes a structured email or set of emails is more appropriate than a full report. What documentation looks like in any given case depends on what you need, and committing to a fixed format in advance doesn't make sense.
 
-But documentation isn't optional. You'll receive one or more written communications — usually emails — that set out the key things we discussed. This will include any advice I provide, with the reasons for it and the risks associated with it.
+What stays constant is that documentation isn't optional. Whatever form it takes, you'll always receive a written record of the key things we discussed, including any advice I provide, with the reasons for it and the risks associated with it.
 
-There are two reasons documentation matters this much:
+There are three reasons documentation matters this much:
 
 * **Regulatory.** I'm required by law to document the advice I provide, including the reasons for that advice and the risks associated with it. That's a non-negotiable part of how I do this work.
 
-* **Practical.** Neither of us will remember the detail of our conversations a year or three from now. The written record is what we both refer back to — to act on, to revisit, and to ground any future engagement we might have.
+* **Practical, for future reference.** Neither of us will remember the detail of our conversations a year or three from now. The written record is what we both refer back to — to act on, to revisit, and to ground any future engagement we might have. I've also heard from clients who tell me they regularly refer to reports and emails I've prepared for them in the past.
+
+* **The writing is part of producing the advice.** Especially when preparing a financial plan, the act of writing it is itself part of the work. Recommendations often need thoughtful consideration that can't happen in real time during a conversation. Stepping back and writing the plan often surfaces angles, tensions, or considerations that wouldn't have come up in conversation alone.
 
 This is also why the time covered by an engagement isn't only the time we spend on the phone, on Zoom, or in person. Doing the documentation properly takes time, and that time is part of the engagement — and part of the anchor.
 
@@ -231,6 +233,8 @@ If you have questions that arise after the engagement is complete, I'm just an e
 I don't charge for short follow-up conversations. In fact, I love to hear from past clients! It's rewarding, and receiving updates from past clients informs the discussions I have with other clients! It's win-win!
 
 I'll only charge for significant additional work. Where this is the case, we discuss this transparently and make it clear beforehand before any billable work begins. To date all clients have been satisfied with this. If anything I'm considered "too reasonable" when it comes to charging for follow-up work.
+
+If you engaged Fairhaven Wealth prior to 2024 and are thinking about re-engaging, get in touch sooner rather than later. For a limited period, I'm offering past clients a discounted rate of $150 per hour, without an anchored fee.
 
 ## What doesn't Fairhaven Wealth do? 
 
