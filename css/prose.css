@@ -1,0 +1,218 @@
+/* Content typography: everything markdown can produce inside <main>.
+
+   This is the layer that decides whether a page written as plain text
+   reads as designed or as a browser default. base.css owns the heading
+   system and page furniture; this file owns running text -- the vertical
+   rhythm between blocks, lists, quotes, rules, tables and captions.
+
+   The rule for the whole file: an author writing markdown never adds a
+   class, so every selector here has to work off the element alone. */
+
+/* ==================== VERTICAL RHYTHM ==================== */
+/* Headings owe more space above than below, so a heading binds visually to
+   the text it introduces rather than floating between two blocks. The
+   first child never gets a top margin: the section already has padding. */
+.prose > h2,
+.prose > h3 {
+    margin-top: var(--flow-gap-heading-top);
+}
+
+.prose > h4,
+.prose > h5,
+.prose > h6 {
+    margin-top: var(--flow-gap-heading-top-minor);
+}
+
+.prose > *:first-child {
+    margin-top: 0;
+}
+
+.prose > *:last-child {
+    margin-bottom: 0;
+}
+
+/* A heading immediately after another heading is a subtitle, not a new
+   section, so it keeps the tight gap. */
+.prose > h2 + h3,
+.prose > h3 + h4,
+.prose > h4 + h5 {
+    margin-top: var(--flow-gap);
+}
+
+/* ==================== PARAGRAPHS ==================== */
+.prose p {
+    font-size: var(--font-size-prose);
+    line-height: var(--line-height-prose);
+    margin: 0 0 var(--flow-gap);
+    text-wrap: pretty;
+}
+
+/* The opening paragraph of a page carries the summary; setting it slightly
+   larger gives the page an entry point without needing a class in the
+   markdown. Only the paragraph directly after the first heading, so it
+   cannot fire repeatedly down a long page. */
+.prose > h2:first-child + p,
+.prose > p:first-child {
+    font-size: var(--font-size-lead);
+    color: var(--colour-text-muted);
+}
+
+/* ==================== LINKS IN RUNNING TEXT ==================== */
+/* Underlined, unlike navigation and buttons: inside a paragraph colour
+   alone is not a reliable signal, and it is the one accessibility default
+   worth keeping. */
+.prose a {
+    text-decoration: underline;
+    text-decoration-color: var(--tint-strong);
+    text-underline-offset: 0.15em;
+    text-decoration-thickness: 1px;
+    transition: color var(--duration-fast) var(--ease-out),
+                text-decoration-color var(--duration-fast) var(--ease-out);
+}
+
+.prose a:hover {
+    text-decoration-color: currentColor;
+}
+
+/* ==================== EMPHASIS ==================== */
+.prose strong {
+    font-weight: var(--weight-semibold);
+    color: var(--colour-text);
+}
+
+.prose em {
+    font-style: italic;
+}
+
+/* ==================== LISTS ==================== */
+.prose ul,
+.prose ol {
+    margin: 0 0 var(--flow-gap);
+    padding-left: var(--space-6);
+}
+
+.prose li {
+    margin-bottom: var(--space-2);
+    line-height: var(--line-height-prose);
+}
+
+.prose li:last-child {
+    margin-bottom: 0;
+}
+
+/* Nested lists tighten rather than repeating the full block gap. */
+.prose li > ul,
+.prose li > ol {
+    margin-top: var(--space-2);
+    margin-bottom: 0;
+}
+
+/* Brand-coloured markers. ::marker is the only way to colour a bullet
+   without replacing the list mechanism, which would break numbering. */
+.prose li::marker {
+    color: var(--brand-primary);
+}
+
+/* ==================== QUOTES ==================== */
+.prose blockquote {
+    margin: var(--flow-gap-block) 0;
+    padding: var(--space-5) var(--card-padding);
+    border-left: 3px solid var(--brand-primary);
+    border-radius: 0 var(--radius-card) var(--radius-card) 0;
+    background-color: var(--tint-subtle);
+    color: var(--colour-text-muted);
+    font-size: var(--font-size-lead);
+    font-style: italic;
+}
+
+.prose blockquote > *:last-child {
+    margin-bottom: 0;
+}
+
+/* ==================== RULES ==================== */
+/* A section break, so it gets section-sized space and reads as a tapered
+   line rather than the browser's default engraved bar. */
+.prose hr {
+    height: 1px;
+    margin: var(--flow-gap-heading-top) 0;
+    border: none;
+    background-image: linear-gradient(
+        to right,
+        transparent,
+        var(--colour-border),
+        transparent
+    );
+}
+
+/* ==================== IMAGES AND FIGURES ==================== */
+.prose img {
+    margin: var(--flow-gap-block) 0;
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-sm);
+}
+
+.prose figure {
+    margin: var(--flow-gap-block) 0;
+}
+
+.prose figcaption {
+    margin-top: var(--space-3);
+    color: var(--colour-text-muted);
+    font-size: var(--font-size-caption);
+    text-align: center;
+}
+
+/* ==================== CODE ==================== */
+/* Present because markdown can emit it, not because a brochure site is
+   expected to use it. Left unstyled it renders at the browser's monospace
+   default, which is visibly smaller than the surrounding text. */
+.prose code {
+    padding: 0.15em 0.4em;
+    border-radius: var(--radius-sm);
+    background-color: var(--tint-light);
+    font-size: 0.9em;
+}
+
+.prose pre {
+    margin: var(--flow-gap-block) 0;
+    padding: var(--card-padding);
+    border-radius: var(--radius-card);
+    background-color: var(--colour-bg-sunken);
+    border: 1px solid var(--colour-border-soft);
+    overflow-x: auto;
+    font-size: var(--font-size-secondary);
+}
+
+.prose pre code {
+    padding: 0;
+    background: none;
+    font-size: inherit;
+}
+
+/* ==================== TABLES ==================== */
+/* Wrapped in its own scroll context so a wide table scrolls rather than
+   forcing the whole page sideways on a phone. */
+.prose table {
+    width: 100%;
+    margin: var(--flow-gap-block) 0;
+    border-collapse: collapse;
+    font-size: var(--font-size-secondary);
+}
+
+.prose th,
+.prose td {
+    padding: var(--space-3) var(--space-4);
+    text-align: left;
+    border-bottom: 1px solid var(--colour-border-soft);
+}
+
+.prose th {
+    font-family: var(--font-heading);
+    font-weight: var(--weight-semibold);
+    color: var(--brand-primary);
+    border-bottom-color: var(--colour-border);
+}
+
+.prose tbody tr:last-child td {
+    border-bottom: none;
+}

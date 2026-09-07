@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% if page.url == "index.html" %}{% set page_title = site.name ~ " | " ~ site.tagline %}{% else %}{% set page_title = page.title ~ " | " ~ site.name %}{% endif %}
+    <title>{{ page_title }}</title>
+    <meta name="description" content="{{ page.description }}">
+    <link rel="canonical" href="{{ page.canonical }}">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="{{ site.name }}">
+    <meta property="og:title" content="{{ page_title }}">
+    <meta property="og:description" content="{{ page.description }}">
+    <meta property="og:url" content="{{ page.canonical }}">
+    <meta property="og:image" content="{{ site.domain }}/{{ site.social_image }}">
+    <meta name="twitter:card" content="summary_large_image">
+
+    {% if not site.search_visible %}
+    <meta name="robots" content="noindex, nofollow">
+    {% elif page.noindex %}
+    <meta name="robots" content="noindex">
+    {% endif %}
+
+    {% include "partials/theme-preload.html" %}
+
+    <link rel="icon" href="{{ site.favicon }}">
+    <link rel="stylesheet" href="{{ site.fonts.google_css }}">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    {% include "partials/header.html" %}
+    <main>
+        {% block main %}{% endblock %}
+    </main>
+    {% include "partials/footer.html" %}
+
+    <script src="js/theme.js" defer></script>
+    <script src="js/menu.js" defer></script>
+    <script src="js/reveal.js" defer></script>
+    <script src="js/faq.js" defer></script>
+</body>
+</html>

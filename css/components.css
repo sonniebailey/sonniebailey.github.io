@@ -1,0 +1,443 @@
+/* Discrete UI components: nav, mobile menu, feature cards, FAQ accordion,
+   map embed. Layout scaffolding (header/footer shell, hero) lives in
+   base.css. */
+
+/* ==================== NAV / LOGO ==================== */
+.logo {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    margin-right: var(--space-6);
+}
+
+.logo img {
+    display: block;
+    height: var(--logo-height);
+    width: auto;
+}
+
+/* Text wordmark, used when site.json names no logo image. Sized as site
+   identity rather than as another nav link -- it is the largest thing in
+   the header and the only item in the heading font, which is what makes a
+   header read as branded rather than as a row of links. */
+.logo__wordmark {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-wordmark);
+    font-weight: var(--weight-heading);
+    line-height: 1;
+    letter-spacing: var(--letter-spacing-heading);
+    color: var(--brand-primary);
+    white-space: nowrap;
+    transition: color var(--duration-fast) var(--ease-out);
+}
+
+.logo:hover .logo__wordmark {
+    color: var(--colour-link-hover);
+}
+
+/* The nav is pushed right and the header items are separated by one
+   consistent gap, so the theme toggle is not left jammed against the
+   phone number. */
+.nav-desktop {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+    margin-left: auto;
+}
+
+.nav-desktop a {
+    color: var(--colour-text);
+    font-weight: var(--weight-medium);
+}
+
+.nav-desktop a.is-current {
+    color: var(--brand-primary);
+    font-weight: var(--weight-heading);
+    border-bottom: 2px solid var(--brand-primary);
+}
+
+.nav-phone {
+    font-weight: var(--weight-semibold);
+    color: var(--brand-primary);
+    white-space: nowrap;
+}
+
+/* ==================== MOBILE MENU TOGGLE ==================== */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: var(--burger-width);
+    height: var(--burger-height);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: var(--space-4);
+}
+
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--brand-primary);
+    border-radius: 2px;
+}
+
+/* ==================== MOBILE MENU PANEL ==================== */
+#mobile-menu {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background-color: var(--colour-bg-alt);
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-9) var(--space-6) var(--space-6);
+    overflow-y: auto;
+}
+
+#mobile-menu[hidden] {
+    display: none;
+}
+
+.menu-close {
+    position: absolute;
+    top: var(--space-5);
+    right: var(--space-5);
+    width: var(--icon-size);
+    height: var(--icon-size);
+    border: 2px solid var(--brand-primary);
+    border-radius: 50%;
+    background: none;
+    color: var(--brand-primary);
+    font-size: var(--font-size-lg);
+    line-height: 1;
+    cursor: pointer;
+}
+
+.mobile-nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+    margin-top: var(--space-8);
+}
+
+.mobile-nav a {
+    font-size: var(--font-size-lg);
+    color: var(--colour-text);
+    font-weight: var(--weight-medium);
+}
+
+.mobile-nav a.is-current {
+    color: var(--brand-primary);
+    font-weight: var(--weight-heading);
+}
+
+.mobile-nav .nav-phone {
+    margin-left: 0;
+    margin-top: var(--space-4);
+}
+
+/* ==================== FEATURE CARDS ==================== */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--card-min-width), 1fr));
+    gap: var(--feature-gap);
+}
+
+/* Cards are translucent rather than solid, so the ground texture shows
+   through and the surface visibly brightens on hover. A solid white card
+   on a warm background reads as a cut-out. */
+.feature-card {
+    background-color: var(--colour-card);
+    border: 1px solid var(--colour-border-soft);
+    border-radius: var(--radius-card);
+    padding: var(--card-padding);
+    box-shadow: var(--shadow-sm);
+    transition: background-color var(--duration-base) var(--ease-out),
+                border-color var(--duration-base) var(--ease-out),
+                box-shadow var(--duration-base) var(--ease-out),
+                transform var(--duration-base) var(--ease-out);
+}
+
+.feature-card:hover {
+    background-color: var(--colour-card-hover);
+    border-color: var(--tint-medium);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+/* Icon sits in a tinted disc. Works for an inline SVG or a short glyph;
+   emoji are deliberately not the default -- they render differently on
+   every platform and undercut an otherwise branded page. */
+.feature-card__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--icon-lg);
+    height: var(--icon-lg);
+    margin-bottom: var(--space-4);
+    border-radius: var(--radius-button);
+    background-color: var(--tint-light);
+    color: var(--brand-primary);
+    font-size: var(--font-size-lg);
+}
+
+.feature-card__icon svg {
+    width: var(--icon-sm);
+    height: var(--icon-sm);
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.75;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.feature-card h2,
+.feature-card h3 {
+    font-size: var(--font-size-heading-card);
+    letter-spacing: var(--letter-spacing-card);
+    color: var(--colour-text);
+    margin-bottom: var(--space-2);
+}
+
+.feature-card p {
+    color: var(--colour-text-muted);
+    font-size: var(--font-size-secondary);
+    margin: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .feature-card {
+        transition: none;
+    }
+
+    .feature-card:hover {
+        transform: none;
+    }
+}
+
+/* ==================== THEME TOGGLE ==================== */
+/* Sun/moon switch in the header and mobile menu. Both icons are in the
+   markup; only the one matching the current theme is shown. Behaviour is
+   in js/theme.js; the initial theme is set before paint by the inline
+   script in templates/partials/theme-preload.html. */
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--toggle-size);
+    height: var(--toggle-size);
+    padding: 0;
+    border: 1px solid var(--colour-border-soft);
+    border-radius: var(--radius-button);
+    background-color: transparent;
+    color: var(--colour-text-muted);
+    cursor: pointer;
+    transition: color var(--duration-fast) var(--ease-out),
+                background-color var(--duration-fast) var(--ease-out),
+                border-color var(--duration-fast) var(--ease-out);
+}
+
+.theme-toggle:hover {
+    color: var(--brand-primary);
+    background-color: var(--tint-light);
+    border-color: var(--tint-medium);
+}
+
+.theme-toggle svg {
+    width: var(--icon-sm);
+    height: var(--icon-sm);
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* Show the moon in light mode (click for dark) and the sun in dark mode. */
+.theme-toggle .icon-sun {
+    display: none;
+}
+
+.theme-toggle .icon-moon {
+    display: block;
+}
+
+[data-theme="dark"] .theme-toggle .icon-sun {
+    display: block;
+}
+
+[data-theme="dark"] .theme-toggle .icon-moon {
+    display: none;
+}
+
+/* ==================== FAQ ACCORDION ==================== */
+/* Markup hook (contract): build/faq_transform.py emits a .faq-list holding
+   one <details class="faq-item"> per question, each wrapping its answer in
+   a .faq-answer. The accordions are native <details> and need no JS; only
+   the .faq-toggle-all control is scripted (js/faq.js). */
+/* .faq-page groups the control row and the questions into one block so
+   they sit together as a single item in main > .container's grid, which
+   owns the section spacing (see base.css). It adds no padding itself. */
+
+/* The control belongs to the list it operates on, so it sits close to it
+   and keeps its distance from the hero above instead. */
+.faq-controls {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: var(--space-4);
+}
+
+.faq-toggle-all {
+    padding: var(--space-2) var(--space-5);
+    border: 1px solid var(--colour-border);
+    border-radius: var(--radius-button);
+    background-color: transparent;
+    color: var(--brand-primary);
+    font-family: var(--font-body);
+    font-size: var(--font-size-secondary);
+    font-weight: var(--weight-semibold);
+    cursor: pointer;
+    transition: background-color var(--duration-fast) var(--ease-out),
+                border-color var(--duration-fast) var(--ease-out);
+}
+
+.faq-toggle-all:hover {
+    background-color: var(--tint-light);
+    border-color: var(--tint-strong);
+}
+
+.faq-toggle-all[hidden] {
+    display: none;
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    margin: 0;
+}
+
+/* Each question is a card rather than a rule-separated row, so an open
+   answer reads as belonging to its question. */
+.faq-item {
+    background-color: var(--colour-card);
+    border: 1px solid var(--colour-border-soft);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    transition: background-color var(--duration-base) var(--ease-out),
+                border-color var(--duration-base) var(--ease-out),
+                box-shadow var(--duration-base) var(--ease-out);
+}
+
+.faq-item:hover {
+    border-color: var(--tint-medium);
+}
+
+.faq-item[open] {
+    background-color: var(--colour-card-hover);
+    border-color: var(--tint-medium);
+    box-shadow: var(--shadow-sm);
+}
+
+.faq-item > summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-5) var(--card-padding);
+    cursor: pointer;
+    font-family: var(--font-heading);
+    font-weight: var(--weight-semibold);
+    font-size: var(--font-size-heading-card);
+    color: var(--colour-text);
+    list-style: none;
+    transition: color var(--duration-fast) var(--ease-out);
+}
+
+.faq-item > summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item > summary:hover {
+    color: var(--brand-primary);
+}
+
+/* Chevron drawn from two borders, rotating to point up when open. */
+.faq-item > summary::after {
+    content: '';
+    flex-shrink: 0;
+    width: 0.5em;
+    height: 0.5em;
+    margin-right: 0.25em;
+    border-right: 2px solid var(--brand-primary);
+    border-bottom: 2px solid var(--brand-primary);
+    transform: rotate(45deg) translate(-0.1em, -0.1em);
+    transition: transform var(--duration-base) var(--ease-out);
+}
+
+.faq-item[open] > summary::after {
+    transform: rotate(-135deg) translate(-0.15em, -0.15em);
+}
+
+.faq-answer {
+    padding: 0 var(--card-padding) var(--space-5);
+    color: var(--colour-text-muted);
+}
+
+.faq-answer > *:last-child {
+    margin-bottom: 0;
+}
+
+/* Smooth open/close where the browser supports animating to auto height;
+   elsewhere <details> simply snaps, which is the correct fallback. */
+@supports (interpolate-size: allow-keywords) {
+    @media (prefers-reduced-motion: no-preference) {
+        .faq-item {
+            interpolate-size: allow-keywords;
+        }
+
+        .faq-item::details-content {
+            block-size: 0;
+            overflow: hidden;
+            transition: block-size var(--duration-base) var(--ease-out),
+                        content-visibility var(--duration-base) allow-discrete;
+        }
+
+        .faq-item[open]::details-content {
+            block-size: auto;
+        }
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .faq-item,
+    .faq-item > summary::after {
+        transition: none;
+    }
+}
+
+/* ==================== MAP ==================== */
+/* A direct Google Maps embed. This loads Google on page load rather than
+   on click: the click-to-load facade it replaces was one more control for
+   a visitor to find before seeing where the business is, on a page whose
+   whole job is to say where the business is. The cost is a third-party
+   request on every view of a page with show_map set, which is why the
+   embed is opt-in per page rather than sitewide. loading="lazy" holds the
+   request until the frame is near the viewport. */
+.map-embed {
+    margin: 0;
+    border: 1px solid var(--colour-border-soft);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    aspect-ratio: 16 / 9;
+}
+
+.map-embed iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: none;
+}

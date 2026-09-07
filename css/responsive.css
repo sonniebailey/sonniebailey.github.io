@@ -1,0 +1,144 @@
+/* Breakpoint overrides. Numeric literals here must match the documentary
+   --breakpoint-* tokens in variables.css -- plain CSS cannot resolve
+   var() inside an @media condition.
+
+   The approach: rather than let everything shrink by the same amount,
+   each breakpoint restages the spacing, type and wrap-width tokens so
+   the page recomposes at each size. Component rules below the token
+   blocks are limited to things a token cannot express (swapping the nav
+   for the burger, collapsing a grid). */
+
+/* ---------------------------------------------------------------- */
+/* Tablet                                                            */
+/* ---------------------------------------------------------------- */
+@media (max-width: 768px) {
+    :root {
+        --content-inset: var(--space-5);
+        --hero-padding-block: var(--space-8);
+        --section-padding-block: var(--space-8);
+        --section-gap: var(--space-6);
+        --card-padding: var(--space-5);
+        --feature-gap: var(--space-5);
+        --measure-hero: 14ch;
+        --font-size-hero-interior: 2.1rem;
+        --toggle-size: 34px;
+
+        /* Heading tiers step down together so the gaps between levels stay
+           proportional; shrinking only the largest collapses the hierarchy. */
+        --font-size-heading-section: var(--font-size-xl);
+        --font-size-heading-sub: var(--font-size-lg);
+        --font-size-heading-minor: var(--font-size-md);
+        --font-size-heading-card: var(--font-size-md);
+
+        /* Less screen means less room for silence, but the asymmetry
+           between the space above a heading and below it is kept. */
+        --flow-gap-heading-top: var(--space-7);
+        --flow-gap-heading-top-minor: var(--space-5);
+        --flow-gap-block: var(--space-5);
+    }
+
+    .nav-desktop {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex;
+        margin-left: var(--space-3);
+    }
+
+    /* Phone number takes too much width once the nav collapses; it stays
+       available in the mobile menu. */
+    header .nav-phone {
+        display: none;
+    }
+
+    header .theme-toggle {
+        margin-left: auto;
+    }
+
+    .hero__title {
+        font-size: var(--font-size-hero-mobile);
+    }
+
+    .footer__grid {
+        flex-direction: column;
+        gap: var(--space-6);
+    }
+}
+
+/* ---------------------------------------------------------------- */
+/* Mobile                                                            */
+/* ---------------------------------------------------------------- */
+@media (max-width: 480px) {
+    :root {
+        --content-inset: var(--container-padding-mobile);
+        --hero-padding-block: var(--space-7);
+        --section-padding-block: var(--space-7);
+        --section-gap: var(--space-5);
+        --card-padding: var(--space-5);
+        --feature-gap: var(--space-4);
+        --measure-hero: 12ch;
+        --font-size-hero-mobile: 1.9rem;
+        --font-size-hero-interior: 1.8rem;
+        --font-size-heading-card: var(--font-size-md);
+        --icon-lg: 40px;
+
+        --font-size-heading-section: var(--font-size-lg);
+        --font-size-heading-sub: var(--font-size-md);
+        --flow-gap-heading-top: var(--space-6);
+        --flow-gap-heading-top-minor: var(--space-5);
+        --flow-gap-block: var(--space-5);
+    }
+
+    .container {
+        padding: 0 var(--container-padding-mobile);
+    }
+
+    .hero__content {
+        padding: var(--hero-padding-block) var(--container-padding-mobile);
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    /* At this width the control reads better full-width than tucked into
+       the corner. */
+    .faq-controls {
+        justify-content: stretch;
+    }
+
+    .faq-toggle-all {
+        width: 100%;
+    }
+}
+
+/* ---------------------------------------------------------------- */
+/* Short viewports                                                   */
+/* ---------------------------------------------------------------- */
+/* Landscape phones and small laptops: a hero sized in vh eats the whole
+   screen and pushes all content below the fold. Cap it by height rather
+   than width, which a width breakpoint cannot catch. */
+/* Both the vh share and the px floor come down. Raising the vh share here
+   would be self-defeating: on a 740px-tall laptop a larger share is also a
+   larger banner in absolute terms, which is the problem being solved. */
+@media (max-height: 749px) {
+    :root {
+        --hero-min-height: 38vh;
+        --hero-min-height-interior: 28vh;
+        --hero-floor: 220px;
+        --hero-floor-interior: 170px;
+        --hero-padding-block: var(--space-7);
+    }
+}
+
+@media (max-height: 520px) {
+    :root {
+        --hero-min-height: 34vh;
+        --hero-min-height-interior: 26vh;
+        --hero-floor: 180px;
+        --hero-floor-interior: 140px;
+        --font-size-hero: 2.2rem;
+        --font-size-hero-interior: 1.8rem;
+    }
+}

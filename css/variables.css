@@ -1,0 +1,338 @@
+/* Design tokens - single source of truth for every colour, spacing and
+   type value used across the site. Every other CSS file references a
+   token via var(--token); nothing outside this file is a literal colour
+   or spacing value (breakpoint numbers in responsive.css are the one
+   documented exception, since @media cannot resolve var()).
+
+   The BRAND block below is what settings.py reads and writes. Keep one
+   token per line in exactly this form -- the tool edits these lines
+   directly and does not touch anything else in this file.
+
+   Everything below BRAND derives from those eight values, mostly via
+   color-mix(), so a new site changes the brand block and the whole
+   system -- tints, scrims, shadows, dark mode -- moves with it. Values
+   that need hand-tuning for a particular brand can be overridden by
+   editing the derived token directly; nothing forces the derivation. */
+:root {
+    /* ===== BRAND: edit these ===== */
+    --brand-primary: #2d5f8a;
+    --brand-primary-dark: #1e4160;
+    --brand-accent: #c26b3c;
+    --brand-bg: #f8f7f5;
+    --brand-text: #22272e;
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Montserrat', sans-serif;
+    --radius: 8px;
+    /* ===== END BRAND ===== */
+
+    /* ------------------------------------------------------------ */
+    /* Brand tint ramp                                                */
+    /* ------------------------------------------------------------ */
+    /* Four steps of the primary colour over the page background, for
+       hovers, active states, rules and tinted fills. Using a ramp rather
+       than one flat border colour is most of what separates a page that
+       looks designed from one that looks defaulted. */
+    --tint-subtle: color-mix(in srgb, var(--brand-primary) 5%, transparent);
+    --tint-light: color-mix(in srgb, var(--brand-primary) 10%, transparent);
+    --tint-medium: color-mix(in srgb, var(--brand-primary) 18%, transparent);
+    --tint-strong: color-mix(in srgb, var(--brand-primary) 30%, transparent);
+
+    /* ------------------------------------------------------------ */
+    /* Surfaces and text                                              */
+    /* ------------------------------------------------------------ */
+    --colour-text: var(--brand-text);
+    --colour-text-muted: color-mix(in srgb, var(--brand-text) 65%, var(--brand-bg));
+    --colour-text-on-dark: #ffffff;
+
+    --colour-bg: var(--brand-bg);
+    /* Raised surfaces sit slightly lighter than the page, not pure white,
+       so cards read as a material rather than a cut-out. */
+    --colour-bg-alt: color-mix(in srgb, #ffffff 88%, var(--brand-bg));
+    --colour-bg-sunken: color-mix(in srgb, var(--brand-text) 4%, var(--brand-bg));
+
+    /* Card fill is translucent so the ground texture shows through and
+       the surface brightens on hover. */
+    --colour-card: color-mix(in srgb, #ffffff 70%, transparent);
+    --colour-card-hover: color-mix(in srgb, #ffffff 90%, transparent);
+
+    --colour-link: var(--brand-primary);
+    --colour-link-hover: var(--brand-primary-dark);
+
+    --colour-border: color-mix(in srgb, var(--brand-text) 14%, transparent);
+    --colour-border-soft: color-mix(in srgb, var(--brand-text) 8%, transparent);
+    --colour-border-strong: color-mix(in srgb, var(--brand-text) 24%, transparent);
+
+    --header-bg: color-mix(in srgb, #ffffff 82%, var(--brand-bg));
+    --header-border: var(--colour-border-soft);
+    --footer-bg: var(--brand-primary-dark);
+    --footer-text: var(--colour-text-on-dark);
+    --footer-text-muted: color-mix(in srgb, #ffffff 72%, var(--brand-primary-dark));
+    --footer-rule: color-mix(in srgb, #ffffff 18%, transparent);
+
+    /* Discreet dark plate behind a label sitting over imagery (the map
+       facade's load button). Not derived from the brand: it has to work
+       over an arbitrary photograph, not over the page background. */
+    --scrim-plate: color-mix(in srgb, #000000 60%, transparent);
+    --scrim-plate-hover: color-mix(in srgb, #000000 78%, transparent);
+
+    /* ------------------------------------------------------------ */
+    /* Ground texture                                                 */
+    /* ------------------------------------------------------------ */
+    /* A faint tinted wash painted under the page and header. Set
+       --ground-texture to a url() of a tileable image to use a real
+       texture instead; the opacity and size tokens apply either way. */
+    --ground-texture: radial-gradient(
+        circle at 1px 1px,
+        var(--tint-medium) 1px,
+        transparent 0
+    );
+    --ground-texture-size: 22px 22px;
+    --ground-texture-opacity: 0.5;
+
+    /* ------------------------------------------------------------ */
+    /* Hero scrim                                                     */
+    /* ------------------------------------------------------------ */
+    /* Two layers sit over the hero photo: a diagonal brand wash that
+       gives the image the site's colour, and a scrim that HOLDS a
+       plateau of darkness behind the heading before falling away, so
+       text stays legible without dimming the whole photograph. */
+    --hero-wash: linear-gradient(
+        135deg,
+        color-mix(in srgb, var(--brand-primary-dark) 55%, transparent) 0%,
+        color-mix(in srgb, var(--brand-primary-dark) 15%, transparent) 60%,
+        color-mix(in srgb, var(--brand-accent) 22%, transparent) 100%
+    );
+    --hero-scrim: linear-gradient(
+        100deg,
+        color-mix(in srgb, #0d1817 78%, transparent) 0%,
+        color-mix(in srgb, #0d1817 62%, transparent) 38%,
+        color-mix(in srgb, #0d1817 28%, transparent) 68%,
+        color-mix(in srgb, #0d1817 10%, transparent) 100%
+    );
+
+    /* ------------------------------------------------------------ */
+    /* Shadows                                                        */
+    /* ------------------------------------------------------------ */
+    /* Tinted with the brand's dark shade rather than flat black -- black
+       shadows on a warm background read as grey smudges. */
+    --shadow-colour: color-mix(in srgb, var(--brand-primary-dark) 30%, transparent);
+    --shadow-colour-soft: color-mix(in srgb, var(--brand-primary-dark) 16%, transparent);
+    --shadow-sm: 0 1px 2px var(--shadow-colour-soft),
+                 0 2px 8px var(--shadow-colour-soft);
+    --shadow-md: 0 2px 4px var(--shadow-colour-soft),
+                 0 6px 18px var(--shadow-colour);
+    --shadow-lg: 0 4px 8px var(--shadow-colour-soft),
+                 0 16px 40px var(--shadow-colour);
+    --shadow-button: 0 2px 6px var(--shadow-colour);
+    --shadow-button-hover: 0 8px 22px var(--shadow-colour);
+
+    /* ------------------------------------------------------------ */
+    /* Radii                                                          */
+    /* ------------------------------------------------------------ */
+    --radius-sm: 4px;
+    --radius-button: 999px;
+    --radius-card: var(--radius);
+
+    /* ------------------------------------------------------------ */
+    /* Motion                                                         */
+    /* ------------------------------------------------------------ */
+    --ease-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --duration-fast: 0.15s;
+    --duration-base: 0.25s;
+    --duration-slow: 0.45s;
+
+    /* ------------------------------------------------------------ */
+    /* Layout                                                         */
+    /* ------------------------------------------------------------ */
+    --header-height: 84px;
+    --container-max-width: 800px;
+
+    /* Hero heights. The home page gets a taller banner than interior
+       pages; both have a px floor so they do not collapse on short
+       screens (landscape phones, small laptops). Individual pages can
+       override --hero-min-height inline via frontmatter if needed. */
+    --hero-min-height: 42vh;
+    --hero-min-height-interior: 30vh;
+    --hero-floor: 300px;
+    --hero-floor-interior: 220px;
+
+    /* Hero heading wrap width, stepped down at each breakpoint in
+       responsive.css so the heading breaks into a controlled column
+       instead of spanning the whole photograph. */
+    --measure-hero: 16ch;
+
+    /* ------------------------------------------------------------ */
+    /* Spacing scale                                                  */
+    /* ------------------------------------------------------------ */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.5rem;
+    --space-6: 2rem;
+    --space-7: 2.5rem;
+    --space-8: 3rem;
+    --space-9: 4rem;
+    --space-10: 5rem;
+
+    /* Per-area rhythm. These are what responsive.css steps down, so
+       hero, sections and cards can breathe differently at each size
+       instead of everything shrinking by the same amount. */
+    --hero-padding-block: var(--space-9);
+    --section-padding-block: var(--space-9);
+    /* The gap BETWEEN two main blocks, and before the footer. Smaller than
+       --section-padding-block, which is the gap below a full-bleed hero:
+       a hero is a change of register and earns more air than a join
+       between two pieces of ordinary content. One value for both read as
+       a hole between the home page's text and its feature cards. */
+    --section-gap: var(--space-7);
+    --card-padding: var(--space-6);
+    --feature-gap: var(--space-6);
+    --content-inset: var(--space-6);
+
+    /* Header. --header-gap separates every item in the header row; the
+       wordmark is deliberately larger than the nav links, since it is the
+       site's name rather than one more link. */
+    --header-gap: var(--space-5);
+    --logo-height: 44px;
+    --font-size-wordmark: var(--font-size-lg);
+
+    /* Fixed component dimensions */
+    --nav-height: 44px;
+    --burger-width: 28px;
+    --burger-height: 22px;
+    --icon-size: 40px;
+    --icon-sm: 20px;
+    --icon-lg: 48px;
+    --card-min-width: 220px;
+    --footer-column-min: 200px;
+    --reveal-offset: 16px;
+    --toggle-size: 38px;
+
+    --container-padding: var(--content-inset);
+    --container-padding-mobile: var(--space-4);
+
+    /* ------------------------------------------------------------ */
+    /* Type scale                                                     */
+    /* ------------------------------------------------------------ */
+    --font-size-xs: 0.78rem;
+    --font-size-sm: 0.9rem;
+    --font-size-base: 1rem;
+    --font-size-md: 1.125rem;
+    --font-size-lg: 1.35rem;
+    --font-size-xl: 1.75rem;
+    --font-size-2xl: 2.25rem;
+    --font-size-3xl: 2.75rem;
+    --font-size-hero: 3rem;
+    --font-size-hero-mobile: 2.1rem;
+    --font-size-hero-interior: 2.4rem;
+
+    /* Semantic prose tiers, layered on the raw scale above. Components
+       reference these rather than raw sizes, so the reading hierarchy
+       can be retuned in one place. */
+    --font-size-lead: var(--font-size-md);
+    --font-size-prose: var(--font-size-base);
+    --font-size-secondary: var(--font-size-sm);
+    --font-size-caption: var(--font-size-xs);
+
+    /* Heading tiers, named by role rather than by level. The same visual
+       role can be an h2 on one page and an h3 on another, so components
+       reference the tier. Levels are mapped to tiers once, in base.css. */
+    --font-size-heading-section: var(--font-size-2xl);
+    --font-size-heading-sub: var(--font-size-xl);
+    --font-size-heading-minor: var(--font-size-lg);
+    --font-size-heading-card: var(--font-size-lg);
+
+    /* Weights. Only the values loaded by the Google Fonts URL in
+       content/site.json may appear here: asking for a weight that was not
+       loaded makes the browser synthesise a smeared fake bold, which is
+       the single most common cause of a page's type looking inconsistent.
+       Montserrat is loaded at 400, 500, 600 and 700. */
+    --weight-body: 400;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --weight-heading: 700;
+
+    --line-height-prose: 1.7;
+    --line-height-heading: 1.2;
+    --line-height-heading-tight: 1.15;
+    --letter-spacing-heading: -0.01em;
+    --letter-spacing-card: 0.3px;
+    --letter-spacing-wide: 0.08em;
+
+    /* Vertical rhythm for running text. A heading owes more space to what
+       came before it than to its own body copy: without that asymmetry a
+       new section reads as just another paragraph, which is what makes
+       otherwise correct type feel arbitrarily spaced. */
+    --flow-gap: var(--space-4);
+    --flow-gap-heading-top: var(--space-8);
+    --flow-gap-heading-top-minor: var(--space-6);
+    --flow-gap-heading-bottom: var(--space-3);
+    --flow-gap-block: var(--space-6);
+
+    /* ------------------------------------------------------------ */
+    /* Breakpoints (documentary; see responsive.css)                  */
+    /* ------------------------------------------------------------ */
+    --breakpoint-tablet: 768px;
+    --breakpoint-mobile: 480px;
+}
+
+/* ================================================================ */
+/* Dark mode                                                         */
+/* ================================================================ */
+/* Applied by [data-theme="dark"] on <html>, set before first paint by
+   the inline preload script in templates/partials/theme-preload.html.
+   That script resolves a saved choice first, falling back to the
+   visitor's OS setting, so there is no prefers-color-scheme query here.
+
+   Only colour tokens are redefined -- spacing, type and motion are
+   shared. Surfaces derive from the brand text colour rather than pure
+   black so the dark theme keeps the brand's temperature. */
+[data-theme="dark"] {
+    --colour-bg: color-mix(in srgb, var(--brand-text) 88%, #000000);
+    --colour-bg-alt: color-mix(in srgb, var(--brand-text) 74%, #000000);
+    --colour-bg-sunken: color-mix(in srgb, var(--brand-text) 94%, #000000);
+
+    --colour-text: color-mix(in srgb, #ffffff 90%, var(--brand-bg));
+    --colour-text-muted: color-mix(in srgb, #ffffff 58%, var(--colour-bg));
+
+    /* Saturated brand colours vibrate against dark backgrounds; lift them
+       towards the page background so links and buttons stay readable. */
+    --colour-link: color-mix(in srgb, var(--brand-primary) 62%, #ffffff);
+    --colour-link-hover: color-mix(in srgb, var(--brand-accent) 70%, #ffffff);
+
+    --colour-card: color-mix(in srgb, #ffffff 6%, transparent);
+    --colour-card-hover: color-mix(in srgb, #ffffff 11%, transparent);
+
+    --colour-border: color-mix(in srgb, #ffffff 16%, transparent);
+    --colour-border-soft: color-mix(in srgb, #ffffff 9%, transparent);
+    --colour-border-strong: color-mix(in srgb, #ffffff 28%, transparent);
+
+    --header-bg: color-mix(in srgb, var(--brand-text) 80%, #000000);
+    --header-border: var(--colour-border-soft);
+    --footer-bg: color-mix(in srgb, var(--brand-text) 96%, #000000);
+    --footer-text: var(--colour-text);
+    --footer-text-muted: var(--colour-text-muted);
+
+    --tint-subtle: color-mix(in srgb, var(--brand-primary) 10%, transparent);
+    --tint-light: color-mix(in srgb, var(--brand-primary) 18%, transparent);
+    --tint-medium: color-mix(in srgb, var(--brand-primary) 28%, transparent);
+    --tint-strong: color-mix(in srgb, var(--brand-primary) 42%, transparent);
+
+    /* Shadows read as depth only against light surfaces; on dark, deepen
+       to near-black so cards still separate from the page. */
+    --shadow-colour: color-mix(in srgb, #000000 55%, transparent);
+    --shadow-colour-soft: color-mix(in srgb, #000000 32%, transparent);
+
+    --ground-texture-opacity: 0.35;
+
+    /* The hero photo is already dark-friendly; deepen the scrim slightly
+       so it sits with the rest of the dark page. */
+    --hero-scrim: linear-gradient(
+        100deg,
+        color-mix(in srgb, #000000 82%, transparent) 0%,
+        color-mix(in srgb, #000000 68%, transparent) 38%,
+        color-mix(in srgb, #000000 38%, transparent) 68%,
+        color-mix(in srgb, #000000 18%, transparent) 100%
+    );
+}

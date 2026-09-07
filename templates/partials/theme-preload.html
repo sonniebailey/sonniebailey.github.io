@@ -1,0 +1,23 @@
+<script>
+// Inline preload: decide the theme and set it on <html> before first paint,
+// so the page never flashes light before switching to dark. This runs
+// synchronously in <head> ahead of the stylesheet, and must stay
+// self-contained -- it cannot depend on js/theme.js, which loads later.
+//
+// Order of preference: the visitor's saved choice, then their operating
+// system setting, then light.
+(function () {
+    try {
+        var saved = localStorage.getItem('site-theme');
+        var systemDark = window.matchMedia
+            && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute(
+            'data-theme',
+            saved || (systemDark ? 'dark' : 'light')
+        );
+    } catch (e) {
+        // localStorage can throw in private mode; fall through to light.
+        document.documentElement.setAttribute('data-theme', 'light');
+    }
+})();
+</script>

@@ -1,0 +1,60 @@
+{
+  "name": "Fairhaven Wealth",
+  "legal_name": "",
+  "tagline": "Life model. Champion power walker. Professional lion tamer.",
+  "domain": "https://www.bucksandbox.example.co.nz",
+  "search_visible": false,
+  "phone": {
+    "display": "021 BUCK 01",
+    "tel": "+6421282501"
+  },
+  "email": "buck@example.co.nz",
+  "address": {
+    "lines": [
+      "The Old Drill Hall",
+      "9 Ringmaster Lane",
+      "Wellington 6011"
+    ],
+    "single_line": "The Old Drill Hall, 9 Ringmaster Lane, Wellington 6011"
+  },
+  "hours": [
+    {
+      "days": "Monday to Friday",
+      "times": "6am to 7pm"
+    },
+    {
+      "days": "Saturday",
+      "times": "Training walk, back by noon"
+    }
+  ],
+  "nav": [
+    {
+      "label": "About",
+      "href": "about.html"
+    },
+    {
+      "label": "What I do",
+      "href": "services.html"
+    },
+    {
+      "label": "FAQ",
+      "href": "faq.html"
+    },
+    {
+      "label": "Contact",
+      "href": "contact.html"
+    }
+  ],
+  "favicon": "images/favicon.png",
+  "social_image": "images/social-card.png",
+  "fonts": {
+    "heading": "Montserrat",
+    "body": "Montserrat",
+    "google_css": "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+  },
+  "map": {
+    "embed_url": "",
+    "link_url": "https://maps.google.com/?q=Wellington"
+  },
+  "footer_note": "All lion work is carried out under supervision, with the lion's consent, and never before breakfast."
+}

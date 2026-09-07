@@ -1,0 +1,13 @@
+{# Site identity in the header. A text wordmark by default: most small
+   businesses have no usable logo file, and a bitmap wordmark cannot
+   recolour for dark mode, so it either disappears against the header or
+   has to be shipped twice. Set "logo" in site.json to an image path to
+   use a real logo instead -- an SVG that inherits currentColor, or a
+   mark that reads on both a light and a dark header. #}
+<a href="index.html" class="logo" aria-label="{{ site.name }}, home">
+    {%- if site.get('logo') %}
+    <img src="{{ site.get('logo') }}" alt="{{ site.name }}">
+    {%- else %}
+    <span class="logo__wordmark">{{ site.name }}</span>
+    {%- endif %}
+</a>

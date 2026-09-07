@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block main %}
+<section class="hero hero--interior" style="background-image: url('{{ page.hero_image }}');">
+    <div class="hero__content">
+        <h1 class="hero__title">{{ hero_title }}</h1>
+        {% if page.cta %}
+        <a href="{{ page.cta.href }}" class="hero__cta">{{ page.cta.label }}</a>
+        {% endif %}
+    </div>
+</section>
+
+<div class="container">
+    {# The controls and the questions are one block: .faq-page owns the
+       section padding so the control row does not add a second helping of
+       it on top of the .prose padding.
+
+       The toggle-all button is hidden until js/faq.js enables it, so a
+       visitor without JavaScript is never shown a control that does
+       nothing. The accordions themselves are native <details> and work
+       regardless. #}
+    <div class="faq-page">
+        <div class="faq-controls">
+            <button type="button" class="faq-toggle-all" hidden>Expand all</button>
+        </div>
+
+        <div class="prose">
+            {{ content }}
+        </div>
+    </div>
+
+    {% if site.map and page.show_map %}
+    <div class="map-embed">
+        <iframe
+            src="{{ site.map.embed_url }}"
+            title="Map showing the location of {{ site.name }}"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen></iframe>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

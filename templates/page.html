@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block main %}
+<section class="hero hero--interior" style="background-image: url('{{ page.hero_image }}');">
+    <div class="hero__content">
+        <h1 class="hero__title">{{ hero_title }}</h1>
+        {% if page.cta %}
+        <a href="{{ page.cta.href }}" class="hero__cta">{{ page.cta.label }}</a>
+        {% endif %}
+    </div>
+</section>
+
+<div class="container">
+    <div class="prose">
+        {{ content }}
+    </div>
+
+    {% if site.map and page.show_map %}
+    <div class="map-embed">
+        <iframe
+            src="{{ site.map.embed_url }}"
+            title="Map showing the location of {{ site.name }}"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen></iframe>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

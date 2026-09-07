@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Site settings</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  /* Developer tool only; deliberately self-contained and not using the site's CSS. */
+  body { font: 15px/1.5 system-ui, sans-serif; margin: 0; padding: 1.5rem; background: #f4f4f2; color: #222; }
+  main { max-width: 900px; margin: 0 auto; }
+  h1 { font-size: 1.4rem; }
+  h2 { font-size: 1.05rem; margin-top: 2rem; border-bottom: 1px solid #ccc; padding-bottom: .25rem; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem 1.5rem; }
+  label { display: block; font-size: .85rem; color: #555; }
+  input, textarea { width: 100%; box-sizing: border-box; padding: .4rem .5rem; border: 1px solid #bbb; border-radius: 4px; font: inherit; }
+  textarea { min-height: 4rem; }
+  .row { display: flex; gap: .5rem; align-items: center; }
+  input[type=color] { width: 3rem; height: 2.2rem; padding: 0; border: 1px solid #bbb; }
+  button { font: inherit; padding: .5rem 1rem; border-radius: 4px; border: 1px solid #333; background: #333; color: #fff; cursor: pointer; }
+  button.secondary { background: #fff; color: #333; }
+  #status { margin-left: 1rem; }
+  #status.error { color: #b00020; }
+  .actions { position: sticky; bottom: 0; background: #f4f4f2; padding: 1rem 0; border-top: 1px solid #ccc; margin-top: 2rem; }
+  p.note { font-size: .85rem; color: #555; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Site settings</h1>
+  <p class="note">Edits content/site.json and the brand block at the top of css/variables.css. Page text is not edited here: open the files in content/ instead. After saving, rebuild (python3 build.py or preview.py) to see the change.</p>
+
+  <h2>Business</h2>
+  <div class="grid" id="business"></div>
+
+  <h2>Contact</h2>
+  <div class="grid" id="contact"></div>
+
+  <h2>Navigation</h2>
+  <p class="note">One link per line as <code>Label | file.html</code>. The logo links to index.html and is not listed here.</p>
+  <textarea id="nav"></textarea>
+
+  <h2>Opening hours</h2>
+  <p class="note">One line per entry as <code>Days | Times</code>. Leave empty for none.</p>
+  <textarea id="hours"></textarea>
+
+  <h2>Brand</h2>
+  <div class="grid" id="brand"></div>
+
+  <h2>Everything else</h2>
+  <p class="note">Keys not covered by the fields above (images, fonts, map, footer note) are shown here as JSON and saved as-is.</p>
+  <textarea id="rest" style="min-height: 12rem; font-family: monospace;"></textarea>
+
+  <div class="actions">
+    <button id="save">Save</button>
+    <button id="reload" class="secondary">Reload from disk</button>
+    <span id="status"></span>
+  </div>
+</main>
+
+<script>
+// @ts-check
+/** Keys edited through dedicated fields; everything else goes in the "rest" JSON box. */
+const BUSINESS_KEYS = ['name', 'legal_name', 'tagline', 'domain'];
+const CONTACT_KEYS = ['email', 'phone.display', 'phone.tel', 'address.single_line', 'address.lines'];
+const HANDLED = new Set(['name', 'legal_name', 'tagline', 'domain', 'email', 'phone', 'address', 'nav', 'hours']);
+
+/**
+ * Read a dotted key from an object.
+ * @param {any} obj
+ * @param {string} key
+ * @returns {any}
+ */
+function get(obj, key) { return key.split('.').reduce((o, k) => (o == null ? undefined : o[k]), obj); }
+
+/**
+ * Set a dotted key on an object, creating intermediate objects.
+ * @param {any} obj
+ * @param {string} key
+ * @param {any} value
+ * @returns {void}
+ */
+function set(obj, key, value) {
+  const parts = key.split('.');
+  let o = obj;
+  for (const p of parts.slice(0, -1)) { if (typeof o[p] !== 'object' || o[p] === null) o[p] = {}; o = o[p]; }
+  o[parts[parts.length - 1]] = value;
+}
+
+/**
+ * Render text inputs for a list of keys into a grid container.
+ * @param {HTMLElement} container
+ * @param {string[]} keys
+ * @param {any} site
+ * @returns {void}
+ */
+function renderFields(container, keys, site) {
+  container.innerHTML = '';
+  for (const key of keys) {
+    const value = get(site, key);
+    const label = document.createElement('label');
+    label.textContent = key;
+    const input = document.createElement(Array.isArray(value) ? 'textarea' : 'input');
+    input.dataset.key = key;
+    input.value = Array.isArray(value) ? value.join('\n') : (value ?? '');
+    label.appendChild(input);
+    container.appendChild(label);
+  }
+}
+
+/**
+ * Render the brand tokens: a colour picker plus text for hex values, text otherwise.
+ * @param {Record<string, string>} brand
+ * @returns {void}
+ */
+function renderBrand(brand) {
+  const container = document.getElementById('brand');
+  container.innerHTML = '';
+  for (const [name, value] of Object.entries(brand)) {
+    const label = document.createElement('label');
+    label.textContent = name;
+    const row = document.createElement('div');
+    row.className = 'row';
+    const text = document.createElement('input');
+    text.dataset.token = name;
+    text.value = value;
+    if (/^#[0-9a-f]{6}$/i.test(value)) {
+      const picker = document.createElement('input');
+      picker.type = 'color';
+      picker.value = value;
+      picker.addEventListener('input', () => { text.value = picker.value; });
+      text.addEventListener('input', () => { if (/^#[0-9a-f]{6}$/i.test(text.value)) picker.value = text.value; });
+      row.appendChild(picker);
+    }
+    row.appendChild(text);
+    label.appendChild(row);
+    container.appendChild(label);
+  }
+}
+
+/**
+ * Populate the whole page from the server state.
+ * @param {{site: any, brand: Record<string,string>}} state
+ * @returns {void}
+ */
+function render(state) {
+  const site = state.site;
+  renderFields(document.getElementById('business'), BUSINESS_KEYS, site);
+  renderFields(document.getElementById('contact'), CONTACT_KEYS, site);
+  document.getElementById('nav').value = (site.nav || []).map(i => `${i.label} | ${i.href}`).join('\n');
+  document.getElementById('hours').value = (site.hours || []).map(h => `${h.days} | ${h.times}`).join('\n');
+  renderBrand(state.brand);
+  const rest = {};
+  for (const [k, v] of Object.entries(site)) if (!HANDLED.has(k)) rest[k] = v;
+  document.getElementById('rest').value = JSON.stringify(rest, null, 2);
+}
+
+/**
+ * Collect the page back into a state object. Throws on invalid input.
+ * @returns {{site: any, brand: Record<string,string>}}
+ */
+function collect() {
+  const site = JSON.parse(document.getElementById('rest').value);
+  for (const el of document.querySelectorAll('[data-key]')) {
+    const key = el.dataset.key;
+    const value = el.tagName === 'TEXTAREA' ? el.value.split('\n').map(s => s.trim()).filter(Boolean) : el.value.trim();
+    set(site, key, value);
+  }
+  site.nav = document.getElementById('nav').value.split('\n').map(s => s.trim()).filter(Boolean).map(line => {
+    const [label, href] = line.split('|').map(s => s.trim());
+    if (!label || !href) throw new Error(`Navigation line needs "Label | file.html": ${line}`);
+    return { label, href };
+  });
+  site.hours = document.getElementById('hours').value.split('\n').map(s => s.trim()).filter(Boolean).map(line => {
+    const [days, times] = line.split('|').map(s => s.trim());
+    if (!days || !times) throw new Error(`Hours line needs "Days | Times": ${line}`);
+    return { days, times };
+  });
+  for (const key of ['name', 'domain', 'email']) if (!site[key]) throw new Error(`${key} is required`);
+  const brand = {};
+  for (const el of document.querySelectorAll('[data-token]')) {
+    if (!el.value.trim()) throw new Error(`${el.dataset.token} cannot be empty`);
+    brand[el.dataset.token] = el.value.trim();
+  }
+  return { site, brand };
+}
+
+/**
+ * Show a status message.
+ * @param {string} text
+ * @param {boolean} [isError]
+ * @returns {void}
+ */
+function status(text, isError) {
+  const el = document.getElementById('status');
+  el.textContent = text;
+  el.className = isError ? 'error' : '';
+}
+
+/** Fetch state from disk and render it. @returns {Promise<void>} */
+async function load() {
+  const res = await fetch('/api/state');
+  const data = await res.json();
+  if (!res.ok) { status(data.error || 'Could not load', true); return; }
+  render(data);
+  status('Loaded');
+}
+
+/** Save the page to disk. @returns {Promise<void>} */
+async function save() {
+  let state;
+  try { state = collect(); } catch (e) { status(e.message, true); return; }
+  const res = await fetch('/api/state', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(state) });
+  const data = await res.json();
+  if (!res.ok) { status(data.error || 'Save failed', true); return; }
+  status('Saved. Rebuild to see the change.');
+}
+
+document.getElementById('save').addEventListener('click', save);
+document.getElementById('reload').addEventListener('click', load);
+load();
+</script>
+</body>
+</html>

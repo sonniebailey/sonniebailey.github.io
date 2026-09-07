@@ -1,0 +1,412 @@
+/* Reset, page furniture and the hero. Everything here is generic layout;
+   component-specific rules (cards, FAQ, nav) live in components.css. */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+body {
+    position: relative;
+    font-family: var(--font-body);
+    font-size: var(--font-size-base);
+    font-weight: var(--weight-body);
+    line-height: var(--line-height-prose);
+    color: var(--colour-text);
+    background-color: var(--colour-bg);
+}
+
+/* Ground texture: a faint tinted pattern painted under the whole page so
+   surfaces read as a material rather than flat colour. Sits behind all
+   content (z-index -1) and is inert to pointers. Set --ground-texture to
+   none in variables.css to switch it off site-wide. */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image: var(--ground-texture);
+    background-size: var(--ground-texture-size);
+    opacity: var(--ground-texture-opacity);
+}
+
+/* Headings: every level, mapped once to a tier from variables.css. All six
+   levels are covered deliberately -- a level left out falls back to the
+   browser's own family, size and weight, which is what makes markdown-
+   authored pages look like two different sites stitched together. */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: var(--weight-heading);
+    line-height: var(--line-height-heading);
+    letter-spacing: var(--letter-spacing-heading);
+    color: var(--colour-text);
+    margin: 0 0 var(--flow-gap-heading-bottom);
+    text-wrap: balance;
+}
+
+h1 {
+    font-size: var(--font-size-3xl);
+    line-height: var(--line-height-heading-tight);
+}
+
+h2 {
+    font-size: var(--font-size-heading-section);
+    color: var(--brand-primary);
+}
+
+h3 {
+    font-size: var(--font-size-heading-sub);
+}
+
+/* From h4 down the type stops growing and the distinction is carried by
+   weight and letter-spacing instead, so deep nesting cannot outgrow the
+   section heading above it. */
+h4 {
+    font-size: var(--font-size-heading-minor);
+    font-weight: var(--weight-semibold);
+}
+
+h5, h6 {
+    font-size: var(--font-size-md);
+    font-weight: var(--weight-semibold);
+    letter-spacing: var(--letter-spacing-card);
+}
+
+h6 {
+    font-size: var(--font-size-base);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-wide);
+    color: var(--colour-text-muted);
+}
+
+p {
+    margin: 0 0 var(--flow-gap);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: var(--colour-link);
+    text-decoration: none;
+    transition: color var(--duration-fast) var(--ease-out);
+}
+
+a:hover {
+    color: var(--colour-link-hover);
+}
+
+/* Smooth in-page scrolling, switched off for reduced-motion users */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+/* Visible keyboard focus ring; unaffected for mouse users */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 2px solid var(--brand-primary);
+    outline-offset: 2px;
+}
+
+.container {
+    max-width: var(--container-max-width);
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+    box-sizing: border-box;
+}
+
+main {
+    display: block;
+    width: 100%;
+    padding-top: var(--header-height);
+}
+
+/* ==================== SECTION RHYTHM ==================== */
+/* One owner for the vertical rhythm of a page's main blocks. The blocks
+   themselves (.prose, .features, .faq-page, .map-embed) carry no vertical
+   padding or margin of their own: the gap between any two of them is this
+   grid gap, and the gap above the first and below the last is this
+   padding-block.
+
+   Both ends are padded, and the bottom one matters: the footer paints its
+   own background, so the join is a visible colour boundary. Space added
+   inside the footer sits below that line and does nothing to stop the
+   last block touching the edge of its own section. The gap before the
+   footer is therefore shared -- this padding on the page side of the
+   boundary, the footer's top padding on the other.
+
+   This is structural, not a convention to remember. Previously each block
+   padded both its top and its bottom with a full --section-padding-block,
+   so every join between two of them (text to cards, text to map, map to
+   footer) rendered a doubled gap. A new block added here inherits the
+   correct spacing without knowing any of that.
+
+   Scoped to main so the header and footer, which share .container, keep
+   owning their own padding. */
+main > .container {
+    display: grid;
+    gap: var(--section-gap);
+    padding-block: var(--section-padding-block) var(--section-gap);
+}
+
+/* The FAQ page opens on a small right-aligned control rather than a body
+   of text, so it needs less air above it than a paragraph does: a full
+   hero gap above a lone button reads as a hole rather than as breathing
+   room. Matching the block gap puts the control at the same distance the
+   rest of the page uses between blocks. */
+main > .container:has(> .faq-page) {
+    padding-block-start: var(--section-gap);
+}
+
+/* Grid items refuse to shrink below their content by default, which would
+   let a wide table or code block in .prose stretch the page. */
+main > .container > * {
+    min-width: 0;
+}
+
+/* ==================== SCROLL REVEAL ==================== */
+/* js/reveal.js adds .is-visible; elements stay visible if JS never runs. */
+.reveal {
+    opacity: 0;
+    transform: translateY(var(--reveal-offset));
+    transition: opacity var(--duration-slow) var(--ease-out),
+                transform var(--duration-slow) var(--ease-out);
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/* ==================== VIEW TRANSITIONS ==================== */
+/* CSS-only cross-document transitions; ignored by browsers without support. */
+@view-transition {
+    navigation: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    ::view-transition-group(*),
+    ::view-transition-old(*),
+    ::view-transition-new(*) {
+        animation: none !important;
+    }
+}
+
+/* ==================== HERO ==================== */
+/* Two hero sizes: the home page gets the taller banner, every other page
+   uses .hero--interior. Both pair a vh height with a px floor so they
+   stay usable on short screens (landscape phones, small laptops) without
+   eating the whole viewport on tall ones. */
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: max(var(--hero-min-height), var(--hero-floor));
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    view-transition-name: hero;
+}
+
+.hero--interior {
+    min-height: max(var(--hero-min-height-interior), var(--hero-floor-interior));
+}
+
+/* Layer one: a diagonal brand wash that pulls the photograph towards the
+   site's colour instead of leaving it as an unrelated stock image. */
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: var(--hero-wash);
+}
+
+/* Layer two: the scrim, which holds a plateau of darkness behind the
+   heading and then falls away, so the text is legible without dimming
+   the whole image evenly. */
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: var(--hero-scrim);
+}
+
+.hero__content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: var(--hero-padding-block) var(--container-padding);
+}
+
+.hero__title {
+    color: var(--colour-text-on-dark);
+    font-size: var(--font-size-hero);
+    line-height: var(--line-height-heading);
+    letter-spacing: var(--letter-spacing-heading);
+    margin-bottom: var(--space-5);
+    /* Capped so the heading wraps into a column against the scrim's dark
+       side rather than running across the whole photograph. */
+    max-width: var(--measure-hero);
+    text-wrap: balance;
+}
+
+.hero--interior .hero__title {
+    font-size: var(--font-size-hero-interior);
+}
+
+.hero__cta {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    overflow: hidden;
+    padding: var(--space-4) var(--space-6);
+    background-color: var(--brand-accent);
+    color: var(--colour-text-on-dark);
+    font-family: var(--font-body);
+    font-weight: var(--weight-semibold);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-button);
+    transition: transform var(--duration-base) var(--ease-out),
+                box-shadow var(--duration-base) var(--ease-out),
+                background-color var(--duration-fast) var(--ease-out);
+}
+
+/* Sheen: a translucent band that sweeps across the button on hover. */
+.hero__cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+        120deg,
+        transparent 0%,
+        color-mix(in srgb, #ffffff 32%, transparent) 50%,
+        transparent 100%
+    );
+    transition: left var(--duration-slow) var(--ease-out);
+}
+
+.hero__cta:hover {
+    background-color: var(--brand-primary-dark);
+    color: var(--colour-text-on-dark);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-button-hover);
+}
+
+.hero__cta:hover::before {
+    left: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero__cta,
+    .hero__cta::before {
+        transition: none;
+    }
+
+    .hero__cta:hover {
+        transform: none;
+    }
+}
+
+/* ==================== HEADER ==================== */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    background-color: var(--header-bg);
+    border-bottom: 1px solid var(--header-border);
+    box-shadow: var(--shadow-sm);
+    z-index: 100;
+}
+
+/* One gap value separates every item in the header, so the phone number,
+   the theme toggle and the burger are spaced by the same rule rather than
+   by margins added to each in turn. */
+header .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: var(--header-gap);
+}
+
+/* ==================== FOOTER ==================== */
+footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    /* Half of the gap across the footer boundary; the container's bottom
+       padding is the other half, on the page side of the colour change. */
+    padding: var(--section-gap) 0 var(--space-6);
+}
+
+footer a {
+    color: var(--footer-text);
+}
+
+footer a:hover {
+    color: var(--brand-accent);
+}
+
+footer h3 {
+    color: var(--footer-text);
+    font-size: var(--font-size-md);
+    margin-bottom: var(--space-4);
+}
+
+.footer__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-8);
+    margin-bottom: var(--space-7);
+}
+
+.footer__block {
+    flex: 1 1 var(--footer-column-min);
+}
+
+.footer__block p {
+    margin-bottom: var(--space-2);
+    color: var(--footer-text-muted);
+}
+
+.footer__note,
+.footer__legal {
+    font-size: var(--font-size-secondary);
+    color: var(--footer-text-muted);
+    margin: 0;
+}
+
+.footer__legal {
+    margin-top: var(--space-2);
+    border-top: 1px solid var(--footer-rule);
+    padding-top: var(--space-5);
+}
