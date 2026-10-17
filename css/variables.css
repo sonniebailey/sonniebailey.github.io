@@ -166,6 +166,49 @@
     --duration-fast: 0.15s;
     --duration-base: 0.25s;
     --duration-slow: 0.45s;
+    /* Speeds up as it goes, like something falling. */
+    --ease-in: cubic-bezier(0.55, 0, 1, 0.45);
+
+    /* Tilt (js/tilt.js): feature cards and the hero button turn towards
+       the pointer, their contents lift off the surface, and a soft light
+       follows the pointer across them. */
+    --tilt-perspective: 900px;
+    --tilt-max: 7deg;
+    --tilt-lift: 28px;
+    --tilt-glare: color-mix(in srgb, var(--colour-text-on-dark) 9%, transparent);
+    --tilt-glare-size: 60%;
+    --button-face-hover: color-mix(in srgb, var(--brand-accent) 88%, var(--colour-text-on-dark));
+
+    /* Hero light (js/hero-light.js): a ray of warm light shining from the
+       hero's top right corner towards the pointer, widening as it goes:
+       a bright core inside a fainter halo. Spread is the half-angle of
+       the whole cone, core the half-angle of the bright part. Length
+       must reach the hero's far corner; the hero is never wider than the
+       screen, so a little over the screen's longer side always does. */
+    --hero-light: color-mix(in srgb, #ffe9c2 26%, transparent);
+    --hero-ray-halo: color-mix(in srgb, #ffe9c2 9%, transparent);
+    --hero-ray-spread: 10deg;
+    --hero-ray-core: 3deg;
+    --hero-ray-length: 110vmax;
+    /* As the pointer comes down to the hero button's level the ray widens
+       and strengthens, at full anywhere level with or below the button.
+       Widen is how many times wider it gets at full; rest is its strength
+       well above the button, as a share of full. */
+    --hero-ray-boost-widen: 2.2;
+    --hero-ray-rest: 0.65;
+    /* Strength with distance from the corner (opaque is full strength). */
+    --hero-ray-fade: linear-gradient(to bottom, #000 30%, transparent 100%);
+
+    /* Page change: the current page is ripped down off the screen. It
+       jiggles side to side as it gives, then falls straight down,
+       uncovering the next page, which starts in shadow and brightens.
+       Jiggle is the angle of each yank; tug is how far the page has given
+       by the time it lets go, as a share of the screen's height. */
+    --duration-page-drop: 0.85s;
+    --page-drop-tug: 3%;
+    --page-drop-jiggle: 1.2deg;
+    --page-drop-shade: 0.45;
+    --page-drop-under-scale: 0.98;
 
     /* ------------------------------------------------------------ */
     /* Layout                                                         */
@@ -330,10 +373,9 @@
     --colour-text: #ffffff;
     --colour-text-muted: rgba(255, 255, 255, 0.7);
 
-    /* Saturated brand colours vibrate against dark backgrounds; lift them
-       towards the page background so links and buttons stay readable. */
-    --colour-link: #7FA6CE;
-    --colour-link-hover: color-mix(in srgb, #7FA6CE 70%, #ffffff);
+    /* All text, links included, is white; hover dims to the muted white. */
+    --colour-link: #ffffff;
+    --colour-link-hover: var(--colour-text-muted);
 
     --colour-card: rgba(255, 255, 255, 0.035);
     --colour-card-hover: rgba(255, 255, 255, 0.07);

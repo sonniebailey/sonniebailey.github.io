@@ -110,14 +110,14 @@
 /* Brand-coloured markers. ::marker is the only way to colour a bullet
    without replacing the list mechanism, which would break numbering. */
 .prose li::marker {
-    color: var(--brand-primary);
+    color: var(--colour-text);
 }
 
 /* ==================== QUOTES ==================== */
 .prose blockquote {
     margin: var(--flow-gap-block) 0;
     padding: var(--space-5) var(--card-padding);
-    border-left: 3px solid var(--brand-primary);
+    border-left: 3px solid var(--colour-text);
     border-radius: 0 var(--radius-card) var(--radius-card) 0;
     background-color: var(--tint-subtle);
     color: var(--colour-text-muted);
@@ -209,7 +209,7 @@
 .prose th {
     font-family: var(--font-heading);
     font-weight: var(--weight-semibold);
-    color: var(--brand-primary);
+    color: var(--colour-text);
     border-bottom-color: var(--colour-border);
 }
 

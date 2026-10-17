@@ -14,7 +14,7 @@ How the site is built, for whoever maintains it. readme.md covers day-to-day edi
 - content/ - one markdown file per page, plus site.json
 - templates/ - Jinja2 templates: base.html (page shell and head), page.html, home.html, faq.html, partials/header.html, partials/footer.html, partials/logo.html, partials/icons.html
 - css/ - main.css imports variables.css, base.css, prose.css, components.css, responsive.css in that order
-- js/ - header.js (floating header state), menu.js (mobile menu), reveal.js (scroll-in animation), faq.js (expand/collapse all)
+- js/ - header.js (floating header state), menu.js (mobile menu), reveal.js (scroll-in animation), tilt.js (card and button tilt), hero-light.js (light across the hero), faq.js (expand/collapse all)
 - images/ - images as published; the build copies this folder unchanged. images/favicon.png is the favicon site.json names. images/logo.png is not used by any template (site.json sets no logo)
 - icons/ - the full favicon set (16, 32, 180, 192, 512 and .ico), copied from the live site. Nothing links it yet and the build does not copy it; base.html links only images/favicon.png
 - build.py and build/ - the build; build/orchestrator.py runs the steps in order
@@ -77,7 +77,9 @@ prose.css works off elements alone, never classes, because an author writing mar
 
 --ground-texture paints a texture under the page and header via body::before, so surfaces read as a material rather than flat colour. It is Snoopy's 45-degree fabric weave tile, copied into images/ in both tones the pattern ships in, drawn at native size and repeated. Set it to none to switch it off.
 
-The hero is two layers over the photograph: --hero-wash, a diagonal brand gradient that pulls the image towards the site's colour, and --hero-scrim, which holds a plateau of darkness behind the heading before falling away, so the text is legible without dimming the whole image evenly.
+The hero is two layers over the photograph: --hero-wash, a diagonal brand gradient that pulls the image towards the site's colour, and --hero-scrim, which holds a plateau of darkness behind the heading before falling away, so the text is legible without dimming the whole image evenly. A third layer, .hero__light, is a ray of warm light shining from the hero's top right corner towards the pointer, widening into a cone across the whole hero, a bright core inside a fainter halo (js/hero-light.js). The cone is a conic gradient on a pseudo-element that is only ever rotated about the corner, so it is painted once and turned by the graphics card; an earlier version transitioned a gradient's position instead, which repainted the whole hero on every frame and lagged visibly. The box's width uses CSS tan(), so the cone needs a browser that supports it. The script eases the aim after the pointer in a frame loop that stops once it has caught up. As the pointer comes down towards the hero button's level the ray widens and strengthens, at full anywhere level with or below the button's top edge, and keyboard focus on the button lights the ray aimed at it at full strength; this too is transform and opacity only.
+
+Page changes use the cross-document view transition, which only supporting browsers run: the current page jiggles side to side as it gives, then falls straight off the bottom of the screen, uncovering the next page underneath. The header has its own transition name and stays still. A speculation rules block in base.html prepares a page in the background when its link is hovered, so the drop starts on the click rather than after the next page loads; browsers without support ignore it. The drop is off under reduced motion.
 
 Hero height is a vh value paired with a px floor: --hero-min-height (home) and --hero-min-height-interior (every other page, applied by the hero--interior class). responsive.css also lowers these under max-height queries, so landscape phones and short laptop screens do not get a banner that fills the viewport.
 
@@ -119,6 +121,8 @@ Each file is self-contained, has JSDoc comments and starts with `// @ts-check`. 
 - faq.js: reveals the .faq-toggle-all button and wires it to open or close every question at once, re-syncing its label when a visitor opens one by hand. The accordions themselves are native details elements and work without it.
 - menu.js: toggles the mobile menu (button.menu-toggle and nav#mobile-menu), closes on Escape, returns focus.
 - reveal.js: adds is-visible to elements with class reveal as they scroll into view. Does nothing when the visitor prefers reduced motion or the browser lacks IntersectionObserver; the CSS keeps those elements visible.
+- tilt.js: on elements with class tilt (the home page feature cards and the hero button), sets --pointer-x and --pointer-y and adds is-tilting while the pointer is over them, and clears all three when it leaves. The CSS turns the card towards the pointer, lifts the icon and heading off its surface and runs a soft light across it. Runs only with a mouse or trackpad and without reduced motion; touch screens keep the ordinary hover.
+- hero-light.js: sets --ray-angle on .hero__light to aim the ray from the hero's top right corner at the pointer, and --ray-boost (0 to 1) for how near the pointer is to the hero button's level (full anywhere level with or below its top edge), easing both a frame at a time until they catch up; keyboard focus on the button also lights and aims it, and adds is-lit to the hero while the pointer is over it. Mouse or trackpad only, and not under reduced motion.
 
 ## Tests
 

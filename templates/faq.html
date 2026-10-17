@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 {% block main %}
 <section class="hero hero--interior" style="background-image: url('{{ page.hero_image }}');">
+    <div class="hero__light" aria-hidden="true"></div>
     <div class="hero__content">
         <h1 class="hero__title">{{ hero_title }}</h1>
         {% if page.cta %}
-        <a href="{{ page.cta.href }}" class="hero__cta">{{ page.cta.label }}</a>
+        <a href="{{ page.cta.href }}" class="hero__cta tilt"><span class="hero__cta-label">{{ page.cta.label }}</span></a>
         {% endif %}
     </div>
 </section>

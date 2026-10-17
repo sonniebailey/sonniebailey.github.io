@@ -26,6 +26,12 @@
     <link rel="icon" href="{{ site.favicon }}">
     <link rel="stylesheet" href="{{ site.fonts.google_css }}">
     <link rel="stylesheet" href="css/main.css">
+    {# Prepares a page in the background once the visitor hovers its link,
+       so the page drop starts the moment they click rather than after the
+       next page loads. Browsers without speculation rules ignore it. #}
+    <script type="speculationrules">
+    {"prerender": [{"where": {"href_matches": "/*"}, "eagerness": "moderate"}]}
+    </script>
 </head>
 <body>
     {% include "partials/header.html" %}
@@ -37,6 +43,8 @@
     <script src="js/header.js" defer></script>
     <script src="js/menu.js" defer></script>
     <script src="js/reveal.js" defer></script>
+    <script src="js/tilt.js" defer></script>
+    <script src="js/hero-light.js" defer></script>
     <script src="js/faq.js" defer></script>
 </body>
 </html>

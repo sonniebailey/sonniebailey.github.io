@@ -57,7 +57,7 @@ h1 {
 
 h2 {
     font-size: var(--font-size-heading-section);
-    color: var(--brand-primary);
+    color: var(--colour-text);
 }
 
 h3 {
@@ -214,6 +214,75 @@ main > .container > * {
     navigation: auto;
 }
 
+/* Page drop: the current page is ripped down off the screen. It jiggles
+   side to side as it gives (see the keyframes), then lets go and falls
+   straight down, speeding up, out of the bottom of the screen. The next page is already lying
+   underneath, in the falling page's shadow, and brightens as it is
+   uncovered. The header has its
+   own transition name, so it is lifted out of the page and stays still
+   (it is the same on every page). The old snapshot is raised above the
+   new one, which by default paints on top, and the default cross-fade
+   blend is switched off. */
+@media (prefers-reduced-motion: no-preference) {
+    ::view-transition-old(root) {
+        z-index: 1;
+        mix-blend-mode: normal;
+        transform-origin: top center;
+        animation: page-drop var(--duration-page-drop) var(--ease-in) both;
+    }
+
+    ::view-transition-new(root) {
+        mix-blend-mode: normal;
+        animation: page-uncover var(--duration-page-drop) var(--ease-out) both;
+    }
+}
+
+/* The jiggle: three quick yanks, one way, the other, and back, each
+   pulling a little further down, pivoting on the top centre so neither
+   side is favoured. Linear through the yanks so they snap; the fall is
+   the animation's own ease-in, so it speeds up as it goes. */
+@keyframes page-drop {
+    0% {
+        transform: none;
+        animation-timing-function: linear;
+    }
+
+    7% {
+        transform: translateY(calc(var(--page-drop-tug) * 0.3)) rotate(calc(var(--page-drop-jiggle) * -1));
+        animation-timing-function: linear;
+    }
+
+    14% {
+        transform: translateY(calc(var(--page-drop-tug) * 0.6)) rotate(var(--page-drop-jiggle));
+        animation-timing-function: linear;
+    }
+
+    21% {
+        transform: translateY(calc(var(--page-drop-tug) * 0.8)) rotate(calc(var(--page-drop-jiggle) * -0.6));
+        animation-timing-function: linear;
+    }
+
+    27% {
+        transform: translateY(var(--page-drop-tug)) rotate(0);
+    }
+
+    100% {
+        transform: translateY(100%) rotate(0);
+    }
+}
+
+@keyframes page-uncover {
+    from {
+        filter: brightness(var(--page-drop-shade));
+        transform: scale(var(--page-drop-under-scale));
+    }
+
+    to {
+        filter: brightness(1);
+        transform: scale(1);
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
     ::view-transition-group(*),
     ::view-transition-old(*),
@@ -236,7 +305,6 @@ main > .container > * {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    view-transition-name: hero;
 }
 
 .hero--interior {
@@ -260,6 +328,67 @@ main > .container > * {
     position: absolute;
     inset: 0;
     background-image: var(--hero-scrim);
+}
+
+/* Layer three: a ray of warm light shining from the hero's top right
+   corner towards the pointer, above the scrim so it can lift the darkened
+   side too. .hero__light is a clipping frame the size of the hero; the
+   ray is its ::before, a cone whose tip sits on that corner and which is
+   only ever rotated about it. That keeps it cheap: the cone is painted
+   once and the graphics card turns it, where redrawing a hero-sized
+   gradient on every pointer move made an earlier version lag.
+   js/hero-light.js sets --ray-angle (the turn from pointing straight
+   down), easing it after the pointer, and adds .is-lit while the pointer
+   is over the hero. Without the script (touch screens, reduced motion)
+   the layer stays invisible. */
+.hero__light {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    overflow: hidden;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity var(--duration-slow) var(--ease-out);
+}
+
+/* The cone is drawn pointing straight down from the top centre of its
+   box: a conic gradient whose bright core is flanked by a fainter halo,
+   fading to nothing at the cone's edges, so it has no hard sides. The box
+   is just wide enough to hold the cone at its full length (twice the
+   length times the tangent of the half-angle) and is long enough to
+   reach across the whole hero. A mask fades it with distance from the
+   corner. */
+.hero__light::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: calc(2 * var(--hero-ray-length) * tan(var(--hero-ray-spread)));
+    height: var(--hero-ray-length);
+    margin-left: calc(var(--hero-ray-length) * tan(var(--hero-ray-spread)) * -1);
+    background-image: conic-gradient(
+        from calc(180deg - var(--hero-ray-spread)) at 50% 0,
+        transparent 0deg,
+        var(--hero-ray-halo) calc(var(--hero-ray-spread) - var(--hero-ray-core)),
+        var(--hero-light) var(--hero-ray-spread),
+        var(--hero-ray-halo) calc(var(--hero-ray-spread) + var(--hero-ray-core)),
+        transparent calc(var(--hero-ray-spread) * 2),
+        transparent
+    );
+    mask-image: var(--hero-ray-fade);
+    transform-origin: 50% 0;
+    /* --ray-boost (0 to 1) rises as the pointer nears the hero button, or
+       when the button has keyboard focus: the cone is stretched sideways
+       (wider) and brought to full strength. Both are transform and
+       opacity, so the boost costs no more than the turn does. */
+    transform: rotate(var(--ray-angle, 45deg))
+               scaleX(calc(1 + var(--ray-boost, 0) * (var(--hero-ray-boost-widen) - 1)));
+    opacity: calc(var(--hero-ray-rest) + var(--ray-boost, 0) * (1 - var(--hero-ray-rest)));
+    will-change: transform, opacity;
+}
+
+.hero.is-lit .hero__light {
+    opacity: 1;
 }
 
 .hero__content {
@@ -290,11 +419,13 @@ main > .container > * {
     font-size: var(--font-size-hero-interior);
 }
 
+/* The button carries .tilt, so with a mouse it turns towards the pointer
+   with a soft light following it, the same as the feature cards (see Tilt
+   in components.css), and its label lifts off its face. */
 .hero__cta {
     position: relative;
     display: inline-flex;
     align-items: center;
-    overflow: hidden;
     padding: var(--space-4) var(--space-6);
     background-color: var(--brand-accent);
     color: var(--colour-text-on-dark);
@@ -307,37 +438,25 @@ main > .container > * {
                 background-color var(--duration-fast) var(--ease-out);
 }
 
-/* Sheen: a translucent band that sweeps across the button on hover. */
-.hero__cta::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(
-        120deg,
-        transparent 0%,
-        color-mix(in srgb, #ffffff 32%, transparent) 50%,
-        transparent 100%
-    );
-    transition: left var(--duration-slow) var(--ease-out);
-}
-
 .hero__cta:hover {
-    background-color: var(--brand-primary-dark);
+    background-color: var(--button-face-hover);
     color: var(--colour-text-on-dark);
     transform: translateY(-3px);
     box-shadow: var(--shadow-button-hover);
 }
 
-.hero__cta:hover::before {
-    left: 100%;
+.hero__cta-label {
+    display: block;
+    transition: transform var(--duration-base) var(--ease-out);
+}
+
+.hero__cta.is-tilting .hero__cta-label {
+    transform: translateZ(calc(var(--tilt-lift) / 2));
 }
 
 @media (prefers-reduced-motion: reduce) {
     .hero__cta,
-    .hero__cta::before {
+    .hero__cta-label {
         transition: none;
     }
 
@@ -371,6 +490,9 @@ header {
     z-index: 100;
     transition: background-color var(--duration-base) var(--ease-out),
                 box-shadow var(--duration-base) var(--ease-out);
+    /* Keeps the header still while the page drops away under it (see VIEW
+       TRANSITIONS). */
+    view-transition-name: site-header;
 }
 
 header.is-scrolled {

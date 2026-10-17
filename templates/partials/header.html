@@ -6,9 +6,8 @@
             {% for item in site.nav %}
             <a href="{{ item.href }}"{% if page.url == item.href %} class="is-current" aria-current="page"{% endif %}>{{ item.label }}</a>
             {% endfor %}
+            <a href="tel:{{ site.phone.tel }}" class="nav-phone">{{ site.phone.display }}</a>
         </nav>
-
-        <a href="tel:{{ site.phone.tel }}" class="nav-phone">{{ site.phone.display }}</a>
 
 
         <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">

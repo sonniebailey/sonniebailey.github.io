@@ -35,9 +35,8 @@
     color: var(--colour-link-hover);
 }
 
-/* The nav is pushed right and the header items are separated by one
-   consistent gap, so the theme toggle is not left jammed against the
-   phone number. */
+/* The nav is pushed right; its items, the phone number included, are
+   separated by --nav-gap. */
 .nav-desktop {
     display: flex;
     align-items: center;
@@ -71,9 +70,9 @@
     box-shadow: var(--nav-current-glow);
 }
 
+/* The phone number sits inside the nav as one more item, so it shares the
+   links' spacing, weight and hover pill; this only stops it wrapping. */
 .nav-phone {
-    font-weight: var(--weight-semibold);
-    color: var(--wordmark-colour);
     white-space: nowrap;
 }
 
@@ -121,10 +120,10 @@
     right: var(--space-5);
     width: var(--icon-size);
     height: var(--icon-size);
-    border: 2px solid var(--brand-primary);
+    border: 2px solid var(--colour-text);
     border-radius: 50%;
     background: none;
-    color: var(--brand-primary);
+    color: var(--colour-text);
     font-size: var(--font-size-lg);
     line-height: 1;
     cursor: pointer;
@@ -210,7 +209,7 @@
     margin-bottom: var(--space-4);
     border-radius: var(--radius-button);
     background-color: var(--tint-light);
-    color: var(--brand-primary);
+    color: var(--colour-text);
     font-size: var(--font-size-lg);
 }
 
@@ -236,6 +235,58 @@
     color: var(--colour-text-muted);
     font-size: var(--font-size-secondary);
     margin: 0;
+}
+
+/* Tilt: js/tilt.js adds .is-tilting while the pointer is over a .tilt
+   card and sets --pointer-x / --pointer-y (-0.5 to 0.5 from the centre).
+   The card turns towards the pointer, the icon and heading lift off its
+   surface, and a soft light follows the pointer across it. Touch screens
+   and reduced-motion visitors never get the class, so keep the ordinary
+   hover above. preserve-3d is what lets the children sit at their own
+   depth; overflow: hidden would flatten it, so the glare is clipped by
+   border-radius instead. */
+.tilt {
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.tilt::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background-image: radial-gradient(
+        circle at calc((var(--pointer-x, 0) + 0.5) * 100%) calc((var(--pointer-y, 0) + 0.5) * 100%),
+        var(--tilt-glare),
+        transparent var(--tilt-glare-size)
+    );
+    opacity: 0;
+    transition: opacity var(--duration-base) var(--ease-out);
+}
+
+.tilt.is-tilting {
+    transform: perspective(var(--tilt-perspective))
+               rotateX(calc(var(--pointer-y, 0) * var(--tilt-max) * -2))
+               rotateY(calc(var(--pointer-x, 0) * var(--tilt-max) * 2));
+    transition-duration: var(--duration-fast);
+}
+
+.tilt.is-tilting::after {
+    opacity: 1;
+}
+
+.tilt .feature-card__icon,
+.tilt h2 {
+    transition: transform var(--duration-base) var(--ease-out);
+}
+
+.tilt.is-tilting .feature-card__icon {
+    transform: translateZ(var(--tilt-lift));
+}
+
+.tilt.is-tilting h2 {
+    transform: translateZ(calc(var(--tilt-lift) / 2));
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -271,7 +322,7 @@
     border: 1px solid var(--colour-border);
     border-radius: var(--radius-button);
     background-color: transparent;
-    color: var(--brand-primary);
+    color: var(--colour-text);
     font-family: var(--font-body);
     font-size: var(--font-size-secondary);
     font-weight: var(--weight-semibold);
@@ -281,8 +332,8 @@
 }
 
 .faq-toggle-all:hover {
-    background-color: var(--tint-light);
-    border-color: var(--tint-strong);
+    background-color: var(--colour-card-hover);
+    border-color: var(--colour-border-strong);
 }
 
 .faq-toggle-all[hidden] {
@@ -338,7 +389,7 @@
 }
 
 .faq-item > summary:hover {
-    color: var(--brand-primary);
+    color: var(--colour-text);
 }
 
 /* Chevron drawn from two borders, rotating to point up when open. */
@@ -348,8 +399,8 @@
     width: 0.5em;
     height: 0.5em;
     margin-right: 0.25em;
-    border-right: 2px solid var(--brand-primary);
-    border-bottom: 2px solid var(--brand-primary);
+    border-right: 2px solid var(--colour-text);
+    border-bottom: 2px solid var(--colour-text);
     transform: rotate(45deg) translate(-0.1em, -0.1em);
     transition: transform var(--duration-base) var(--ease-out);
 }
