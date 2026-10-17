@@ -7,10 +7,11 @@ If you are new here, whether a person or an AI assistant, read this file and the
 ## How the site works
 
 - Page text lives in content/ as markdown files, one per page. Edit them in any text editor.
-- Business details (name, legal name, tagline, phone, address, email, opening hours, navigation links, the banner and the footer note) live in content/site.json and appear wherever the templates use them. Legal name is used in the copyright line and falls back to the business name if left out; footer_note is an optional line of small print above it; both are optional. footer_links is an optional list of small links beside the copyright line, each with a label and an href, in the same shape as the nav list. It currently links the disclosure statement and privacy policy.
+- Business details (name, legal name, tagline, phone, address, email, opening hours, navigation links, the banner and the footer note) live in content/site.json and appear wherever the templates use them. Legal name is optional and not currently shown on the site. The footer is pinned to the bottom of the screen on every page: footer_note if set and each of footer_links one per line on the left, and any opening hours, the email and the phone number one per line on the right. It shows no address or copyright line. On phones it shows only the email and phone number. footer_links is an optional list of small links, each with a label and an href, in the same shape as the nav list. It currently links the disclosure statement and privacy policy.
 - The disclosure statement and privacy policy are disclosure.pdf and privacy.pdf in the top folder. To update one, replace the file and keep its name. Any PDF in the top folder is published at the top level of the site, eg fairhavenwealth.co.nz/disclosure.pdf.
-- The banner is the notice sitting under the menu on every page, currently that the business is not taking new clients. It is the banner value in content/site.json. Change the wording there, or remove the line to remove the strip entirely.
-- The business name appears in the top left as text, in the site's heading font. If you have a logo image, add `"logo": "images/logo.svg"` to content/site.json and it is used instead. Make sure it reads against the dark header and against the hero photograph, since the header sits over the photograph rather than above it.
+- The banner is an optional notice under the menu on every page. It is the banner value in content/site.json, currently null, so no banner shows. Put wording there to bring it back.
+- Every page shows a round gold "Limited capacity" sticker at the right of its heading. Clicking it opens a popup explaining how few clients the business takes on. The popup's wording is in content/snippets/capacity.md, edited like any page: the `# ` line is the popup's heading and the paragraphs below it are its text. It has no settings block at the top. The words on the sticker itself are fixed in templates/partials/capacity_dialog.html.
+- The business name appears in the top left as text, in the site's heading font. If you have a logo image, add `"logo": "images/logo.svg"` to content/site.json and it is used instead. Make sure it reads against the dark header, which sits over the background photograph.
 - Colours and fonts live in the block at the top of css/variables.css marked BRAND. Most of the site is worked out from those eight values, so changing them changes the whole site. The dark surface colours are the exception: they are set by hand rather than derived, so this site matches the rest of the estate.
 - The site is dark only. There is no light version and no sun/moon switch, so there is one set of colours to maintain.
 - Running build.py turns all of that into ordinary HTML files in _site/. That folder is what visitors see.
@@ -30,7 +31,7 @@ Builds the site and serves it at http://127.0.0.1:8000/. After editing a file, s
 
 ## Edit a page
 
-Open the page's file in content/ (for example content/about.md). The block between the two `---` lines at the top is the page's settings; below it is the page text in markdown. The first line beginning with `# ` becomes the big heading in the hero banner.
+Open the page's file in content/ (for example content/about.md). The block between the two `---` lines at the top is the page's settings; below it is the page text in markdown. The first line beginning with `# ` becomes the page's big heading, at the top of the page.
 
 ## Add a page
 
@@ -43,14 +44,15 @@ Page settings, all in the block at the top of the file:
 
 - title and description: required. Used in the browser tab, search results and link previews.
 - layout: required. `page` for a normal page, `faq` for a page where every `##` heading becomes a click-to-expand question, `home` for the home page only.
-- hero_image: optional. Path to the banner image (a .jpg); defaults to images/hero.jpg. A .webp copy with the same name must sit beside it, since browsers load the WebP and fall back to the JPG; without it the banner shows no photograph. The home page gets a taller banner than the other pages automatically.
-- cta: optional. A button in the hero, for example `cta: { label: "Book now", href: "contact.html" }`.
+- hero_image: optional. Path to the page's photograph (a .jpg); defaults to images/hero.jpg. It fills the screen behind the page, darkened and blurred. A .webp copy with the same name must sit beside it, since browsers load the WebP and fall back to the JPG; without it the page shows no photograph.
+- cta: optional. A gold button: on the home page it sits under the text, on other pages beside the heading. For example `cta: { label: "Book now", href: "contact.html" }`.
+- intro: optional. A line of text shown under the page heading, on the same row as the Limited capacity sticker (page and faq layouts). For example `intro: Some kind words from clients are below.`
 - show_map: optional. `true` shows the map (from site.json) at the bottom of the page. Only set it on pages where the map earns its place: the map is a Google embed, so those pages contact Google when they load.
 - noindex: optional. `true` keeps the page out of search engines.
 
 ## Home page feature cards
 
-The home page can show a row of cards under its text. They are set up in the block at the top of content/index.md, under `features`. Each card needs a title, a line of text and an icon:
+The home page has a row of cards set up, but they are not shown at the moment: home.html no longer includes them. The cards' wording stays where it was so they can come back. They are set up in the block at the top of content/index.md, under `features`. Each card needs a title, a line of text and an icon:
 
     features:
       - title: Same-week appointments
@@ -63,7 +65,7 @@ The icon is a name, not a picture file. Available names: calendar, clock, users,
 
 On a page with `layout: faq`, every `##` heading becomes a question that opens when clicked, and the text under it is the answer. An expand-all button appears above the list automatically. You do not need to add anything for it.
 
-Text above the first `##` heading is not part of the list: it stays on show, sits above the expand-all button, and is not opened or closed by it. The About page uses this for its executive summary, under a `###` heading.
+Text above the first `##` heading is not part of the list: it stays on show, sits above the expand-all button, and is not opened or closed by it. The About page uses this for its opening paragraphs. A single short line that belongs with the heading is better set as `intro` instead.
 
 ## Add a photo
 

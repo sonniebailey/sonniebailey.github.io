@@ -17,9 +17,9 @@
 }
 
 /* Text wordmark, used when site.json names no logo image. Sized as site
-   identity rather than as another nav link -- it is the largest thing in
-   the header and the only item in the heading font, which is what makes a
-   header read as branded rather than as a row of links. */
+   identity rather than as another nav link -- the only item in the
+   heading font, which is what makes a header read as branded rather than
+   as a row of links. Kept modest in size and opacity so it stays discreet. */
 .logo__wordmark {
     font-family: var(--font-heading);
     font-size: var(--font-size-wordmark);
@@ -27,6 +27,7 @@
     line-height: 1;
     letter-spacing: var(--letter-spacing-heading);
     color: var(--wordmark-colour);
+    opacity: var(--wordmark-opacity);
     white-space: nowrap;
     transition: color var(--duration-fast) var(--ease-out);
 }
@@ -55,16 +56,51 @@
        fill appears on hover. */
     margin: calc(var(--space-2) * -1) calc(var(--nav-pill-inset) * -1);
     transition: backdrop-filter var(--duration-fast) var(--ease-out),
-                box-shadow var(--duration-fast) var(--ease-out);
+                box-shadow var(--duration-slow) var(--ease-out);
 }
 
-.nav-desktop a:hover {
+/* Home button left of the wordmark: a house icon in the same pill as the
+   nav links, so it takes their hover and current-page treatment. Pulled
+   back on the left and vertically by its padding, like the nav links, so
+   the icon sits on the container edge. */
+.nav-home {
+    display: inline-flex;
+    flex-shrink: 0;
+    color: var(--colour-text);
+    border-radius: var(--radius);
+    padding: var(--space-2);
+    margin-block: calc(var(--space-2) * -1);
+    margin-left: calc(var(--space-2) * -1);
+    transition: backdrop-filter var(--duration-fast) var(--ease-out),
+                box-shadow var(--duration-slow) var(--ease-out);
+}
+
+.nav-home svg {
+    width: var(--icon-sm);
+    height: var(--icon-sm);
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.75;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* Resting outline on the page buttons (not the phone number). Declared
+   before hover and current so their gold glow replaces it. */
+.nav-desktop a:not(.nav-phone),
+.nav-home {
+    box-shadow: var(--nav-rest-glow);
+}
+
+.nav-desktop a:hover,
+.nav-home:hover {
     backdrop-filter: var(--nav-hover-blur);
     -webkit-backdrop-filter: var(--nav-hover-blur);
     box-shadow: var(--nav-hover-glow);
 }
 
-.nav-desktop a.is-current {
+.nav-desktop a.is-current,
+.nav-home.is-current {
     backdrop-filter: var(--nav-current-blur);
     -webkit-backdrop-filter: var(--nav-current-blur);
     box-shadow: var(--nav-current-glow);
@@ -148,7 +184,7 @@
     padding: var(--space-2) var(--nav-pill-inset);
     margin: calc(var(--space-2) * -1) calc(var(--nav-pill-inset) * -1);
     transition: backdrop-filter var(--duration-fast) var(--ease-out),
-                box-shadow var(--duration-fast) var(--ease-out);
+                box-shadow var(--duration-slow) var(--ease-out);
 }
 
 .mobile-nav a:hover {
@@ -320,7 +356,7 @@
 .faq-toggle-all {
     padding: var(--space-2) var(--space-5);
     border: 1px solid var(--colour-border);
-    border-radius: var(--radius-button);
+    border-radius: var(--radius);
     background-color: transparent;
     color: var(--colour-text);
     font-family: var(--font-body);
@@ -333,7 +369,6 @@
 }
 
 .faq-toggle-all:hover {
-    background-color: var(--hover-gold-fill);
     border-color: var(--hover-gold-border);
     box-shadow: var(--hover-gold-glow);
 }
@@ -352,25 +387,32 @@
 /* Each question is a card rather than a rule-separated row, so an open
    answer reads as belonging to its question. */
 .faq-item {
-    background-color: var(--colour-card);
+    background-color: var(--panel-bg);
     border: 1px solid var(--colour-border-soft);
     border-radius: var(--radius-card);
     overflow: hidden;
     transition: background-color var(--duration-base) var(--ease-out),
-                border-color var(--duration-base) var(--ease-out),
-                box-shadow var(--duration-base) var(--ease-out);
+                border-color var(--duration-slow) var(--ease-out),
+                box-shadow var(--duration-slow) var(--ease-out);
 }
 
 .faq-item:hover {
-    background-color: var(--hover-gold-fill);
     border-color: var(--hover-gold-border);
     box-shadow: var(--hover-gold-glow);
 }
 
 .faq-item[open] {
-    background-color: var(--colour-card-hover);
+    background-color: var(--panel-bg-open);
     border-color: var(--tint-medium);
     box-shadow: var(--shadow-sm);
+}
+
+/* An open panel takes the same gold border and glow on hover as a closed
+   one; without this its own border and shadow above would win. Neither
+   state changes its fill on hover. */
+.faq-item[open]:hover {
+    border-color: var(--hover-gold-border);
+    box-shadow: var(--hover-gold-glow);
 }
 
 .faq-item > summary {
@@ -415,7 +457,7 @@
 
 .faq-answer {
     padding: 0 var(--card-padding) var(--space-5);
-    color: var(--colour-text-muted);
+    color: var(--colour-text);
 }
 
 .faq-answer > *:last-child {
@@ -494,4 +536,180 @@
     text-align: center;
 }
 
+
+
+/* ==================== DIALOG ==================== */
+/* "Limited capacity" button, top right of the home page under the header,
+   and the popup it opens (templates/partials/capacity_dialog.html,
+   js/dialog.js). The dialog is frosted like the header and footer. */
+/* A round gold sticker, the same face as the "Find out more" button,
+   tipped slightly off-square. Sits at the right end of the page heading
+   row (.page-heading). */
+.capacity-button {
+    flex-shrink: 0;
+    width: var(--badge-size);
+    aspect-ratio: 1;
+    margin-left: auto;
+    display: grid;
+    place-items: center;
+    padding: var(--space-3);
+    font: inherit;
+    font-weight: var(--weight-semibold);
+    line-height: var(--line-height-heading);
+    text-align: center;
+    color: var(--colour-text-on-dark);
+    background-color: var(--brand-accent);
+    /* A soft top-left sheen so it reads as a slightly domed sticker
+       rather than a flat disc. */
+    background-image: radial-gradient(circle at 35% 30%, var(--sticker-sheen), transparent 60%);
+    /* Inner ring in the text colour gives the stamped-sticker edge. */
+    border: 2px dashed color-mix(in srgb, var(--colour-text-on-dark) 55%, transparent);
+    outline: var(--space-1) solid var(--brand-accent);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* ==================== SOLID GOLD BUTTONS ==================== */
+/* The cta button (.hero__cta) and the capacity sticker share their glow
+   and hover: an even gold glow all round at rest, and on hover they grow
+   slightly in place, the face lightens and the glow brightens and spreads.
+   The sticker adds its own outline and shading below. */
+.hero__cta,
+.capacity-button {
+    box-shadow: var(--button-glow-rest);
+    transition: transform var(--duration-slow) var(--ease-out),
+                box-shadow var(--duration-slow) var(--ease-out),
+                background-color var(--duration-fast) var(--ease-out);
+}
+
+.hero__cta:hover,
+.capacity-button:hover {
+    background-color: var(--button-face-hover);
+    transform: scale(var(--button-hover-scale));
+    box-shadow: var(--button-glow-hover);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero__cta,
+    .capacity-button {
+        transition: none;
+    }
+
+    .hero__cta:hover,
+    .capacity-button:hover {
+        transform: none;
+    }
+}
+
+/* Sticker extras on top of the shared glow and hover: the domed inner
+   shading is kept in both states, and the outer ring lightens with the
+   face. These come after the shared rules so they win. */
+.capacity-button {
+    box-shadow: inset 0 -2px 4px var(--sticker-shade), var(--button-glow-rest);
+}
+
+.capacity-button:hover {
+    outline-color: var(--button-face-hover);
+    box-shadow: inset 0 -2px 4px var(--sticker-shade), var(--button-glow-hover);
+}
+
+/* display: grid above would otherwise override the hidden attribute the
+   button ships with until js/dialog.js reveals it. */
+.capacity-button[hidden] {
+    display: none;
+}
+
+/* The home page stacks its block to the left; the heading row still has
+   to span the full width so the sticker reaches the right edge. */
+.container--centred .page-heading {
+    justify-self: stretch;
+}
+
+
+.dialog {
+    width: min(var(--dialog-width), calc(100% - 2 * var(--container-padding)));
+    max-height: calc(100svh - 2 * var(--space-6));
+    padding: 0;
+    color: var(--colour-text);
+    background-color: var(--header-scrolled-bg);
+    backdrop-filter: var(--header-blur);
+    -webkit-backdrop-filter: var(--header-blur);
+    /* The gold border and glow a FAQ panel takes on hover. */
+    border: 1px solid var(--hover-gold-border);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-lg), var(--hover-gold-glow);
+}
+
+.dialog::backdrop {
+    background-color: var(--dialog-backdrop);
+    backdrop-filter: var(--dialog-backdrop-blur);
+    -webkit-backdrop-filter: var(--dialog-backdrop-blur);
+}
+
+/* Not positioned, so the close button below sits against the dialog
+   itself and stays put while this body scrolls. The bottom padding
+   keeps the last paragraph clear of it. */
+.dialog__body {
+    padding: var(--space-7);
+    padding-bottom: calc(var(--space-7) + var(--dialog-close-size));
+}
+
+/* A round gold button in the bottom-right corner, the same face as the
+   capacity sticker. */
+.dialog__close {
+    position: absolute;
+    bottom: var(--space-4);
+    right: var(--space-4);
+    z-index: 1;
+    width: var(--dialog-close-size);
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    padding: 0;
+    font: inherit;
+    font-size: var(--font-size-xl);
+    line-height: 1;
+    color: var(--colour-text-on-dark);
+    background-color: var(--brand-accent);
+    border: 0;
+    border-radius: var(--radius-button);
+    box-shadow: var(--shadow-button);
+    cursor: pointer;
+    transition: background-color var(--duration-fast) var(--ease-out),
+                box-shadow var(--duration-base) var(--ease-out);
+}
+
+.dialog__close:hover {
+    background-color: var(--button-face-hover);
+    box-shadow: var(--shadow-button-hover), var(--hover-gold-glow);
+}
+
+/* A dialog with a sticker hanging off its corner cannot clip its own
+   edges, so the scrolling moves onto the body inside it. */
+.dialog--stickered {
+    overflow: visible;
+}
+
+.dialog--stickered .dialog__body {
+    max-height: inherit;
+    overflow-y: auto;
+}
+
+
+/* The capacity sticker's face, shrunk and stuck on the top-right corner,
+   matching where the real button sits on the page. Decoration, not a
+   control. */
+.dialog__sticker {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    width: var(--dialog-sticker-size);
+    margin: 0;
+    font-size: var(--font-size-sm);
+    cursor: default;
+    pointer-events: none;
+    transform: translate(calc(-1 * var(--dialog-sticker-offset)), var(--dialog-sticker-offset))
+               rotate(var(--dialog-sticker-tilt));
+}
 

@@ -26,6 +26,7 @@ from build.page_loader import compute_canonical, load_pages
 from build.page_renderer import create_env, render_page
 from build.root_relative import rootify
 from build.site_config import load_site_config
+from build.snippet_loader import load_snippets
 from build.sitemap_writer import write_robots, write_sitemap
 
 logger = logging.getLogger(__name__)
@@ -68,6 +69,7 @@ def run_build(root: Path, out_dir: Path) -> None:
     prepare_output(out_dir)
 
     env = create_env(root)
+    env.globals["snippets"] = load_snippets(root)
     build_info = {"year": date.today().year}
 
     for page in pages:

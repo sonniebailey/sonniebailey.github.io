@@ -60,10 +60,7 @@
         font-size: var(--font-size-hero-mobile);
     }
 
-    .footer__grid {
-        flex-direction: column;
-        gap: var(--space-6);
-    }
+
 }
 
 /* ---------------------------------------------------------------- */
@@ -73,13 +70,19 @@
     :root {
         /* The notice wraps to two lines at this width. */
         --banner-height: 56px;
+        --footer-height: 66px;
         --content-inset: var(--container-padding-mobile);
+        /* The heading row is narrow here; a full-size sticker crowds the title. */
+        --badge-size: 96px;
         --hero-padding-block: var(--space-7);
         --section-padding-block: var(--space-7);
         --section-gap: var(--space-5);
         --card-padding: var(--space-5);
         --feature-gap: var(--space-4);
         --measure-hero: 12ch;
+        /* Too little margin to hang past the dialog's edge. */
+        --dialog-sticker-size: 84px;
+        --dialog-sticker-offset: -15%;
         --font-size-hero-mobile: 1.9rem;
         --font-size-hero-interior: 1.8rem;
         --font-size-heading-card: var(--font-size-md);
@@ -102,6 +105,19 @@
 
     .features {
         grid-template-columns: 1fr;
+    }
+
+    /* Phone and email only: the full line would take a third of the
+       screen at this width. */
+    .footer__legal,
+    .footer__contact > :not(a[href^="tel:"], a[href^="mailto:"]) {
+        display: none;
+    }
+
+    /* Side by side rather than stacked, to fit the shorter footer. */
+    .footer__contact {
+        flex-direction: row;
+        gap: var(--space-6);
     }
 
     /* At this width the control reads better full-width than tucked into

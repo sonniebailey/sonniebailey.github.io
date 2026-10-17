@@ -84,6 +84,29 @@
     --footer-text: var(--colour-text-on-dark);
     --footer-text-muted: color-mix(in srgb, #ffffff 72%, var(--brand-primary-dark));
     --footer-rule: color-mix(in srgb, #ffffff 18%, transparent);
+    /* Darkening laid over the whole page photograph. */
+    --backdrop-dim: rgba(0, 0, 0, 0.55);
+    --backdrop-blur: blur(6px);
+    /* The dimmed layer behind an open dialog, and the dialog's width:
+       sized so its text runs the same width as a page's text column
+       (the container less its inset), plus the dialog body's padding. */
+    --dialog-backdrop: rgba(0, 0, 0, 0.6);
+    --dialog-backdrop-blur: blur(10px);
+    --dialog-width: calc(var(--container-max-width) - 2 * var(--content-inset) + 2 * var(--space-7));
+    /* The round close button in the dialog's bottom-right corner. */
+    --dialog-close-size: 48px;
+    /* The round "Limited capacity" sticker. */
+    --badge-size: 134px;
+    /* The smaller copy stuck on the dialog's top-right corner: its size,
+       tilt, and how far it hangs past the corner. */
+    --dialog-sticker-size: 104px;
+    --dialog-sticker-tilt: -10deg;
+    --dialog-sticker-offset: -35%;
+    --sticker-sheen: rgba(255, 240, 200, 0.35);
+    --sticker-shade: rgba(70, 48, 10, 0.35);
+    /* Height of the footer pinned to the bottom of the screen; the body
+       is padded by this much so the footer never covers the page end. */
+    --footer-height: 96px;
 
     /* Discreet dark plate behind a label sitting over imagery (the map
        facade's load button). Not derived from the brand: it has to work
@@ -94,22 +117,15 @@
     /* ------------------------------------------------------------ */
     /* Ground texture                                                 */
     /* ------------------------------------------------------------ */
-    /* A faint texture painted under the page and header, so the
-       background reads as a material rather than flat colour. Two
-       layers: fine desaturated fractal noise from an inline SVG, and a
-       soft diagonal brand tint that keeps the grain from reading as
-       plain grey dirt. The noise is generated rather than a file, so
-       there is no image to ship, tile or optimise.
-
-       Swap --ground-texture for a url() of a tileable image to use a
-       real photographed texture; set it to none to switch it off. The
-       size and opacity tokens apply either way, and --ground-texture-
-       size takes one entry per layer. */
+    /* A fabric texture painted on the header and footer bars (not the
+       page), so they read as a material rather than flat colour. Each
+       theme points at its own tileable image. Set --ground-texture to
+       none to switch it off. */
     /* Height of the optional site-wide notice row inside the header. */
     --banner-height: 40px;
     /* Total height the floating header occupies, for content that has
        to clear it. Sites without a banner set this to --header-height. */
-    --header-offset: calc(var(--header-height) + var(--banner-height));
+    --header-offset: var(--header-height);
 
     --ground-texture: url('../images/fabric-light-theme.png');
     --ground-texture-size: auto;
@@ -170,6 +186,10 @@
     --ease-in: cubic-bezier(0.55, 0, 1, 0.45);
     /* Page drop curve: speeds up, then slows to a stop off the bottom. */
     --ease-page-drop: cubic-bezier(0.65, 0, 0.35, 1);
+    /* Dialog growing out of, and shrinking back into, the button that
+       opened it (js/dialog.js reads these). */
+    --duration-dialog: 0.4s;
+    --ease-dialog: cubic-bezier(0.2, 0.8, 0.2, 1);
 
     /* Tilt (js/tilt.js): feature cards and the hero button turn towards
        the pointer, their contents lift off the surface, and a soft light
@@ -180,11 +200,29 @@
     --tilt-glare: color-mix(in srgb, var(--colour-text-on-dark) 9%, transparent);
     --tilt-glare-size: 60%;
     --button-face-hover: color-mix(in srgb, var(--brand-accent) 88%, var(--colour-text-on-dark));
+    /* How much the solid gold buttons grow, in place, on hover. */
+    --button-hover-scale: 1.04;
+    /* Even, all-round dark shadow for the solid gold buttons, so they lift
+       off the warm photograph. No gold glow: it blended into the brown
+       photograph or, lightened, read as a halo. Hover is darker and a
+       little wider, plus the thin gold edge the nav buttons take. */
+    --button-glow-rest: 0 0 12px color-mix(in srgb, #000000 60%, transparent);
+    --button-glow-hover: 0 0 0 1px var(--hover-gold-border),
+                         0 0 18px color-mix(in srgb, #000000 75%, transparent);
     /* Gold hover treatment for cards, FAQ items and buttons: a faint
        accent-tinted fill, a hairline accent border and a soft accent halo.
        Echoes the warm frosted pill the nav shows over the hero photo. */
     --hover-gold-fill: color-mix(in srgb, var(--brand-accent) 12%, transparent);
     --hover-gold-border: color-mix(in srgb, var(--brand-accent) 55%, transparent);
+    /* A barely-there warm cast on the header and footer bars; kept far
+       below the hover fill so the bars stay dark. */
+    --bar-gold-wash: color-mix(in srgb, var(--brand-accent) 4%, transparent);
+    /* FAQ panels (FAQ, About, Testimonials) sit darker than the page
+       rather than lighter: translucent black, a little deeper when open. */
+    --panel-bg: color-mix(in srgb, #000000 35%, transparent);
+    --panel-bg-open: color-mix(in srgb, #000000 45%, transparent);
+    /* Black laid under the gold wash to deepen the bars. */
+    --bar-black-wash: color-mix(in srgb, #000000 75%, transparent);
     --hover-gold-glow: 0 0 0 1px var(--hover-gold-border),
                        0 0 16px color-mix(in srgb, var(--brand-accent) 22%, transparent),
                        0 0 34px color-mix(in srgb, var(--brand-accent) 10%, transparent);
@@ -245,8 +283,8 @@
     --content-inset: var(--space-6);
 
     /* Header. --header-gap separates every item in the header row; the
-       wordmark is deliberately larger than the nav links, since it is the
-       site's name rather than one more link. */
+       wordmark is kept a step above the nav links and slightly faded, so it
+       reads as the site's name without dominating the header. */
     --header-gap: var(--space-5);
     /* Nav pills: the inset is padding cancelled by an equal
        negative margin, so --nav-gap is reduced by twice the
@@ -254,7 +292,13 @@
     --nav-pill-inset: var(--space-4);
     --nav-gap: var(--space-8);
     --logo-height: 44px;
-    --font-size-wordmark: var(--font-size-lg);
+    /* Space above and below the logo inside the header; the footer pads
+       its top and bottom by the same amount so the two bars match. */
+    --header-inset: calc((var(--header-height) - var(--logo-height)) / 2);
+    --font-size-wordmark: var(--font-size-md);
+    /* Keeps the name quieter than the nav; applies over the photograph too,
+       where the header forces its colour. */
+    --wordmark-opacity: 0.8;
 
     /* Fixed component dimensions */
     --nav-height: 44px;
@@ -376,15 +420,15 @@
     --header-float-bg: rgba(6, 6, 8, 0.28);
     --nav-current-blur: blur(10px);
     --nav-hover-blur: blur(5px);
-    /* A hairline ring plus a soft halo around the pill edge. The ring
-       is what separates hover from current at a glance, since the two
-       blur levels alone read almost the same. */
-    --nav-hover-glow: 0 0 0 1px rgba(255, 255, 255, 0.09),
-                      0 0 16px rgba(255, 255, 255, 0.045),
-                      0 0 34px rgba(255, 255, 255, 0.022);
-    --nav-current-glow: 0 0 0 1px rgba(255, 255, 255, 0.2),
-                        0 0 24px rgba(255, 255, 255, 0.075),
-                        0 0 50px rgba(255, 255, 255, 0.035);
+    /* The same gold hairline border and glow the FAQ panels take on
+       hover, for both a hovered nav item and the current page. The two
+       are told apart only by their blur levels. */
+    --nav-hover-glow: var(--hover-gold-glow);
+    --nav-current-glow: var(--hover-gold-glow);
+    /* Faint outline on nav buttons at rest, so they read as buttons
+       before they are hovered or selected. */
+    --nav-rest-glow: 0 0 0 1px color-mix(in srgb, var(--brand-accent) 22%, transparent),
+                     0 0 12px color-mix(in srgb, var(--brand-accent) 8%, transparent);
     --header-scrolled-bg: rgba(27, 27, 31, 0.72);
     --header-blur: blur(8px) saturate(1.15);
     --header-border: var(--colour-border-soft);

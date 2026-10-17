@@ -7,8 +7,6 @@ hero_image: images/hero-lake-2560.jpg
 
 # About
 
-### Executive summary
-
 Fairhaven Wealth provides financial advice-related services to New Zealanders. Fairhaven Wealth charges $300 per hour (including GST). For substantive engagements, I prefer to structure billing as an "anchored fee" arrangement, described below. Our engagements are one-off, short-term, and we typically work with very few clients at any point in time.
 
 When you deal with Fairhaven Wealth, you deal with Sonnie Bailey. You may be familiar with my writing on the [NZ Wealth & Risk blog](https://www.wealthandrisk.nz), where I published regularly for over 10 years.

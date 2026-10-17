@@ -3,11 +3,10 @@ title: Testimonials
 description: Kind words from Fairhaven Wealth clients.
 layout: faq
 hero_image: images/hero-lake-2560.jpg
+intro: Some kind words from clients are below.
 ---
 
 # Testimonials
-
-Some kind words from clients are below.
 
 ## "we got so much more than we expected"
 

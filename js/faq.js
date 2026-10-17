@@ -60,7 +60,7 @@
         if (!items.length) return;
 
         // Seat the control row directly above the list it operates on, so
-        // any preamble (eg the About page's executive summary) sits above
+        // any preamble (eg the About page's opening paragraphs) sits above
         // the button and is visibly outside its reach. The row only exists
         // for JavaScript visitors, so moving it here costs no-JS nothing.
         var controls = button.closest('.faq-controls');

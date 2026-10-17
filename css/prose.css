@@ -47,16 +47,6 @@
     text-wrap: pretty;
 }
 
-/* The opening paragraph of a page carries the summary; setting it slightly
-   larger gives the page an entry point without needing a class in the
-   markdown. Only the paragraph directly after the first heading, so it
-   cannot fire repeatedly down a long page. */
-.prose > h2:first-child + p,
-.prose > p:first-child {
-    font-size: var(--font-size-lead);
-    color: var(--colour-text-muted);
-}
-
 /* ==================== LINKS IN RUNNING TEXT ==================== */
 /* Underlined, unlike navigation and buttons: inside a paragraph colour
    alone is not a reliable signal, and it is the one accessibility default

@@ -50,12 +50,13 @@ def _check_page(out_dir: Path, page: dict, failures: list[str]) -> str | None:
 
     # The header partial renders the nav twice (desktop nav and mobile menu), so a
     # page listed in site.nav carries exactly two markers; a page not in the nav
-    # (index, 404) carries none. Any other count means the marker logic is broken.
+    # (404) carries none. Index carries one, on the header's home button, which
+    # is not part of either nav block. Any other count means the marker logic is broken.
     is_current_count = html.count('aria-current="page"')
     if page["url"] == "index.html":
-        if is_current_count != 0:
+        if is_current_count != 1:
             failures.append(
-                f"{page['url']}: expected 0 current-page markers on index, found {is_current_count}"
+                f"{page['url']}: expected 1 current-page marker on index (home button), found {is_current_count}"
             )
     elif is_current_count not in (0, 2):
         failures.append(

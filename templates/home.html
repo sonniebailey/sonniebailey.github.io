@@ -1,32 +1,28 @@
 {% extends "base.html" %}
-{% from "partials/hero_bg.html" import hero_bg %}
-{% from "partials/icons.html" import feature_icon %}
 {% block main %}
-<section class="hero" style="{{ hero_bg(page.hero_image) }}">
+<section class="hero">
     <div class="hero__content">
         <h1 class="hero__title">{{ hero_title }}</h1>
         {% if page.cta %}
-        <a href="{{ page.cta.href }}" class="hero__cta tilt"><span class="hero__cta-label">{{ page.cta.label }}</span></a>
+        <a href="{{ page.cta.href }}" class="hero__cta"><span class="hero__cta-label">{{ page.cta.label }}</span></a>
         {% endif %}
     </div>
 </section>
 
-<div class="container">
+<div class="container container--centred">
+    {# The page heading, shown here while the hero is hidden (see
+       base.css, Hero hidden). The feature cards are not shown for now;
+       their content stays in content/index.md. #}
+    <div class="page-heading">
+        <h1 class="page-heading__title">{{ hero_title }}</h1>
+        {% include "partials/capacity_dialog.html" %}
+    </div>
     <div class="prose">
         {{ content }}
     </div>
-
-    {% if page.features %}
-    <div class="features">
-        {% for feature in page.features %}
-        <div class="feature-card reveal tilt">
-            {% if feature.icon %}
-            <div class="feature-card__icon">{{ feature_icon(feature.icon) }}</div>
-            {% endif %}
-            <h2>{{ feature.title }}</h2>
-            <p>{{ feature.text }}</p>
-        </div>
-        {% endfor %}
+    {% if page.cta %}
+    <div>
+        <a href="{{ page.cta.href }}" class="hero__cta"><span class="hero__cta-label">{{ page.cta.label }}</span></a>
     </div>
     {% endif %}
 </div>

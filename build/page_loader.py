@@ -92,7 +92,8 @@ def load_pages(root: Path) -> list[dict]:
 
     Returns:
         A list of page dicts, each with keys: filename, title, description,
-        layout, hero_image, cta, features, noindex, show_map, url, canonical, body
+        layout, hero_image, cta, intro, features, noindex, show_map, url,
+        canonical, body
         (raw markdown body, frontmatter removed).
 
     Raises:
@@ -137,6 +138,10 @@ def load_pages(root: Path) -> list[dict]:
             if not isinstance(cta, dict) or "label" not in cta or "href" not in cta:
                 raise BuildError(f"{filename}: 'cta' must be an object with 'label' and 'href'")
 
+        intro = frontmatter.get("intro")
+        if intro is not None and not isinstance(intro, str):
+            raise BuildError(f"{filename}: 'intro' must be text")
+
         features = frontmatter.get("features")
         if layout == "home":
             _validate_features(features, filename)
@@ -159,6 +164,7 @@ def load_pages(root: Path) -> list[dict]:
                 "layout": layout,
                 "hero_image": hero_image,
                 "cta": cta,
+                "intro": intro,
                 "features": features,
                 "noindex": bool(noindex),
                 "show_map": bool(show_map),
