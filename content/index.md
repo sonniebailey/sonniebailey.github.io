@@ -19,6 +19,8 @@ features:
 ---
 # We help you make decisions that align with your values.
 
-Fairhaven Wealth is different. We provide one-off services for switched-on Kiwis who want to retain control of their financial lives. We avoid the conflicts of interest that are common in the financial services industry. This means we can give you the same advice we'd give to our friends and family members. 
+Fairhaven Wealth is different. We provide one-off services for switched-on Kiwis who want to retain control of their financial lives. We avoid the conflicts of interest that are common in the financial services industry. This means we can give you the same advice we'd give to our friends and family members.
+{: .hide-on-phone }
 
-We charge $300 per hour (including GST). 
+We charge $300 per hour (including GST).
+{: .hide-on-phone } 

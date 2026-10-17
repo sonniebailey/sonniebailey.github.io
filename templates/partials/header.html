@@ -35,6 +35,19 @@
         {% for item in site.nav %}
         <a href="{{ item.href }}"{% if page.url == item.href %} class="is-current" aria-current="page"{% endif %}>{{ item.label }}</a>
         {% endfor %}
-        <a href="tel:{{ site.phone.tel }}" class="nav-phone">{{ site.phone.display }}</a>
+    </div>
+    {# The footer's contents, for phones, where the pinned footer is hidden. #}
+    <div class="mobile-menu__footer">
+        {% for slot in site.hours or [] %}
+        <span>{{ slot.days }}: {{ slot.times }}</span>
+        {% endfor %}
+        <a href="tel:{{ site.phone.tel }}">{{ site.phone.display }}</a>
+        <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+        {% if site.footer_note %}
+        <span>{{ site.footer_note }}</span>
+        {% endif %}
+        {% for link in site.get('footer_links') or [] %}
+        <a href="{{ link.href }}" target="_blank" rel="noopener">{{ link.label }}</a>
+        {% endfor %}
     </div>
 </nav>

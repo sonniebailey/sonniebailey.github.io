@@ -22,6 +22,8 @@
         --measure-hero: 14ch;
         --font-size-hero-interior: 2.1rem;
         --toggle-size: 34px;
+        --badge-size: 104px;
+        --badge-font-size: var(--font-size-sm);
 
         /* Heading tiers step down together so the gaps between levels stay
            proportional; shrinking only the largest collapses the hierarchy. */
@@ -41,19 +43,17 @@
         display: none;
     }
 
+    /* Pushed to the right edge: nothing else in the header takes the
+       spare width once the nav is hidden. */
     .menu-toggle {
         display: flex;
-        margin-left: var(--space-3);
+        margin-left: auto;
     }
 
     /* Phone number takes too much width once the nav collapses; it stays
        available in the mobile menu. */
     header .nav-phone {
         display: none;
-    }
-
-    header .theme-toggle {
-        margin-left: auto;
     }
 
     .hero__title {
@@ -70,10 +70,12 @@
     :root {
         /* The notice wraps to two lines at this width. */
         --banner-height: 56px;
-        --footer-height: 66px;
+        /* No footer at this width (see below), so nothing to clear. */
+        --footer-height: 0px;
         --content-inset: var(--container-padding-mobile);
         /* The heading row is narrow here; a full-size sticker crowds the title. */
-        --badge-size: 96px;
+        --badge-size: 84px;
+        --badge-font-size: var(--font-size-xs);
         --hero-padding-block: var(--space-7);
         --section-padding-block: var(--space-7);
         --section-gap: var(--space-5);
@@ -84,6 +86,7 @@
         --dialog-sticker-size: 84px;
         --dialog-sticker-offset: -15%;
         --font-size-hero-mobile: 1.9rem;
+        --font-size-page-title: 2rem;
         --font-size-hero-interior: 1.8rem;
         --font-size-heading-card: var(--font-size-md);
         --icon-lg: 40px;
@@ -107,17 +110,21 @@
         grid-template-columns: 1fr;
     }
 
-    /* Phone and email only: the full line would take a third of the
-       screen at this width. */
-    .footer__legal,
-    .footer__contact > :not(a[href^="tel:"], a[href^="mailto:"]) {
+    /* No pinned footer: it would cover too much of a small screen. Its
+       contents move into the menu instead (.mobile-menu__footer). The
+       footer stays in the page, hidden, because checks.py requires it. */
+    footer {
         display: none;
     }
 
-    /* Side by side rather than stacked, to fit the shorter footer. */
-    .footer__contact {
-        flex-direction: row;
-        gap: var(--space-6);
+    .mobile-menu__footer {
+        display: flex;
+    }
+
+    /* Content marked {: .hide-on-phone } in a page's markdown, eg the
+       home page's longer paragraphs, which crowd a small screen. */
+    .hide-on-phone {
+        display: none;
     }
 
     /* At this width the control reads better full-width than tucked into

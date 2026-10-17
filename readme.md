@@ -7,7 +7,7 @@ If you are new here, whether a person or an AI assistant, read this file and the
 ## How the site works
 
 - Page text lives in content/ as markdown files, one per page. Edit them in any text editor.
-- Business details (name, legal name, tagline, phone, address, email, opening hours, navigation links, the banner and the footer note) live in content/site.json and appear wherever the templates use them. Legal name is optional and not currently shown on the site. The footer is pinned to the bottom of the screen on every page: footer_note if set and each of footer_links one per line on the left, and any opening hours, the email and the phone number one per line on the right. It shows no address or copyright line. On phones it shows only the email and phone number. footer_links is an optional list of small links, each with a label and an href, in the same shape as the nav list. It currently links the disclosure statement and privacy policy.
+- Business details (name, legal name, tagline, phone, address, email, opening hours, navigation links, the banner and the footer note) live in content/site.json and appear wherever the templates use them. Legal name is optional and not currently shown on the site. The footer is pinned to the bottom of the screen on every page: footer_note if set and each of footer_links one per line on the left, and any opening hours, the email and the phone number one per line on the right. It shows no address or copyright line. On phones the footer is hidden and its contents (any opening hours, the email, footer_note and footer_links) appear at the bottom of the menu instead, with the phone number above the email. footer_links is an optional list of small links, each with a label and an href, in the same shape as the nav list. It currently links the disclosure statement and privacy policy.
 - The disclosure statement and privacy policy are disclosure.pdf and privacy.pdf in the top folder. To update one, replace the file and keep its name. Any PDF in the top folder is published at the top level of the site, eg fairhavenwealth.co.nz/disclosure.pdf.
 - The banner is an optional notice under the menu on every page. It is the banner value in content/site.json, currently null, so no banner shows. Put wording there to bring it back.
 - Every page shows a round gold "Limited capacity" sticker at the right of its heading. Clicking it opens a popup explaining how few clients the business takes on. The popup's wording is in content/snippets/capacity.md, edited like any page: the `# ` line is the popup's heading and the paragraphs below it are its text. It has no settings block at the top. The words on the sticker itself are fixed in templates/partials/capacity_dialog.html.
@@ -31,7 +31,7 @@ Builds the site and serves it at http://127.0.0.1:8000/. After editing a file, s
 
 ## Edit a page
 
-Open the page's file in content/ (for example content/about.md). The block between the two `---` lines at the top is the page's settings; below it is the page text in markdown. The first line beginning with `# ` becomes the page's big heading, at the top of the page.
+Open the page's file in content/ (for example content/about.md). The block between the two `---` lines at the top is the page's settings; below it is the page text in markdown. The first line beginning with `# ` becomes the page's big heading, at the top of the page. To hide a paragraph on phones, put `{: .hide-on-phone }` on the line directly below it (the home page does this).
 
 ## Add a page
 

@@ -97,6 +97,7 @@
     --dialog-close-size: 48px;
     /* The round "Limited capacity" sticker. */
     --badge-size: 134px;
+    --badge-font-size: var(--font-size-base);
     /* The smaller copy stuck on the dialog's top-right corner: its size,
        tilt, and how far it hangs past the corner. */
     --dialog-sticker-size: 104px;
@@ -167,6 +168,11 @@
                  0 16px 40px var(--shadow-colour);
     --shadow-button: 0 2px 6px var(--shadow-colour);
     --shadow-button-hover: 0 8px 22px var(--shadow-colour);
+    /* Header and footer: cast onto the page body to set the bars apart.
+       Near-black rather than brand-tinted, since the page is already dark. */
+    --bar-shadow-colour: rgba(0, 0, 0, 0.55);
+    --shadow-header: 0 4px 16px var(--bar-shadow-colour);
+    --shadow-footer: 0 -4px 16px var(--bar-shadow-colour);
 
     /* ------------------------------------------------------------ */
     /* Radii                                                          */
@@ -313,7 +319,7 @@
     --toggle-size: 38px;
 
     --container-padding: var(--content-inset);
-    --container-padding-mobile: var(--space-4);
+    --container-padding-mobile: var(--space-5);
 
     /* ------------------------------------------------------------ */
     /* Type scale                                                     */
@@ -326,6 +332,8 @@
     --font-size-xl: 1.75rem;
     --font-size-2xl: 2.25rem;
     --font-size-3xl: 2.75rem;
+    /* Page headings (h1); smaller on phones (responsive.css). */
+    --font-size-page-title: var(--font-size-3xl);
     --font-size-hero: 3rem;
     --font-size-hero-mobile: 2.1rem;
     --font-size-hero-interior: 2.4rem;

@@ -14,7 +14,9 @@
        base.css, Hero hidden). The feature cards are not shown for now;
        their content stays in content/index.md. #}
     <div class="page-heading">
-        <h1 class="page-heading__title">{{ hero_title }}</h1>
+        <div class="page-heading__text">
+            <h1 class="page-heading__title">{{ hero_title }}</h1>
+        </div>
         {% include "partials/capacity_dialog.html" %}
     </div>
     <div class="prose">

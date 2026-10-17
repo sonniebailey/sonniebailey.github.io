@@ -62,7 +62,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-page-title);
     line-height: var(--line-height-heading-tight);
 }
 
@@ -379,6 +379,7 @@ header {
     background-color: var(--header-float-bg);
     backdrop-filter: var(--header-blur);
     -webkit-backdrop-filter: var(--header-blur);
+    box-shadow: var(--shadow-header);
     z-index: 100;
     transition: background-color var(--duration-base) var(--ease-out),
                 box-shadow var(--duration-base) var(--ease-out);
@@ -386,7 +387,6 @@ header {
 
 header.is-scrolled {
     background-color: var(--header-scrolled-bg);
-    box-shadow: var(--shadow-sm);
 }
 
 /* Over the photograph the header's own theme colours do not apply: in
@@ -431,6 +431,7 @@ footer {
     backdrop-filter: var(--header-blur);
     -webkit-backdrop-filter: var(--header-blur);
     border-top: 1px solid var(--header-border);
+    box-shadow: var(--shadow-footer);
 }
 
 .footer__inner {
@@ -508,14 +509,22 @@ body:has(.hero) main {
     padding-top: var(--header-offset);
 }
 
-/* The title sits on the bottom of the row, level with the foot of the
-   sticker beside it, rather than centred against the sticker's height. */
+/* The sticker sits level with the top of the title, like a corner stamp,
+   so a long title wrapping to several lines does not leave it floating. */
 .page-heading {
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-end;
+    align-items: flex-start;
     justify-content: space-between;
     gap: var(--space-5);
+}
+
+/* Takes the row's spare width but can shrink below its text's natural
+   width, so a long intro line wraps beside the sticker rather than
+   pushing the sticker onto a row of its own. */
+.page-heading__text {
+    flex: 1 1 0;
+    min-width: 0;
 }
 
 .page-heading__title {
@@ -523,8 +532,7 @@ body:has(.hero) main {
     max-width: var(--measure-hero);
 }
 
-/* Optional line under the title (frontmatter intro), left-aligned with it
-   so the sticker stays level with the foot of the pair. */
+/* Optional line under the title (frontmatter intro), left-aligned with it. */
 .page-heading__intro {
     margin: var(--space-3) 0 0;
 }
@@ -538,9 +546,9 @@ main > .container--centred {
     min-height: calc(100svh - var(--header-offset) - var(--footer-height));
 }
 
-/* The home page's button is its one call to action, so it is drawn larger
-   than the same button on other pages. */
+/* The home page's button is its one call to action, so it is drawn a
+   little larger than the same button on other pages. */
 .container--centred .hero__cta {
-    padding: var(--space-5) var(--space-8);
-    font-size: var(--font-size-lg);
+    padding: var(--space-4) var(--space-7);
+    font-size: var(--font-size-md);
 }
