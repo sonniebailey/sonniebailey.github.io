@@ -7,10 +7,11 @@ If you are new here, whether a person or an AI assistant, read this file and the
 ## How the site works
 
 - Page text lives in content/ as markdown files, one per page. Edit them in any text editor.
-- Business details (name, legal name, tagline, phone, address, email, opening hours, navigation links and the footer note) live in content/site.json and appear wherever the templates use them. Legal name is used in the copyright line and falls back to the business name if left out; footer_note is an optional line of small print above it; both are optional.
-- The business name appears in the top left as text, in the site's heading font. If you have a logo image, add `"logo": "images/logo.svg"` to content/site.json and it is used instead. Make sure it reads against both the light and the dark header.
-- Colours and fonts live in the block at the top of css/variables.css marked BRAND. Everything else on the site is worked out from those eight values, including the dark theme, so changing them changes the whole site.
-- The site has a light and a dark version. Visitors get whichever their phone or computer is set to, and can switch with the sun/moon button in the menu. Their choice is remembered. You do not need to maintain two sets of colours.
+- Business details (name, legal name, tagline, phone, address, email, opening hours, navigation links, the banner and the footer note) live in content/site.json and appear wherever the templates use them. Legal name is used in the copyright line and falls back to the business name if left out; footer_note is an optional line of small print above it; both are optional.
+- The banner is the notice sitting under the menu on every page, currently that the business is not taking new clients. It is the banner value in content/site.json. Change the wording there, or remove the line to remove the strip entirely.
+- The business name appears in the top left as text, in the site's heading font. If you have a logo image, add `"logo": "images/logo.svg"` to content/site.json and it is used instead. Make sure it reads against the dark header and against the hero photograph, since the header sits over the photograph rather than above it.
+- Colours and fonts live in the block at the top of css/variables.css marked BRAND. Most of the site is worked out from those eight values, so changing them changes the whole site. The dark surface colours are the exception: they are set by hand rather than derived, so this site matches the rest of the estate.
+- The site is dark only. There is no light version and no sun/moon switch, so there is one set of colours to maintain.
 - Running build.py turns all of that into ordinary HTML files in _site/. That folder is what visitors see.
 - Netlify watches the GitHub repository. Every push to the default branch (master) rebuilds and publishes the site automatically. Nothing is uploaded by hand.
 

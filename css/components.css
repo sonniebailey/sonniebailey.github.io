@@ -26,7 +26,7 @@
     font-weight: var(--weight-heading);
     line-height: 1;
     letter-spacing: var(--letter-spacing-heading);
-    color: var(--brand-primary);
+    color: var(--wordmark-colour);
     white-space: nowrap;
     transition: color var(--duration-fast) var(--ease-out);
 }
@@ -41,24 +41,39 @@
 .nav-desktop {
     display: flex;
     align-items: center;
-    gap: var(--space-6);
+    gap: var(--nav-gap);
     margin-left: auto;
 }
 
 .nav-desktop a {
     color: var(--colour-text);
     font-weight: var(--weight-medium);
+    background-color: transparent;
+    border-radius: var(--radius);
+    padding: var(--space-2) var(--nav-pill-inset);
+    /* Pulled back by the padding so the pill costs no extra space: the
+       items sit where they would without it, and nothing shifts when a
+       fill appears on hover. */
+    margin: calc(var(--space-2) * -1) calc(var(--nav-pill-inset) * -1);
+    transition: backdrop-filter var(--duration-fast) var(--ease-out),
+                box-shadow var(--duration-fast) var(--ease-out);
+}
+
+.nav-desktop a:hover {
+    backdrop-filter: var(--nav-hover-blur);
+    -webkit-backdrop-filter: var(--nav-hover-blur);
+    box-shadow: var(--nav-hover-glow);
 }
 
 .nav-desktop a.is-current {
-    color: var(--brand-primary);
-    font-weight: var(--weight-heading);
-    border-bottom: 2px solid var(--brand-primary);
+    backdrop-filter: var(--nav-current-blur);
+    -webkit-backdrop-filter: var(--nav-current-blur);
+    box-shadow: var(--nav-current-glow);
 }
 
 .nav-phone {
     font-weight: var(--weight-semibold);
-    color: var(--brand-primary);
+    color: var(--wordmark-colour);
     white-space: nowrap;
 }
 
@@ -128,9 +143,25 @@
     font-weight: var(--weight-medium);
 }
 
+.mobile-nav a {
+    background-color: transparent;
+    border-radius: var(--radius);
+    padding: var(--space-2) var(--nav-pill-inset);
+    margin: calc(var(--space-2) * -1) calc(var(--nav-pill-inset) * -1);
+    transition: backdrop-filter var(--duration-fast) var(--ease-out),
+                box-shadow var(--duration-fast) var(--ease-out);
+}
+
+.mobile-nav a:hover {
+    backdrop-filter: var(--nav-hover-blur);
+    -webkit-backdrop-filter: var(--nav-hover-blur);
+    box-shadow: var(--nav-hover-glow);
+}
+
 .mobile-nav a.is-current {
-    color: var(--brand-primary);
-    font-weight: var(--weight-heading);
+    backdrop-filter: var(--nav-current-blur);
+    -webkit-backdrop-filter: var(--nav-current-blur);
+    box-shadow: var(--nav-current-glow);
 }
 
 .mobile-nav .nav-phone {
@@ -218,60 +249,6 @@
 }
 
 /* ==================== THEME TOGGLE ==================== */
-/* Sun/moon switch in the header and mobile menu. Both icons are in the
-   markup; only the one matching the current theme is shown. Behaviour is
-   in js/theme.js; the initial theme is set before paint by the inline
-   script in templates/partials/theme-preload.html. */
-.theme-toggle {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: var(--toggle-size);
-    height: var(--toggle-size);
-    padding: 0;
-    border: 1px solid var(--colour-border-soft);
-    border-radius: var(--radius-button);
-    background-color: transparent;
-    color: var(--colour-text-muted);
-    cursor: pointer;
-    transition: color var(--duration-fast) var(--ease-out),
-                background-color var(--duration-fast) var(--ease-out),
-                border-color var(--duration-fast) var(--ease-out);
-}
-
-.theme-toggle:hover {
-    color: var(--brand-primary);
-    background-color: var(--tint-light);
-    border-color: var(--tint-medium);
-}
-
-.theme-toggle svg {
-    width: var(--icon-sm);
-    height: var(--icon-sm);
-    stroke: currentColor;
-    fill: none;
-    stroke-width: 1.6;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-
-/* Show the moon in light mode (click for dark) and the sun in dark mode. */
-.theme-toggle .icon-sun {
-    display: none;
-}
-
-.theme-toggle .icon-moon {
-    display: block;
-}
-
-[data-theme="dark"] .theme-toggle .icon-sun {
-    display: block;
-}
-
-[data-theme="dark"] .theme-toggle .icon-moon {
-    display: none;
-}
-
 /* ==================== FAQ ACCORDION ==================== */
 /* Markup hook (contract): build/faq_transform.py emits a .faq-list holding
    one <details class="faq-item"> per question, each wrapping its answer in
@@ -441,3 +418,25 @@
     height: 100%;
     border: none;
 }
+
+/* ------------------------------------------------------------ */
+/* Site banner                                                    */
+/* ------------------------------------------------------------ */
+/* A site-wide notice sitting between the header and the hero, for
+   something every visitor needs to see before reading anything else
+   (for example, that the business is not taking new clients). Driven
+   by the optional banner key in site.json; absent when unset. */
+.site-banner {
+    height: var(--banner-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--banner-text);
+    font-size: var(--font-size-secondary);
+    font-weight: var(--weight-medium);
+    letter-spacing: 0.02em;
+    padding: var(--space-3) var(--space-4);
+    text-align: center;
+}
+
+

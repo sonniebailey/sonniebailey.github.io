@@ -71,6 +71,8 @@
 /* ---------------------------------------------------------------- */
 @media (max-width: 480px) {
     :root {
+        /* The notice wraps to two lines at this width. */
+        --banner-height: 56px;
         --content-inset: var(--container-padding-mobile);
         --hero-padding-block: var(--space-7);
         --section-padding-block: var(--space-7);

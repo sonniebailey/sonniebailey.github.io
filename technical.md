@@ -12,10 +12,11 @@ How the site is built, for whoever maintains it. readme.md covers day-to-day edi
 ## Folder layout
 
 - content/ - one markdown file per page, plus site.json
-- templates/ - Jinja2 templates: base.html (page shell and head), page.html, home.html, faq.html, partials/header.html, partials/footer.html, partials/logo.html, partials/theme-preload.html, partials/theme-toggle.html, partials/icons.html
+- templates/ - Jinja2 templates: base.html (page shell and head), page.html, home.html, faq.html, partials/header.html, partials/footer.html, partials/logo.html, partials/icons.html
 - css/ - main.css imports variables.css, base.css, prose.css, components.css, responsive.css in that order
-- js/ - theme.js (light/dark switch), menu.js (mobile menu), reveal.js (scroll-in animation), faq.js (expand/collapse all)
-- images/ - images as published; the build copies this folder unchanged
+- js/ - header.js (floating header state), menu.js (mobile menu), reveal.js (scroll-in animation), faq.js (expand/collapse all)
+- images/ - images as published; the build copies this folder unchanged. images/favicon.png is the favicon site.json names. images/logo.png is not used by any template (site.json sets no logo)
+- icons/ - the full favicon set (16, 32, 180, 192, 512 and .ico), copied from the live site. Nothing links it yet and the build does not copy it; base.html links only images/favicon.png
 - build.py and build/ - the build; build/orchestrator.py runs the steps in order
 - preview.py - build then serve _site/ locally
 - settings.py and settings.html - local editor for site.json and the brand block; never published
@@ -74,7 +75,7 @@ Vertical rhythm is tokenised as --flow-gap (between paragraphs), --flow-gap-head
 
 prose.css works off elements alone, never classes, because an author writing markdown cannot add one. Every element markdown can emit is styled, including ones a brochure site is unlikely to use (code, tables), since an unstyled element falls back to browser defaults that visibly do not belong to the rest of the page.
 
---ground-texture paints a faint tinted pattern under the page and header via body::before, so surfaces read as a material rather than flat colour. Set it to a url() of a tileable image for a real texture, or to none to switch it off.
+--ground-texture paints a texture under the page and header via body::before, so surfaces read as a material rather than flat colour. It is Snoopy's 45-degree fabric weave tile, copied into images/ in both tones the pattern ships in, drawn at native size and repeated. Set it to none to switch it off.
 
 The hero is two layers over the photograph: --hero-wash, a diagonal brand gradient that pulls the image towards the site's colour, and --hero-scrim, which holds a plateau of darkness behind the heading before falling away, so the text is legible without dimming the whole image evenly.
 
@@ -82,17 +83,27 @@ Hero height is a vh value paired with a px floor: --hero-min-height (home) and -
 
 settings.py edits only the lines between the BRAND markers, so keep one token per line in the form `--name: value;`. Everything added below the markers is invisible to it.
 
-## Light and dark mode
+## Dark only
 
-The theme is a data-theme attribute on the html element. variables.css defines the light palette on :root and overrides only the colour tokens under [data-theme="dark"]; spacing, type and motion are shared between the two.
+The site is dark and offers no alternative. base.html hard-codes data-theme="dark" on the html element, so the [data-theme="dark"] block in variables.css always applies. There is no toggle, no preload script and no theme.js; the sun/moon button and its styling were removed along with them.
 
-templates/partials/theme-preload.html is an inline script in the head, ahead of the stylesheet. It resolves the theme in this order: the visitor's saved choice in localStorage under the key site-theme, then their operating system setting via prefers-color-scheme, then light. Because it runs before first paint, the page never flashes the wrong theme. It is deliberately self-contained and must not be made to depend on js/theme.js, which loads later.
+The :root block above the dark block is retained as the base layer the dark values override, not as a theme anyone can reach. Only colour tokens are redefined; spacing, type and motion come from :root. Stripping the light values entirely is possible but has not been done, on the grounds that it is a larger edit for no behavioural gain.
 
-There is no prefers-color-scheme media query in the CSS. The preload script resolves the OS setting into the attribute, so the attribute is the single source of truth and a visitor's explicit choice always wins.
+The dark surfaces are Snoopy's values copied verbatim (snoopy/css/variables.css) rather than derived from the brand colour: ground #060608, header #1B1B1F, panels as faint white over them, link #7FA6CE. The point is that this site and that app read as the same dark, which a derivation cannot guarantee. The ground texture is Snoopy's 45-degree fabric tile, drawn at native size and repeated.
 
-templates/partials/theme-toggle.html is the sun/moon button, included twice (header and mobile menu). Both icons are always in the markup; components.css shows the one matching the current theme. js/theme.js handles clicks and keeps aria-label and aria-pressed accurate on every toggle on the page.
+The consequence to keep in mind is that changing the BRAND block no longer moves the dark palette with it. A brand change means revisiting these values by hand.
 
-Dark surfaces derive from the brand text colour rather than pure black, so the dark theme keeps the brand's temperature. Link and accent colours are lifted towards white in dark mode, because fully saturated brand colours vibrate against dark backgrounds.
+## Header
+
+The header is fixed and floats over the hero photograph rather than sitting in a bar above it, so the image runs to the top of the page. base.css removes main's reserved top strip on any page containing a hero (body:has(.hero)), and .hero__content pads itself by --header-offset instead, which covers the nav row and the banner row together.
+
+The header is frosted at all times: a translucent fill over a backdrop-filter blur. The blur must be on the base rule rather than only on the scrolled state, because past the hero the backdrop is a near-flat near-black page and blurring a flat colour is indistinguishable from not blurring it. The photograph is the only backdrop with structure to soften.
+
+js/header.js adds .is-scrolled once the visitor passes the hero, switching the fill from a faint tint to the heavier surface, since running text has to stay legible passing underneath. Over the photograph every item in the header is forced to --colour-text-on-dark, because the header's own colours would otherwise put dark text on a dark scrim.
+
+site.json's optional banner key renders a notice row inside the header, under the nav row. It paints no fill of its own; the header's frosted surface covers both rows, so the two cannot stack up two layers of tint. --banner-height is a declared value restaged in responsive.css, not a measured one, because the notice wraps at narrow widths.
+
+The current page is marked in the nav by blurring its patch of the header further than the header already does, plus a white hairline ring and a feathered halo; hover is the same treatment at roughly half strength. There is no underline and no colour change. Blur only stacks downward -- a child's backdrop is the parent's already-filtered result -- so a nav item can add blur but cannot reduce it below the header's. Every nav link carries the pill's padding and radius with a transparent fill, cancelled by an equal negative margin, so the items neither move nor cost extra space when a state paints. --nav-gap is wider than --header-gap because it has to clear two pill insets and still leave visible air between neighbours.
 
 ## Responsive
 
@@ -104,7 +115,7 @@ Breakpoints: 768px (tablet), 480px (mobile), and two max-height queries (749px a
 
 Each file is self-contained, has JSDoc comments and starts with `// @ts-check`. Each runs on DOMContentLoaded and does nothing if its markup is absent, so removing a feature from the templates needs no JS change.
 
-- theme.js: switches the theme and keeps the toggle's aria-label and aria-pressed accurate. See Light and dark mode below.
+- header.js: adds is-scrolled to the header once the visitor scrolls past the hero, so the floating header takes its heavier surface over running text. The threshold is measured from the hero's own height rather than a fixed number, so it holds at every page and screen size. A page with no hero is solid from the start. See Header above.
 - faq.js: reveals the .faq-toggle-all button and wires it to open or close every question at once, re-syncing its label when a visitor opens one by hand. The accordions themselves are native details elements and work without it.
 - menu.js: toggles the mobile menu (button.menu-toggle and nav#mobile-menu), closes on Escape, returns focus.
 - reveal.js: adds is-visible to elements with class reveal as they scroll into view. Does nothing when the visitor prefers reduced motion or the browser lacks IntersectionObserver; the CSS keeps those elements visible.
@@ -124,6 +135,8 @@ Netlify reads _redirects natively and serves a root 404.html for unknown paths a
 ## Known limitations
 
 - No file watcher in preview.py; rerun it after edits.
+- content/site.json sets map and footer_note to null rather than omitting them. Both are documented as optional, but the templates test them with {% if site.map %} against a plain dict under StrictUndefined, so an absent key raises rather than reading as falsy and the build fails. Setting the key to null is the workaround. This is inherited from Quickie and is a defect there, not here; if it is fixed upstream, the two null entries can go.
+- The dark palette is hand-set rather than derived from the BRAND block, so a brand change moves the light base layer and leaves the dark surfaces where they are. See Dark only.
 - A page with show_map set loads a Google Maps iframe on view, so Google is contacted on that page whether or not the visitor looks at the map. This replaced a click-to-load facade, which avoided the request but put a control between the visitor and the one thing a contact page exists to show. The embed stays opt-in per page to keep the cost off pages that do not need it.
 - Nothing checks that a class the stylesheet targets is actually present in the built page. faq_transform.py once emitted bare details elements while every FAQ rule targeted .faq-item, so the accordion fell back to browser defaults and the build still passed. A unit test now guards that specific contract, but the general gap remains: the markup hooks documented as contracts in components.css are enforced only by whichever tests happen to assert them.
 - Feature card icons come from a fixed set in templates/partials/icons.html, named from a page's frontmatter. Adding an icon means editing that template, which is a step a non-technical owner will not take unaided.

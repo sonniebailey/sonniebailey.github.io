@@ -136,6 +136,13 @@ main {
     padding-top: var(--header-height);
 }
 
+/* A page opening on a hero puts the photograph under the header instead of
+   below it, so the reserved strip is removed and the hero clears the
+   header from the inside (see .hero__content). */
+body:has(.hero) main {
+    padding-top: 0;
+}
+
 /* ==================== SECTION RHYTHM ==================== */
 /* One owner for the vertical rhythm of a page's main blocks. The blocks
    themselves (.prose, .features, .faq-page, .map-embed) carry no vertical
@@ -262,6 +269,9 @@ main > .container > * {
     max-width: var(--container-max-width);
     margin: 0 auto;
     padding: var(--hero-padding-block) var(--container-padding);
+    /* Clears the floating header (and its banner row, where present) so the
+       heading is never underneath it. */
+    padding-top: calc(var(--hero-padding-block) + var(--header-offset));
 }
 
 .hero__title {
@@ -337,23 +347,56 @@ main > .container > * {
 }
 
 /* ==================== HEADER ==================== */
+/* The header floats over the hero photograph rather than sitting in a bar
+   above it, so the image runs to the top of the page. It is transparent
+   until the visitor scrolls past the hero, at which point js/header.js
+   adds .is-scrolled and the solid surface fades in -- without that, a
+   fixed transparent header would sit unreadably over running text.
+
+   Height is auto rather than fixed because the header may carry a second
+   row (the site banner); the nav row itself keeps --header-height. */
 header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: var(--header-height);
-    background-color: var(--header-bg);
-    border-bottom: 1px solid var(--header-border);
-    box-shadow: var(--shadow-sm);
+    /* Frosted at all times, including over the hero. The blur has to be
+       here rather than only on .is-scrolled: past the hero the backdrop
+       is a near-flat near-black page, and blurring a flat colour looks
+       identical to not blurring it. The photograph is the only backdrop
+       with any structure to soften, so that is where it has to apply. */
+    background-color: var(--header-float-bg);
+    backdrop-filter: var(--header-blur);
+    -webkit-backdrop-filter: var(--header-blur);
     z-index: 100;
+    transition: background-color var(--duration-base) var(--ease-out),
+                box-shadow var(--duration-base) var(--ease-out);
+}
+
+header.is-scrolled {
+    background-color: var(--header-scrolled-bg);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Over the photograph the header's own theme colours do not apply: in
+   light mode they would be dark text on a dark scrim. Everything in the
+   header is forced to the on-image colour until it lands on its surface. */
+header:not(.is-scrolled),
+header:not(.is-scrolled) a,
+header:not(.is-scrolled) .logo__wordmark,
+header:not(.is-scrolled) .site-banner {
+    color: var(--colour-text-on-dark);
+}
+
+header:not(.is-scrolled) .menu-toggle span {
+    background-color: var(--colour-text-on-dark);
 }
 
 /* One gap value separates every item in the header, so the phone number,
    the theme toggle and the burger are spaced by the same rule rather than
    by margins added to each in turn. */
 header .container {
-    height: 100%;
+    height: var(--header-height);
     display: flex;
     align-items: center;
     gap: var(--header-gap);
@@ -406,7 +449,5 @@ footer h3 {
 }
 
 .footer__legal {
-    margin-top: var(--space-2);
-    border-top: 1px solid var(--footer-rule);
-    padding-top: var(--space-5);
+    margin-top: var(--space-5);
 }

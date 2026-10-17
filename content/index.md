@@ -1,25 +1,24 @@
 ---
 title: Home
-description: Buck Sandbox - life model, champion power walker, and professional lion tamer, available for hire in Wellington and nationwide.
+description: Fairhaven Wealth provides one-off, conflict-free financial advice for switched-on New Zealanders who want to retain control of their financial lives.
 layout: home
-hero_image: images/hero.jpg
+hero_image: images/hero-lake.jpg
 cta:
-  label: Book Buck
-  href: contact.html
+  label: Find out more
+  href: about.html
 features:
-  - title: Held perfectly still since 2014
-    text: Life modelling for art schools, studios and private classes. Long poses, short poses, no fidgeting.
-    icon: users
-  - title: National power walking champion
-    text: Three titles, one hip flexor, and a heel-toe technique that has been described in print as unsettling.
-    icon: activity
-  - title: Now taming lions
-    text: Newly qualified, fully insured, and taking bookings. The lions are called Deborah and Kevin.
+  - title: One-off engagements
+    text: Short-term work with very few clients at a time. No ongoing fees and no lock-in.
+    icon: clock
+  - title: No conflicts of interest
+    text: The only remuneration is directly from clients, so the advice is the same we would give friends and family.
     icon: shield
+  - title: $300 per hour, including GST
+    text: For substantive engagements, an anchored fee arrangement agreed before the work starts.
+    icon: check
 ---
+# We help you make decisions that align with your values.
 
-# One man. Three disciplines. No shirt.
+Fairhaven Wealth is different. We provide one-off services for switched-on Kiwis who want to retain control of their financial lives. We avoid the conflicts of interest that are common in the financial services industry. This means we can give you the same advice we'd give to our friends and family members. 
 
-Buck Sandbox has spent a decade being drawn by strangers and out-walking men half his age. This year he added lions.
-
-If you need a figure held motionless for four hours, a 20 kilometre course covered at an alarming speed, or a large cat persuaded onto a small stool, you have arrived at the correct website.
+We charge $300 per hour (including GST). 

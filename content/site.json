@@ -1,60 +1,40 @@
 {
   "name": "Fairhaven Wealth",
-  "legal_name": "",
-  "tagline": "Life model. Champion power walker. Professional lion tamer.",
-  "domain": "https://www.bucksandbox.example.co.nz",
+  "legal_name": "Fairhaven Wealth Limited",
+  "tagline": "Financial advice for switched-on Kiwis",
+  "domain": "https://www.fairhavenwealth.co.nz",
   "search_visible": false,
   "phone": {
-    "display": "021 BUCK 01",
-    "tel": "+6421282501"
+    "display": "021 0269 2213",
+    "tel": "+642102692213"
   },
-  "email": "buck@example.co.nz",
+  "email": "sonnie@fairhavenwealth.co.nz",
   "address": {
     "lines": [
-      "The Old Drill Hall",
-      "9 Ringmaster Lane",
-      "Wellington 6011"
+      "Christchurch",
+      "New Zealand"
     ],
-    "single_line": "The Old Drill Hall, 9 Ringmaster Lane, Wellington 6011"
+    "single_line": "Christchurch, New Zealand"
   },
-  "hours": [
-    {
-      "days": "Monday to Friday",
-      "times": "6am to 7pm"
-    },
-    {
-      "days": "Saturday",
-      "times": "Training walk, back by noon"
-    }
-  ],
+  "hours": [],
+  "map": null,
   "nav": [
     {
       "label": "About",
       "href": "about.html"
     },
     {
-      "label": "What I do",
-      "href": "services.html"
-    },
-    {
-      "label": "FAQ",
-      "href": "faq.html"
-    },
-    {
-      "label": "Contact",
-      "href": "contact.html"
+      "label": "Testimonials",
+      "href": "testimonials.html"
     }
   ],
   "favicon": "images/favicon.png",
   "social_image": "images/social-card.png",
   "fonts": {
-    "heading": "Montserrat",
-    "body": "Montserrat",
-    "google_css": "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+    "heading": "Raleway",
+    "body": "Raleway",
+    "google_css": "https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap"
   },
-  "map": {
-    "embed_url": "",
-    "link_url": "https://maps.google.com/?q=Wellington"
-  },
-  "footer_note": "All lion work is carried out under supervision, with the lion's consent, and never before breakfast."
+  "banner": "Fairhaven Wealth is not currently taking new clients.",
+  "footer_note": null
 }

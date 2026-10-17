@@ -10,7 +10,6 @@
 
         <a href="tel:{{ site.phone.tel }}" class="nav-phone">{{ site.phone.display }}</a>
 
-        {% include "partials/theme-toggle.html" %}
 
         <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
             <span></span>
@@ -18,6 +17,10 @@
             <span></span>
         </button>
     </div>
+
+    {% if site.banner %}
+    <div class="site-banner" role="status">{{ site.banner }}</div>
+    {% endif %}
 </header>
 
 <nav id="mobile-menu" hidden aria-label="Mobile">
@@ -27,6 +30,5 @@
         <a href="{{ item.href }}"{% if page.url == item.href %} class="is-current" aria-current="page"{% endif %}>{{ item.label }}</a>
         {% endfor %}
         <a href="tel:{{ site.phone.tel }}" class="nav-phone">{{ site.phone.display }}</a>
-        {% include "partials/theme-toggle.html" %}
     </div>
 </nav>

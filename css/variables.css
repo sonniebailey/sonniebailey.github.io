@@ -15,14 +15,14 @@
    editing the derived token directly; nothing forces the derivation. */
 :root {
     /* ===== BRAND: edit these ===== */
-    --brand-primary: #2d5f8a;
-    --brand-primary-dark: #1e4160;
-    --brand-accent: #c26b3c;
+    --brand-primary: #2f4858;
+    --brand-primary-dark: #1d2e3a;
+    --brand-accent: #b8912b;
     --brand-bg: #f8f7f5;
     --brand-text: #22272e;
-    --font-heading: 'Montserrat', sans-serif;
-    --font-body: 'Montserrat', sans-serif;
-    --radius: 8px;
+    --font-heading: 'Raleway', sans-serif;
+    --font-body: 'Raleway', sans-serif;
+    --radius: 10px;
     /* ===== END BRAND ===== */
 
     /* ------------------------------------------------------------ */
@@ -63,6 +63,22 @@
     --colour-border-strong: color-mix(in srgb, var(--brand-text) 24%, transparent);
 
     --header-bg: color-mix(in srgb, #ffffff 82%, var(--brand-bg));
+    --header-float-bg: color-mix(in srgb, var(--brand-bg) 28%, transparent);
+    --nav-current-blur: blur(10px);
+    --nav-hover-blur: blur(5px);
+    /* A hairline ring plus a soft halo around the pill edge. The ring
+       is what separates hover from current at a glance, since the two
+       blur levels alone read almost the same. */
+    --nav-hover-glow: 0 0 0 1px rgba(255, 255, 255, 0.09),
+                      0 0 16px rgba(255, 255, 255, 0.045),
+                      0 0 34px rgba(255, 255, 255, 0.022);
+    --nav-current-glow: 0 0 0 1px rgba(255, 255, 255, 0.2),
+                        0 0 24px rgba(255, 255, 255, 0.075),
+                        0 0 50px rgba(255, 255, 255, 0.035);
+    --header-scrolled-bg: color-mix(in srgb, var(--header-bg) 78%, transparent);
+    --header-blur: blur(8px) saturate(1.15);
+    --wordmark-colour: var(--brand-primary);
+    --banner-text: var(--colour-text-muted);
     --header-border: var(--colour-border-soft);
     --footer-bg: var(--brand-primary-dark);
     --footer-text: var(--colour-text-on-dark);
@@ -78,15 +94,25 @@
     /* ------------------------------------------------------------ */
     /* Ground texture                                                 */
     /* ------------------------------------------------------------ */
-    /* A faint tinted wash painted under the page and header. Set
-       --ground-texture to a url() of a tileable image to use a real
-       texture instead; the opacity and size tokens apply either way. */
-    --ground-texture: radial-gradient(
-        circle at 1px 1px,
-        var(--tint-medium) 1px,
-        transparent 0
-    );
-    --ground-texture-size: 22px 22px;
+    /* A faint texture painted under the page and header, so the
+       background reads as a material rather than flat colour. Two
+       layers: fine desaturated fractal noise from an inline SVG, and a
+       soft diagonal brand tint that keeps the grain from reading as
+       plain grey dirt. The noise is generated rather than a file, so
+       there is no image to ship, tile or optimise.
+
+       Swap --ground-texture for a url() of a tileable image to use a
+       real photographed texture; set it to none to switch it off. The
+       size and opacity tokens apply either way, and --ground-texture-
+       size takes one entry per layer. */
+    /* Height of the optional site-wide notice row inside the header. */
+    --banner-height: 40px;
+    /* Total height the floating header occupies, for content that has
+       to clear it. Sites without a banner set this to --header-height. */
+    --header-offset: calc(var(--header-height) + var(--banner-height));
+
+    --ground-texture: url('../images/fabric-light-theme.png');
+    --ground-texture-size: auto;
     --ground-texture-opacity: 0.5;
 
     /* ------------------------------------------------------------ */
@@ -194,6 +220,11 @@
        wordmark is deliberately larger than the nav links, since it is the
        site's name rather than one more link. */
     --header-gap: var(--space-5);
+    /* Nav pills: the inset is padding cancelled by an equal
+       negative margin, so --nav-gap is reduced by twice the
+       inset once both neighbours are painted. */
+    --nav-pill-inset: var(--space-4);
+    --nav-gap: var(--space-8);
     --logo-height: 44px;
     --font-size-wordmark: var(--font-size-lg);
 
@@ -280,37 +311,59 @@
 /* ================================================================ */
 /* Dark mode                                                         */
 /* ================================================================ */
-/* Applied by [data-theme="dark"] on <html>, set before first paint by
-   the inline preload script in templates/partials/theme-preload.html.
-   That script resolves a saved choice first, falling back to the
-   visitor's OS setting, so there is no prefers-color-scheme query here.
+/* The site is dark only. data-theme="dark" is set on <html> in
+   base.html, so this block always applies; there is no toggle, no
+   preload script and no light alternative offered to the visitor.
 
-   Only colour tokens are redefined -- spacing, type and motion are
-   shared. Surfaces derive from the brand text colour rather than pure
-   black so the dark theme keeps the brand's temperature. */
+   The :root block above is retained as the base layer this overrides,
+   not as a theme anyone can reach. Only colour tokens are redefined --
+   spacing, type and motion are shared with it. */
 [data-theme="dark"] {
-    --colour-bg: color-mix(in srgb, var(--brand-text) 88%, #000000);
-    --colour-bg-alt: color-mix(in srgb, var(--brand-text) 74%, #000000);
-    --colour-bg-sunken: color-mix(in srgb, var(--brand-text) 94%, #000000);
+    /* Surfaces, borders and text roles are Snoopy's values verbatim
+       (snoopy/css/variables.css), not derivations, so this site and the
+       app read as the same dark. Ground is near-black; panels are faint
+       white over it rather than lighter greys. */
+    --colour-bg: #060608;
+    --colour-bg-alt: #1B1B1F;
+    --colour-bg-sunken: #060608;
 
-    --colour-text: color-mix(in srgb, #ffffff 90%, var(--brand-bg));
-    --colour-text-muted: color-mix(in srgb, #ffffff 58%, var(--colour-bg));
+    --colour-text: #ffffff;
+    --colour-text-muted: rgba(255, 255, 255, 0.7);
 
     /* Saturated brand colours vibrate against dark backgrounds; lift them
        towards the page background so links and buttons stay readable. */
-    --colour-link: color-mix(in srgb, var(--brand-primary) 62%, #ffffff);
-    --colour-link-hover: color-mix(in srgb, var(--brand-accent) 70%, #ffffff);
+    --colour-link: #7FA6CE;
+    --colour-link-hover: color-mix(in srgb, #7FA6CE 70%, #ffffff);
 
-    --colour-card: color-mix(in srgb, #ffffff 6%, transparent);
-    --colour-card-hover: color-mix(in srgb, #ffffff 11%, transparent);
+    --colour-card: rgba(255, 255, 255, 0.035);
+    --colour-card-hover: rgba(255, 255, 255, 0.07);
 
-    --colour-border: color-mix(in srgb, #ffffff 16%, transparent);
-    --colour-border-soft: color-mix(in srgb, #ffffff 9%, transparent);
-    --colour-border-strong: color-mix(in srgb, #ffffff 28%, transparent);
+    --colour-border: rgba(255, 255, 255, 0.1);
+    --colour-border-soft: rgba(255, 255, 255, 0.05);
+    --colour-border-strong: rgba(255, 255, 255, 0.2);
 
-    --header-bg: color-mix(in srgb, var(--brand-text) 80%, #000000);
+    --header-bg: #1B1B1F;
+    /* Over the hero: a faint tint so the frost reads as glass
+       rather than as a plain blur. Once scrolled, the heavier
+       surface, since text has to pass legibly underneath. */
+    --header-float-bg: rgba(6, 6, 8, 0.28);
+    --nav-current-blur: blur(10px);
+    --nav-hover-blur: blur(5px);
+    /* A hairline ring plus a soft halo around the pill edge. The ring
+       is what separates hover from current at a glance, since the two
+       blur levels alone read almost the same. */
+    --nav-hover-glow: 0 0 0 1px rgba(255, 255, 255, 0.09),
+                      0 0 16px rgba(255, 255, 255, 0.045),
+                      0 0 34px rgba(255, 255, 255, 0.022);
+    --nav-current-glow: 0 0 0 1px rgba(255, 255, 255, 0.2),
+                        0 0 24px rgba(255, 255, 255, 0.075),
+                        0 0 50px rgba(255, 255, 255, 0.035);
+    --header-scrolled-bg: rgba(27, 27, 31, 0.72);
+    --header-blur: blur(8px) saturate(1.15);
     --header-border: var(--colour-border-soft);
-    --footer-bg: color-mix(in srgb, var(--brand-text) 96%, #000000);
+    --wordmark-colour: #ffffff;
+    --banner-text: var(--colour-text-muted);
+    --footer-bg: #060608;
     --footer-text: var(--colour-text);
     --footer-text-muted: var(--colour-text-muted);
 
@@ -324,6 +377,8 @@
     --shadow-colour: color-mix(in srgb, #000000 55%, transparent);
     --shadow-colour-soft: color-mix(in srgb, #000000 32%, transparent);
 
+    --ground-texture: url('../images/fabric-dark-theme.png');
+    --ground-texture-size: auto;
     --ground-texture-opacity: 0.35;
 
     /* The hero photo is already dark-friendly; deepen the scrim slightly
