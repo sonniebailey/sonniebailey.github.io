@@ -59,6 +59,15 @@
         var items = list.querySelectorAll('details');
         if (!items.length) return;
 
+        // Seat the control row directly above the list it operates on, so
+        // any preamble (eg the About page's executive summary) sits above
+        // the button and is visibly outside its reach. The row only exists
+        // for JavaScript visitors, so moving it here costs no-JS nothing.
+        var controls = button.closest('.faq-controls');
+        if (controls && list.parentNode) {
+            list.parentNode.insertBefore(controls, list);
+        }
+
         button.removeAttribute('hidden');
         button.setAttribute('aria-controls', 'faq-list');
         list.id = 'faq-list';

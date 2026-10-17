@@ -2,7 +2,8 @@
 Prepare the build output directory and copy static assets into it.
 
 Single responsibility: filesystem housekeeping for _site/ -- clearing and
-recreating it, and copying css/, js/, images/ and _redirects verbatim.
+recreating it, and copying css/, js/, images/, _redirects and any
+repo-root *.pdf verbatim.
 Does not touch page HTML, which build.py writes separately.
 """
 
@@ -70,7 +71,7 @@ def prepare_output(out_dir: Path) -> None:
 
 def copy_assets(root: Path, out_dir: Path) -> None:
     """
-    Copy css/, js/, images/ and _redirects from the repo into the output.
+    Copy css/, js/, images/, _redirects and repo-root *.pdf into the output.
 
     Args:
         root: repository root Path.
@@ -97,3 +98,9 @@ def copy_assets(root: Path, out_dir: Path) -> None:
     if redirects_path.exists():
         shutil.copy2(redirects_path, out_dir / "_redirects")
         logger.info("Copied _redirects to output")
+
+    # Documents kept at the repo root publish at the site root, so a PDF's
+    # address (eg /disclosure.pdf) stays fixed for anything linking to it.
+    for pdf_path in sorted(root.glob("*.pdf")):
+        shutil.copy2(pdf_path, out_dir / pdf_path.name)
+        logger.info("Copied %s to output", pdf_path.name)

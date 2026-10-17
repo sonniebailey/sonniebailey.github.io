@@ -14,7 +14,7 @@ How the site is built, for whoever maintains it. readme.md covers day-to-day edi
 - content/ - one markdown file per page, plus site.json
 - templates/ - Jinja2 templates: base.html (page shell and head), page.html, home.html, faq.html, partials/header.html, partials/footer.html, partials/logo.html, partials/icons.html
 - css/ - main.css imports variables.css, base.css, prose.css, components.css, responsive.css in that order
-- js/ - header.js (floating header state), menu.js (mobile menu), reveal.js (scroll-in animation), tilt.js (card and button tilt), hero-light.js (light across the hero), faq.js (expand/collapse all)
+- js/ - header.js (floating header state), menu.js (mobile menu), reveal.js (scroll-in animation), tilt.js (card and button tilt), faq.js (expand/collapse all)
 - images/ - images as published; the build copies this folder unchanged. images/favicon.png is the favicon site.json names. images/logo.png is not used by any template (site.json sets no logo)
 - icons/ - the full favicon set (16, 32, 180, 192, 512 and .ico), copied from the live site. Nothing links it yet and the build does not copy it; base.html links only images/favicon.png
 - build.py and build/ - the build; build/orchestrator.py runs the steps in order
@@ -23,17 +23,18 @@ How the site is built, for whoever maintains it. readme.md covers day-to-day edi
 - utils/optimise_images.py - photo resizer
 - tests/ - pytest tests for the build modules
 - _redirects - Netlify redirect rules, copied to the output
+- disclosure.pdf and privacy.pdf - the disclosure statement and privacy policy, linked from the footer via footer_links in content/site.json. Any PDF at the repo root is copied to the site root, so its address (eg /disclosure.pdf) matches the old site's and stays fixed for anything linking to it
 - _site/ - build output, ignored by git, recreated on every build
 
 ## Build steps
 
 build/orchestrator.py run_build, in order:
 
-1. site_config.load_site_config reads content/site.json and checks every required key (name, tagline, domain, phone.display, phone.tel, email, address.lines, address.single_line, hours, nav, favicon, social_image, fonts.heading, fonts.body, fonts.google_css; logo is optional; map is optional and, if present, needs embed_url and link_url).
+1. site_config.load_site_config reads content/site.json and checks every required key (name, tagline, domain, phone.display, phone.tel, email, address.lines, address.single_line, hours, nav, favicon, social_image, fonts.heading, fonts.body, fonts.google_css; logo is optional; map is optional and, if present, needs embed_url and link_url; footer_links is optional and, if present, is a list whose items each need label and href).
 2. page_loader.load_pages reads every content/*.md, splits the YAML front matter, checks title, description and layout (page, home or faq), applies defaults (hero_image images/hero.jpg, noindex false, show_map false), checks the hero image exists, checks the shape of cta and features, and derives the URL from the file name.
 3. output.prepare_output empties _site/ (retrying briefly if a sync client such as Dropbox holds a lock).
 4. For each page: markdown_render.render_body lifts the first H1 out as the hero title and renders the rest to HTML; faq_transform.to_details wraps each H2 section in a details.faq-item (answer inside a div.faq-answer), collected into a single div.faq-list, for faq pages; page_renderer.render_page renders the template named after the layout; root_relative.rootify rewrites 404.html's links to start with / so it works from any path.
-5. output.copy_assets copies css/, js/, images/ and _redirects.
+5. output.copy_assets copies css/, js/, images/, _redirects and any repo-root *.pdf.
 6. sitemap_writer writes sitemap.xml (every page except 404 and noindex pages) and robots.txt.
 7. checks.check_output reads the output back and fails the build if any page is missing its header, footer, hero or main, still contains template syntax, links to a css/js/image file that does not exist, has the wrong number of current-page markers, or if 404.html, sitemap.xml or robots.txt is missing.
 
@@ -77,9 +78,9 @@ prose.css works off elements alone, never classes, because an author writing mar
 
 --ground-texture paints a texture under the page and header via body::before, so surfaces read as a material rather than flat colour. It is Snoopy's 45-degree fabric weave tile, copied into images/ in both tones the pattern ships in, drawn at native size and repeated. Set it to none to switch it off.
 
-The hero is two layers over the photograph: --hero-wash, a diagonal brand gradient that pulls the image towards the site's colour, and --hero-scrim, which holds a plateau of darkness behind the heading before falling away, so the text is legible without dimming the whole image evenly. A third layer, .hero__light, is a ray of warm light shining from the hero's top right corner towards the pointer, widening into a cone across the whole hero, a bright core inside a fainter halo (js/hero-light.js). The cone is a conic gradient on a pseudo-element that is only ever rotated about the corner, so it is painted once and turned by the graphics card; an earlier version transitioned a gradient's position instead, which repainted the whole hero on every frame and lagged visibly. The box's width uses CSS tan(), so the cone needs a browser that supports it. The script eases the aim after the pointer in a frame loop that stops once it has caught up. As the pointer comes down towards the hero button's level the ray widens and strengthens, at full anywhere level with or below the button's top edge, and keyboard focus on the button lights the ray aimed at it at full strength; this too is transform and opacity only.
+The hero is two layers over the photograph: --hero-wash, a diagonal brand gradient that pulls the image towards the site's colour, and --hero-scrim, which holds a plateau of darkness behind the heading before falling away, so the text is legible without dimming the whole image evenly. The photograph is set by templates/partials/hero_bg.html as two background-image declarations: a plain JPG, then an image-set() offering the WebP of the same name first and the JPG second, so browsers without image-set() keep the JPG. The WebP path is derived by swapping .jpg for .webp. Debt: the build checks only that the JPG exists, so a missing WebP builds cleanly and shows no photograph in modern browsers. The hero files are 2560px wide (hero-lake-2560.jpg and .webp); the 7008px original, images/hero-lake.jpg, is unused but still published.
 
-Page changes use the cross-document view transition, which only supporting browsers run: the current page jiggles side to side as it gives, then falls straight off the bottom of the screen, uncovering the next page underneath. The header has its own transition name and stays still. A speculation rules block in base.html prepares a page in the background when its link is hovered, so the drop starts on the click rather than after the next page loads; browsers without support ignore it. The drop is off under reduced motion.
+Page changes use the cross-document view transition, which only supporting browsers run: the current page falls straight off the bottom of the screen, uncovering the next page underneath. The header and banner fall with the page; giving the header its own transition name kept it still, but the browser shows a captured image of it during the drop, and the swap back to the live header at the end was visible. A speculation rules block in base.html prepares a page in the background when its link is hovered, so the drop starts on the click rather than after the next page loads; browsers without support ignore it. The drop is off under reduced motion.
 
 Hero height is a vh value paired with a px floor: --hero-min-height (home) and --hero-min-height-interior (every other page, applied by the hero--interior class). responsive.css also lowers these under max-height queries, so landscape phones and short laptop screens do not get a banner that fills the viewport.
 
@@ -107,6 +108,8 @@ site.json's optional banner key renders a notice row inside the header, under th
 
 The current page is marked in the nav by blurring its patch of the header further than the header already does, plus a white hairline ring and a feathered halo; hover is the same treatment at roughly half strength. There is no underline and no colour change. Blur only stacks downward -- a child's backdrop is the parent's already-filtered result -- so a nav item can add blur but cannot reduce it below the header's. Every nav link carries the pill's padding and radius with a transparent fill, cancelled by an equal negative margin, so the items neither move nor cost extra space when a state paints. --nav-gap is wider than --header-gap because it has to clear two pill insets and still leave visible air between neighbours.
 
+The nav's hover reads as gold only because the hero photograph's warm tones show through its blur; the nav itself paints no gold. Elsewhere that look is painted explicitly with three tokens derived from --brand-accent: --hover-gold-fill (a faint tinted fill), --hover-gold-border (a hairline accent border) and --hover-gold-glow (an accent ring plus feathered halo). Feature cards, FAQ items and the FAQ expand-all toggle take all three on hover. The hero button takes only the glow, since it is already solid gold and a tinted fill would vanish against it. A blur alone would do nothing on these elements: the button is opaque and the cards sit on the textured ground rather than the photograph.
+
 ## Responsive
 
 responsive.css restages the token values at each breakpoint rather than only resizing individual components, so the page recomposes at each size instead of shrinking uniformly. Each block redefines the per-area rhythm tokens, the hero wrap width and the type sizes; component rules are limited to what a token cannot express, such as swapping the desktop nav for the burger or collapsing the feature grid to one column.
@@ -118,11 +121,10 @@ Breakpoints: 768px (tablet), 480px (mobile), and two max-height queries (749px a
 Each file is self-contained, has JSDoc comments and starts with `// @ts-check`. Each runs on DOMContentLoaded and does nothing if its markup is absent, so removing a feature from the templates needs no JS change.
 
 - header.js: adds is-scrolled to the header once the visitor scrolls past the hero, so the floating header takes its heavier surface over running text. The threshold is measured from the hero's own height rather than a fixed number, so it holds at every page and screen size. A page with no hero is solid from the start. See Header above.
-- faq.js: reveals the .faq-toggle-all button and wires it to open or close every question at once, re-syncing its label when a visitor opens one by hand. The accordions themselves are native details elements and work without it.
+- faq.js: reveals the .faq-toggle-all button and wires it to open or close every question at once, re-syncing its label when a visitor opens one by hand. It also moves the control row from its place in faq.html to directly above .faq-list, so any text before a page's first ## heading (the About page's executive summary, the testimonials intro line) sits above the button and visibly outside its reach. The row only exists for JavaScript visitors, so the move costs a no-JS visitor nothing. The accordions themselves are native details elements and work without it.
 - menu.js: toggles the mobile menu (button.menu-toggle and nav#mobile-menu), closes on Escape, returns focus.
 - reveal.js: adds is-visible to elements with class reveal as they scroll into view. Does nothing when the visitor prefers reduced motion or the browser lacks IntersectionObserver; the CSS keeps those elements visible.
 - tilt.js: on elements with class tilt (the home page feature cards and the hero button), sets --pointer-x and --pointer-y and adds is-tilting while the pointer is over them, and clears all three when it leaves. The CSS turns the card towards the pointer, lifts the icon and heading off its surface and runs a soft light across it. Runs only with a mouse or trackpad and without reduced motion; touch screens keep the ordinary hover.
-- hero-light.js: sets --ray-angle on .hero__light to aim the ray from the hero's top right corner at the pointer, and --ray-boost (0 to 1) for how near the pointer is to the hero button's level (full anywhere level with or below its top edge), easing both a frame at a time until they catch up; keyboard focus on the button also lights and aims it, and adds is-lit to the hero while the pointer is over it. Mouse or trackpad only, and not under reduced motion.
 
 ## Tests
 
@@ -139,6 +141,9 @@ Netlify reads _redirects natively and serves a root 404.html for unknown paths a
 ## Known limitations
 
 - No file watcher in preview.py; rerun it after edits.
+- Text before an faq page's first ## heading stays as ordinary, always-visible text, but it cannot carry a ## heading of its own, because every ## becomes a question. The About page's Executive summary heading is therefore a ### directly under the page's h1, which skips a heading level.
+- .prose img carries no box-shadow. A shadow follows the image's rectangle, not its visible pixels, so the round cut-out headshot on the About page showed a faint square card behind it.
+- footer_links is read with site.get() in the footer template, so leaving the key out works. map and footer_note still need the null workaround below.
 - content/site.json sets map and footer_note to null rather than omitting them. Both are documented as optional, but the templates test them with {% if site.map %} against a plain dict under StrictUndefined, so an absent key raises rather than reading as falsy and the build fails. Setting the key to null is the workaround. This is inherited from Quickie and is a defect there, not here; if it is fixed upstream, the two null entries can go.
 - The dark palette is hand-set rather than derived from the BRAND block, so a brand change moves the light base layer and leaves the dark surfaces where they are. See Dark only.
 - A page with show_map set loads a Google Maps iframe on view, so Google is contacted on that page whether or not the visitor looks at the map. This replaced a click-to-load facade, which avoided the request but put a control between the visitor and the one thing a contact page exists to show. The embed stays opt-in per page to keep the cost off pages that do not need it.

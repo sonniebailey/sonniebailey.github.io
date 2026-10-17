@@ -36,5 +36,15 @@
     "google_css": "https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap"
   },
   "banner": "Fairhaven Wealth is not currently taking new clients.",
+  "footer_links": [
+    {
+      "label": "Disclosures",
+      "href": "disclosure.pdf"
+    },
+    {
+      "label": "Privacy",
+      "href": "privacy.pdf"
+    }
+  ],
   "footer_note": null
 }

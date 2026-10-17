@@ -13,6 +13,7 @@ import pytest
 from build.errors import BuildError
 from build.faq_transform import to_details
 from build.markdown_render import render_body
+from build.output import copy_assets
 from build.page_loader import load_pages
 from build.root_relative import rootify
 from build.site_config import load_site_config
@@ -82,6 +83,26 @@ def test_site_config_valid_loads(tmp_path):
     _write_site_json(tmp_path)
     config = load_site_config(tmp_path)
     assert config["name"] == "Example Co"
+
+
+def test_site_config_footer_link_missing_href_raises(tmp_path):
+    """A footer_links item without an href raises BuildError naming the item."""
+    _write_site_json(tmp_path, {"footer_links": [{"label": "Privacy"}]})
+    with pytest.raises(BuildError, match=r"footer_links\[0\]"):
+        load_site_config(tmp_path)
+
+
+# ---------------------------------------------------------------------------
+# output
+# ---------------------------------------------------------------------------
+
+def test_copy_assets_publishes_root_pdfs_at_site_root(tmp_path):
+    """A PDF at the repo root is copied to the output root, keeping its address."""
+    (tmp_path / "disclosure.pdf").write_bytes(b"%PDF-")
+    out_dir = tmp_path / "_site"
+    out_dir.mkdir()
+    copy_assets(tmp_path, out_dir)
+    assert (out_dir / "disclosure.pdf").read_bytes() == b"%PDF-"
 
 
 # ---------------------------------------------------------------------------

@@ -1,8 +1,8 @@
 {% extends "base.html" %}
+{% from "partials/hero_bg.html" import hero_bg %}
 {% from "partials/icons.html" import feature_icon %}
 {% block main %}
-<section class="hero" style="background-image: url('{{ page.hero_image }}');">
-    <div class="hero__light" aria-hidden="true"></div>
+<section class="hero" style="{{ hero_bg(page.hero_image) }}">
     <div class="hero__content">
         <h1 class="hero__title">{{ hero_title }}</h1>
         {% if page.cta %}

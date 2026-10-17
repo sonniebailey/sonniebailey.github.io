@@ -8,3 +8,4 @@ Thumbs.db
 .env
 .pytest_cache/
 status.md
+.playwright-mcp/

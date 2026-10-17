@@ -7,7 +7,8 @@ If you are new here, whether a person or an AI assistant, read this file and the
 ## How the site works
 
 - Page text lives in content/ as markdown files, one per page. Edit them in any text editor.
-- Business details (name, legal name, tagline, phone, address, email, opening hours, navigation links, the banner and the footer note) live in content/site.json and appear wherever the templates use them. Legal name is used in the copyright line and falls back to the business name if left out; footer_note is an optional line of small print above it; both are optional.
+- Business details (name, legal name, tagline, phone, address, email, opening hours, navigation links, the banner and the footer note) live in content/site.json and appear wherever the templates use them. Legal name is used in the copyright line and falls back to the business name if left out; footer_note is an optional line of small print above it; both are optional. footer_links is an optional list of small links beside the copyright line, each with a label and an href, in the same shape as the nav list. It currently links the disclosure statement and privacy policy.
+- The disclosure statement and privacy policy are disclosure.pdf and privacy.pdf in the top folder. To update one, replace the file and keep its name. Any PDF in the top folder is published at the top level of the site, eg fairhavenwealth.co.nz/disclosure.pdf.
 - The banner is the notice sitting under the menu on every page, currently that the business is not taking new clients. It is the banner value in content/site.json. Change the wording there, or remove the line to remove the strip entirely.
 - The business name appears in the top left as text, in the site's heading font. If you have a logo image, add `"logo": "images/logo.svg"` to content/site.json and it is used instead. Make sure it reads against the dark header and against the hero photograph, since the header sits over the photograph rather than above it.
 - Colours and fonts live in the block at the top of css/variables.css marked BRAND. Most of the site is worked out from those eight values, so changing them changes the whole site. The dark surface colours are the exception: they are set by hand rather than derived, so this site matches the rest of the estate.
@@ -42,7 +43,7 @@ Page settings, all in the block at the top of the file:
 
 - title and description: required. Used in the browser tab, search results and link previews.
 - layout: required. `page` for a normal page, `faq` for a page where every `##` heading becomes a click-to-expand question, `home` for the home page only.
-- hero_image: optional. Path to the banner image; defaults to images/hero.jpg. The home page gets a taller banner than the other pages automatically.
+- hero_image: optional. Path to the banner image (a .jpg); defaults to images/hero.jpg. A .webp copy with the same name must sit beside it, since browsers load the WebP and fall back to the JPG; without it the banner shows no photograph. The home page gets a taller banner than the other pages automatically.
 - cta: optional. A button in the hero, for example `cta: { label: "Book now", href: "contact.html" }`.
 - show_map: optional. `true` shows the map (from site.json) at the bottom of the page. Only set it on pages where the map earns its place: the map is a Google embed, so those pages contact Google when they load.
 - noindex: optional. `true` keeps the page out of search engines.
@@ -61,6 +62,8 @@ The icon is a name, not a picture file. Available names: calendar, clock, users,
 ## Frequently asked questions page
 
 On a page with `layout: faq`, every `##` heading becomes a question that opens when clicked, and the text under it is the answer. An expand-all button appears above the list automatically. You do not need to add anything for it.
+
+Text above the first `##` heading is not part of the list: it stays on show, sits above the expand-all button, and is not opened or closed by it. The About page uses this for its executive summary, under a `###` heading.
 
 ## Add a photo
 

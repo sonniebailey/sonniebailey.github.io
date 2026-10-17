@@ -119,6 +119,18 @@ def load_site_config(root: Path) -> dict:
         _require(item, "label", f"site.json nav[{index}]")
         _require(item, "href", f"site.json nav[{index}]")
 
+    # Nested: footer_links, optional -- small links on the footer's legal
+    # line (eg the disclosure and privacy PDFs). Same shape as nav items.
+    footer_links = config.get("footer_links")
+    if footer_links is not None:
+        if not isinstance(footer_links, list):
+            raise BuildError("content/site.json: 'footer_links' must be a list or null")
+        for index, item in enumerate(footer_links):
+            if not isinstance(item, dict):
+                raise BuildError(f"content/site.json: footer_links[{index}] must be an object")
+            _require(item, "label", f"site.json footer_links[{index}]")
+            _require(item, "href", f"site.json footer_links[{index}]")
+
     # Nested: map, optional -- only validated when present and not null.
     map_config = config.get("map")
     if map_config is not None:

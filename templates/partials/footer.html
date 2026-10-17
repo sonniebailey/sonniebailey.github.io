@@ -22,6 +22,11 @@
         <p class="footer__note">{{ site.footer_note }}</p>
         {% endif %}
 
-        <p class="footer__legal">&copy; {{ build.year }} {{ site.legal_name or site.name }}</p>
+        <p class="footer__legal">
+            <span>&copy; {{ build.year }} {{ site.legal_name or site.name }}</span>
+            {% for link in site.get('footer_links') or [] %}
+            <a href="{{ link.href }}" target="_blank" rel="noopener">{{ link.label }}</a>
+            {% endfor %}
+        </p>
     </div>
 </footer>

@@ -145,10 +145,12 @@
 }
 
 /* ==================== IMAGES AND FIGURES ==================== */
+/* No box-shadow: a shadow follows the image's box, not its visible pixels,
+   so a cut-out image such as the round headshot on the About page drew a
+   faint square card behind it. */
 .prose img {
     margin: var(--flow-gap-block) 0;
     border-radius: var(--radius-card);
-    box-shadow: var(--shadow-sm);
 }
 
 .prose figure {

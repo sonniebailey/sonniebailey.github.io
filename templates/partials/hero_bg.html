@@ -1,0 +1,5 @@
+{#- Hero background style: WebP via image-set(), JPG for browsers without image-set/WebP.
+    Expects a sibling .webp next to the .jpg (same basename). -#}
+{% macro hero_bg(jpg) -%}
+background-image: url('{{ jpg }}'); background-image: image-set(url('{{ jpg | replace('.jpg', '.webp') }}') type('image/webp'), url('{{ jpg }}') type('image/jpeg'));
+{%- endmacro %}
