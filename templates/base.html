@@ -31,16 +31,10 @@
        outbound-links variant also counts clicks on links to other sites. #}
     <script defer data-domain="fairhavenwealth.co.nz" src="https://plausible.io/js/script.outbound-links.js"></script>
     <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
-    {# Prepares a page in the background once the visitor hovers its link,
-       so the page drop starts the moment they click rather than after the
-       next page loads. Browsers without speculation rules ignore it. #}
-    <script type="speculationrules">
-    {"prerender": [{"where": {"href_matches": "/*"}, "eagerness": "moderate"}]}
-    </script>
 </head>
 <body>
-    {# The page photograph, fixed behind everything so the hero shows it
-       through and the frosted footer blurs it. #}
+    {# The page photograph, fixed behind everything so the frosted header
+       and footer blur it. #}
     {% if page.hero_image %}
     {% from "partials/hero_bg.html" import hero_bg %}
     <div class="page-backdrop" style="{{ hero_bg(page.hero_image) }}" aria-hidden="true"></div>
@@ -54,7 +48,6 @@
     <script src="js/header.js" defer></script>
     <script src="js/menu.js" defer></script>
     <script src="js/reveal.js" defer></script>
-    <script src="js/tilt.js" defer></script>
     <script src="js/faq.js" defer></script>
     <script src="js/dialog.js" defer></script>
 </body>

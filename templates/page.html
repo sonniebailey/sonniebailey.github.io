@@ -1,17 +1,6 @@
 {% extends "base.html" %}
 {% block main %}
-<section class="hero hero--interior">
-    <div class="hero__content">
-        <h1 class="hero__title">{{ hero_title }}</h1>
-        {% if page.cta %}
-        <a href="{{ page.cta.href }}" class="hero__cta"><span class="hero__cta-label">{{ page.cta.label }}</span></a>
-        {% endif %}
-    </div>
-</section>
-
 <div class="container">
-    {# The page heading, shown here while the hero is hidden (see
-       base.css, Hero hidden). #}
     <div class="page-heading">
         <div class="page-heading__text">
             <h1 class="page-heading__title">{{ hero_title }}</h1>

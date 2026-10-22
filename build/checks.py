@@ -42,9 +42,6 @@ def _check_page(out_dir: Path, page: dict, failures: list[str]) -> str | None:
         if required not in html:
             failures.append(f"{page['url']}: missing '{required}'")
 
-    if not re.search(r'class="[^"]*\bhero\b[^"]*"', html):
-        failures.append(f"{page['url']}: missing hero class")
-
     if "{{" in html or "{%" in html:
         failures.append(f"{page['url']}: leftover template syntax ('{{{{' or '{{%')")
 

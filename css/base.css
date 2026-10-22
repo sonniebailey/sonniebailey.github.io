@@ -1,4 +1,4 @@
-/* Reset, page furniture and the hero. Everything here is generic layout;
+/* Reset and page furniture. Everything here is generic layout;
    component-specific rules (cards, FAQ, nav) live in components.css. */
 
 *, *::before, *::after {
@@ -144,14 +144,7 @@ select:focus-visible {
 main {
     display: block;
     width: 100%;
-    padding-top: var(--header-height);
-}
-
-/* A page opening on a hero puts the photograph under the header instead of
-   below it, so the reserved strip is removed and the hero clears the
-   header from the inside (see .hero__content). */
-body:has(.hero) main {
-    padding-top: 0;
+    padding-top: var(--header-offset);
 }
 
 /* ==================== SECTION RHYTHM ==================== */
@@ -211,129 +204,7 @@ main > .container > * {
     }
 }
 
-/* ==================== VIEW TRANSITIONS ==================== */
-/* CSS-only cross-document transitions; ignored by browsers without support. */
-@view-transition {
-    navigation: auto;
-}
-
-/* Page drop: the current page falls straight down, speeding up then easing to a stop, out of
-   the bottom of the screen. The next page is already lying underneath, in
-   the falling page's shadow, and brightens as it is uncovered. The header
-   falls with the page. The old snapshot is raised above
-   the new one, which by default paints on top, and the default cross-fade
-   blend is switched off. */
-@media (prefers-reduced-motion: no-preference) {
-    ::view-transition-old(root) {
-        z-index: 1;
-        mix-blend-mode: normal;
-        transform-origin: top center;
-        animation: page-drop var(--duration-page-drop) var(--ease-page-drop) both;
-    }
-
-    ::view-transition-new(root) {
-        mix-blend-mode: normal;
-        animation: page-uncover var(--duration-page-drop) var(--ease-out) both;
-    }
-}
-
-@keyframes page-drop {
-    from {
-        transform: none;
-    }
-
-    to {
-        transform: translateY(100%);
-    }
-}
-
-@keyframes page-uncover {
-    from {
-        filter: brightness(var(--page-drop-shade));
-        transform: scale(var(--page-drop-under-scale));
-    }
-
-    to {
-        filter: brightness(1);
-        transform: scale(1);
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    ::view-transition-group(*),
-    ::view-transition-old(*),
-    ::view-transition-new(*) {
-        animation: none !important;
-    }
-}
-
-/* ==================== HERO ==================== */
-/* Two hero sizes: the home page gets the taller banner, every other page
-   uses .hero--interior. Both pair a vh height with a px floor so they
-   stay usable on short screens (landscape phones, small laptops) without
-   eating the whole viewport on tall ones. */
-.hero {
-    position: relative;
-    width: 100%;
-    min-height: max(var(--hero-min-height), var(--hero-floor));
-    display: flex;
-    align-items: center;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.hero--interior {
-    min-height: max(var(--hero-min-height-interior), var(--hero-floor-interior));
-}
-
-/* Layer one: a diagonal brand wash that pulls the photograph towards the
-   site's colour instead of leaving it as an unrelated stock image. */
-.hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: var(--hero-wash);
-}
-
-/* Layer two: the scrim, which holds a plateau of darkness behind the
-   heading and then falls away, so the text is legible without dimming
-   the whole image evenly. */
-.hero::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: var(--hero-scrim);
-}
-
-.hero__content {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    max-width: var(--container-max-width);
-    margin: 0 auto;
-    padding: var(--hero-padding-block) var(--container-padding);
-    /* Clears the floating header (and its banner row, where present) so the
-       heading is never underneath it. */
-    padding-top: calc(var(--hero-padding-block) + var(--header-offset));
-}
-
-.hero__title {
-    color: var(--colour-text-on-dark);
-    font-size: var(--font-size-hero);
-    line-height: var(--line-height-heading);
-    letter-spacing: var(--letter-spacing-heading);
-    margin-bottom: var(--space-5);
-    /* Capped so the heading wraps into a column against the scrim's dark
-       side rather than running across the whole photograph. */
-    max-width: var(--measure-hero);
-    text-wrap: balance;
-}
-
-.hero--interior .hero__title {
-    font-size: var(--font-size-hero-interior);
-}
-
+/* ==================== CTA BUTTON ==================== */
 /* Solid gold button. Its hover is shared with the capacity sticker (SOLID
    GOLD BUTTONS in components.css). */
 .hero__cta {
@@ -358,11 +229,10 @@ main > .container > * {
 }
 
 /* ==================== HEADER ==================== */
-/* The header floats over the hero photograph rather than sitting in a bar
-   above it, so the image runs to the top of the page. It is transparent
-   until the visitor scrolls past the hero, at which point js/header.js
-   adds .is-scrolled and the solid surface fades in -- without that, a
-   fixed transparent header would sit unreadably over running text.
+/* The header floats over the page photograph. At the top of the page it is
+   lightly tinted; once the visitor scrolls, js/header.js adds .is-scrolled
+   and the solid surface fades in -- without that, a fixed transparent
+   header would sit unreadably over running text.
 
    Height is auto rather than fixed because the header may carry a second
    row (the site banner); the nav row itself keeps --header-height. */
@@ -371,9 +241,9 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    /* Frosted at all times, including over the hero. The blur has to be
-       here rather than only on .is-scrolled: past the hero the backdrop
-       is a near-flat near-black page, and blurring a flat colour looks
+    /* Frosted at all times, including at the top of the page. The blur has
+       to be here rather than only on .is-scrolled: behind plain content the
+       backdrop is a near-flat near-black page, and blurring a flat colour looks
        identical to not blurring it. The photograph is the only backdrop
        with any structure to soften, so that is where it has to apply. */
     background-color: var(--header-float-bg);
@@ -397,10 +267,6 @@ header:not(.is-scrolled) a,
 header:not(.is-scrolled) .logo__wordmark,
 header:not(.is-scrolled) .site-banner {
     color: var(--colour-text-on-dark);
-}
-
-header:not(.is-scrolled) .menu-toggle span {
-    background-color: var(--colour-text-on-dark);
 }
 
 /* One gap value separates every item in the header, so the phone number,
@@ -470,9 +336,8 @@ footer a:hover {
 }
 
 /* ==================== PAGE BACKDROP ==================== */
-/* The page photograph, fixed to the viewport behind everything. The hero
-   has no image of its own: it is a transparent window onto this layer, so
-   the photograph stays put while the content scrolls up over it.
+/* The page photograph, fixed to the viewport behind everything, so it
+   stays put while the content scrolls up over it.
    Below the ground texture (z-index -1) so the texture still reads. */
 .page-backdrop {
     position: fixed;
@@ -494,20 +359,10 @@ footer a:hover {
     -webkit-backdrop-filter: var(--backdrop-blur);
 }
 
-/* ==================== HERO HIDDEN ==================== */
-/* Trial: the hero is not shown and the page heading sits at the top of
-   the content instead (.page-heading in the page templates). The
-   hero markup and its styles above are kept; delete this block and the
-   .page-heading markup to bring it back. With the hero gone, main has to
-   clear the fixed header itself again; the gap below that is the
-   container's own --section-gap (SECTION RHYTHM). */
-.hero {
-    display: none;
-}
-
-body:has(.hero) main {
-    padding-top: var(--header-offset);
-}
+/* ==================== PAGE HEADING ==================== */
+/* The page heading sits at the top of the content (.page-heading in the
+   page templates). main clears the fixed header (see main above); the gap
+   below that is the container's own --section-gap (SECTION RHYTHM). */
 
 /* The sticker sits level with the top of the title, like a corner stamp,
    so a long title wrapping to several lines does not leave it floating. */

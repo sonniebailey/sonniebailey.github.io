@@ -3,19 +3,23 @@
    never sees a control that does nothing. #}
 <button type="button" class="capacity-button" data-dialog-open="capacity-dialog" hidden>Limited capacity</button>
 
-<dialog id="capacity-dialog" class="dialog dialog--stickered" aria-labelledby="capacity-dialog-title">
-    {# The sticker's face, stuck on the corner as decoration; the heading
-       below already says the same words to a screen reader. #}
+{# No visible heading: the sticker at the top says it. The snippet's
+   title names the dialog for screen readers instead. #}
+<dialog id="capacity-dialog" class="dialog dialog--stickered" aria-label="{{ snippets.capacity.title }}">
+    {# The sticker's face, stuck on the top edge as decoration; the
+       dialog's aria-label already says the same words to a screen reader. #}
     <span class="capacity-button dialog__sticker" aria-hidden="true">Limited capacity</span>
     {# Padding lives on this wrapper, not the dialog, so a click on the
        dialog element itself can only be a click outside the content. #}
     <div class="dialog__body">
     <button type="button" class="dialog__close" data-dialog-close aria-label="Close">&times;</button>
     <div class="prose">
-        <h2 id="capacity-dialog-title">{{ snippets.capacity.title }}</h2>
-
         {# Wording comes from content/snippets/capacity.md. #}
         {{ snippets.capacity.html }}
     </div>
+    {# Home page only: the popup is the way to the cta (home.html). #}
+    {% if page.layout == "home" and page.cta %}
+    <a href="{{ page.cta.href }}" class="hero__cta dialog__cta"><span class="hero__cta-label">{{ page.cta.label }}</span></a>
+    {% endif %}
     </div>
 </dialog>

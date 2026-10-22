@@ -1,5 +1,5 @@
 /* Discrete UI components: nav, mobile menu, feature cards, FAQ accordion,
-   map embed. Layout scaffolding (header/footer shell, hero) lives in
+   map embed. Layout scaffolding (header/footer shell) lives in
    base.css. */
 
 /* ==================== NAV / LOGO ==================== */
@@ -290,58 +290,6 @@
     margin: 0;
 }
 
-/* Tilt: js/tilt.js adds .is-tilting while the pointer is over a .tilt
-   card and sets --pointer-x / --pointer-y (-0.5 to 0.5 from the centre).
-   The card turns towards the pointer, the icon and heading lift off its
-   surface, and a soft light follows the pointer across it. Touch screens
-   and reduced-motion visitors never get the class, so keep the ordinary
-   hover above. preserve-3d is what lets the children sit at their own
-   depth; overflow: hidden would flatten it, so the glare is clipped by
-   border-radius instead. */
-.tilt {
-    position: relative;
-    transform-style: preserve-3d;
-}
-
-.tilt::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    pointer-events: none;
-    background-image: radial-gradient(
-        circle at calc((var(--pointer-x, 0) + 0.5) * 100%) calc((var(--pointer-y, 0) + 0.5) * 100%),
-        var(--tilt-glare),
-        transparent var(--tilt-glare-size)
-    );
-    opacity: 0;
-    transition: opacity var(--duration-base) var(--ease-out);
-}
-
-.tilt.is-tilting {
-    transform: perspective(var(--tilt-perspective))
-               rotateX(calc(var(--pointer-y, 0) * var(--tilt-max) * -2))
-               rotateY(calc(var(--pointer-x, 0) * var(--tilt-max) * 2));
-    transition-duration: var(--duration-fast);
-}
-
-.tilt.is-tilting::after {
-    opacity: 1;
-}
-
-.tilt .feature-card__icon,
-.tilt h2 {
-    transition: transform var(--duration-base) var(--ease-out);
-}
-
-.tilt.is-tilting .feature-card__icon {
-    transform: translateZ(var(--tilt-lift));
-}
-
-.tilt.is-tilting h2 {
-    transform: translateZ(calc(var(--tilt-lift) / 2));
-}
-
 @media (prefers-reduced-motion: reduce) {
     .feature-card {
         transition: none;
@@ -363,7 +311,7 @@
    owns the section spacing (see base.css). It adds no padding itself. */
 
 /* The control belongs to the list it operates on, so it sits close to it
-   and keeps its distance from the hero above instead. */
+   and keeps its distance from the page heading above instead. */
 .faq-controls {
     display: flex;
     justify-content: flex-end;
@@ -536,7 +484,7 @@
 /* ------------------------------------------------------------ */
 /* Site banner                                                    */
 /* ------------------------------------------------------------ */
-/* A site-wide notice sitting between the header and the hero, for
+/* A site-wide notice sitting between the header and the page content, for
    something every visitor needs to see before reading anything else
    (for example, that the business is not taking new clients). Driven
    by the optional banner key in site.json; absent when unset. */
@@ -559,17 +507,16 @@
 /* "Limited capacity" button, top right of the home page under the header,
    and the popup it opens (templates/partials/capacity_dialog.html,
    js/dialog.js). The dialog is frosted like the header and footer. */
-/* A round gold sticker, the same face as the "Find out more" button,
-   tipped slightly off-square. Sits at the right end of the page heading
-   row (.page-heading). */
+/* A gold oblong sticker with a stitched edge, tipped a few degrees off
+   level so it reads as a label stuck on rather than as the flat gold cta
+   button. Sits at the right end of the page heading row (.page-heading). */
 .capacity-button {
     flex-shrink: 0;
-    width: var(--badge-size);
-    aspect-ratio: 1;
+    white-space: nowrap;
     margin-left: auto;
     display: grid;
     place-items: center;
-    padding: var(--space-3);
+    padding: var(--space-3) var(--space-5);
     font: inherit;
     font-size: var(--badge-font-size);
     font-weight: var(--weight-semibold);
@@ -578,12 +525,14 @@
     color: var(--colour-text-on-dark);
     background-color: var(--brand-accent);
     /* A soft top-left sheen so it reads as a slightly domed sticker
-       rather than a flat disc. */
+       rather than a flat face. */
     background-image: radial-gradient(circle at 35% 30%, var(--sticker-sheen), transparent 60%);
     /* Inner ring in the text colour gives the stamped-sticker edge. */
     border: 2px dashed color-mix(in srgb, var(--colour-text-on-dark) 55%, transparent);
     outline: var(--space-1) solid var(--brand-accent);
-    border-radius: 50%;
+    border-radius: var(--badge-radius);
+    /* rotate, not transform, so the hover scale adds to it. */
+    rotate: var(--badge-tilt);
     cursor: pointer;
 }
 
@@ -637,10 +586,21 @@
     display: none;
 }
 
-/* The home page stacks its block to the left; the heading row still has
-   to span the full width so the sticker reaches the right edge. */
-.container--centred .page-heading {
-    justify-self: stretch;
+/* On the home page the sticker is the main button under the text,
+   left-aligned with it, rather than at the right end of the heading row. */
+.container--centred .capacity-button {
+    margin-left: 0;
+}
+
+/* The cta link at the end of the home page's popup, below its text, at
+   the ordinary button size rather than the home page's larger one. */
+.dialog__cta {
+    margin-top: var(--space-5);
+}
+
+.container--centred .dialog__cta {
+    padding: var(--space-4) var(--space-6);
+    font-size: inherit;
 }
 
 
@@ -665,19 +625,26 @@
 }
 
 /* Not positioned, so the close button below sits against the dialog
-   itself and stays put while this body scrolls. The bottom padding
-   keeps the last paragraph clear of it. */
+   itself and stays put while this body scrolls. Padding is smaller on
+   phones (--dialog-padding in responsive.css) so the text keeps a usable
+   width. */
 .dialog__body {
-    padding: var(--space-7);
-    padding-bottom: calc(var(--space-7) + var(--dialog-close-size));
+    padding: var(--dialog-padding-top) var(--dialog-padding) var(--dialog-padding);
 }
 
-/* A round gold button in the bottom-right corner, the same face as the
-   capacity sticker. */
+/* .prose p sets its own size, so the popup's must be set on the paragraph. */
+.dialog__body .prose p {
+    font-size: var(--dialog-font-size);
+}
+
+/* A round gold button hanging over the top-right corner, the same face
+   as the capacity sticker. Sitting mostly outside the dialog, it never
+   covers the text as the body scrolls. */
 .dialog__close {
     position: absolute;
-    bottom: var(--space-4);
-    right: var(--space-4);
+    top: 0;
+    right: 0;
+    transform: translate(var(--dialog-close-offset), calc(-1 * var(--dialog-close-offset)));
     z-index: 1;
     width: var(--dialog-close-size);
     aspect-ratio: 1;
@@ -714,20 +681,18 @@
 }
 
 
-/* The capacity sticker's face, shrunk and stuck on the top-right corner,
-   matching where the real button sits on the page. Decoration, not a
-   control. */
+/* The capacity sticker's face, stuck across the middle of the dialog's
+   top edge, at the same tilt as the button on the page. It stands in
+   for a heading. Decoration, not a control. */
 .dialog__sticker {
     position: absolute;
     top: 0;
-    right: 0;
+    left: var(--dialog-sticker-left);
     z-index: 1;
-    width: var(--dialog-sticker-size);
     margin: 0;
     font-size: var(--font-size-sm);
     cursor: default;
     pointer-events: none;
-    transform: translate(calc(-1 * var(--dialog-sticker-offset)), var(--dialog-sticker-offset))
-               rotate(var(--dialog-sticker-tilt));
+    transform: translate(var(--dialog-sticker-shift), -50%);
 }
 

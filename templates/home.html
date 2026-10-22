@@ -1,31 +1,25 @@
 {% extends "base.html" %}
 {% block main %}
-<section class="hero">
-    <div class="hero__content">
-        <h1 class="hero__title">{{ hero_title }}</h1>
-        {% if page.cta %}
-        <a href="{{ page.cta.href }}" class="hero__cta"><span class="hero__cta-label">{{ page.cta.label }}</span></a>
-        {% endif %}
-    </div>
-</section>
-
 <div class="container container--centred">
-    {# The page heading, shown here while the hero is hidden (see
-       base.css, Hero hidden). The feature cards are not shown for now;
-       their content stays in content/index.md. #}
+    {# The feature cards are not shown for now; their content stays in
+       content/index.md. #}
     <div class="page-heading">
         <div class="page-heading__text">
             <h1 class="page-heading__title">{{ hero_title }}</h1>
         </div>
-        {% include "partials/capacity_dialog.html" %}
     </div>
     <div class="prose">
         {{ content }}
     </div>
-    {% if page.cta %}
+    {# The Limited capacity sticker is the home page's main button: its
+       popup ends with the cta link (capacity_dialog.html), so visitors
+       reach the cta through it. The sticker needs JavaScript, so a visitor
+       without it gets the cta link here instead. #}
     <div>
-        <a href="{{ page.cta.href }}" class="hero__cta"><span class="hero__cta-label">{{ page.cta.label }}</span></a>
+        {% include "partials/capacity_dialog.html" %}
+        {% if page.cta %}
+        <noscript><a href="{{ page.cta.href }}" class="hero__cta"><span class="hero__cta-label">{{ page.cta.label }}</span></a></noscript>
+        {% endif %}
     </div>
-    {% endif %}
 </div>
 {% endblock %}

@@ -14,15 +14,13 @@
 @media (max-width: 768px) {
     :root {
         --content-inset: var(--space-5);
-        --hero-padding-block: var(--space-8);
         --section-padding-block: var(--space-8);
         --section-gap: var(--space-6);
         --card-padding: var(--space-5);
         --feature-gap: var(--space-5);
         --measure-hero: 14ch;
-        --font-size-hero-interior: 2.1rem;
+        --font-size-page-title: var(--font-size-2xl);
         --toggle-size: 34px;
-        --badge-size: 104px;
         --badge-font-size: var(--font-size-sm);
 
         /* Heading tiers step down together so the gaps between levels stay
@@ -55,12 +53,6 @@
     header .nav-phone {
         display: none;
     }
-
-    .hero__title {
-        font-size: var(--font-size-hero-mobile);
-    }
-
-
 }
 
 /* ---------------------------------------------------------------- */
@@ -74,20 +66,22 @@
         --footer-height: 0px;
         --content-inset: var(--container-padding-mobile);
         /* The heading row is narrow here; a full-size sticker crowds the title. */
-        --badge-size: 84px;
         --badge-font-size: var(--font-size-xs);
-        --hero-padding-block: var(--space-7);
+        /* The popup is nearly full width here; full padding squeezed its
+           text to a few words a line. */
+        --dialog-padding: var(--space-4);
+        --dialog-close-size: 40px;
+        --dialog-font-size: var(--font-size-sm);
+        /* The sticker sits over the text's left edge here, so it needs more clearance. */
+        --dialog-padding-top: calc(var(--dialog-padding) + var(--space-6));
+        --dialog-sticker-left: var(--dialog-padding);
+        --dialog-sticker-shift: 0%;
         --section-padding-block: var(--space-7);
         --section-gap: var(--space-5);
         --card-padding: var(--space-5);
         --feature-gap: var(--space-4);
         --measure-hero: 12ch;
-        /* Too little margin to hang past the dialog's edge. */
-        --dialog-sticker-size: 84px;
-        --dialog-sticker-offset: -15%;
-        --font-size-hero-mobile: 1.9rem;
         --font-size-page-title: 2rem;
-        --font-size-hero-interior: 1.8rem;
         --font-size-heading-card: var(--font-size-md);
         --icon-lg: 40px;
 
@@ -100,10 +94,6 @@
 
     .container {
         padding: 0 var(--container-padding-mobile);
-    }
-
-    .hero__content {
-        padding: var(--hero-padding-block) var(--container-padding-mobile);
     }
 
     .features {
@@ -135,35 +125,5 @@
 
     .faq-toggle-all {
         width: 100%;
-    }
-}
-
-/* ---------------------------------------------------------------- */
-/* Short viewports                                                   */
-/* ---------------------------------------------------------------- */
-/* Landscape phones and small laptops: a hero sized in vh eats the whole
-   screen and pushes all content below the fold. Cap it by height rather
-   than width, which a width breakpoint cannot catch. */
-/* Both the vh share and the px floor come down. Raising the vh share here
-   would be self-defeating: on a 740px-tall laptop a larger share is also a
-   larger banner in absolute terms, which is the problem being solved. */
-@media (max-height: 749px) {
-    :root {
-        --hero-min-height: 38vh;
-        --hero-min-height-interior: 28vh;
-        --hero-floor: 220px;
-        --hero-floor-interior: 170px;
-        --hero-padding-block: var(--space-7);
-    }
-}
-
-@media (max-height: 520px) {
-    :root {
-        --hero-min-height: 34vh;
-        --hero-min-height-interior: 26vh;
-        --hero-floor: 180px;
-        --hero-floor-interior: 140px;
-        --font-size-hero: 2.2rem;
-        --font-size-hero-interior: 1.8rem;
     }
 }
