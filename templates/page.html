@@ -11,7 +11,10 @@
         {% if page.cta %}
         <a href="{{ page.cta.href }}" class="hero__cta"><span class="hero__cta-label">{{ page.cta.label }}</span></a>
         {% endif %}
+        {# Utility pages (noindex, ie the 404 page) carry no sticker. #}
+        {% if not page.noindex %}
         {% include "partials/capacity_dialog.html" %}
+        {% endif %}
     </div>
     <div class="prose">
         {{ content }}

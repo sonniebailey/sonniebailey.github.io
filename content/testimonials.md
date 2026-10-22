@@ -3,7 +3,7 @@ title: Testimonials
 description: Kind words from Fairhaven Wealth clients.
 layout: faq
 hero_image: images/hero-lake-2560.jpg
-intro: Kind words from clients
+intro: Kind words from clients, mostly from 2017 to 2023. The service has changed shape since, but the approach and the independence have not.
 ---
 
 # Testimonials
@@ -94,6 +94,7 @@ Thank you Sonnie for your awesome work for my parents. Their increased peace of 
 "I had been wanting to consult a financial planner for a while but those I’d met had struck me as quite slick and condescending. I came across Sonnie on a recommendation. We talked on the phone first and then had two meetings. It was important to me that the adviser not have any bias toward specific products nor that he/she recieve any commission for recommending particular products. Sonnie impressed me from the start. He was very engaging, unhurried, meticulous and a great listener. My husband and I are financially savvy, and one of my initial concerns was that we would not get value for money. However, Sonnie challenged us with great questions, suggestions and scenarios. I found the whole process exceptionally useful. The financial report was interesting reading and the advice was sound and well-reasoned. I can see us consulting Sonnie again in another couple of years for an update. I’m so pleased we went through this process and I highly recommend Sonnie to absolutely everyone!"
 
 – Nadia
+
 ## "You have given us... a sense of confidence and peace of mind regarding our finances."
 
 "After reading some of Sonnie’s blogs we realised we had finally found a financial adviser who was truly independent and didn’t want ongoing fees from any investment we might make. We had already visited four other advisors and each time they wanted to structure our investments to give themselves an income through fees from our investments.  
@@ -188,14 +189,17 @@ I would recommend anyone to Sonnie, for true "independent" advise to give them a
 
 ## "Sonnie had a great handle on me, my life, and my expectations, and prepared tailored advice that was in my best interests" 
 
-"I think Sonnie had a great handle on me, my life, and my expectations, and prepared tailored advice that was in my best interests. I found the process of working with Sonnie extremely valuable, Sonnie has helped give me the confidence to take control and plan ahead."  
-  
-"We discuss things a lot more openly with [Sonnie] than we do just the two of us" – Loretta & Andrew  
+"I think Sonnie had a great handle on me, my life, and my expectations, and prepared tailored advice that was in my best interests. I found the process of working with Sonnie extremely valuable, Sonnie has helped give me the confidence to take control and plan ahead."
+
+– Pat
+
+## "We discuss things a lot more openly with [Sonnie] than we do just the two of us"
+
 "We had the good fortune in meeting Sonnie to help guide us with our financial plan for the future. He was so down to earth and understanding of our circumstances and needs. The "flaw-cast" is so valuable for us to see how changing variables can affect the future. We have no hesitation in recommending Sonnie to anyone who would like to get their finances checked out in a completely unbiased way. He has given us the confidence to make some big changes in our future plans. Great value for money, too."  
   
 “It is amazing how [meeting with Sonnie] focuses us. We discuss things a lot more openly with [Sonnie] than we do just the two of us”
 
-– Pat
+– Loretta & Andrew
 
 ## "fantastic to work with" 
 
@@ -277,9 +281,12 @@ I feel more confident now and like I've organised my money responsibly for me an
 
 ## "friendly and knowledgeable" 
 
-“We liked the model for financial advice that Sonnie uses. As the advice that he gives is completely impartial. This impartiality has given confidence and changed some of our thinking, particularly regarding insurance needs. Sonnie himself is friendly and knowledgeable and created a good rapport with us. The advise we received gave us confidence in the investment approach that he recommended. We would have no hesitation in recommending Sonnie as an advisor.”  
-  
-"We... have no hesitation in recommending Sonnie to anyone looking for good independent advice" – Brian & Shelley  
+“We liked the model for financial advice that Sonnie uses. As the advice that he gives is completely impartial. This impartiality has given confidence and changed some of our thinking, particularly regarding insurance needs. Sonnie himself is friendly and knowledgeable and created a good rapport with us. The advise we received gave us confidence in the investment approach that he recommended. We would have no hesitation in recommending Sonnie as an advisor.”
+
+– Brian & Shelley
+
+## "We... have no hesitation in recommending Sonnie to anyone looking for good independent advice"
+
 "After a lot of research, we chose Sonnie to provide us with investment advice. We had never before been in a position where we had money to invest and it was very important that any advice we got was totally independent. Sonnie took the time to get to know us and to fully understand our needs and aims and presented it all in a way that was easy to understand. We would have no hesitation in recommending Sonnie to anyone looking for good independent advice at a very reasonable cost."
 
 – Chris & Jude
@@ -292,9 +299,11 @@ I feel more confident now and like I've organised my money responsibly for me an
 
 ## "A testimonial of appreciation for the job well done" 
 
-“Before retiring i didnt know what to do for the best, with my lifelong superannuation savings, as you only get one chance to get this right. I was apprehensive as to who to trust and where to invest. Searching online i read about Sonnie. A quick email and a couple of visits from Sonnie and i found the confidance in him to follow his plan for my situation. I am pretty much relaxed about my investment plan to provide for the coming years.“  
-  
-"candid, honest dialogue... plain English and easy to understand" – Anne Marie & Osman Kross
+“Before retiring i didnt know what to do for the best, with my lifelong superannuation savings, as you only get one chance to get this right. I was apprehensive as to who to trust and where to invest. Searching online i read about Sonnie. A quick email and a couple of visits from Sonnie and i found the confidance in him to follow his plan for my situation. I am pretty much relaxed about my investment plan to provide for the coming years.“
+
+– Anne Marie & Osman Kross
+
+## "candid, honest dialogue... plain English and easy to understand"
 
 “The main points we would like to emphasise in our dealings with Fairhaven Wealth were: convenience of interaction, candid, honest dialogue and financial reporting which, tho’ still professional in style, was written in plain English and easy to understand“
 
@@ -346,9 +355,12 @@ I highly recommend Sonnie to anyone wanting truly independent advice.“
 
 ## "Sonnie's knowledge and facilitative skills have helped us enormously." 
 
-"We are heading towards retirement and needed some direction in relation to our financial future. Sonnie's knowledge and facilitative skills have helped us enormously. We would have no hesitation in recommending Sonnie to anyone needing independent, knowledgeable and professional advice."  
-  
-"I am extremely fortunate that I engaged with Sonnie two years ago and only wish it had been before then!" – Joan G  
+"We are heading towards retirement and needed some direction in relation to our financial future. Sonnie's knowledge and facilitative skills have helped us enormously. We would have no hesitation in recommending Sonnie to anyone needing independent, knowledgeable and professional advice."
+
+– Joan G
+
+## "I am extremely fortunate that I engaged with Sonnie two years ago and only wish it had been before then!"
+
 "I first engaged with Sonnie in 2017 when I retired and he produced a very comprehensive tailored report and recommendations for my retirement funding and decumulation period . I have put 95% of his recommendations in place and am extremely happy with the results so far .  
   
 Although I’m probably one of his lowest $ value clients ,Sonnie has never made me feel I’m any less important and has always responded to my ad hoc queries and comments in a considered and professional yet empathetic and friendly manner . I have recently been through what I have termed a biennial WOF on my small portfolio and again Sonnie has given me valuable insights and recommendations .  
