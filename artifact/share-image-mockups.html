@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Fairhaven Wealth: share image variations</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Same layouts as the earlier variations, recoloured to the site's own
+   palette (css/variables.css, dark theme): the photo blurred 6px under a
+   black dim rather than a navy wash, warm darks, white text, gold accents. */
+:root{
+  --gold:#b8912b; --gold-light:#e0bd57;
+  --photo:url("../images/hero-lake-2560.jpg");
+  --fabric:url("../images/fabric-dark-theme.png");
+}
+*{box-sizing:border-box;margin:0}
+body{background:#14181c;color:#e8e6e1;font-family:Raleway,sans-serif;padding:32px 40px}
+h1{font-weight:600;font-size:22px;margin-bottom:6px}
+.intro{color:#a9a69f;font-size:14px;margin-bottom:28px;max-width:1100px;line-height:1.5}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(940px,1fr));gap:36px 40px}
+.option h2{font-size:16px;font-weight:600;margin-bottom:4px}
+.option p{font-size:13px;color:#a9a69f;margin-bottom:12px}
+.crops{display:flex;gap:16px;align-items:flex-start}
+.frame{position:relative;overflow:hidden;border-radius:8px;box-shadow:0 0 0 1px #2c3238}
+.frame.wide{width:600px;height:315px}
+.frame.square{width:315px;height:315px}
+.frame > .card{position:absolute;top:0;left:0;transform:scale(.5);transform-origin:0 0}
+.frame.square > .card{left:-142.5px}
+.label{font-size:11px;color:#7d7a74;margin-top:5px;letter-spacing:.04em}
+
+/* Cards are the real 1200 x 630 size, scaled to half. What matters stays
+   inside the centre 630px so the square crop keeps it. */
+.card{width:1200px;height:630px;position:relative;overflow:hidden;font-family:Raleway,sans-serif;color:#fff}
+.photo{position:absolute;inset:-20px;background:var(--photo) center/cover;filter:blur(6px)}
+.photo.sharp{inset:0;filter:none}
+.dim{position:absolute;inset:0}
+.lockup{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.name{font-weight:700;letter-spacing:-0.01em;line-height:1;text-align:center}
+.tile{width:150px;height:150px;border-radius:32px}
+.seed{width:170px;height:170px;display:block}
+
+/* 6 and 6b: seedling beside a stacked name, Wealth in gold */
+.v6 .dim{background:linear-gradient(135deg,rgba(29,46,58,.7),rgba(18,29,37,.88))}
+.v6 .lockup{flex-direction:row;gap:26px}
+.v6 .seed{width:160px;height:160px;filter:drop-shadow(0 0 20px rgba(224,189,87,.35))}
+.v6 .name{font-size:74px;text-align:left;line-height:.98}
+.v6 .name span{color:var(--gold-light);font-weight:500}
+/* Variations of 6 */
+.v6a .seed{filter:none}
+.v6c .lockup{gap:20px;padding-right:16px}
+.v6c .seed{width:136px;height:136px}
+.v6c .name{font-size:64px}
+.v6d .photo.sharp{inset:-20px;filter:blur(3px)}
+.v6e .seed{filter:none}
+.v6e .lockup{transform:translateX(-12px)}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <defs><linearGradient id="seedgold" gradientUnits="userSpaceOnUse" x1="20" y1="90" x2="90" y2="10"><stop offset="0" stop-color="#8f6f1f"/><stop offset="1" stop-color="#e0bd57"/></linearGradient></defs>
+  <symbol id="seedling" viewBox="10 8 86 84"><g fill="url(#seedgold)"><path d="M46 43 C40 37 37 30 40 23 C45 27 48 35 46 43 Z"/><g transform="translate(2 8)"><path d="M47 58 C55 44 68 40 80 43 C74 56 60 65 47 58 Z"/><path d="M50 58 C42 44 29 40 17 43 C23 56 37 65 50 58 Z"/></g><path d="M42 85 C49 72 45 54 45 41 L51 41 C51 54 59 72 54 85 A6 6 0 0 1 42 85 Z"/><path d="M45 41.2 C56 24 74 12 93 11 C88 32 68 44 51 41.2 Z"/></g></symbol>
+</svg>
+
+<h1>Share image: side by side</h1>
+<p class="intro">Shown at half size, with the centre square beside it.</p>
+
+<div class="grid">
+  <section class="option"><h2>Side by side</h2><p>Gold seedling beside the stacked name, Wealth in gold, on the lake photo with a navy wash.</p>
+    <template><div class="card v6"><div class="photo sharp"></div><div class="dim"></div><div class="lockup"><svg class="seed"><use href="#seedling"/></svg><div class="name">Fairhaven<br><span>Wealth</span></div></div></div></template></section>
+
+  <section class="option"><h2>A. No glow</h2><p>The same card with the gold glow behind the seedling removed.</p>
+    <template><div class="card v6 v6a"><div class="photo sharp"></div><div class="dim"></div><div class="lockup"><svg class="seed"><use href="#seedling"/></svg><div class="name">Fairhaven<br><span>Wealth</span></div></div></div></template></section>
+
+  <section class="option"><h2>B. Better centred in the square</h2><p>The seedling and name a little smaller with a tighter gap, so the block sits evenly in the centre square with equal room either side.</p>
+    <template><div class="card v6 v6c"><div class="photo sharp"></div><div class="dim"></div><div class="lockup"><svg class="seed"><use href="#seedling"/></svg><div class="name">Fairhaven<br><span>Wealth</span></div></div></div></template></section>
+
+  <section class="option"><h2>C. Slightly more blur</h2><p>The photo softened a little (3px blur), less than the site's 6px.</p>
+    <template><div class="card v6 v6d"><div class="photo sharp"></div><div class="dim"></div><div class="lockup"><svg class="seed"><use href="#seedling"/></svg><div class="name">Fairhaven<br><span>Wealth</span></div></div></div></template></section>
+
+  <section class="option"><h2>D. No glow, better centred</h2><p>A, with the block nudged left so it looks centred. The leaves and the longer first line pull the eye right, so a mathematically centred block looked off to the right.</p>
+    <template><div class="card v6 v6e"><div class="photo sharp"></div><div class="dim"></div><div class="lockup"><svg class="seed"><use href="#seedling"/></svg><div class="name">Fairhaven<br><span>Wealth</span></div></div></div></template></section>
+
+
+
+</div>
+
+<script>
+// Draw each option's card twice: the wide card and its centre-square crop.
+document.querySelectorAll('.option').forEach(function (opt) {
+  const tpl = opt.querySelector('template');
+  const crops = document.createElement('div');
+  crops.className = 'crops';
+  [['wide', 'Wide link card'], ['square', 'Centre square']].forEach(function (pair) {
+    const wrap = document.createElement('div');
+    const frame = document.createElement('div');
+    frame.className = 'frame ' + pair[0];
+    frame.appendChild(tpl.content.cloneNode(true));
+    const label = document.createElement('div');
+    label.className = 'label';
+    label.textContent = pair[1];
+    wrap.append(frame, label);
+    crops.appendChild(wrap);
+  });
+  opt.appendChild(crops);
+});
+</script>
+</body>
+</html>

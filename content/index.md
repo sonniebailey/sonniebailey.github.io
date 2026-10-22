@@ -17,9 +17,9 @@ features:
     text: For substantive engagements, an anchored fee arrangement agreed before the work starts.
     icon: check
 ---
-# We help you make decisions that align with your values.
+# Your money. Your values. Your call.
 
-Fairhaven Wealth is different. We provide one-off services for switched-on Kiwis who want to retain control of their financial lives. We avoid the conflicts of interest that are common in the financial services industry. This means we can give you the same advice we'd give to our friends and family members.
+Fairhaven Wealth is different. We don't touch your money or lock you into ongoing arrangements. We avoid the conflicts of interest that are common in the financial services industry. This means we can give you the same advice we'd give to our friends and family members.
 {: .hide-on-phone }
 
 We charge $300 per hour (including GST).

@@ -17,7 +17,7 @@ I'm based in Christchurch but work with Kiwis throughout the country via Zoom, p
 
 I provided services to many clients through Fairhaven Wealth between 2017 and 2023, but recently took time off to focus on my family. After this hiatus, I am offering services via Fairhaven Wealth again, in a slightly different capacity.
 
-For one thing, I have committed to short-term engagements with clients, and my intention is to only work actively with one or two clients at a time. Only once I've finished working with a client will I be open to working with another.
+For one thing, I have committed to short-term engagements with clients, and my intention is to only work actively with a small number of clients at a time. Only once I've finished working with a client will I be open to working with another.
 
 I operate Fairhaven Wealth in a fiercely independent manner and do everything I can to align my interests with those of my clients.
 

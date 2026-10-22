@@ -29,7 +29,7 @@
     }
   ],
   "favicon": "icons/favicon.ico",
-  "social_image": "images/social-card.png",
+  "social_image": "icons/og-image.png",
   "fonts": {
     "heading": "Raleway",
     "body": "Raleway",
