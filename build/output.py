@@ -2,7 +2,7 @@
 Prepare the build output directory and copy static assets into it.
 
 Single responsibility: filesystem housekeeping for _site/ -- clearing and
-recreating it, and copying css/, js/, images/, icons/ and any repo-root *.pdf
+recreating it, and copying css/, js/, images/, icons/, any repo-root *.pdf and icons/favicon.ico (to the output root)
 verbatim.
 Does not touch page HTML, which build.py writes separately.
 """
@@ -79,6 +79,9 @@ def copy_assets(root: Path, out_dir: Path) -> None:
 
     Returns:
         None. Skips *.tmp.* files, .DS_Store and Thumbs.db.
+    LLM Note: also copies icons/favicon.ico to the output root when it exists,
+    so browsers' blind requests for /favicon.ico stop returning 404. The pages
+    link the icons/ copy; the root copy is a courtesy.
     """
     for dir_name in _ASSET_DIRS:
         source_dir = root / dir_name
@@ -99,3 +102,9 @@ def copy_assets(root: Path, out_dir: Path) -> None:
     for pdf_path in sorted(root.glob("*.pdf")):
         shutil.copy2(pdf_path, out_dir / pdf_path.name)
         logger.info("Copied %s to output", pdf_path.name)
+
+    # Browsers request /favicon.ico without being told to; a root copy answers it.
+    root_favicon = root / "icons" / "favicon.ico"
+    if root_favicon.exists():
+        shutil.copy2(root_favicon, out_dir / "favicon.ico")
+        logger.info("Copied icons/favicon.ico to output root")

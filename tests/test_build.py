@@ -105,6 +105,17 @@ def test_copy_assets_publishes_root_pdfs_at_site_root(tmp_path):
     assert (out_dir / "disclosure.pdf").read_bytes() == b"%PDF-"
 
 
+def test_copy_assets_publishes_favicon_at_site_root(tmp_path):
+    """icons/favicon.ico is also copied to the output root for blind /favicon.ico requests."""
+    (tmp_path / "icons").mkdir()
+    (tmp_path / "icons" / "favicon.ico").write_bytes(b"ICO")
+    out_dir = tmp_path / "_site"
+    out_dir.mkdir()
+    copy_assets(tmp_path, out_dir)
+    assert (out_dir / "icons" / "favicon.ico").read_bytes() == b"ICO"
+    assert (out_dir / "favicon.ico").read_bytes() == b"ICO"
+
+
 # ---------------------------------------------------------------------------
 # page_loader
 # ---------------------------------------------------------------------------

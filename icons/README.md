@@ -9,9 +9,9 @@ improvements.
 Usage:
     python3 generate_variants.py --yes --targets web-favicon
 
-Leave out og-image: og-image.png is the hand-made share card (lake photo,
+Leave out og-image: og-image.jpg is the hand-made share card (lake photo,
 seedling and name, from artifact/share-image-mockups.html option D), and the
-generator's default set would overwrite it with a plain icon card.
+generator's default set would write a plain icon card as og-image.png beside it.
 
 seedling.svg is the gold seedling alone, no background, used as the header home button; copied by hand from master.svg, so update it if the icon changes.
 

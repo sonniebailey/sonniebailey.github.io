@@ -16,6 +16,25 @@
     <meta property="og:image" content="{{ site.domain }}/{{ site.social_image }}">
     <meta name="twitter:card" content="summary_large_image">
 
+    {# Structured data for the business, filled from site.json so it cannot
+       drift from the footer and contact details. #}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FinancialService",
+        "name": {{ site.name | tojson }},
+        "url": {{ site.domain | tojson }},
+        "telephone": {{ site.phone.tel | tojson }},
+        "email": {{ site.email | tojson }},
+        "image": {{ (site.domain ~ "/" ~ site.social_image) | tojson }},
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": {{ site.address.lines[0] | tojson }},
+            "addressCountry": "NZ"
+        }
+    }
+    </script>
+
     {% if not site.search_visible %}
     <meta name="robots" content="noindex, nofollow">
     {% elif page.noindex %}
