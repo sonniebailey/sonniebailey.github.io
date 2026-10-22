@@ -271,6 +271,8 @@ I maintain my competence, knowledge, and skill in a variety of ways:
 
 	- Pursuing formal qualifications that align with what I am doing professionally at a given point in time. I completed my financial planning diploma while acting as a financial services lawyer, to better understand the world of financial advisers I was working with. I recently completed a graduate certificate in professional coaching because I felt like the skills and knowledge related to coaching were highly relevant to the work I was doing as a financial planner. 
 
+	- Building software tools for data analysis and decision-making. Through [Future Friends](https://futurefriends.kiwi) I have published finance-related tools for Kiwis, including Snoopy and Flawcastr, with more to come. Building these forces me to think precisely about the problems my clients face. I've also built tools to make my own advice process more efficient and robust.
+
 2. Professional Engagement:
 
 	- I've been a member of Financial Advice New Zealand (FANZ), where I served on the Risk Member Advisory Committee, advising the CEO and the board in relation to substantive matters impacting advisers in the industry, and was a founding member of the Canterbury region committee. I've previously been a member of the New Zealand Law Society, where I was a founding member of an Elder Law Special Interest Group. I've also held memberships with the New Zealand Institute of Directors and the Governance Institute of Australia. I'm not currently a member of any professional organisations, as I haven't found them relevant to my current needs. However, when that changes I don't hesitate to join these organisations and get involved.
@@ -279,10 +281,6 @@ I maintain my competence, knowledge, and skill in a variety of ways:
 	   
 	- Working directly with clients has been one of the most valuable ways of maintaining my competency. In-depth conversations with thoughtful clients who ask valuable questions have been particularly beneficial. Even during periods when I'm not actively advising, I maintain informal discussions with peers and previous clients, which serves as a practical test of my ongoing competence.
 
-4. Recent Focus and Return to Practice:
-
-    - In the past two years, I have spent less time keeping up to date with financial advising specifically. During this time, I wasn't assisting clients and was unsure if I would return to this type of work. For a lot of this time, to the extent I was cultivating my knowledge/competence/skills, it was in domains that are adjacent to the services I provide via Fairhaven Wealth. In particular, coding to assist with data analysis, decision-making, and gaining insight into information. I am working on a variety of finance-related tools that I will make available to Kiwis in due course. 
-	
 #### My biases and prejudices
 
 I have biases and prejudices. I'm human: we all have 'em.

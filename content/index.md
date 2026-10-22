@@ -19,7 +19,7 @@ features:
 ---
 # Your money. Your values. Your call.
 
-Fairhaven Wealth is different. We don't touch your money or lock you into ongoing arrangements. We avoid the conflicts of interest that are common in the financial services industry. This means we can give you the same advice we'd give to our friends and family members.
+Fairhaven Wealth is different. We don't touch your money, and we don't have the conflicts of interest that are common in the financial services industry. That means we can give you the same advice we'd give our own friends and family.
 {: .hide-on-phone }
 
 We charge $300 per hour (including GST).
