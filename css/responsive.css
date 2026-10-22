@@ -111,15 +111,10 @@
         display: flex;
     }
 
-    /* Beside the title the sticker covered it and squeezed the intro, so
-       it drops onto its own line underneath, left-aligned as on the home
-       page. */
+    /* Beside the title a cta button covered it and squeezed the intro, so
+       it drops onto its own line underneath. */
     .page-heading {
         flex-direction: column;
-    }
-
-    .page-heading .capacity-button {
-        margin-left: 0;
     }
 
     /* No brand mark on phones: stacked under the heading it was an orphan. */
@@ -133,13 +128,9 @@
         display: none;
     }
 
-    /* At this width the control reads better full-width than tucked into
-       the corner. */
-    .faq-controls {
-        justify-content: stretch;
-    }
-
+    /* At this width the control is half the row, still at the right end,
+       so it is easy to tap without reading as a full-width bar. */
     .faq-toggle-all {
-        width: 100%;
+        width: 50%;
     }
 }

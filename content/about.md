@@ -7,17 +7,17 @@ hero_image: images/hero-lake-2560.jpg
 
 # About
 
-When you deal with Fairhaven Wealth, you deal with me, Sonnie Bailey. You may be familiar with my writing on the [Wealth & Risk blog](https://www.wealthandrisk.nz), where I've published many articles over the years.
+When you deal with Fairhaven Wealth, you deal with me, Sonnie Bailey. You may be familiar with my writing on the [Wealth & Risk blog](https://www.wealthandrisk.nz), where I've published many articles over the years. Alternatively, you might have used one of the pieces of software I've created, such as [Snoopy](https://futurefriends.kiwi/snoopy/) or [Flawcastr](https://futurefriends.kiwi/flawcastr/).
 
-Fairhaven Wealth charges $300 per hour (including GST). Engagements are often in the region of 15 to 25 hours. I will be up-front and transparent about how long I believe an engagement will take. Where I can get a good idea of what the work will involve, I may offer an "anchored fee" arrangement, described below, which aligns our interests.
+![Sonnie Bailey](images/sonnie.png)
+
+Fairhaven Wealth charges $300 per hour (including GST). Engagements usually take 10 hours minimum and top out around 30 hours where the circumstances are especially complex. I will be up-front and transparent about how long I believe an engagement will take. Where I can get a good idea of what the work will involve, I may offer an "anchored fee" arrangement, described below, which aligns our interests.
 
 All engagements are one-off, in the sense that you engage me for a specific scope of work, and I don't charge ongoing fees for ongoing services. If you want to work with me again, that's your call. I typically work with very few clients at any point in time.
 
 I'm based in Christchurch but work with Kiwis throughout the country via Zoom, phone, and email. The initial conversation is free and involves no obligation.
 
-![Sonnie Bailey](images/sonnie.png)
-
-Fairhaven Wealth has worked with clients since 2017, with a period in 2024 and 2025 where I reduced my availability significantly for family reasons. Since returning to practice, I take on new clients only as I finish working with others.
+Fairhaven Wealth has worked with clients since 2017. I take on new clients only as I finish working with others.
 
 Fairhaven Wealth is the trading name of Fairhaven Ventures Ltd. I am its sole director and shareholder. Where this page says "I" or "we", it means me, acting through that company.
 
@@ -227,7 +227,7 @@ I don't charge for short follow-up conversations. In fact, I love to hear from p
 
 I'll only charge for significant additional work. Where this is the case, we discuss this transparently and make it clear beforehand before any billable work begins. To date all clients have been satisfied with this. If anything I'm considered "too reasonable" when it comes to charging for follow-up work.
 
-If you engaged Fairhaven Wealth prior to 2024, in its first iteration, and are thinking about re-engaging, get in touch sooner rather than later. For a limited period, I'm offering discounted rates to past clients.
+If you have engaged Fairhaven Wealth before and are thinking about re-engaging, get in touch sooner rather than later. For a limited period, I'm offering discounted rates to past clients.
 
 ## What doesn't Fairhaven Wealth do? 
 

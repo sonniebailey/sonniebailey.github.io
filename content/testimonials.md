@@ -3,7 +3,7 @@ title: Testimonials
 description: Kind words from Fairhaven Wealth clients.
 layout: faq
 hero_image: images/hero-lake-2560.jpg
-intro: Kind words from clients, mostly from 2017 to 2023. The service has changed shape since, but the approach and the independence have not.
+intro: Kind words from clients over the years.
 ---
 
 # Testimonials

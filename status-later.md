@@ -4,7 +4,7 @@ Deliberately parked work, not actively pursued. Items move back to status.md whe
 
 ## After launch
 
-Parked until the rebuild has replaced the live site (decided). The single-page design points every copy's canonical at index.html, so it changes how the site appears in search; launching first with three separate pages keeps the live site's search standing unchanged.
+Parked until after launch (decided); the rebuild is now live, and these stay parked until picked up. The single-page design points every copy's canonical at index.html, so it changes how the site appears in search; launching first with three separate pages keeps the live site's search standing unchanged.
 
 - DECISION: add an end-to-end build test before the single-page build.
   Recommended, not chosen. tests/test_build.py tests modules one at a time;

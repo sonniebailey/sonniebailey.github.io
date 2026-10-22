@@ -586,7 +586,7 @@
    js/dialog.js). The dialog is frosted like the header and footer. */
 /* A gold oblong sticker with a stitched edge, tipped a few degrees off
    level so it reads as a label stuck on rather than as the flat gold cta
-   button. Sits at the right end of the page heading row (.page-heading). */
+   button. Rendered on the home page only (home.html). */
 .capacity-button {
     flex-shrink: 0;
     white-space: nowrap;
@@ -663,8 +663,8 @@
     display: none;
 }
 
-/* On the home page the sticker is the main button under the text,
-   left-aligned with it, rather than at the right end of the heading row. */
+/* The sticker is the home page's main button under the text,
+   left-aligned with it. */
 .container--centred .capacity-button {
     margin-left: 0;
 }
