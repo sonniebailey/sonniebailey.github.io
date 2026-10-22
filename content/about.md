@@ -7,23 +7,25 @@ hero_image: images/hero-lake-2560.jpg
 
 # About
 
-When you deal with Fairhaven Wealth, you deal with me, Sonnie Bailey. I provide financial advice to New Zealanders through Fairhaven Ventures Ltd, the company that trades as Fairhaven Wealth. Where this page says "I" or "we", it means me, acting through that company. You may be familiar with my writing on the [NZ Wealth & Risk blog](https://www.wealthandrisk.nz), where I published regularly for over 10 years.
+When you deal with Fairhaven Wealth, you deal with me, Sonnie Bailey. You may be familiar with my writing on the [Wealth & Risk blog](https://www.wealthandrisk.nz), where I've published many articles over the years.
 
-Fairhaven Wealth charges $300 per hour (including GST). For some engagements, where I can get a good idea of what the work will involve, I might offer an "anchored fee" arrangement, described below. Our engagements are one-off, short-term, and we typically work with very few clients at any point in time.
+Fairhaven Wealth charges $300 per hour (including GST). Engagements are often in the region of 15 to 25 hours. I will be up-front and transparent about how long I believe an engagement will take. Where I can get a good idea of what the work will involve, I may offer an "anchored fee" arrangement, described below, which aligns our interests.
+
+All engagements are one-off, in the sense that you engage me for a specific scope of work, and I don't charge ongoing fees for ongoing services. If you want to work with me again, that's your call. I typically work with very few clients at any point in time.
 
 I'm based in Christchurch but work with Kiwis throughout the country via Zoom, phone, and email. The initial conversation is free and involves no obligation.
 
 ![Sonnie Bailey](images/sonnie.png)
 
-Fairhaven Wealth has worked with clients since 2017, with a period in 2024 and 2025 where I reduced my availability significantly for family reasons. Since returning to practice, I have committed to short-term engagements, and I take on new clients only as I finish working with others.
+Fairhaven Wealth has worked with clients since 2017, with a period in 2024 and 2025 where I reduced my availability significantly for family reasons. Since returning to practice, I take on new clients only as I finish working with others.
+
+Fairhaven Wealth is the trading name of Fairhaven Ventures Ltd. I am its sole director and shareholder. Where this page says "I" or "we", it means me, acting through that company.
 
 I operate Fairhaven Wealth in a fiercely independent manner and do everything I can to align my interests with those of my clients.
 
 Fairhaven Wealth's primary service for new clients consists of two three-hour conversations, usually held via Zoom or phone, followed by a draft financial plan report that you and I review and finalise together.
 
 I operate Fairhaven Wealth in a way so that I don't touch your money in any way, shape, or form. It's up to you whether or not to make any changes to your financial situation (or life in general) as a result of our discussions. It's up to you to implement any advice I might provide. 
-
-You can engage us again in the future, but that's up to you. We aren't looking to engage in a relationship that will involve regular, ongoing fees.
 
 Fairhaven Wealth's service is terrific for some people, but not appropriate for most people. It's best suited for people who already have a good understanding of their situation and are (or want to be) engaged in their finances. It also tends to be most valuable for those with some degree of financial and/or professional security.
 
@@ -244,8 +246,6 @@ Fairhaven Wealth doesn't:
 ## About me – Sonnie Bailey
 
 When you work with Fairhaven Wealth, you work with me – Sonnie Bailey. I don't have any employees and don't plan on employing anyone.
-
-I am the sole director and shareholder of Fairhaven Ventures Ltd.
 
 To get a sense of how I see the world, I encourage you to look at my blog, [Wealth & Risk](https://www.wealthandrisk.nz), where I published articles regularly for approximately 10 years. One of the reasons for writing publicly was to develop my thinking about a lot of topics, my ability to communicate these ideas, and get the benefit of making my ideas legible and open to scrutiny.
 

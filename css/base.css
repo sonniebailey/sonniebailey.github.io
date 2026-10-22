@@ -387,6 +387,15 @@ footer a:hover {
     max-width: var(--measure-hero);
 }
 
+/* Brand mark at the right end of the home heading row, so its right edge
+   lines up with the paragraphs below. Hidden on phones (responsive.css). */
+.page-heading__mark {
+    flex: 0 0 auto;
+    align-self: center;
+    width: var(--heading-mark-size);
+    height: var(--heading-mark-size);
+}
+
 /* Optional line under the title (frontmatter intro), left-aligned with it. */
 .page-heading__intro {
     margin: var(--space-3) 0 0;
@@ -406,4 +415,10 @@ main > .container--centred {
 .container--centred .hero__cta {
     padding: var(--space-4) var(--space-7);
     font-size: var(--font-size-md);
+}
+
+/* justify-items: start shrink-wraps the grid's children, so the heading row
+   is stretched back to full width to put the brand mark at the right edge. */
+.container--centred .page-heading {
+    justify-self: stretch;
 }

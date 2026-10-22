@@ -214,11 +214,12 @@
 }
 
 /* Under the contact lines: the email icon on the left, the large phone
-   button pushed to the right, with extra room beneath it. */
+   button pushed to the right, with extra room beneath it. The email icon
+   sits on the same baseline as the bottom of the phone button. */
 .mobile-menu__contact {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
     gap: var(--space-4);
     margin-top: var(--space-4);
     margin-bottom: var(--space-5);

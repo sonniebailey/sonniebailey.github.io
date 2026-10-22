@@ -10,6 +10,7 @@ If you are new here, whether a person or an AI assistant, read this file and the
 - Business details (name, legal name, tagline, phone, address, email, opening hours, navigation links, the banner and the footer note) live in content/site.json and appear wherever the templates use them. Legal name is optional and not currently shown on the site. The footer is pinned to the bottom of the screen on every page: footer_note if set and each of footer_links one per line on the left, and any opening hours, the email and the phone number one per line on the right. It shows no address or copyright line. On phones the footer is hidden and its contents (any opening hours, the email, footer_note and footer_links) appear at the bottom of the menu instead, with the phone number above the email, followed by an email icon and a large gold call button. The menu also starts with a Home link. footer_links is an optional list of small links, each with a label and an href, in the same shape as the nav list. It currently links the disclosure statement and privacy policy.
 - The disclosure statement and privacy policy are disclosure.pdf and privacy.pdf in the top folder. To update one, replace the file and keep its name. Any PDF in the top folder is published at the top level of the site, eg fairhavenwealth.co.nz/disclosure.pdf.
 - The banner is an optional notice under the menu on every page. It is the banner value in content/site.json, currently null, so no banner shows. Put wording there to bring it back.
+- The home page shows the gold seedling from the site icon at the right of its heading on tablets and desktops, not on phones. It is the same image as the small seedling in the header.
 - Every page except the 404 page shows a gold "Limited capacity" sticker: at the right of the heading on most pages, and as the main button under the text on the home page, where the popup ends with the home page's cta link. Clicking it opens a popup explaining how few clients the business takes on. The popup's wording is in content/snippets/capacity.md, edited like any page: the `# ` line is not shown (the sticker across the popup's top edge acts as its heading) but names the popup for screen readers, and the paragraphs below it are its text. It has no settings block at the top. The words on the sticker itself are fixed in templates/partials/capacity_dialog.html.
 - The business name appears in the top left as text, in the site's heading font. If you have a logo image, add `"logo": "images/logo.svg"` to content/site.json and it is used instead. Make sure it reads against the dark header, which sits over the background photograph.
 - Colours and fonts live in the block at the top of css/variables.css marked BRAND. Most of the site is worked out from those eight values, so changing them changes the whole site. The dark surface colours are the exception: they are set by hand rather than derived, so this site matches the rest of the estate.
@@ -49,17 +50,6 @@ Page settings, all in the block at the top of the file:
 - intro: optional. A line of text shown under the page heading, on the same row as the Limited capacity sticker (page and faq layouts); on phones the sticker drops below it. For example `intro: Some kind words from clients are below.`
 - show_map: optional. `true` shows the map (from site.json) at the bottom of the page. Only set it on pages where the map earns its place: the map is a Google embed, so those pages contact Google when they load.
 - noindex: optional. `true` keeps the page out of search engines and, on the page layout, hides the Limited capacity sticker (used by the 404 page).
-
-## Home page feature cards
-
-The home page has a row of cards set up, but they are not shown at the moment: home.html no longer includes them. The cards' wording stays where it was so they can come back. They are set up in the block at the top of content/index.md, under `features`. Each card needs a title, a line of text and an icon:
-
-    features:
-      - title: Same-week appointments
-        text: Most people get seen within a few days, not weeks.
-        icon: calendar
-
-The icon is a name, not a picture file. Available names: calendar, clock, users, activity, phone, pin, check, shield, star. An unrecognised name shows a plain dot rather than breaking the page. Do not use emoji here; they are drawn differently by every phone and computer and will not match the rest of the site.
 
 ## Frequently asked questions page
 

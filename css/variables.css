@@ -244,6 +244,9 @@
     --space-9: 4rem;
     --space-10: 5rem;
 
+    /* Brand mark beside the home heading; a little under two heading lines. */
+    --heading-mark-size: 4.5rem;
+
     /* Per-area rhythm. These are what responsive.css steps down, so
        sections and cards can breathe differently at each size
        instead of everything shrinking by the same amount. */

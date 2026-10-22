@@ -122,6 +122,11 @@
         margin-left: 0;
     }
 
+    /* No brand mark on phones: stacked under the heading it was an orphan. */
+    .page-heading__mark {
+        display: none;
+    }
+
     /* Content marked {: .hide-on-phone } in a page's markdown, eg the
        home page's longer paragraphs, which crowd a small screen. */
     .hide-on-phone {
