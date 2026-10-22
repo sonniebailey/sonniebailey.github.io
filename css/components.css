@@ -59,10 +59,11 @@
                 box-shadow var(--duration-slow) var(--ease-out);
 }
 
-/* Home button left of the wordmark: a house icon in the same pill as the
-   nav links, so it takes their hover and current-page treatment. Pulled
-   back on the left and vertically by its padding, like the nav links, so
-   the icon sits on the container edge. */
+/* Home button left of the wordmark: the gold seedling from the brand icon
+   (icons/seedling.svg, no background) in the same pill as the nav links, so
+   it takes their hover and current-page treatment. Pulled back on the left
+   and vertically by its padding, like the nav links, so the icon sits on
+   the container edge. */
 .nav-home {
     display: inline-flex;
     flex-shrink: 0;
@@ -75,14 +76,10 @@
                 box-shadow var(--duration-slow) var(--ease-out);
 }
 
-.nav-home svg {
-    width: var(--icon-sm);
-    height: var(--icon-sm);
-    stroke: currentColor;
-    fill: none;
-    stroke-width: 1.75;
-    stroke-linecap: round;
-    stroke-linejoin: round;
+.nav-home__logo {
+    display: block;
+    width: var(--nav-home-logo-size);
+    height: var(--nav-home-logo-size);
 }
 
 /* Resting outline on the page buttons (not the phone number). Declared

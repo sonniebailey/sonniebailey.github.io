@@ -280,6 +280,8 @@
     --burger-height: 22px;
     --icon-size: 40px;
     --icon-sm: 20px;
+    /* Header home button: the gold seedling, the size the house icon was. */
+    --nav-home-logo-size: var(--icon-sm);
     --icon-lg: 48px;
     --card-min-width: 220px;
     --footer-column-min: 200px;

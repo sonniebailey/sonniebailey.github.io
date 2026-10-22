@@ -13,6 +13,8 @@ Leave out og-image: og-image.png is the hand-made share card (lake photo,
 seedling and name, from artifact/share-image-mockups.html option D), and the
 generator's default set would overwrite it with a plain icon card.
 
+seedling.svg is the gold seedling alone, no background, used as the header home button; copied by hand from master.svg, so update it if the icon changes.
+
 icon-print.svg and icon-print-reversed.svg are black and white versions of
 the same mark for print. They are reference files only: nothing links them
 and the generator does not read them.

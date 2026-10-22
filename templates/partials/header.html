@@ -1,11 +1,8 @@
 <header>
     <div class="container">
-        {# Home button: a house icon styled like the nav links, marked current on the home page. #}
+        {# Home button: the brand icon styled like the nav links, marked current on the home page. #}
         <a href="index.html" class="nav-home{% if page.url == 'index.html' %} is-current{% endif %}" aria-label="Home"{% if page.url == 'index.html' %} aria-current="page"{% endif %}>
-            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                <path d="M3 11l9-7 9 7"></path>
-                <path d="M5 10v10h5v-6h4v6h5V10"></path>
-            </svg>
+            <img class="nav-home__logo" src="icons/seedling.svg" alt="">
         </a>
         {% include "partials/logo.html" %}
 
