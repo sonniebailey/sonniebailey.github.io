@@ -47,13 +47,14 @@ def _check_page(out_dir: Path, page: dict, failures: list[str]) -> str | None:
 
     # The header partial renders the nav twice (desktop nav and mobile menu), so a
     # page listed in site.nav carries exactly two markers; a page not in the nav
-    # (404) carries none. Index carries one, on the header's home button, which
-    # is not part of either nav block. Any other count means the marker logic is broken.
+    # (404) carries none. Index is not in site.nav but also carries two: the
+    # header's home button and the mobile menu's Home link. Any other count
+    # means the marker logic is broken.
     is_current_count = html.count('aria-current="page"')
     if page["url"] == "index.html":
-        if is_current_count != 1:
+        if is_current_count != 2:
             failures.append(
-                f"{page['url']}: expected 1 current-page marker on index (home button), found {is_current_count}"
+                f"{page['url']}: expected 2 current-page markers on index (home button and menu Home), found {is_current_count}"
             )
     elif is_current_count not in (0, 2):
         failures.append(
@@ -68,7 +69,7 @@ def _check_page(out_dir: Path, page: dict, failures: list[str]) -> str | None:
 
 def _check_asset_references(out_dir: Path, url: str, html: str, failures: list[str]) -> None:
     """
-    Verify every href/src reference to css/js/images resolves under out_dir.
+    Verify every href/src reference to css/js/images/icons resolves under out_dir.
 
     Args:
         out_dir: build output directory (_site/).
@@ -81,7 +82,7 @@ def _check_asset_references(out_dir: Path, url: str, html: str, failures: list[s
     """
     for match in _ASSET_REF_PATTERN.finditer(html):
         value = match.group(1)
-        if not any(value.startswith(f"{prefix}/") or value.startswith(f"/{prefix}/") for prefix in ("css", "js", "images")):
+        if not any(value.startswith(f"{prefix}/") or value.startswith(f"/{prefix}/") for prefix in ("css", "js", "images", "icons")):
             continue
         relative = value.lstrip("/")
         if not (out_dir / relative).exists():

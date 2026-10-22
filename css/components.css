@@ -157,14 +157,6 @@
     top: var(--space-5);
     right: var(--space-5);
     width: var(--icon-size);
-    height: var(--icon-size);
-    border: 2px solid var(--colour-text);
-    border-radius: 50%;
-    background: none;
-    color: var(--colour-text);
-    font-size: var(--font-size-lg);
-    line-height: 1;
-    cursor: pointer;
 }
 
 .mobile-nav {
@@ -209,7 +201,10 @@
     flex-direction: column;
     gap: var(--space-2);
     margin-top: auto;
-    padding-top: var(--space-8);
+    /* Kept small: margin-top auto already opens the space above on a tall
+       screen, and a larger value pushed the menu past a short phone's
+       height, cutting off the room under the phone button. */
+    padding-top: var(--space-5);
     font-size: var(--font-size-secondary);
 }
 
@@ -219,6 +214,76 @@
 
 .mobile-menu__footer a:hover {
     color: var(--brand-accent);
+}
+
+/* Under the contact lines: the email icon on the left, the large phone
+   button pushed to the right, with extra room beneath it. */
+.mobile-menu__contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-4);
+    margin-top: var(--space-4);
+    margin-bottom: var(--space-5);
+}
+
+/* The round gold phone and email buttons, with a soft gold glow that
+   brightens on hover. Tapping one calls or opens an email. */
+.mobile-menu__contact .call-button {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: var(--call-button-size);
+    aspect-ratio: 1;
+    color: var(--colour-text-on-dark);
+    background-color: var(--brand-accent);
+    border-radius: var(--radius-button);
+    box-shadow: var(--call-button-glow);
+    transition: box-shadow var(--duration-slow) var(--ease-out),
+                background-color var(--duration-fast) var(--ease-out);
+}
+
+.mobile-menu__contact .call-button:hover {
+    color: var(--colour-text-on-dark);
+    background-color: var(--button-face-hover);
+    box-shadow: var(--call-button-glow-hover);
+}
+
+/* The email link as a plain white icon, flush with the text above, rather
+   than a gold button. */
+.mobile-menu__contact .call-button--plain,
+.mobile-menu__contact .call-button--plain:hover {
+    width: auto;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.mobile-menu__contact .call-button--plain {
+    color: var(--colour-text);
+}
+
+.mobile-menu__contact .call-button--plain:hover {
+    color: var(--brand-accent);
+}
+
+.mobile-menu__contact .call-button--large {
+    width: var(--call-button-size-large);
+}
+
+
+.call-button svg {
+    width: var(--call-icon-size);
+    height: var(--call-icon-size);
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.75;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.call-button--large svg {
+    width: var(--call-icon-size-large);
+    height: var(--call-icon-size-large);
 }
 
 /* ==================== FEATURE CARDS ==================== */
@@ -320,8 +385,10 @@
 
 .faq-toggle-all {
     padding: var(--space-2) var(--space-5);
-    border: 1px solid var(--colour-border);
+    /* The nav buttons' faint gold outline at rest, drawn as a ring. */
+    border: 0;
     border-radius: var(--radius);
+    box-shadow: var(--nav-rest-glow);
     background-color: transparent;
     color: var(--colour-text);
     font-family: var(--font-body);
@@ -334,7 +401,6 @@
 }
 
 .faq-toggle-all:hover {
-    border-color: var(--hover-gold-border);
     box-shadow: var(--hover-gold-glow);
 }
 
@@ -380,7 +446,8 @@
     box-shadow: var(--hover-gold-glow);
 }
 
-.faq-item > summary {
+.faq-item > summary,
+.faq-item > .faq-item__title {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -393,6 +460,18 @@
     color: var(--colour-text);
     list-style: none;
     transition: color var(--duration-fast) var(--ease-out);
+}
+
+/* A heading with no answer under it (build/faq_transform.py): the same
+   panel and title, but nothing to open, so no pointer, chevron or hover. */
+.faq-item > .faq-item__title {
+    margin: 0;
+    cursor: default;
+}
+
+.faq-item--static:hover {
+    border-color: var(--colour-border-soft);
+    box-shadow: none;
 }
 
 .faq-item > summary::-webkit-details-marker {
@@ -640,6 +719,8 @@
 /* A round gold button hanging over the top-right corner, the same face
    as the capacity sticker. Sitting mostly outside the dialog, it never
    covers the text as the body scrolls. */
+/* Placement only; the gold face is shared with the menu's close button
+   below. */
 .dialog__close {
     position: absolute;
     top: 0;
@@ -647,6 +728,11 @@
     transform: translate(var(--dialog-close-offset), calc(-1 * var(--dialog-close-offset)));
     z-index: 1;
     width: var(--dialog-close-size);
+}
+
+/* The round gold close button, in the popup and the phone menu. */
+.dialog__close,
+.menu-close {
     aspect-ratio: 1;
     display: grid;
     place-items: center;
@@ -658,15 +744,33 @@
     background-color: var(--brand-accent);
     border: 0;
     border-radius: var(--radius-button);
-    box-shadow: var(--shadow-button);
+    box-shadow: var(--button-glow-rest);
     cursor: pointer;
-    transition: background-color var(--duration-fast) var(--ease-out),
-                box-shadow var(--duration-base) var(--ease-out);
+    transition: scale var(--duration-slow) var(--ease-out),
+                box-shadow var(--duration-slow) var(--ease-out),
+                background-color var(--duration-fast) var(--ease-out);
 }
 
-.dialog__close:hover {
+/* The solid gold buttons' hover (SOLID GOLD BUTTONS above). Grown with
+   the scale property, as the popup's transform already places it on the
+   corner. */
+.dialog__close:hover,
+.menu-close:hover {
     background-color: var(--button-face-hover);
-    box-shadow: var(--shadow-button-hover), var(--hover-gold-glow);
+    scale: var(--button-hover-scale);
+    box-shadow: var(--button-glow-hover);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .dialog__close,
+    .menu-close {
+        transition: none;
+    }
+
+    .dialog__close:hover,
+    .menu-close:hover {
+        scale: none;
+    }
 }
 
 /* A dialog with a sticker hanging off its corner cannot clip its own

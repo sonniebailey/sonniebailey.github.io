@@ -23,7 +23,10 @@
     {% endif %}
 
 
-    <link rel="icon" href="{{ site.favicon }}">
+    <link rel="icon" href="{{ site.favicon }}" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="icons/favicon.svg">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+    <link rel="manifest" href="icons/site.webmanifest">
     <link rel="stylesheet" href="{{ site.fonts.google_css }}">
     <link rel="stylesheet" href="css/main.css">
     {# Plausible visitor counting, carried over unchanged from the previous

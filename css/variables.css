@@ -57,6 +57,9 @@
 
     --colour-link: var(--brand-primary);
     --colour-link-hover: var(--brand-primary-dark);
+    /* Links inside running text (.prose a): colour and the faint resting underline. */
+    --colour-link-prose: var(--colour-link);
+    --link-underline: var(--tint-strong);
 
     --colour-border: color-mix(in srgb, var(--brand-text) 14%, transparent);
     --colour-border-soft: color-mix(in srgb, var(--brand-text) 8%, transparent);
@@ -95,6 +98,15 @@
     --dialog-width: calc(var(--container-max-width) - 2 * var(--content-inset) + 2 * var(--space-7));
     /* The round close button in the dialog's bottom-right corner. */
     --dialog-close-size: 48px;
+    /* The round gold call button in the open mobile menu, with a soft gold
+       glow that brightens on hover. */
+    --call-button-size: 52px;
+    --call-icon-size: 24px;
+    /* The phone button, larger than the email one beside it. */
+    --call-button-size-large: 84px;
+    --call-icon-size-large: 40px;
+    --call-button-glow: 0 0 16px color-mix(in srgb, var(--brand-accent) 50%, transparent);
+    --call-button-glow-hover: 0 0 26px color-mix(in srgb, var(--brand-accent) 80%, transparent);
     /* How far the close button hangs past the corner, as a share of its size. */
     --dialog-close-offset: 30%;
     /* Space inside the popup around its text. */
@@ -366,6 +378,10 @@
     /* All text, links included, is white; hover dims to the muted white. */
     --colour-link: #ffffff;
     --colour-link-hover: var(--colour-text-muted);
+    /* White links in running text read as plain text, and a navy underline
+       vanishes on the dark ground, so running-text links go gold. */
+    --colour-link-prose: var(--brand-accent);
+    --link-underline: color-mix(in srgb, var(--brand-accent) 45%, transparent);
 
     --colour-card: rgba(255, 255, 255, 0.035);
     --colour-card-hover: rgba(255, 255, 255, 0.07);

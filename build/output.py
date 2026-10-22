@@ -2,7 +2,7 @@
 Prepare the build output directory and copy static assets into it.
 
 Single responsibility: filesystem housekeeping for _site/ -- clearing and
-recreating it, and copying css/, js/, images/ and any repo-root *.pdf
+recreating it, and copying css/, js/, images/, icons/ and any repo-root *.pdf
 verbatim.
 Does not touch page HTML, which build.py writes separately.
 """
@@ -17,7 +17,7 @@ from build.errors import BuildError
 logger = logging.getLogger(__name__)
 
 _SKIP_NAMES = {".DS_Store", "Thumbs.db"}
-_ASSET_DIRS = ("css", "js", "images")
+_ASSET_DIRS = ("css", "js", "images", "icons")
 
 
 def _should_skip(path: Path) -> bool:
@@ -71,7 +71,7 @@ def prepare_output(out_dir: Path) -> None:
 
 def copy_assets(root: Path, out_dir: Path) -> None:
     """
-    Copy css/, js/, images/ and repo-root *.pdf into the output.
+    Copy css/, js/, images/, icons/ and repo-root *.pdf into the output.
 
     Args:
         root: repository root Path.

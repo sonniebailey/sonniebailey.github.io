@@ -43,7 +43,10 @@ def to_details(html: str, filename: str) -> str:
         HTML with content before the first H2 left as-is, and every H2
         heading plus its following content (up to the next H2) wrapped in
         <details class="faq-item"><summary>heading text</summary>
-        <div class="faq-answer">...content...</div></details>. The details
+        <div class="faq-answer">...content...</div></details>. A heading
+        with nothing under it has nothing to expand, so it becomes a plain
+        <div class="faq-item faq-item--static"> holding the heading text
+        in a <p class="faq-item__title">, with no toggle. The details
         elements are collected into a single <div class="faq-list">, which
         js/faq.js uses as the scope for its expand/collapse-all control.
 
@@ -62,6 +65,13 @@ def to_details(html: str, filename: str) -> str:
         section_start = match.end()
         section_end = matches[index + 1].start() if index + 1 < len(matches) else len(html)
         section_body = html[section_start:section_end]
+        if not section_body.strip():
+            parts.append(
+                f'<div class="faq-item faq-item--static">'
+                f'<p class="faq-item__title">{summary_text}</p>'
+                f"</div>"
+            )
+            continue
         parts.append(
             f'<details class="faq-item">'
             f"<summary>{summary_text}</summary>"

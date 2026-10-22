@@ -111,6 +111,17 @@
         display: flex;
     }
 
+    /* Beside the title the sticker covered it and squeezed the intro, so
+       it drops onto its own line underneath, left-aligned as on the home
+       page. */
+    .page-heading {
+        flex-direction: column;
+    }
+
+    .page-heading .capacity-button {
+        margin-left: 0;
+    }
+
     /* Content marked {: .hide-on-phone } in a page's markdown, eg the
        home page's longer paragraphs, which crowd a small screen. */
     .hide-on-phone {

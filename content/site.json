@@ -1,6 +1,6 @@
 {
   "name": "Fairhaven Wealth",
-  "legal_name": "Fairhaven Wealth Limited",
+  "legal_name": "Fairhaven Ventures Ltd",
   "tagline": "Financial advice for switched-on Kiwis",
   "domain": "https://fairhavenwealth.co.nz",
   "search_visible": true,
@@ -28,7 +28,7 @@
       "href": "testimonials.html"
     }
   ],
-  "favicon": "images/favicon.png",
+  "favicon": "icons/favicon.ico",
   "social_image": "images/social-card.png",
   "fonts": {
     "heading": "Raleway",

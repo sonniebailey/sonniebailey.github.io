@@ -29,7 +29,7 @@ You can engage us again in the future, but that's up to you. We aren't looking t
 
 Fairhaven Wealth's service is terrific for some people, but not appropriate for most people. It's best suited for people who already have a good understanding of their situation and are (or want to be) engaged in their finances. It also tends to be most valuable for those with some degree of financial and/or professional security.
 
-Fairhaven Wealth has had many happy clients. You can read dozens of testimonials [here](https://www.fairhavenwealth.co.nz/testimonials).
+Fairhaven Wealth has had many happy clients. You can read dozens of testimonials [here](testimonials.html).
 
 ## Fairhaven Wealth's primary service
 
@@ -127,7 +127,7 @@ In a sense, my first question to you will be what you want to get out of the ser
 
 You might, for instance, want me to do something that resembles a holistic review of your situation, and get fresh insights, identifying areas that might require your attention, suggesting what you could do ("you don't know what you don't know!"). Alternatively, you might have a high-stakes decision that you want to make, and want to focus the engagement on that (although I will still insist on considering this decision within the broader context of your situation). 
 
-One way of getting an idea of what you might get from the service is by reading directly from client on the testimonials page of this site [here](www.fairhavenwealth.co.nz/testimonials). 
+One way of getting an idea of what you might get from the service is by reading directly from clients on the testimonials page of this site [here](testimonials.html). 
 
 Examples of ways I've helped clients:
 
