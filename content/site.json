@@ -2,8 +2,8 @@
   "name": "Fairhaven Wealth",
   "legal_name": "Fairhaven Wealth Limited",
   "tagline": "Financial advice for switched-on Kiwis",
-  "domain": "https://www.fairhavenwealth.co.nz",
-  "search_visible": false,
+  "domain": "https://fairhavenwealth.co.nz",
+  "search_visible": true,
   "phone": {
     "display": "021 0269 2213",
     "tel": "+642102692213"

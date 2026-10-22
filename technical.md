@@ -6,7 +6,7 @@ How the site is built, for whoever maintains it. readme.md covers day-to-day edi
 
 - Python 3.12 build script: Jinja2 templates, python-markdown (extensions extra and smarty), PyYAML for page settings. Pinned in requirements.txt.
 - Output is plain HTML, CSS and four small vanilla JavaScript files. No framework, no bundler.
-- Hosted on Netlify, connected to the GitHub repository. netlify.toml gives Netlify the build command and the folder to publish.
+- Hosted on GitHub Pages. A GitHub Actions workflow (.github/workflows/pages.yml) builds and publishes the site on every push to main.
 - Pillow is used only by utils/optimise_images.py, not by the build.
 
 ## Folder layout
@@ -22,7 +22,7 @@ How the site is built, for whoever maintains it. readme.md covers day-to-day edi
 - settings.py and settings.html - local editor for site.json and the brand block; never published
 - utils/optimise_images.py - photo resizer
 - tests/ - pytest tests for the build modules
-- _redirects - Netlify redirect rules, copied to the output
+- .github/workflows/pages.yml - builds and publishes the site on every push to main
 - disclosure.pdf and privacy.pdf - the disclosure statement and privacy policy, linked from the footer via footer_links in content/site.json. Any PDF at the repo root is copied to the site root, so its address (eg /disclosure.pdf) matches the old site's and stays fixed for anything linking to it
 - _site/ - build output, ignored by git, recreated on every build
 
@@ -35,7 +35,7 @@ build/orchestrator.py run_build, in order:
 3. output.prepare_output empties _site/ (retrying briefly if a sync client such as Dropbox holds a lock).
 4. snippet_loader.load_snippets renders each content/snippets/*.md (no front matter; the first H1 becomes its title) through markdown_render.render_body and sets the result as the Jinja global snippets, keyed by file stem.
 5. For each page: markdown_render.render_body lifts the first H1 out as the hero title and renders the rest to HTML; faq_transform.to_details wraps each H2 section in a details.faq-item (answer inside a div.faq-answer), collected into a single div.faq-list, for faq pages; page_renderer.render_page renders the template named after the layout; root_relative.rootify rewrites 404.html's links to start with / so it works from any path.
-6. output.copy_assets copies css/, js/, images/, _redirects and any repo-root *.pdf.
+6. output.copy_assets copies css/, js/, images/ and any repo-root *.pdf.
 7. sitemap_writer writes sitemap.xml (every page except 404 and noindex pages) and robots.txt.
 8. checks.check_output reads the output back and fails the build if any page is missing its header, footer, hero or main, still contains template syntax, links to a css/js/image file that does not exist, has the wrong number of current-page markers, or if 404.html, sitemap.xml or robots.txt is missing.
 
@@ -53,7 +53,9 @@ The header marks the current page by comparing page.url with each nav item's hre
 
 base.html sets the title (site name and tagline on the home page, page title and site name elsewhere), meta description, canonical link built from site.json domain, Open Graph tags with site.json social_image as the default image, a Twitter card tag, the favicon, the Google Fonts stylesheet from site.json fonts.google_css and css/main.css. A page with noindex true also gets a robots noindex meta tag and is left out of the sitemap.
 
-Search visibility is a whole-site setting, separate from the per-page noindex flag. site.json search_visible is optional and defaults to false, applied by site_config.load_site_config so the value is always present downstream. False puts `<meta name="robots" content="noindex, nofollow">` in every page head and makes sitemap_writer.write_robots emit a `Disallow: /` robots.txt with no Sitemap line; true restores the allow-all robots.txt naming the sitemap, and the per-page noindex flag applies as before. The sitemap itself is written either way, so the post-build check for its presence needs no special case. The orchestrator logs which state every build is in, in both directions, so the state is readable in the Netlify deploy log.
+Every page also loads the Plausible visitor-counting script (the outbound-links variant, data-domain fairhavenwealth.co.nz), carried over unchanged from the previous site so visitor numbers continue across the switch. It is hard-coded in base.html, not a site.json setting. Plausible ignores localhost, so previews are not counted. No integrity hash is set: Plausible updates the script in place, and a pinned hash would silently stop counting when it changes.
+
+Search visibility is a whole-site setting, separate from the per-page noindex flag. site.json search_visible is optional and defaults to false, applied by site_config.load_site_config so the value is always present downstream. False puts `<meta name="robots" content="noindex, nofollow">` in every page head and makes sitemap_writer.write_robots emit a `Disallow: /` robots.txt with no Sitemap line; true restores the allow-all robots.txt naming the sitemap, and the per-page noindex flag applies as before. The sitemap itself is written either way, so the post-build check for its presence needs no special case. The orchestrator logs which state every build is in, in both directions, so the state is readable in the GitHub Actions build log.
 
 The default is false rather than true because the two mistakes are not equal: a forgotten key leaves a finished site unlisted, which one commit fixes, whereas the reverse would put a client's unfinished draft in front of Google. A new site is therefore hidden from its first build, and going live is a single deliberate edit. Treat that edit as one-way: once a site is live, deploying a hidden build would remove it from search results.
 
@@ -169,9 +171,9 @@ Covers front matter validation, site.json validation, H1 lifting, the FAQ transf
 
 ## Deploy
 
-netlify.toml: build command `pip install -r requirements.txt && python3 build.py`, publish folder _site. .python-version pins Python 3.12 for Netlify's build image. A failed build leaves the previous deploy live.
+.github/workflows/pages.yml runs on every push to main: installs the Python named in .python-version, installs requirements.txt, runs build.py and publishes _site to GitHub Pages through the actions/upload-pages-artifact and actions/deploy-pages actions. The repo's Pages setting must be "GitHub Actions", not "deploy from a branch". A failed build leaves the previous deploy live.
 
-Netlify reads _redirects natively and serves a root 404.html for unknown paths automatically.
+The custom domain (fairhavenwealth.co.nz) is held in the repo's Pages settings, not in a CNAME file; with Actions-based publishing GitHub ignores any CNAME file in the output. GitHub Pages serves the root 404.html for unknown paths automatically. There is no redirect mechanism on GitHub Pages: a renamed page needs a stub page at the old address with a meta refresh to the new one.
 
 ## Known limitations
 

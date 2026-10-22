@@ -2,8 +2,8 @@
 Prepare the build output directory and copy static assets into it.
 
 Single responsibility: filesystem housekeeping for _site/ -- clearing and
-recreating it, and copying css/, js/, images/, _redirects and any
-repo-root *.pdf verbatim.
+recreating it, and copying css/, js/, images/ and any repo-root *.pdf
+verbatim.
 Does not touch page HTML, which build.py writes separately.
 """
 
@@ -50,7 +50,7 @@ def prepare_output(out_dir: Path) -> None:
     # When the repo sits inside a synced folder (Dropbox, OneDrive), the sync
     # client briefly locks files it has just noticed, so deleting the previous
     # build can hit a transient PermissionError. Retry a few times, then fail
-    # loudly. Hosted builds (Netlify) never hit this.
+    # loudly. Hosted builds (GitHub Actions) never hit this.
     attempts = 6
     for attempt in range(1, attempts + 1):
         if not out_dir.exists():
@@ -71,7 +71,7 @@ def prepare_output(out_dir: Path) -> None:
 
 def copy_assets(root: Path, out_dir: Path) -> None:
     """
-    Copy css/, js/, images/, _redirects and repo-root *.pdf into the output.
+    Copy css/, js/, images/ and repo-root *.pdf into the output.
 
     Args:
         root: repository root Path.
@@ -93,11 +93,6 @@ def copy_assets(root: Path, out_dir: Path) -> None:
             ],
         )
         logger.info("Copied %s/ to output", dir_name)
-
-    redirects_path = root / "_redirects"
-    if redirects_path.exists():
-        shutil.copy2(redirects_path, out_dir / "_redirects")
-        logger.info("Copied _redirects to output")
 
     # Documents kept at the repo root publish at the site root, so a PDF's
     # address (eg /disclosure.pdf) stays fixed for anything linking to it.

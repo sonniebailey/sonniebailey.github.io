@@ -3,7 +3,7 @@ Rewrite document-relative URLs in baked HTML to root-relative ones.
 
 Single responsibility: prefix href/src attribute values and CSS url()
 targets with "/" wherever they are document-relative. Used only for
-404.html, which Netlify can serve from any unmatched path, so
+404.html, which GitHub Pages serves for any unmatched path, so
 document-relative references (css/main.css, about.html) must be pinned to
 the site root instead of resolving against whatever path the visitor hit.
 

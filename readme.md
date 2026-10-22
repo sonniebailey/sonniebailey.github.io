@@ -1,6 +1,6 @@
 # Website
 
-This folder is the complete source of a small static website. It builds a handful of pages from plain text files and publishes them to Netlify. There is no database, no server-side code and no admin login.
+This folder is the complete source of a small static website. It builds a handful of pages from plain text files and publishes them to GitHub Pages. There is no database, no server-side code and no admin login.
 
 If you are new here, whether a person or an AI assistant, read this file and then technical.md before changing anything.
 
@@ -15,7 +15,7 @@ If you are new here, whether a person or an AI assistant, read this file and the
 - Colours and fonts live in the block at the top of css/variables.css marked BRAND. Most of the site is worked out from those eight values, so changing them changes the whole site. The dark surface colours are the exception: they are set by hand rather than derived, so this site matches the rest of the estate.
 - The site is dark only. There is no light version and no sun/moon switch, so there is one set of colours to maintain.
 - Running build.py turns all of that into ordinary HTML files in _site/. That folder is what visitors see.
-- Netlify watches the GitHub repository. Every push to the default branch (master) rebuilds and publishes the site automatically. Nothing is uploaded by hand.
+- GitHub builds the site itself. Every push to the default branch (main) runs the workflow in .github/workflows/pages.yml, which rebuilds the site and publishes it to GitHub Pages. Nothing is uploaded by hand.
 
 ## What you need installed
 
@@ -85,26 +85,22 @@ and open http://127.0.0.1:8001/. It edits exactly those two files and nothing el
 
 ## Publish
 
-Commit and push to the default branch (master) on GitHub. Netlify builds and publishes within a minute or two. If the build fails (for example a page is missing its title), Netlify keeps the previous version live and shows the error in its deploy log; fix the file and push again. Run preview.py before pushing to catch problems locally: the build stops with a message naming the file and the field.
+Commit and push to the default branch (main) on GitHub. GitHub builds and publishes within a minute or two; progress and any errors are under the repository's Actions tab. If the build fails (for example a page is missing its title), the previous version stays live; fix the file and push again. Run preview.py before pushing to catch problems locally: the build stops with a message naming the file and the field.
 
-## Who can see the site
-
-Netlify has its own control over who may view a project, separate from anything in this folder. A newly imported project can start private, which serves a "This site is private" sign-in page instead of the site, even though the build succeeded. It is changed in the project's access and security settings in the Netlify dashboard, and takes effect immediately with no redeploy.
-
-That setting and the search engines setting below do different jobs, and a site being reviewed needs both: visitor access public, so anyone with the address can open it, and search visibility off, so it does not turn up in Google.
+The repository's Pages setting (Settings, Pages, Build and deployment) must be "GitHub Actions". The same page holds the custom domain.
 
 ## Redirects
 
-If a page is renamed, add a line to _redirects so old links keep working: `/old-page  /new-page.html  301`.
+GitHub Pages has no redirect rules. If a page is renamed, keep a small page at the old address that sends the visitor on: a file whose head contains `<meta http-equiv="refresh" content="0; url=/new-page.html">` and a link to the new page. The page and PDF names match the previous site, so none is needed today.
 
 ## Search engines
 
-A new site is hidden from search engines. Every page carries a noindex tag and robots.txt refuses all crawlers, so the site works normally for anyone you give the address to but does not turn up in Google. This is what you want while the site is being built and reviewed.
+Search visibility is one setting, `search_visible` in content/site.json. It is true: pages carry no noindex tag, robots.txt allows all crawlers and names the sitemap. Every build says which state it is in, so you can confirm it in the build log under the Actions tab.
 
-To go live, set `"search_visible": true` in content/site.json and push. Every build says which state it is in, so you can confirm it in Netlify's deploy log.
+Set it to false only for a site that is being built and reviewed and must not turn up in Google: every page then carries a noindex tag and robots.txt refuses all crawlers, while the site still works for anyone you give the address to.
 
 Leave it true from then on. Deploying a hidden build after the site is live would take it out of Google, and getting back in takes time.
 
 ## Domain
 
-The site's address for links, sitemap and search engines is the domain value in content/site.json. Change it if the site moves. Connecting a custom domain to Netlify is done in the Netlify dashboard (Domain management); it needs one A record and one CNAME at the domain's registrar and does not touch email records.
+The site's address for links, sitemap and search engines is the domain value in content/site.json. Change it if the site moves. It is the bare domain, fairhavenwealth.co.nz, matching the custom domain in the repository's Pages settings; the www form is not served. The domain's DNS (A records to GitHub Pages, email records) lives at the registrar and is not touched by anything in this folder.

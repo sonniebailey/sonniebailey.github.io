@@ -26,6 +26,11 @@
     <link rel="icon" href="{{ site.favicon }}">
     <link rel="stylesheet" href="{{ site.fonts.google_css }}">
     <link rel="stylesheet" href="css/main.css">
+    {# Plausible visitor counting, carried over unchanged from the previous
+       site so the visitor record continues across the switch. The
+       outbound-links variant also counts clicks on links to other sites. #}
+    <script defer data-domain="fairhavenwealth.co.nz" src="https://plausible.io/js/script.outbound-links.js"></script>
+    <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
     {# Prepares a page in the background once the visitor hovers its link,
        so the page drop starts the moment they click rather than after the
        next page loads. Browsers without speculation rules ignore it. #}

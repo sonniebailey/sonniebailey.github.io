@@ -90,7 +90,7 @@ def run_build(root: Path, out_dir: Path) -> None:
     write_robots(out_dir, site)
 
     # Announced on every build, in both directions, so the state is visible in
-    # the Netlify deploy log as well as locally. The launch flip is a one-way
+    # the GitHub Actions build log as well as locally. The launch flip is a one-way
     # door in practice: once a site is live, a hidden deploy would remove it
     # from search results.
     if site["search_visible"]:
