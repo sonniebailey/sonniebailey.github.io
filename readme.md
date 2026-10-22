@@ -32,7 +32,7 @@ Builds the site and serves it at http://127.0.0.1:8000/. After editing a file, s
 
 ## Edit a page
 
-Open the page's file in content/ (for example content/about.md). The block between the two `---` lines at the top is the page's settings; below it is the page text in markdown. The first line beginning with `# ` becomes the page's big heading, at the top of the page. To hide a paragraph on phones, put `{: .hide-on-phone }` on the line directly below it (the home page does this).
+Open the page's file in content/ (for example content/about.md). The block between the two `---` lines at the top is the page's settings; below it is the page text in markdown. The first line beginning with `# ` becomes the page's big heading, at the top of the page. To hide a paragraph on phones, put `{: .hide-on-phone }` on the line directly below it.
 
 ## Add a page
 

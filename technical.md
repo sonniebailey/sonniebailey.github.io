@@ -151,7 +151,7 @@ responsive.css restages the token values at each breakpoint rather than only res
 Breakpoints: 768px (tablet) and 480px (mobile). There are no height queries; the two that existed only resized the hero.
 
 
-At 768px and under, page headings (h1) drop to --font-size-page-title 2.25rem (--font-size-2xl). At 480px and under: side padding is --container-padding-mobile (1.5rem, the same as tablet); page headings (h1) drop to --font-size-page-title 2rem; anything marked `{: .hide-on-phone }` in markdown (attr_list, part of extra) is hidden, currently the home page's two body paragraphs. From 768px down the burger is pushed to the right edge with margin-left auto.
+At 768px and under, page headings (h1) drop to --font-size-page-title 2.25rem (--font-size-2xl). At 480px and under: side padding is --container-padding-mobile (1.5rem, the same as tablet); page headings (h1) drop to --font-size-page-title 2rem; anything marked `{: .hide-on-phone }` in markdown (attr_list, part of extra) is hidden (no page uses it today; the home page's one paragraph shows at every size). From 768px down the burger is pushed to the right edge with margin-left auto.
 
 ## JavaScript
 

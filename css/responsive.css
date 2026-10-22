@@ -127,8 +127,8 @@
         display: none;
     }
 
-    /* Content marked {: .hide-on-phone } in a page's markdown, eg the
-       home page's longer paragraphs, which crowd a small screen. */
+    /* Content marked {: .hide-on-phone } in a page's markdown: paragraphs
+       that would crowd a small screen. */
     .hide-on-phone {
         display: none;
     }
